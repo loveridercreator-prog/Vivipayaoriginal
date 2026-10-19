@@ -1,33 +1,51 @@
-.class public Li/k1;
-.super Li/m1;
+.class public final Lp5/k1;
+.super Lp5/r0;
 .source "SourceFile"
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
+# instance fields
+.field public final c:Ljava/lang/String;
 
-    invoke-direct {p0}, Li/m1;-><init>()V
+
+# direct methods
+.method public constructor <init>(Ln5/g;)V
+    .locals 1
+
+    const-string v0, "primitive"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0, p1}, Lp5/r0;-><init>(Ln5/g;)V
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-interface {p1}, Ln5/g;->d()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, "Array"
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lp5/k1;->c:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/text/StaticLayout$Builder;Landroid/widget/TextView;)V
-    .locals 2
+.method public final d()Ljava/lang/String;
+    .locals 1
 
-    const-string v0, "getTextDirectionHeuristic"
+    iget-object v0, p0, Lp5/k1;->c:Ljava/lang/String;
 
-    sget-object v1, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
-
-    invoke-static {p2, v0, v1}, Li/n1;->e(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/text/TextDirectionHeuristic;
-
-    invoke-virtual {p1, p2}, Landroid/text/StaticLayout$Builder;->setTextDirection(Landroid/text/TextDirectionHeuristic;)Landroid/text/StaticLayout$Builder;
-
-    return-void
+    return-object v0
 .end method

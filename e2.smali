@@ -1,106 +1,73 @@
-.class public final Li/e2;
-.super Ljava/lang/Object;
+.class public final Lp5/e2;
+.super Lp5/j1;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic e:I
+.field public a:[J
 
-.field public final synthetic f:Li/l2;
-
-
-# direct methods
-.method public synthetic constructor <init>(Li/l2;I)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p2, p0, Li/e2;->e:I
-
-    iput-object p1, p0, Li/e2;->f:Li/l2;
-
-    return-void
-.end method
+.field public b:I
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final a()Ljava/lang/Object;
+    .locals 2
 
-    iget v0, p0, Li/e2;->e:I
+    iget-object v0, p0, Lp5/e2;->a:[J
 
-    iget-object v1, p0, Li/e2;->f:Li/l2;
+    iget v1, p0, Lp5/e2;->b:I
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([JI)[J
 
-    iget-object v0, v1, Li/l2;->g:Li/y1;
+    move-result-object v0
 
-    if-eqz v0, :cond_0
+    const-string v1, "copyOf(this, newSize)"
 
-    sget-object v2, Lu0/n0;->a:Ljava/util/WeakHashMap;
+    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0}, Lu0/a0;->b(Landroid/view/View;)Z
+    new-instance v1, Ll4/u;
 
-    move-result v0
+    invoke-direct {v1, v0}, Ll4/u;-><init>([J)V
 
-    if-eqz v0, :cond_0
+    return-object v1
+.end method
 
-    iget-object v0, v1, Li/l2;->g:Li/y1;
+.method public final b(I)V
+    .locals 2
 
-    invoke-virtual {v0}, Landroid/widget/AdapterView;->getCount()I
+    iget-object v0, p0, Lp5/e2;->a:[J
 
-    move-result v0
+    array-length v1, v0
 
-    iget-object v2, v1, Li/l2;->g:Li/y1;
+    if-ge v1, p1, :cond_1
 
-    invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
+    array-length v1, v0
 
-    move-result v2
+    mul-int/lit8 v1, v1, 0x2
 
-    if-le v0, v2, :cond_0
+    if-ge p1, v1, :cond_0
 
-    iget-object v0, v1, Li/l2;->g:Li/y1;
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
-
-    move-result v0
-
-    iget v2, v1, Li/l2;->q:I
-
-    if-gt v0, v2, :cond_0
-
-    iget-object v0, v1, Li/l2;->C:Li/g0;
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v0, v2}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
-
-    invoke-virtual {v1}, Li/l2;->f()V
+    move p1, v1
 
     :cond_0
-    return-void
+    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([JI)[J
 
-    :pswitch_0
-    iget-object v0, v1, Li/l2;->g:Li/y1;
+    move-result-object p1
 
-    if-eqz v0, :cond_1
+    const-string v0, "copyOf(this, newSize)"
 
-    const/4 v1, 0x1
+    invoke-static {p1, v0}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Li/y1;->setListSelectionHidden(Z)V
-
-    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
+    iput-object p1, p0, Lp5/e2;->a:[J
 
     :cond_1
     return-void
+.end method
 
-    nop
+.method public final d()I
+    .locals 1
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
+    iget v0, p0, Lp5/e2;->b:I
+
+    return v0
 .end method

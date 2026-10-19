@@ -1,21 +1,73 @@
-.class public abstract Li/h2;
-.super Ljava/lang/Object;
+.class public final Lp5/h2;
+.super Lp5/j1;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Landroid/widget/PopupWindow;Landroid/graphics/Rect;)V
-    .locals 0
+# instance fields
+.field public a:[S
 
-    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setEpicenterBounds(Landroid/graphics/Rect;)V
+.field public b:I
 
+
+# virtual methods
+.method public final a()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lp5/h2;->a:[S
+
+    iget v1, p0, Lp5/h2;->b:I
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([SI)[S
+
+    move-result-object v0
+
+    const-string v1, "copyOf(this, newSize)"
+
+    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v1, Ll4/x;
+
+    invoke-direct {v1, v0}, Ll4/x;-><init>([S)V
+
+    return-object v1
+.end method
+
+.method public final b(I)V
+    .locals 2
+
+    iget-object v0, p0, Lp5/h2;->a:[S
+
+    array-length v1, v0
+
+    if-ge v1, p1, :cond_1
+
+    array-length v1, v0
+
+    mul-int/lit8 v1, v1, 0x2
+
+    if-ge p1, v1, :cond_0
+
+    move p1, v1
+
+    :cond_0
+    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([SI)[S
+
+    move-result-object p1
+
+    const-string v0, "copyOf(this, newSize)"
+
+    invoke-static {p1, v0}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object p1, p0, Lp5/h2;->a:[S
+
+    :cond_1
     return-void
 .end method
 
-.method public static b(Landroid/widget/PopupWindow;Z)V
-    .locals 0
+.method public final d()I
+    .locals 1
 
-    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setIsClippedToScreen(Z)V
+    iget v0, p0, Lp5/h2;->b:I
 
-    return-void
+    return v0
 .end method

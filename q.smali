@@ -1,53 +1,23 @@
-.class public final Lp3/q;
-.super Lr4/c;
+.class public abstract synthetic Lp5/q;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public e:Lu3/c;
-
-.field public f:Ljava/util/Iterator;
-
-.field public synthetic g:Ljava/lang/Object;
-
-.field public final synthetic h:Lp3/r;
-
-.field public i:I
-
-
 # direct methods
-.method public constructor <init>(Lp3/r;Lp4/e;)V
-    .locals 0
-
-    iput-object p1, p0, Lp3/q;->h:Lp3/r;
-
-    invoke-direct {p0, p2}, Lr4/c;-><init>(Lp4/e;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static bridge synthetic a()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
     .locals 1
 
-    iput-object p1, p0, Lp3/q;->g:Ljava/lang/Object;
+    sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_IN_DIRECTION:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
-    iget p1, p0, Lp3/q;->i:I
+    return-object v0
+.end method
 
-    const/high16 v0, -0x80000000
+.method public static bridge synthetic b(Lk5/c;Ljava/lang/Class;)Ljava/lang/Object;
+    .locals 0
 
-    or-int/2addr p1, v0
+    invoke-virtual {p0, p1}, Ljava/lang/ClassValue;->get(Ljava/lang/Class;)Ljava/lang/Object;
 
-    iput p1, p0, Lp3/q;->i:I
+    move-result-object p0
 
-    iget-object p1, p0, Lp3/q;->h:Lp3/r;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0, p0}, Lp3/r;->b(Lp3/r;Lu3/c;Lp4/e;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    return-object p0
 .end method

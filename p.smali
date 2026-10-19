@@ -1,49 +1,82 @@
-.class public final Lp3/p;
-.super Lr4/c;
+.class public final Lp5/p;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lm5/b;
 
-# instance fields
-.field public synthetic e:Ljava/lang/Object;
 
-.field public final synthetic f:Lp3/r;
+# static fields
+.field public static final a:Lp5/p;
 
-.field public g:I
+.field public static final b:Lp5/m1;
 
 
 # direct methods
-.method public constructor <init>(Lp3/r;Lp4/e;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    iput-object p1, p0, Lp3/p;->f:Lp3/r;
+    new-instance v0, Lp5/p;
 
-    invoke-direct {p0, p2}, Lr4/c;-><init>(Lp4/e;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lp5/p;->a:Lp5/p;
+
+    new-instance v0, Lp5/m1;
+
+    sget-object v1, Ln5/e;->c:Ln5/e;
+
+    const-string v2, "kotlin.Char"
+
+    invoke-direct {v0, v2, v1}, Lp5/m1;-><init>(Ljava/lang/String;Ln5/f;)V
+
+    sput-object v0, Lp5/p;->b:Lp5/m1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final deserialize(Lo5/c;)Ljava/lang/Object;
     .locals 1
 
-    iput-object p1, p0, Lp3/p;->e:Ljava/lang/Object;
+    const-string v0, "decoder"
 
-    iget p1, p0, Lp3/p;->g:I
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/high16 v0, -0x80000000
+    invoke-interface {p1}, Lo5/c;->r()C
 
-    or-int/2addr p1, v0
+    move-result p1
 
-    iput p1, p0, Lp3/p;->g:I
+    invoke-static {p1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
-    iget-object p1, p0, Lp3/p;->f:Lp3/r;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0, v0, p0}, Lp3/r;->a(Lp3/r;Ljava/lang/Throwable;Lt3/c;Lp4/e;)V
-
-    sget-object p1, Ll4/y;->a:Ll4/y;
+    move-result-object p1
 
     return-object p1
+.end method
+
+.method public final getDescriptor()Ln5/g;
+    .locals 1
+
+    sget-object v0, Lp5/p;->b:Lp5/m1;
+
+    return-object v0
+.end method
+
+.method public final serialize(Lo5/d;Ljava/lang/Object;)V
+    .locals 1
+
+    check-cast p2, Ljava/lang/Character;
+
+    invoke-virtual {p2}, Ljava/lang/Character;->charValue()C
+
+    move-result p2
+
+    const-string v0, "encoder"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {p1, p2}, Lo5/d;->l(C)V
+
+    return-void
 .end method

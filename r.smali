@@ -1,310 +1,155 @@
-.class public final Lp3/r;
+.class public final Lp5/r;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final d:Lp3/a;
-
-.field public static final e:Lb4/a;
-
-
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final synthetic a:I
 
-.field public final b:Ljava/util/List;
+.field public final b:Lv4/c;
 
-.field public final c:Z
+.field public final c:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(ILm5/l;)V
+    .locals 1
 
-    new-instance v0, Lp3/a;
+    iput p1, p0, Lp5/r;->a:I
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lp3/a;-><init>(II)V
-
-    sput-object v0, Lp3/r;->d:Lp3/a;
-
-    new-instance v0, Lb4/a;
-
-    const-string v1, "HttpResponseValidator"
-
-    invoke-direct {v0, v1}, Lb4/a;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lp3/r;->e:Lb4/a;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/List;Ljava/util/List;Z)V
-    .locals 0
+    if-eq p1, v0, :cond_0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lp3/r;->a:Ljava/util/List;
+    iput-object p2, p0, Lp5/r;->b:Lv4/c;
 
-    iput-object p2, p0, Lp3/r;->b:Ljava/util/List;
+    new-instance p1, Lk5/c;
 
-    iput-boolean p3, p0, Lp3/r;->c:Z
+    invoke-direct {p1, v0}, Lk5/c;-><init>(I)V
+
+    iput-object p1, p0, Lp5/r;->c:Ljava/lang/Object;
+
+    return-void
+
+    :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lp5/r;->b:Lv4/c;
+
+    new-instance p1, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {p1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object p1, p0, Lp5/r;->c:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public static final a(Lp3/r;Ljava/lang/Throwable;Lt3/c;Lp4/e;)V
+
+# virtual methods
+.method public final a(Lb5/b;)Lm5/b;
     .locals 4
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget v0, p0, Lp5/r;->a:I
 
-    instance-of v0, p3, Lp3/p;
+    packed-switch v0, :pswitch_data_0
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Lp5/r;->c:Ljava/lang/Object;
 
-    move-object v0, p3
+    check-cast v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    check-cast v0, Lp3/p;
+    invoke-static {p1}, Lr2/f;->y(Lb5/b;)Ljava/lang/Class;
 
-    iget v1, v0, Lp3/p;->g:I
+    move-result-object v1
 
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lp3/p;->g:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lp3/p;
-
-    invoke-direct {v0, p0, p3}, Lp3/p;-><init>(Lp3/r;Lp4/e;)V
-
-    :goto_0
-    iget-object p3, v0, Lp3/p;->e:Ljava/lang/Object;
-
-    iget v0, v0, Lp3/p;->g:I
-
-    if-eqz v0, :cond_3
-
-    const/4 p0, 0x1
-
-    const/4 p1, 0x0
-
-    if-eq v0, p0, :cond_1
-
-    const/4 p0, 0x2
-
-    if-ne v0, p0, :cond_2
-
-    :cond_1
-    invoke-static {p3}, Lk3/e;->M(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_2
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_3
-    invoke-static {p3}, Lk3/e;->M(Ljava/lang/Object;)V
-
-    sget-object p3, Lp3/t;->a:Lm6/b;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Processing exception "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p1, " for request "
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-interface {p2}, Lt3/c;->l()Lw3/i0;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {p3, p1}, Lm6/b;->g(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lp3/r;->b:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    move-object p1, p0
-
-    :goto_1
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_4
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Landroidx/fragment/app/u;->x(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_4
-    return-void
-.end method
-
-.method public static final b(Lp3/r;Lu3/c;Lp4/e;)Ljava/lang/Object;
-    .locals 5
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    instance-of v0, p2, Lp3/q;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p2
-
-    check-cast v0, Lp3/q;
-
-    iget v1, v0, Lp3/q;->i:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lp3/q;->i:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lp3/q;
-
-    invoke-direct {v0, p0, p2}, Lp3/q;-><init>(Lp3/r;Lp4/e;)V
-
-    :goto_0
-    iget-object p2, v0, Lp3/q;->g:Ljava/lang/Object;
-
-    sget-object v1, Lq4/a;->e:Lq4/a;
-
-    iget v2, v0, Lp3/q;->i:I
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_2
-
-    if-ne v2, v3, :cond_1
-
-    iget-object p0, v0, Lp3/q;->f:Ljava/util/Iterator;
-
-    iget-object p1, v0, Lp3/q;->e:Lu3/c;
-
-    invoke-static {p2}, Lk3/e;->M(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    invoke-static {p2}, Lk3/e;->M(Ljava/lang/Object;)V
-
-    sget-object p2, Lp3/t;->a:Lm6/b;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v4, "Validating response for request "
-
-    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Lu3/c;->c()Lk3/b;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lk3/b;->d()Lt3/c;
-
-    move-result-object v4
-
-    invoke-interface {v4}, Lt3/c;->l()Lw3/i0;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-interface {p2, v2}, Lm6/b;->g(Ljava/lang/String;)V
+    if-nez v2, :cond_1
 
-    iget-object p0, p0, Lp3/r;->a:Ljava/util/List;
+    new-instance v2, Lp5/k;
 
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    iget-object v3, p0, Lp5/r;->b:Lv4/c;
 
-    move-result-object p0
+    invoke-interface {v3, p1}, Lv4/c;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_3
+    move-result-object p1
+
+    check-cast p1, Lm5/b;
+
+    invoke-direct {v2, p1}, Lp5/k;-><init>(Lm5/b;)V
+
+    invoke-interface {v0, v1, v2}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move-object v2, p1
+
+    :cond_1
+    :goto_0
+    check-cast v2, Lp5/k;
+
+    iget-object p1, v2, Lp5/k;->a:Lm5/b;
+
+    return-object p1
+
+    :pswitch_0
+    iget-object v0, p0, Lp5/r;->c:Ljava/lang/Object;
+
+    check-cast v0, Lk5/c;
+
+    invoke-static {p1}, Lr2/f;->y(Lb5/b;)Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lp5/q;->b(Lk5/c;Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    const-string v1, "get(key)"
+
+    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast v0, Lp5/a1;
+
+    iget-object v1, v0, Lp5/a1;->a:Ljava/lang/ref/SoftReference;
+
+    invoke-virtual {v1}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    new-instance v1, Lc0/i;
+
+    const/4 v2, 0x2
+
+    invoke-direct {v1, p0, v2, p1}, Lc0/i;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Lp5/a1;->a(Lv4/a;)Ljava/lang/Object;
+
+    move-result-object v1
+
     :goto_1
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v1, Lp5/k;
 
-    move-result p2
+    iget-object p1, v1, Lp5/k;->a:Lm5/b;
 
-    if-eqz p2, :cond_4
+    return-object p1
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lv4/e;
-
-    iput-object p1, v0, Lp3/q;->e:Lu3/c;
-
-    iput-object p0, v0, Lp3/q;->f:Ljava/util/Iterator;
-
-    iput v3, v0, Lp3/q;->i:I
-
-    invoke-interface {p2, p1, v0}, Lv4/e;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    if-ne p2, v1, :cond_3
-
-    goto :goto_2
-
-    :cond_4
-    sget-object v1, Ll4/y;->a:Ll4/y;
-
-    :goto_2
-    return-object v1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

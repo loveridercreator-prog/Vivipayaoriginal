@@ -1,79 +1,82 @@
-.class public abstract Lp3/o0;
+.class public final Lp5/o0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lm5/b;
+
 
 # static fields
-.field public static final a:Lm6/b;
+.field public static final a:Lp5/o0;
+
+.field public static final b:Lp5/m1;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 3
 
-    const-string v0, "io.ktor.client.plugins.HttpTimeout"
+    new-instance v0, Lp5/o0;
 
-    invoke-static {v0}, Lk3/e;->c(Ljava/lang/String;)Lm6/b;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    sput-object v0, Lp5/o0;->a:Lp5/o0;
 
-    sput-object v0, Lp3/o0;->a:Lm6/b;
+    new-instance v0, Lp5/m1;
+
+    sget-object v1, Ln5/e;->f:Ln5/e;
+
+    const-string v2, "kotlin.Int"
+
+    invoke-direct {v0, v2, v1}, Lp5/m1;-><init>(Ljava/lang/String;Ln5/f;)V
+
+    sput-object v0, Lp5/o0;->b:Lp5/m1;
 
     return-void
 .end method
 
-.method public static final a(Lt3/e;Ljava/lang/Throwable;)Lo3/b;
-    .locals 3
 
-    const-string v0, "request"
+# virtual methods
+.method public final deserialize(Lo5/c;)Ljava/lang/Object;
+    .locals 1
 
-    invoke-static {p0, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v0, "decoder"
 
-    new-instance v0, Lo3/b;
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-interface {p1}, Lo5/c;->l()I
 
-    const-string v2, "Socket timeout has expired [url="
+    move-result p1
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v2, p0, Lt3/e;->a:Lw3/i0;
+    move-result-object p1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    return-object p1
+.end method
 
-    const-string v2, ", socket_timeout="
+.method public final getDescriptor()Ln5/g;
+    .locals 1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    sget-object v2, Lp3/n0;->d:Lp3/m0;
-
-    invoke-virtual {p0}, Lt3/e;->a()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lp3/k0;
-
-    if-eqz p0, :cond_0
-
-    iget-object p0, p0, Lp3/k0;->c:Ljava/lang/Long;
-
-    if-nez p0, :cond_1
-
-    :cond_0
-    const-string p0, "unknown"
-
-    :cond_1
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, "] ms"
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0, p1}, Lo3/b;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    sget-object v0, Lp5/o0;->b:Lp5/m1;
 
     return-object v0
+.end method
+
+.method public final serialize(Lo5/d;Ljava/lang/Object;)V
+    .locals 1
+
+    check-cast p2, Ljava/lang/Number;
+
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
+
+    move-result p2
+
+    const-string v0, "encoder"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-interface {p1, p2}, Lo5/d;->d(I)V
+
+    return-void
 .end method

@@ -1,98 +1,159 @@
-.class public final Li/i2;
-.super Landroid/database/DataSetObserver;
+.class public final Lp5/i2;
+.super Lp5/l1;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/lang/Object;
+# static fields
+.field public static final c:Lp5/i2;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput p1, p0, Li/i2;->a:I
+    new-instance v0, Lp5/i2;
 
-    iput-object p2, p0, Li/i2;->b:Ljava/lang/Object;
+    sget-object v1, Lp5/j2;->a:Lp5/j2;
 
-    invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
+    invoke-direct {v0, v1}, Lp5/l1;-><init>(Lm5/b;)V
+
+    sput-object v0, Lp5/i2;->c:Lp5/i2;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onChanged()V
-    .locals 2
+.method public final d(Ljava/lang/Object;)I
+    .locals 1
 
-    iget v0, p0, Li/i2;->a:I
+    check-cast p1, Ll4/x;
 
-    iget-object v1, p0, Li/i2;->b:Ljava/lang/Object;
+    iget-object p1, p1, Ll4/x;->e:[S
 
-    packed-switch v0, :pswitch_data_0
+    const-string v0, "$this$collectionSize"
 
-    check-cast v1, Ly0/a;
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x1
+    array-length p1, p1
 
-    iput-boolean v0, v1, Ly0/a;->e:Z
-
-    invoke-virtual {v1}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
-
-    return-void
-
-    :pswitch_0
-    check-cast v1, Li/l2;
-
-    iget-object v0, v1, Li/l2;->C:Li/g0;
-
-    invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v1}, Li/l2;->f()V
-
-    :cond_0
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p1
 .end method
 
-.method public final onInvalidated()V
+.method public final f(Lo5/a;ILjava/lang/Object;Z)V
+    .locals 1
+
+    check-cast p3, Lp5/h2;
+
+    const-string p4, "builder"
+
+    invoke-static {p3, p4}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object p4, p0, Lp5/l1;->b:Lp5/k1;
+
+    invoke-interface {p1, p4, p2}, Lo5/a;->n(Lp5/k1;I)Lo5/c;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Lo5/c;->B()S
+
+    move-result p1
+
+    invoke-static {p3}, Lp5/j1;->c(Lp5/j1;)V
+
+    iget-object p2, p3, Lp5/h2;->a:[S
+
+    iget p4, p3, Lp5/h2;->b:I
+
+    add-int/lit8 v0, p4, 0x1
+
+    iput v0, p3, Lp5/h2;->b:I
+
+    aput-short p1, p2, p4
+
+    return-void
+.end method
+
+.method public final g(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    check-cast p1, Ll4/x;
+
+    iget-object p1, p1, Ll4/x;->e:[S
+
+    const-string v0, "$this$toBuilder"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lp5/h2;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, v0, Lp5/h2;->a:[S
+
+    array-length p1, p1
+
+    iput p1, v0, Lp5/h2;->b:I
+
+    const/16 p1, 0xa
+
+    invoke-virtual {v0, p1}, Lp5/h2;->b(I)V
+
+    return-object v0
+.end method
+
+.method public final j()Ljava/lang/Object;
     .locals 2
-
-    iget v0, p0, Li/i2;->a:I
-
-    iget-object v1, p0, Li/i2;->b:Ljava/lang/Object;
-
-    packed-switch v0, :pswitch_data_0
-
-    check-cast v1, Ly0/a;
 
     const/4 v0, 0x0
 
-    iput-boolean v0, v1, Ly0/a;->e:Z
+    new-array v0, v0, [S
 
-    invoke-virtual {v1}, Landroid/widget/BaseAdapter;->notifyDataSetInvalidated()V
+    new-instance v1, Ll4/x;
 
+    invoke-direct {v1, v0}, Ll4/x;-><init>([S)V
+
+    return-object v1
+.end method
+
+.method public final k(Lo5/b;Ljava/lang/Object;I)V
+    .locals 3
+
+    check-cast p2, Ll4/x;
+
+    iget-object p2, p2, Ll4/x;->e:[S
+
+    const-string v0, "encoder"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "content"
+
+    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, p3, :cond_0
+
+    move-object v1, p1
+
+    check-cast v1, Lo6/i;
+
+    iget-object v2, p0, Lp5/l1;->b:Lp5/k1;
+
+    invoke-virtual {v1, v2, v0}, Lo6/i;->v(Lp5/k1;I)Lo5/d;
+
+    move-result-object v1
+
+    aget-short v2, p2, v0
+
+    invoke-interface {v1, v2}, Lo5/d;->k(S)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
     return-void
-
-    :pswitch_0
-    check-cast v1, Li/l2;
-
-    invoke-virtual {v1}, Li/l2;->dismiss()V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

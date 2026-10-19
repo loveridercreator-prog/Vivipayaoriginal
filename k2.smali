@@ -1,105 +1,92 @@
-.class public final Li/k2;
+.class public final Lp5/k2;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Lm5/b;
+
+
+# static fields
+.field public static final b:Lp5/k2;
 
 
 # instance fields
-.field public final synthetic e:Li/l2;
+.field public final synthetic a:Lp5/d0;
 
 
 # direct methods
-.method public constructor <init>(Li/l2;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lp5/k2;
+
+    invoke-direct {v0}, Lp5/k2;-><init>()V
+
+    sput-object v0, Lp5/k2;->b:Lp5/k2;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Li/k2;->e:Li/l2;
+    new-instance v0, Lp5/d0;
+
+    invoke-direct {v0}, Lp5/d0;-><init>()V
+
+    iput-object v0, p0, Lp5/k2;->a:Lp5/d0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 3
+.method public final deserialize(Lo5/c;)Ljava/lang/Object;
+    .locals 1
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+    const-string v0, "decoder"
 
-    move-result p1
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+    iget-object v0, p0, Lp5/k2;->a:Lp5/d0;
 
-    move-result v0
+    invoke-virtual {v0, p1}, Lp5/d0;->deserialize(Lo5/c;)Ljava/lang/Object;
 
-    float-to-int v0, v0
+    sget-object p1, Ll4/y;->a:Ll4/y;
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+    return-object p1
+.end method
 
-    move-result p2
+.method public final getDescriptor()Ln5/g;
+    .locals 1
 
-    float-to-int p2, p2
+    iget-object v0, p0, Lp5/k2;->a:Lp5/d0;
 
-    iget-object v1, p0, Li/k2;->e:Li/l2;
+    invoke-virtual {v0}, Lp5/d0;->getDescriptor()Ln5/g;
 
-    if-nez p1, :cond_0
+    move-result-object v0
 
-    iget-object v2, v1, Li/l2;->C:Li/g0;
+    return-object v0
+.end method
 
-    if-eqz v2, :cond_0
+.method public final serialize(Lo5/d;Ljava/lang/Object;)V
+    .locals 1
 
-    invoke-virtual {v2}, Landroid/widget/PopupWindow;->isShowing()Z
+    check-cast p2, Ll4/y;
 
-    move-result v2
+    const-string v0, "encoder"
 
-    if-eqz v2, :cond_0
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-ltz v0, :cond_0
+    const-string v0, "value"
 
-    iget-object v2, v1, Li/l2;->C:Li/g0;
+    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v2}, Landroid/widget/PopupWindow;->getWidth()I
+    iget-object v0, p0, Lp5/k2;->a:Lp5/d0;
 
-    move-result v2
+    invoke-virtual {v0, p1, p2}, Lp5/d0;->serialize(Lo5/d;Ljava/lang/Object;)V
 
-    if-ge v0, v2, :cond_0
-
-    if-ltz p2, :cond_0
-
-    iget-object v0, v1, Li/l2;->C:Li/g0;
-
-    invoke-virtual {v0}, Landroid/widget/PopupWindow;->getHeight()I
-
-    move-result v0
-
-    if-ge p2, v0, :cond_0
-
-    iget-object p1, v1, Li/l2;->y:Landroid/os/Handler;
-
-    iget-object p2, v1, Li/l2;->u:Li/e2;
-
-    const-wide/16 v0, 0xfa
-
-    invoke-virtual {p1, p2, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p2, 0x1
-
-    if-ne p1, p2, :cond_1
-
-    iget-object p1, v1, Li/l2;->y:Landroid/os/Handler;
-
-    iget-object p2, v1, Li/l2;->u:Li/e2;
-
-    invoke-virtual {p1, p2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x0
-
-    return p1
+    return-void
 .end method

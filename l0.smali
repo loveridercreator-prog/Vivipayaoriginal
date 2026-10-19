@@ -1,246 +1,104 @@
-.class public final Lp3/l0;
-.super Lr4/i;
+.class public final Lp5/l0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lv4/e;
+.implements Lp5/h0;
 
 
 # instance fields
-.field public e:I
-
-.field public final synthetic f:Ljava/lang/Long;
-
-.field public final synthetic g:Lt3/d;
-
-.field public final synthetic h:Lf5/b1;
+.field public final synthetic a:Lm5/b;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Long;Lt3/d;Lf5/b1;Lp4/e;)V
+.method public constructor <init>(Lm5/b;)V
     .locals 0
 
-    iput-object p1, p0, Lp3/l0;->f:Ljava/lang/Long;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lp3/l0;->g:Lt3/d;
-
-    iput-object p3, p0, Lp3/l0;->h:Lf5/b1;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p4}, Lr4/i;-><init>(ILp4/e;)V
+    iput-object p1, p0, Lp5/l0;->a:Lm5/b;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final create(Ljava/lang/Object;Lp4/e;)Lp4/e;
+.method public final childSerializers()[Lm5/b;
     .locals 3
 
-    new-instance p1, Lp3/l0;
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lp3/l0;->g:Lt3/d;
+    new-array v0, v0, [Lm5/b;
 
-    iget-object v1, p0, Lp3/l0;->h:Lf5/b1;
+    const/4 v1, 0x0
 
-    iget-object v2, p0, Lp3/l0;->f:Ljava/lang/Long;
+    iget-object v2, p0, Lp5/l0;->a:Lm5/b;
 
-    invoke-direct {p1, v2, v0, v1, p2}, Lp3/l0;-><init>(Ljava/lang/Long;Lt3/d;Lf5/b1;Lp4/e;)V
+    aput-object v2, v0, v1
 
-    return-object p1
+    return-object v0
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final deserialize(Lo5/c;)Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Lf5/b0;
+    const-string v0, "decoder"
 
-    check-cast p2, Lp4/e;
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p0, p1, p2}, Lp3/l0;->create(Ljava/lang/Object;Lp4/e;)Lp4/e;
-
-    move-result-object p1
-
-    check-cast p1, Lp3/l0;
-
-    sget-object p2, Ll4/y;->a:Ll4/y;
-
-    invoke-virtual {p1, p2}, Lp3/l0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
-
-    sget-object v0, Lq4/a;->e:Lq4/a;
-
-    iget v1, p0, Lp3/l0;->e:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lk3/e;->M(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
+    const-string v0, "unsupported"
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
+.end method
 
-    :cond_1
-    invoke-static {p1}, Lk3/e;->M(Ljava/lang/Object;)V
+.method public final getDescriptor()Ln5/g;
+    .locals 2
 
-    iget-object p1, p0, Lp3/l0;->f:Ljava/lang/Long;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    const-string v1, "unsupported"
 
-    move-result-wide v3
-
-    iput v2, p0, Lp3/l0;->e:I
-
-    invoke-static {v3, v4, p0}, Lk3/e;->u(JLp4/e;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_2
-
-    return-object v0
-
-    :cond_2
-    :goto_0
-    new-instance p1, Lp3/f0;
-
-    iget-object v0, p0, Lp3/l0;->g:Lt3/d;
-
-    const-string v1, "request"
-
-    invoke-static {v0, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v1, v0, Lt3/d;->a:Lw3/d0;
-
-    invoke-virtual {v1}, Lw3/d0;->a()V
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const/16 v3, 0x100
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-static {v1, v2}, Lr2/f;->b(Lw3/d0;Ljava/lang/StringBuilder;)V
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "appendTo(StringBuilder(256)).toString()"
-
-    invoke-static {v2, v3}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v3, Lp3/n0;->d:Lp3/m0;
-
-    sget-object v4, Lm3/j;->a:Lb4/a;
-
-    iget-object v0, v0, Lt3/d;->f:Lb4/h;
-
-    invoke-virtual {v0, v4}, Lb4/b;->c(Lb4/a;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map;
-
-    const/4 v4, 0x0
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {v0, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    :cond_3
-    move-object v0, v4
-
-    :goto_1
-    check-cast v0, Lp3/k0;
-
-    if-eqz v0, :cond_4
-
-    iget-object v4, v0, Lp3/k0;->a:Ljava/lang/Long;
-
-    :cond_4
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v3, "Request timeout has expired [url="
-
-    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, ", request_timeout="
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-nez v4, :cond_5
-
-    const-string v4, "unknown"
-
-    :cond_5
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v2, " ms]"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    sget-object v0, Lp3/o0;->a:Lm6/b;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Request timeout: "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lm6/b;->g(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    throw v0
+.end method
 
-    move-result-object v0
+.method public final serialize(Lo5/d;Ljava/lang/Object;)V
+    .locals 0
 
-    invoke-static {v0}, Lk3/e;->i(Ljava/lang/Object;)V
+    const-string p2, "encoder"
 
-    invoke-static {v0, p1}, Lf5/c0;->a(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/util/concurrent/CancellationException;
+    invoke-static {p1, p2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object p1
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    iget-object v0, p0, Lp3/l0;->h:Lf5/b1;
+    const-string p2, "unsupported"
 
-    invoke-interface {v0, p1}, Lf5/b1;->b(Ljava/util/concurrent/CancellationException;)V
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    sget-object p1, Ll4/y;->a:Ll4/y;
+    move-result-object p2
 
-    return-object p1
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public final typeParametersSerializers()[Lm5/b;
+    .locals 1
+
+    sget-object v0, Lp5/g1;->b:[Lm5/b;
+
+    return-object v0
 .end method

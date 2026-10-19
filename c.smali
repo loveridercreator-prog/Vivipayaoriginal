@@ -1,183 +1,94 @@
-.class public final Lp4/c;
-.super Lw4/i;
+.class public final Lp5/c;
+.super Lp5/r0;
 .source "SourceFile"
-
-# interfaces
-.implements Lv4/e;
-
-
-# static fields
-.field public static final f:Lp4/c;
-
-.field public static final g:Lp4/c;
 
 
 # instance fields
-.field public final synthetic e:I
+.field public final synthetic c:I
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
+.method public constructor <init>(Ln5/g;I)V
     .locals 2
 
-    new-instance v0, Lp4/c;
+    iput p2, p0, Lp5/c;->c:I
 
-    const/4 v1, 0x0
+    const/4 v0, 0x1
 
-    invoke-direct {v0, v1}, Lp4/c;-><init>(I)V
+    const-string v1, "elementDesc"
 
-    sput-object v0, Lp4/c;->f:Lp4/c;
+    if-eq p2, v0, :cond_2
 
-    new-instance v0, Lp4/c;
+    const/4 v0, 0x2
 
-    const/4 v1, 0x1
+    if-eq p2, v0, :cond_1
 
-    invoke-direct {v0, v1}, Lp4/c;-><init>(I)V
+    const/4 v0, 0x3
 
-    sput-object v0, Lp4/c;->g:Lp4/c;
+    if-eq p2, v0, :cond_0
+
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0, p1}, Lp5/r0;-><init>(Ln5/g;)V
 
     return-void
-.end method
 
-.method public synthetic constructor <init>(I)V
-    .locals 0
+    :cond_0
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput p1, p0, Lp4/c;->e:I
+    invoke-direct {p0, p1}, Lp5/r0;-><init>(Ln5/g;)V
 
-    const/4 p1, 0x2
+    return-void
 
-    invoke-direct {p0, p1}, Lw4/i;-><init>(I)V
+    :cond_1
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0, p1}, Lp5/r0;-><init>(Ln5/g;)V
+
+    return-void
+
+    :cond_2
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0, p1}, Lp5/r0;-><init>(Ln5/g;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final d()Ljava/lang/String;
+    .locals 1
 
-    iget v0, p0, Lp4/c;->e:I
-
-    const-string v1, "element"
-
-    const-string v2, "acc"
+    iget v0, p0, Lp5/c;->c:I
 
     packed-switch v0, :pswitch_data_0
 
-    check-cast p1, Lp4/j;
+    const-string v0, "kotlin.collections.LinkedHashSet"
 
-    check-cast p2, Lp4/h;
-
-    invoke-static {p1, v2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p2, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {p2}, Lp4/h;->getKey()Lp4/i;
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Lp4/j;->G(Lp4/i;)Lp4/j;
-
-    move-result-object p1
-
-    sget-object v0, Lp4/k;->e:Lp4/k;
-
-    if-ne p1, v0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    sget-object v1, Lp4/f;->e:Lp4/f;
-
-    invoke-interface {p1, v1}, Lp4/j;->x(Lp4/i;)Lp4/h;
-
-    move-result-object v2
-
-    check-cast v2, Lp4/g;
-
-    if-nez v2, :cond_1
-
-    new-instance v0, Lp4/d;
-
-    invoke-direct {v0, p2, p1}, Lp4/d;-><init>(Lp4/h;Lp4/j;)V
-
-    :goto_0
-    move-object p2, v0
-
-    goto :goto_1
-
-    :cond_1
-    invoke-interface {p1, v1}, Lp4/j;->G(Lp4/i;)Lp4/j;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_2
-
-    new-instance p1, Lp4/d;
-
-    invoke-direct {p1, v2, p2}, Lp4/d;-><init>(Lp4/h;Lp4/j;)V
-
-    move-object p2, p1
-
-    goto :goto_1
-
-    :cond_2
-    new-instance v0, Lp4/d;
-
-    new-instance v1, Lp4/d;
-
-    invoke-direct {v1, p2, p1}, Lp4/d;-><init>(Lp4/h;Lp4/j;)V
-
-    invoke-direct {v0, v2, v1}, Lp4/d;-><init>(Lp4/h;Lp4/j;)V
-
-    goto :goto_0
-
-    :goto_1
-    return-object p2
+    return-object v0
 
     :pswitch_0
-    check-cast p1, Ljava/lang/String;
+    const-string v0, "kotlin.collections.HashSet"
 
-    check-cast p2, Lp4/h;
+    return-object v0
 
-    invoke-static {p1, v2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    :pswitch_1
+    const-string v0, "kotlin.collections.ArrayList"
 
-    invoke-static {p2, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    return-object v0
 
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    :pswitch_2
+    const-string v0, "kotlin.Array"
 
-    move-result v0
+    return-object v0
 
-    if-nez v0, :cond_3
-
-    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :cond_3
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, ", "
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    :goto_2
-    return-object p1
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

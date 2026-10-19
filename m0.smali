@@ -1,75 +1,69 @@
-.class public final Lp3/m0;
-.super Ljava/lang/Object;
+.class public final Lp5/m0;
+.super Lp5/j1;
 .source "SourceFile"
 
-# interfaces
-.implements Lp3/u;
-.implements Lm3/i;
+
+# instance fields
+.field public a:[I
+
+.field public b:I
 
 
 # virtual methods
-.method public final a(Lv4/c;)Ljava/lang/Object;
-    .locals 3
+.method public final a()Ljava/lang/Object;
+    .locals 2
 
-    new-instance v0, Lp3/k0;
+    iget-object v0, p0, Lp5/m0;->a:[I
 
-    invoke-direct {v0}, Lp3/k0;-><init>()V
+    iget v1, p0, Lp5/m0;->b:I
 
-    invoke-interface {p1, v0}, Lv4/c;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance p1, Lp3/n0;
-
-    iget-object v1, v0, Lp3/k0;->a:Ljava/lang/Long;
-
-    iget-object v2, v0, Lp3/k0;->b:Ljava/lang/Long;
-
-    iget-object v0, v0, Lp3/k0;->c:Ljava/lang/Long;
-
-    invoke-direct {p1, v1, v2, v0}, Lp3/n0;-><init>(Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;)V
-
-    return-object p1
-.end method
-
-.method public final b(Ljava/lang/Object;Lj3/e;)V
-    .locals 4
-
-    check-cast p1, Lp3/n0;
-
-    const-string v0, "plugin"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "scope"
-
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    sget-object v0, Lp3/j0;->b:Lp3/a;
-
-    invoke-static {p2, v0}, Lp3/v;->a(Lj3/e;Lp3/a;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([II)[I
 
     move-result-object v0
 
-    check-cast v0, Lp3/j0;
+    const-string v1, "copyOf(this, newSize)"
 
-    new-instance v1, Lm3/d;
+    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v2, 0x0
+    return-object v0
+.end method
 
-    const/4 v3, 0x4
+.method public final b(I)V
+    .locals 2
 
-    invoke-direct {v1, p1, p2, v2, v3}, Lm3/d;-><init>(Ljava/lang/Object;Lj3/e;Lp4/e;I)V
+    iget-object v0, p0, Lp5/m0;->a:[I
 
-    iget-object p1, v0, Lp3/j0;->a:Ljava/util/ArrayList;
+    array-length v1, v0
 
-    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    if-ge v1, p1, :cond_1
 
+    array-length v1, v0
+
+    mul-int/lit8 v1, v1, 0x2
+
+    if-ge p1, v1, :cond_0
+
+    move p1, v1
+
+    :cond_0
+    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([II)[I
+
+    move-result-object p1
+
+    const-string v0, "copyOf(this, newSize)"
+
+    invoke-static {p1, v0}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object p1, p0, Lp5/m0;->a:[I
+
+    :cond_1
     return-void
 .end method
 
-.method public final getKey()Lb4/a;
+.method public final d()I
     .locals 1
 
-    sget-object v0, Lp3/n0;->e:Lb4/a;
+    iget v0, p0, Lp5/m0;->b:I
 
-    return-object v0
+    return v0
 .end method

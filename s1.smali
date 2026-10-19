@@ -1,153 +1,147 @@
-.class public abstract Li/s1;
-.super Ljava/lang/Object;
+.class public final Lp5/s1;
+.super Lp5/l1;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:[I
-
-.field public static final b:[I
+.field public static final c:Lp5/s1;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    const v0, 0x10100a0
+    new-instance v0, Lp5/s1;
 
-    filled-new-array {v0}, [I
+    sget-object v1, Lp5/t1;->a:Lp5/t1;
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Lp5/l1;-><init>(Lm5/b;)V
 
-    sput-object v0, Li/s1;->a:[I
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Li/s1;->b:[I
-
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    sput-object v0, Lp5/s1;->c:Lp5/s1;
 
     return-void
 .end method
 
-.method public static a(Landroid/graphics/drawable/Drawable;)V
-    .locals 3
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+# virtual methods
+.method public final d(Ljava/lang/Object;)I
+    .locals 1
 
-    move-result-object v0
+    check-cast p1, [S
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    const-string v0, "<this>"
 
-    move-result-object v0
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    array-length p1, p1
 
-    const/16 v2, 0x1d
+    return p1
+.end method
 
-    if-lt v1, v2, :cond_2
+.method public final f(Lo5/a;ILjava/lang/Object;Z)V
+    .locals 1
 
-    const/16 v2, 0x1f
+    check-cast p3, Lp5/r1;
 
-    if-ge v1, v2, :cond_2
+    const-string p4, "builder"
 
-    const-string v1, "android.graphics.drawable.ColorStateListDrawable"
+    invoke-static {p3, p4}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object p4, p0, Lp5/l1;->b:Lp5/k1;
 
-    move-result v0
+    invoke-interface {p1, p4, p2}, Lo5/a;->v(Lp5/k1;I)S
 
-    if-eqz v0, :cond_2
+    move-result p1
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getState()[I
+    invoke-static {p3}, Lp5/j1;->c(Lp5/j1;)V
 
-    move-result-object v0
+    iget-object p2, p3, Lp5/r1;->a:[S
 
-    if-eqz v0, :cond_1
+    iget p4, p3, Lp5/r1;->b:I
 
-    array-length v1, v0
+    add-int/lit8 v0, p4, 0x1
 
-    if-nez v1, :cond_0
+    iput v0, p3, Lp5/r1;->b:I
+
+    aput-short p1, p2, p4
+
+    return-void
+.end method
+
+.method public final g(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    check-cast p1, [S
+
+    const-string v0, "<this>"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lp5/r1;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, v0, Lp5/r1;->a:[S
+
+    array-length p1, p1
+
+    iput p1, v0, Lp5/r1;->b:I
+
+    const/16 p1, 0xa
+
+    invoke-virtual {v0, p1}, Lp5/r1;->b(I)V
+
+    return-object v0
+.end method
+
+.method public final j()Ljava/lang/Object;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [S
+
+    return-object v0
+.end method
+
+.method public final k(Lo5/b;Ljava/lang/Object;I)V
+    .locals 5
+
+    check-cast p2, [S
+
+    const-string v0, "encoder"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "content"
+
+    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, p3, :cond_0
+
+    aget-short v1, p2, v0
+
+    move-object v2, p1
+
+    check-cast v2, Lo6/i;
+
+    const-string v3, "descriptor"
+
+    iget-object v4, p0, Lp5/l1;->b:Lp5/k1;
+
+    invoke-static {v4, v3}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v2, v4, v0}, Lo6/i;->u(Ln5/g;I)V
+
+    invoke-virtual {v2, v1}, Lo6/i;->k(S)V
+
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    sget-object v1, Li/s1;->b:[I
-
-    invoke-virtual {p0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    sget-object v1, Li/s1;->a:[I
-
-    invoke-virtual {p0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    :goto_1
-    invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    :cond_2
     return-void
-.end method
-
-.method public static b(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
-    .locals 1
-
-    const/4 v0, 0x3
-
-    if-eq p0, v0, :cond_2
-
-    const/4 v0, 0x5
-
-    if-eq p0, v0, :cond_1
-
-    const/16 v0, 0x9
-
-    if-eq p0, v0, :cond_0
-
-    packed-switch p0, :pswitch_data_0
-
-    return-object p1
-
-    :pswitch_0
-    sget-object p0, Landroid/graphics/PorterDuff$Mode;->ADD:Landroid/graphics/PorterDuff$Mode;
-
-    return-object p0
-
-    :pswitch_1
-    sget-object p0, Landroid/graphics/PorterDuff$Mode;->SCREEN:Landroid/graphics/PorterDuff$Mode;
-
-    return-object p0
-
-    :pswitch_2
-    sget-object p0, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
-
-    return-object p0
-
-    :cond_0
-    sget-object p0, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
-
-    return-object p0
-
-    :cond_1
-    sget-object p0, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
-
-    return-object p0
-
-    :cond_2
-    sget-object p0, Landroid/graphics/PorterDuff$Mode;->SRC_OVER:Landroid/graphics/PorterDuff$Mode;
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0xe
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

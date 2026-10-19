@@ -1,108 +1,78 @@
-.class public abstract Li/u1;
+.class public final Lp5/u1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lm5/b;
+
 
 # static fields
-.field public static final a:Ljava/lang/reflect/Method;
+.field public static final a:Lp5/u1;
 
-.field public static final b:Ljava/lang/reflect/Method;
-
-.field public static final c:Ljava/lang/reflect/Method;
-
-.field public static final d:Z
+.field public static final b:Lp5/m1;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 3
 
-    const-class v0, Landroid/widget/AdapterView;
+    new-instance v0, Lp5/u1;
 
-    :try_start_0
-    const-class v1, Landroid/widget/AbsListView;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const-string v2, "positionSelector"
+    sput-object v0, Lp5/u1;->a:Lp5/u1;
 
-    const/4 v3, 0x5
+    new-instance v0, Lp5/m1;
 
-    new-array v3, v3, [Ljava/lang/Class;
+    sget-object v1, Ln5/e;->i:Ln5/e;
 
-    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v2, "kotlin.String"
 
-    const/4 v5, 0x0
+    invoke-direct {v0, v2, v1}, Lp5/m1;-><init>(Ljava/lang/String;Ln5/f;)V
 
-    aput-object v4, v3, v5
+    sput-object v0, Lp5/u1;->b:Lp5/m1;
 
-    const-class v6, Landroid/view/View;
+    return-void
+.end method
 
-    const/4 v7, 0x1
 
-    aput-object v6, v3, v7
+# virtual methods
+.method public final deserialize(Lo5/c;)Ljava/lang/Object;
+    .locals 1
 
-    sget-object v6, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    const-string v0, "decoder"
 
-    const/4 v8, 0x2
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    aput-object v6, v3, v8
+    invoke-interface {p1}, Lo5/c;->C()Ljava/lang/String;
 
-    sget-object v6, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+    move-result-object p1
 
-    const/4 v8, 0x3
+    return-object p1
+.end method
 
-    aput-object v6, v3, v8
+.method public final getDescriptor()Ln5/g;
+    .locals 1
 
-    const/4 v8, 0x4
+    sget-object v0, Lp5/u1;->b:Lp5/m1;
 
-    aput-object v6, v3, v8
+    return-object v0
+.end method
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+.method public final serialize(Lo5/d;Ljava/lang/Object;)V
+    .locals 1
 
-    move-result-object v1
+    check-cast p2, Ljava/lang/String;
 
-    sput-object v1, Li/u1;->a:Ljava/lang/reflect/Method;
+    const-string v0, "encoder"
 
-    invoke-virtual {v1, v7}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "setSelectedPositionInt"
+    const-string v0, "value"
 
-    new-array v2, v7, [Ljava/lang/Class;
+    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    aput-object v4, v2, v5
+    invoke-interface {p1, p2}, Lo5/d;->q(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v1
-
-    sput-object v1, Li/u1;->b:Ljava/lang/reflect/Method;
-
-    invoke-virtual {v1, v7}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
-
-    const-string v1, "setNextSelectedPositionInt"
-
-    new-array v2, v7, [Ljava/lang/Class;
-
-    aput-object v4, v2, v5
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    sput-object v0, Li/u1;->c:Ljava/lang/reflect/Method;
-
-    invoke-virtual {v0, v7}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
-
-    sput-boolean v7, Li/u1;->d:Z
-    :try_end_0
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
-
-    :goto_0
     return-void
 .end method

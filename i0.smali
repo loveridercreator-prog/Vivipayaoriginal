@@ -1,46 +1,38 @@
-.class public final Lp3/i0;
-.super Ljava/lang/Object;
+.class public final Lp5/i0;
+.super Lp5/y0;
 .source "SourceFile"
-
-# interfaces
-.implements Lp3/p0;
-
-
-# instance fields
-.field public final a:Lv4/f;
-
-.field public final b:Lp3/p0;
 
 
 # direct methods
-.method public constructor <init>(Lv4/f;Lp3/p0;)V
-    .locals 1
+.method public constructor <init>(Ln5/g;Ln5/g;I)V
+    .locals 3
 
-    const-string v0, "interceptor"
+    const/4 v0, 0x1
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v1, "valueDesc"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v2, "keyDesc"
 
-    iput-object p1, p0, Lp3/i0;->a:Lv4/f;
+    if-eq p3, v0, :cond_0
 
-    iput-object p2, p0, Lp3/i0;->b:Lp3/p0;
+    invoke-static {p1, v2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p2, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string p3, "kotlin.collections.HashMap"
+
+    invoke-direct {p0, p3, p1, p2}, Lp5/y0;-><init>(Ljava/lang/String;Ln5/g;Ln5/g;)V
 
     return-void
-.end method
 
+    :cond_0
+    invoke-static {p1, v2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-# virtual methods
-.method public final a(Lt3/d;Lp4/e;)Ljava/lang/Object;
-    .locals 2
+    invoke-static {p2, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lp3/i0;->a:Lv4/f;
+    const-string p3, "kotlin.collections.LinkedHashMap"
 
-    iget-object v1, p0, Lp3/i0;->b:Lp3/p0;
+    invoke-direct {p0, p3, p1, p2}, Lp5/y0;-><init>(Ljava/lang/String;Ln5/g;Ln5/g;)V
 
-    invoke-interface {v0, v1, p1, p2}, Lv4/f;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

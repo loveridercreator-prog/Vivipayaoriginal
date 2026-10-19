@@ -1,41 +1,23 @@
-.class public final Li/f1;
-.super La2/c;
+.class public final Lp5/f1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic f:Li/g1;
+.field public final a:Ljava/util/concurrent/ConcurrentHashMap;
 
 
 # direct methods
-.method public constructor <init>(Li/g1;)V
-    .locals 0
-
-    iput-object p1, p0, Li/f1;->f:Li/g1;
-
-    invoke-direct {p0, p1}, La2/c;-><init>(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final j(I)V
+.method public constructor <init>()V
     .locals 1
 
-    iget-object v0, p0, Li/f1;->f:Li/g1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0, p1}, Li/g1;->e(Li/g1;I)V
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    return-void
-.end method
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-.method public final k(I)V
-    .locals 1
-
-    iget-object v0, p0, Li/f1;->f:Li/g1;
-
-    invoke-static {v0, p1}, Li/g1;->d(Li/g1;I)V
+    iput-object v0, p0, Lp5/f1;->a:Ljava/util/concurrent/ConcurrentHashMap;
 
     return-void
 .end method

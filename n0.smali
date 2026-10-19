@@ -1,53 +1,141 @@
-.class public final Lp3/n0;
-.super Ljava/lang/Object;
+.class public final Lp5/n0;
+.super Lp5/l1;
 .source "SourceFile"
 
 
 # static fields
-.field public static final d:Lp3/m0;
-
-.field public static final e:Lb4/a;
-
-
-# instance fields
-.field public final a:Ljava/lang/Long;
-
-.field public final b:Ljava/lang/Long;
-
-.field public final c:Ljava/lang/Long;
+.field public static final c:Lp5/n0;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lp3/m0;
+    new-instance v0, Lp5/n0;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    sget-object v1, Lp5/o0;->a:Lp5/o0;
 
-    sput-object v0, Lp3/n0;->d:Lp3/m0;
+    invoke-direct {v0, v1}, Lp5/l1;-><init>(Lm5/b;)V
 
-    new-instance v0, Lb4/a;
-
-    const-string v1, "TimeoutPlugin"
-
-    invoke-direct {v0, v1}, Lb4/a;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lp3/n0;->e:Lb4/a;
+    sput-object v0, Lp5/n0;->c:Lp5/n0;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;)V
-    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final d(Ljava/lang/Object;)I
+    .locals 1
 
-    iput-object p1, p0, Lp3/n0;->a:Ljava/lang/Long;
+    check-cast p1, [I
 
-    iput-object p2, p0, Lp3/n0;->b:Ljava/lang/Long;
+    const-string v0, "<this>"
 
-    iput-object p3, p0, Lp3/n0;->c:Ljava/lang/Long;
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
+    array-length p1, p1
+
+    return p1
+.end method
+
+.method public final f(Lo5/a;ILjava/lang/Object;Z)V
+    .locals 1
+
+    check-cast p3, Lp5/m0;
+
+    const-string p4, "builder"
+
+    invoke-static {p3, p4}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object p4, p0, Lp5/l1;->b:Lp5/k1;
+
+    invoke-interface {p1, p4, p2}, Lo5/a;->i(Ln5/g;I)I
+
+    move-result p1
+
+    invoke-static {p3}, Lp5/j1;->c(Lp5/j1;)V
+
+    iget-object p2, p3, Lp5/m0;->a:[I
+
+    iget p4, p3, Lp5/m0;->b:I
+
+    add-int/lit8 v0, p4, 0x1
+
+    iput v0, p3, Lp5/m0;->b:I
+
+    aput p1, p2, p4
+
+    return-void
+.end method
+
+.method public final g(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    check-cast p1, [I
+
+    const-string v0, "<this>"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lp5/m0;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, v0, Lp5/m0;->a:[I
+
+    array-length p1, p1
+
+    iput p1, v0, Lp5/m0;->b:I
+
+    const/16 p1, 0xa
+
+    invoke-virtual {v0, p1}, Lp5/m0;->b(I)V
+
+    return-object v0
+.end method
+
+.method public final j()Ljava/lang/Object;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [I
+
+    return-object v0
+.end method
+
+.method public final k(Lo5/b;Ljava/lang/Object;I)V
+    .locals 4
+
+    check-cast p2, [I
+
+    const-string v0, "encoder"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "content"
+
+    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, p3, :cond_0
+
+    aget v1, p2, v0
+
+    move-object v2, p1
+
+    check-cast v2, Lo6/i;
+
+    iget-object v3, p0, Lp5/l1;->b:Lp5/k1;
+
+    invoke-virtual {v2, v0, v1, v3}, Lo6/i;->w(IILn5/g;)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method

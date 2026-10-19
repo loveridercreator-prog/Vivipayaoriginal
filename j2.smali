@@ -1,73 +1,92 @@
-.class public final Li/j2;
+.class public final Lp5/j2;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/AbsListView$OnScrollListener;
+.implements Lm5/b;
 
 
-# instance fields
-.field public final synthetic a:Li/l2;
+# static fields
+.field public static final a:Lp5/j2;
+
+.field public static final b:Lp5/k0;
 
 
 # direct methods
-.method public constructor <init>(Li/l2;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lp5/j2;
 
-    iput-object p1, p0, Li/j2;->a:Li/l2;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lp5/j2;->a:Lp5/j2;
+
+    sget-object v0, Lp5/t1;->a:Lp5/t1;
+
+    const-string v1, "kotlin.UShort"
+
+    invoke-static {v1, v0}, Lf5/c0;->c(Ljava/lang/String;Lm5/b;)Lp5/k0;
+
+    move-result-object v0
+
+    sput-object v0, Lp5/j2;->b:Lp5/k0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onScroll(Landroid/widget/AbsListView;III)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onScrollStateChanged(Landroid/widget/AbsListView;I)V
+.method public final deserialize(Lo5/c;)Ljava/lang/Object;
     .locals 1
 
-    const/4 p1, 0x1
+    const-string v0, "decoder"
 
-    if-ne p2, p1, :cond_1
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object p1, p0, Li/j2;->a:Li/l2;
+    sget-object v0, Lp5/j2;->b:Lp5/k0;
 
-    iget-object p2, p1, Li/l2;->C:Li/g0;
+    invoke-interface {p1, v0}, Lo5/c;->G(Ln5/g;)Lo5/c;
 
-    invoke-virtual {p2}, Landroid/widget/PopupWindow;->getInputMethodMode()I
+    move-result-object p1
 
-    move-result p2
+    invoke-interface {p1}, Lo5/c;->B()S
 
-    const/4 v0, 0x2
+    move-result p1
 
-    if-ne p2, v0, :cond_0
+    new-instance v0, Ll4/w;
 
-    goto :goto_0
+    invoke-direct {v0, p1}, Ll4/w;-><init>(S)V
 
-    :cond_0
-    iget-object p2, p1, Li/l2;->C:Li/g0;
+    return-object v0
+.end method
 
-    invoke-virtual {p2}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+.method public final getDescriptor()Ln5/g;
+    .locals 1
 
-    move-result-object p2
+    sget-object v0, Lp5/j2;->b:Lp5/k0;
 
-    if-eqz p2, :cond_1
+    return-object v0
+.end method
 
-    iget-object p2, p1, Li/l2;->y:Landroid/os/Handler;
+.method public final serialize(Lo5/d;Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object p1, p1, Li/l2;->u:Li/e2;
+    check-cast p2, Ll4/w;
 
-    invoke-virtual {p2, p1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    iget-short p2, p2, Ll4/w;->e:S
 
-    invoke-virtual {p1}, Li/e2;->run()V
+    const-string v0, "encoder"
 
-    :cond_1
-    :goto_0
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lp5/j2;->b:Lp5/k0;
+
+    invoke-interface {p1, v0}, Lo5/d;->r(Ln5/g;)Lo5/d;
+
+    move-result-object p1
+
+    invoke-interface {p1, p2}, Lo5/d;->k(S)V
+
     return-void
 .end method

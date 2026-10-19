@@ -1,352 +1,147 @@
-.class public final Li/t0;
-.super Li/l2;
+.class public final Lp5/t0;
+.super Lp5/l1;
 .source "SourceFile"
 
-# interfaces
-.implements Li/v0;
 
-
-# instance fields
-.field public F:Ljava/lang/CharSequence;
-
-.field public G:Landroid/widget/ListAdapter;
-
-.field public final H:Landroid/graphics/Rect;
-
-.field public I:I
-
-.field public final synthetic J:Li/w0;
+# static fields
+.field public static final c:Lp5/t0;
 
 
 # direct methods
-.method public constructor <init>(Li/w0;Landroid/content/Context;Landroid/util/AttributeSet;)V
+.method static constructor <clinit>()V
     .locals 2
 
-    iput-object p1, p0, Li/t0;->J:Li/w0;
+    new-instance v0, Lp5/t0;
 
-    const/4 v0, 0x0
+    sget-object v1, Lp5/u0;->a:Lp5/u0;
 
-    const v1, 0x7f0300e3
+    invoke-direct {v0, v1}, Lp5/l1;-><init>(Lm5/b;)V
 
-    invoke-direct {p0, p2, p3, v1, v0}, Li/l2;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-
-    new-instance p2, Landroid/graphics/Rect;
-
-    invoke-direct {p2}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object p2, p0, Li/t0;->H:Landroid/graphics/Rect;
-
-    iput-object p1, p0, Li/l2;->s:Landroid/view/View;
-
-    const/4 p2, 0x1
-
-    iput-boolean p2, p0, Li/l2;->B:Z
-
-    iget-object p3, p0, Li/l2;->C:Li/g0;
-
-    invoke-virtual {p3, p2}, Landroid/widget/PopupWindow;->setFocusable(Z)V
-
-    new-instance p3, Le/c;
-
-    invoke-direct {p3, p0, p2, p1}, Le/c;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    iput-object p3, p0, Li/l2;->t:Landroid/widget/AdapterView$OnItemClickListener;
+    sput-object v0, Lp5/t0;->c:Lp5/t0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(II)V
-    .locals 4
+.method public final d(Ljava/lang/Object;)I
+    .locals 1
 
-    iget-object v0, p0, Li/l2;->C:Li/g0;
+    check-cast p1, [J
 
-    invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
+    const-string v0, "<this>"
 
-    move-result v1
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Li/t0;->s()V
+    array-length p1, p1
 
-    const/4 v2, 0x2
+    return p1
+.end method
 
-    iget-object v3, p0, Li/l2;->C:Li/g0;
+.method public final f(Lo5/a;ILjava/lang/Object;Z)V
+    .locals 2
 
-    invoke-virtual {v3, v2}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
+    check-cast p3, Lp5/s0;
 
-    invoke-virtual {p0}, Li/l2;->f()V
+    const-string p4, "builder"
 
-    iget-object v2, p0, Li/l2;->g:Li/y1;
+    invoke-static {p3, p4}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v3, 0x1
+    iget-object p4, p0, Lp5/l1;->b:Lp5/k1;
 
-    invoke-virtual {v2, v3}, Landroid/widget/AbsListView;->setChoiceMode(I)V
+    invoke-interface {p1, p4, p2}, Lo5/a;->D(Lp5/k1;I)J
 
-    invoke-static {v2, p1}, Li/o0;->d(Landroid/view/View;I)V
+    move-result-wide p1
 
-    invoke-static {v2, p2}, Li/o0;->c(Landroid/view/View;I)V
+    invoke-static {p3}, Lp5/j1;->c(Lp5/j1;)V
 
-    iget-object p1, p0, Li/t0;->J:Li/w0;
+    iget-object p4, p3, Lp5/s0;->a:[J
 
-    invoke-virtual {p1}, Landroid/widget/AdapterView;->getSelectedItemPosition()I
+    iget v0, p3, Lp5/s0;->b:I
 
-    move-result p2
+    add-int/lit8 v1, v0, 0x1
 
-    iget-object v2, p0, Li/l2;->g:Li/y1;
+    iput v1, p3, Lp5/s0;->b:I
 
-    invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
+    aput-wide p1, p4, v0
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    if-eqz v2, :cond_0
-
-    const/4 v0, 0x0
-
-    invoke-virtual {v2, v0}, Li/y1;->setListSelectionHidden(Z)V
-
-    invoke-virtual {v2, p2}, Landroid/widget/AdapterView;->setSelection(I)V
-
-    invoke-virtual {v2}, Landroid/widget/AbsListView;->getChoiceMode()I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v2, p2, v3}, Landroid/widget/AbsListView;->setItemChecked(IZ)V
-
-    :cond_0
-    if-eqz v1, :cond_1
-
-    return-void
-
-    :cond_1
-    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    new-instance p2, Lh/e;
-
-    const/4 v0, 0x3
-
-    invoke-direct {p2, v0, p0}, Lh/e;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p1, p2}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
-
-    new-instance p1, Li/s0;
-
-    invoke-direct {p1, p0, p2}, Li/s0;-><init>(Li/t0;Lh/e;)V
-
-    iget-object p2, p0, Li/l2;->C:Li/g0;
-
-    invoke-virtual {p2, p1}, Landroid/widget/PopupWindow;->setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
-
-    :cond_2
     return-void
 .end method
 
-.method public final j()Ljava/lang/CharSequence;
+.method public final g(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Li/t0;->F:Ljava/lang/CharSequence;
+    check-cast p1, [J
+
+    const-string v0, "<this>"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lp5/s0;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, v0, Lp5/s0;->a:[J
+
+    array-length p1, p1
+
+    iput p1, v0, Lp5/s0;->b:I
+
+    const/16 p1, 0xa
+
+    invoke-virtual {v0, p1}, Lp5/s0;->b(I)V
 
     return-object v0
 .end method
 
-.method public final l(Ljava/lang/CharSequence;)V
-    .locals 0
+.method public final j()Ljava/lang/Object;
+    .locals 1
 
-    iput-object p1, p0, Li/t0;->F:Ljava/lang/CharSequence;
+    const/4 v0, 0x0
 
-    return-void
+    new-array v0, v0, [J
+
+    return-object v0
 .end method
 
-.method public final o(Landroid/widget/ListAdapter;)V
-    .locals 0
+.method public final k(Lo5/b;Ljava/lang/Object;I)V
+    .locals 6
 
-    invoke-super {p0, p1}, Li/l2;->o(Landroid/widget/ListAdapter;)V
+    check-cast p2, [J
 
-    iput-object p1, p0, Li/t0;->G:Landroid/widget/ListAdapter;
+    const-string v0, "encoder"
 
-    return-void
-.end method
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-.method public final p(I)V
-    .locals 0
+    const-string v0, "content"
 
-    iput p1, p0, Li/t0;->I:I
+    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    return-void
-.end method
+    const/4 v0, 0x0
 
-.method public final s()V
-    .locals 9
+    :goto_0
+    if-ge v0, p3, :cond_0
 
-    iget-object v0, p0, Li/l2;->C:Li/g0;
+    aget-wide v1, p2, v0
 
-    invoke-virtual {v0}, Landroid/widget/PopupWindow;->getBackground()Landroid/graphics/drawable/Drawable;
+    move-object v3, p1
 
-    move-result-object v1
+    check-cast v3, Lo6/i;
 
-    iget-object v2, p0, Li/t0;->J:Li/w0;
+    const-string v4, "descriptor"
 
-    if-eqz v1, :cond_1
+    iget-object v5, p0, Lp5/l1;->b:Lp5/k1;
 
-    iget-object v3, v2, Li/w0;->l:Landroid/graphics/Rect;
+    invoke-static {v5, v4}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {v1, v3}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
+    invoke-virtual {v3, v5, v0}, Lo6/i;->u(Ln5/g;I)V
 
-    invoke-static {v2}, Li/a4;->a(Landroid/view/View;)Z
+    invoke-virtual {v3, v1, v2}, Lo6/i;->i(J)V
 
-    move-result v1
-
-    iget-object v3, v2, Li/w0;->l:Landroid/graphics/Rect;
-
-    if-eqz v1, :cond_0
-
-    iget v1, v3, Landroid/graphics/Rect;->right:I
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    iget v1, v3, Landroid/graphics/Rect;->left:I
-
-    neg-int v1, v1
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v1, v2, Li/w0;->l:Landroid/graphics/Rect;
-
-    const/4 v3, 0x0
-
-    iput v3, v1, Landroid/graphics/Rect;->right:I
-
-    iput v3, v1, Landroid/graphics/Rect;->left:I
-
-    move v1, v3
-
-    :goto_0
-    invoke-virtual {v2}, Landroid/view/View;->getPaddingLeft()I
-
-    move-result v3
-
-    invoke-virtual {v2}, Landroid/view/View;->getPaddingRight()I
-
-    move-result v4
-
-    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
-
-    move-result v5
-
-    iget v6, v2, Li/w0;->k:I
-
-    const/4 v7, -0x2
-
-    if-ne v6, v7, :cond_3
-
-    iget-object v6, p0, Li/t0;->G:Landroid/widget/ListAdapter;
-
-    check-cast v6, Landroid/widget/SpinnerAdapter;
-
-    invoke-virtual {v0}, Landroid/widget/PopupWindow;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v6, v0}, Li/w0;->a(Landroid/widget/SpinnerAdapter;Landroid/graphics/drawable/Drawable;)I
-
-    move-result v0
-
-    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v6
-
-    iget v6, v6, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    iget-object v7, v2, Li/w0;->l:Landroid/graphics/Rect;
-
-    iget v8, v7, Landroid/graphics/Rect;->left:I
-
-    sub-int/2addr v6, v8
-
-    iget v7, v7, Landroid/graphics/Rect;->right:I
-
-    sub-int/2addr v6, v7
-
-    if-le v0, v6, :cond_2
-
-    move v0, v6
-
-    :cond_2
-    sub-int v6, v5, v3
-
-    sub-int/2addr v6, v4
-
-    invoke-static {v0, v6}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Li/l2;->r(I)V
-
-    goto :goto_1
-
-    :cond_3
-    const/4 v0, -0x1
-
-    if-ne v6, v0, :cond_4
-
-    sub-int v0, v5, v3
-
-    sub-int/2addr v0, v4
-
-    invoke-virtual {p0, v0}, Li/l2;->r(I)V
-
-    goto :goto_1
-
-    :cond_4
-    invoke-virtual {p0, v6}, Li/l2;->r(I)V
-
-    :goto_1
-    invoke-static {v2}, Li/a4;->a(Landroid/view/View;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    sub-int/2addr v5, v4
-
-    iget v0, p0, Li/l2;->i:I
-
-    sub-int/2addr v5, v0
-
-    iget v0, p0, Li/t0;->I:I
-
-    sub-int/2addr v5, v0
-
-    add-int/2addr v5, v1
-
-    goto :goto_2
-
-    :cond_5
-    iget v0, p0, Li/t0;->I:I
-
-    add-int/2addr v3, v0
-
-    add-int v5, v3, v1
-
-    :goto_2
-    iput v5, p0, Li/l2;->j:I
-
     return-void
 .end method

@@ -1,23 +1,55 @@
-.class public abstract Li/a1;
+.class public final Lp5/a1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Ljava/lang/String;)Landroid/os/LocaleList;
-    .locals 0
+# instance fields
+.field public volatile a:Ljava/lang/ref/SoftReference;
 
-    invoke-static {p0}, Landroid/os/LocaleList;->forLanguageTags(Ljava/lang/String;)Landroid/os/LocaleList;
 
-    move-result-object p0
+# virtual methods
+.method public final declared-synchronized a(Lv4/a;)Ljava/lang/Object;
+    .locals 1
 
-    return-object p0
-.end method
+    monitor-enter p0
 
-.method public static b(Landroid/widget/TextView;Landroid/os/LocaleList;)V
-    .locals 0
+    :try_start_0
+    iget-object v0, p0, Lp5/a1;->a:Ljava/lang/ref/SoftReference;
 
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextLocales(Landroid/os/LocaleList;)V
+    invoke-virtual {v0}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v0, :cond_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :cond_0
+    :try_start_1
+    invoke-interface {p1}, Lv4/a;->invoke()Ljava/lang/Object;
+
+    move-result-object p1
+
+    new-instance v0, Ljava/lang/ref/SoftReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lp5/a1;->a:Ljava/lang/ref/SoftReference;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
 .end method

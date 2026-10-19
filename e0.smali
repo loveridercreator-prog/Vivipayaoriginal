@@ -1,23 +1,69 @@
-.class public abstract Lp3/e0;
-.super Ljava/lang/Object;
+.class public final Lp5/e0;
+.super Lp5/j1;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lm6/b;
+# instance fields
+.field public a:[F
+
+.field public b:I
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+# virtual methods
+.method public final a()Ljava/lang/Object;
+    .locals 2
 
-    const-string v0, "io.ktor.client.plugins.HttpRequestLifecycle"
+    iget-object v0, p0, Lp5/e0;->a:[F
 
-    invoke-static {v0}, Lk3/e;->c(Ljava/lang/String;)Lm6/b;
+    iget v1, p0, Lp5/e0;->b:I
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([FI)[F
 
     move-result-object v0
 
-    sput-object v0, Lp3/e0;->a:Lm6/b;
+    const-string v1, "copyOf(this, newSize)"
 
+    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public final b(I)V
+    .locals 2
+
+    iget-object v0, p0, Lp5/e0;->a:[F
+
+    array-length v1, v0
+
+    if-ge v1, p1, :cond_1
+
+    array-length v1, v0
+
+    mul-int/lit8 v1, v1, 0x2
+
+    if-ge p1, v1, :cond_0
+
+    move p1, v1
+
+    :cond_0
+    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([FI)[F
+
+    move-result-object p1
+
+    const-string v0, "copyOf(this, newSize)"
+
+    invoke-static {p1, v0}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object p1, p0, Lp5/e0;->a:[F
+
+    :cond_1
     return-void
+.end method
+
+.method public final d()I
+    .locals 1
+
+    iget v0, p0, Lp5/e0;->b:I
+
+    return v0
 .end method

@@ -1,338 +1,303 @@
-.class public final Lp4/d;
-.super Ljava/lang/Object;
+.class public final Lp5/d;
+.super Lp5/v;
 .source "SourceFile"
-
-# interfaces
-.implements Lp4/j;
-.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final e:Lp4/j;
+.field public final synthetic b:I
 
-.field public final f:Lp4/h;
+.field public final c:Lp5/c;
 
 
 # direct methods
-.method public constructor <init>(Lp4/h;Lp4/j;)V
-    .locals 1
+.method public constructor <init>(Lm5/b;I)V
+    .locals 3
 
-    const-string v0, "left"
+    iput p2, p0, Lp5/d;->b:I
 
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v0, "eSerializer"
 
-    const-string v0, "element"
+    const/4 v1, 0x2
 
+    const/4 v2, 0x1
+
+    if-eq p2, v2, :cond_1
+
+    if-eq p2, v1, :cond_0
+
+    const-string p2, "element"
+
+    invoke-static {p1, p2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0, p1}, Lp5/u;-><init>(Lm5/b;)V
+
+    new-instance p2, Lp5/c;
+
+    invoke-interface {p1}, Lm5/a;->getDescriptor()Ln5/g;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1, v2}, Lp5/c;-><init>(Ln5/g;I)V
+
+    iput-object p2, p0, Lp5/d;->c:Lp5/c;
+
+    return-void
+
+    :cond_0
     invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lp5/u;-><init>(Lm5/b;)V
 
-    iput-object p2, p0, Lp4/d;->e:Lp4/j;
+    new-instance p2, Lp5/c;
 
-    iput-object p1, p0, Lp4/d;->f:Lp4/h;
+    invoke-interface {p1}, Lm5/a;->getDescriptor()Ln5/g;
+
+    move-result-object p1
+
+    const/4 v0, 0x3
+
+    invoke-direct {p2, p1, v0}, Lp5/c;-><init>(Ln5/g;I)V
+
+    iput-object p2, p0, Lp5/d;->c:Lp5/c;
+
+    return-void
+
+    :cond_1
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0, p1}, Lp5/u;-><init>(Lm5/b;)V
+
+    new-instance p2, Lp5/c;
+
+    invoke-interface {p1}, Lm5/a;->getDescriptor()Ln5/g;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1, v1}, Lp5/c;-><init>(Ln5/g;I)V
+
+    iput-object p2, p0, Lp5/d;->c:Lp5/c;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final G(Lp4/i;)Lp4/j;
-    .locals 3
-
-    const-string v0, "key"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lp4/d;->f:Lp4/h;
-
-    invoke-interface {v0, p1}, Lp4/j;->x(Lp4/i;)Lp4/h;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lp4/d;->e:Lp4/j;
-
-    if-eqz v1, :cond_0
-
-    return-object v2
-
-    :cond_0
-    invoke-interface {v2, p1}, Lp4/j;->G(Lp4/i;)Lp4/j;
-
-    move-result-object p1
-
-    if-ne p1, v2, :cond_1
-
-    move-object v0, p0
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v1, Lp4/k;->e:Lp4/k;
-
-    if-ne p1, v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    new-instance v1, Lp4/d;
-
-    invoke-direct {v1, v0, p1}, Lp4/d;-><init>(Lp4/h;Lp4/j;)V
-
-    move-object v0, v1
-
-    :goto_0
-    return-object v0
-.end method
-
-.method public final J(Ljava/lang/Object;Lv4/e;)Ljava/lang/Object;
+.method public final a()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lp4/d;->e:Lp4/j;
+    iget v0, p0, Lp5/d;->b:I
 
-    invoke-interface {v0, p1, p2}, Lp4/j;->J(Ljava/lang/Object;Lv4/e;)Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p1
+    new-instance v0, Ljava/util/LinkedHashSet;
 
-    iget-object v0, p0, Lp4/d;->f:Lp4/h;
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
-    invoke-interface {p2, p1, v0}, Lv4/e;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    return-object v0
 
-    move-result-object p1
+    :pswitch_0
+    new-instance v0, Ljava/util/HashSet;
 
-    return-object p1
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    return-object v0
+
+    :pswitch_1
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final K(Lp4/j;)Lp4/j;
-    .locals 0
+.method public final b(Ljava/lang/Object;)I
+    .locals 2
 
-    invoke-static {p0, p1}, Lr2/f;->K(Lp4/j;Lp4/j;)Lp4/j;
+    iget v0, p0, Lp5/d;->b:I
 
-    move-result-object p1
+    const-string v1, "<this>"
 
-    return-object p1
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
+    check-cast p1, Ljava/util/LinkedHashSet;
 
-    if-eq p0, p1, :cond_7
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    instance-of v0, p1, Lp4/d;
-
-    if-eqz v0, :cond_6
-
-    check-cast p1, Lp4/d;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v0, 0x2
-
-    move-object v1, p1
-
-    move v2, v0
-
-    :goto_0
-    iget-object v1, v1, Lp4/d;->e:Lp4/j;
-
-    instance-of v3, v1, Lp4/d;
-
-    const/4 v4, 0x0
-
-    if-eqz v3, :cond_0
-
-    check-cast v1, Lp4/d;
-
-    goto :goto_1
-
-    :cond_0
-    move-object v1, v4
-
-    :goto_1
-    if-nez v1, :cond_5
-
-    move-object v1, p0
-
-    :goto_2
-    iget-object v1, v1, Lp4/d;->e:Lp4/j;
-
-    instance-of v3, v1, Lp4/d;
-
-    if-eqz v3, :cond_1
-
-    check-cast v1, Lp4/d;
-
-    goto :goto_3
-
-    :cond_1
-    move-object v1, v4
-
-    :goto_3
-    if-nez v1, :cond_4
-
-    if-ne v2, v0, :cond_6
-
-    move-object v0, p0
-
-    :goto_4
-    iget-object v1, v0, Lp4/d;->f:Lp4/h;
-
-    invoke-interface {v1}, Lp4/h;->getKey()Lp4/i;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Lp4/d;->x(Lp4/i;)Lp4/h;
-
-    move-result-object v2
-
-    invoke-static {v2, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    goto :goto_5
-
-    :cond_2
-    iget-object v0, v0, Lp4/d;->e:Lp4/j;
-
-    instance-of v1, v0, Lp4/d;
-
-    if-eqz v1, :cond_3
-
-    check-cast v0, Lp4/d;
-
-    goto :goto_4
-
-    :cond_3
-    const-string v1, "null cannot be cast to non-null type kotlin.coroutines.CoroutineContext.Element"
-
-    invoke-static {v0, v1}, Lk3/e;->j(Ljava/lang/Object;Ljava/lang/String;)V
-
-    check-cast v0, Lp4/h;
-
-    invoke-interface {v0}, Lp4/h;->getKey()Lp4/i;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v1}, Lp4/d;->x(Lp4/i;)Lp4/h;
-
-    move-result-object p1
-
-    invoke-static {p1, v0}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Ljava/util/AbstractCollection;->size()I
 
     move-result p1
 
-    if-eqz p1, :cond_6
-
-    goto :goto_6
-
-    :cond_4
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_2
-
-    :cond_5
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_6
-    :goto_5
-    const/4 p1, 0x0
-
-    goto :goto_7
-
-    :cond_7
-    :goto_6
-    const/4 p1, 0x1
-
-    :goto_7
     return p1
+
+    :pswitch_0
+    check-cast p1, Ljava/util/HashSet;
+
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/util/HashSet;->size()I
+
+    move-result p1
+
+    return p1
+
+    :pswitch_1
+    check-cast p1, Ljava/util/ArrayList;
+
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result p1
+
+    return p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final hashCode()I
+.method public final g(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lp4/d;->e:Lp4/j;
+    const/4 p1, 0x0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    iget v0, p0, Lp5/d;->b:I
 
-    move-result v0
+    const-string v1, "<this>"
 
-    iget-object v1, p0, Lp4/d;->f:Lp4/h;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result v1
+    new-instance v0, Ljava/util/LinkedHashSet;
 
-    add-int/2addr v1, v0
+    invoke-direct {v0, p1}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
 
-    return v1
+    return-object v0
+
+    :pswitch_0
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0, p1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    return-object v0
+
+    :pswitch_1
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public final getDescriptor()Ln5/g;
+    .locals 1
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "["
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    sget-object v1, Lp4/c;->f:Lp4/c;
-
-    const-string v2, ""
-
-    invoke-virtual {p0, v2, v1}, Lp4/d;->J(Ljava/lang/Object;Lv4/e;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    const/16 v2, 0x5d
-
-    invoke-static {v0, v1, v2}, Landroidx/fragment/app/u;->o(Ljava/lang/StringBuilder;Ljava/lang/String;C)Ljava/lang/String;
-
-    move-result-object v0
+    iget-object v0, p0, Lp5/d;->c:Lp5/c;
 
     return-object v0
 .end method
 
-.method public final x(Lp4/i;)Lp4/h;
+.method public final h(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    const-string v0, "key"
+    iget v0, p0, Lp5/d;->b:I
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v1, "<this>"
 
-    move-object v0, p0
+    packed-switch v0, :pswitch_data_0
 
-    :goto_0
-    iget-object v1, v0, Lp4/d;->f:Lp4/h;
+    check-cast p1, Ljava/util/LinkedHashSet;
 
-    invoke-interface {v1, p1}, Lp4/j;->x(Lp4/i;)Lp4/h;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    return-object v1
-
-    :cond_0
-    iget-object v0, v0, Lp4/d;->e:Lp4/j;
-
-    instance-of v1, v0, Lp4/d;
-
-    if-eqz v1, :cond_1
-
-    check-cast v0, Lp4/d;
-
-    goto :goto_0
-
-    :cond_1
-    invoke-interface {v0, p1}, Lp4/j;->x(Lp4/i;)Lp4/h;
-
-    move-result-object p1
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
+
+    :pswitch_0
+    check-cast p1, Ljava/util/HashSet;
+
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p1
+
+    :pswitch_1
+    check-cast p1, Ljava/util/ArrayList;
+
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final i(Ljava/lang/Object;ILjava/lang/Object;)V
+    .locals 2
+
+    iget v0, p0, Lp5/d;->b:I
+
+    const-string v1, "<this>"
+
+    packed-switch v0, :pswitch_data_0
+
+    check-cast p1, Ljava/util/LinkedHashSet;
+
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1, p3}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :pswitch_0
+    check-cast p1, Ljava/util/HashSet;
+
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1, p3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :pswitch_1
+    check-cast p1, Ljava/util/ArrayList;
+
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1, p2, p3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
