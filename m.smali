@@ -1,15 +1,27 @@
-.class public abstract Le/m;
+.class public final Lf1/m;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:I
+
+.field public final b:[B
+
+.field public final c:Z
+
+
 # direct methods
-.method public static a(Ljava/lang/String;)Landroid/os/LocaleList;
+.method public constructor <init>(I[BZ)V
     .locals 0
 
-    invoke-static {p0}, Landroid/os/LocaleList;->forLanguageTags(Ljava/lang/String;)Landroid/os/LocaleList;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p0
+    iput p1, p0, Lf1/m;->a:I
 
-    return-object p0
+    iput-object p2, p0, Lf1/m;->b:[B
+
+    iput-boolean p3, p0, Lf1/m;->c:Z
+
+    return-void
 .end method

@@ -1,59 +1,25 @@
-.class public final Le4/j;
+.class public abstract Lf1/j;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lr4/d;
-.implements Lp4/e;
-
-
-# static fields
-.field public static final e:Le4/j;
-
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public static a(Landroid/content/pm/PackageManager;Landroid/content/Context;)Landroid/content/pm/PackageInfo;
+    .locals 2
 
-    new-instance v0, Le4/j;
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    move-result-object p1
 
-    sput-object v0, Le4/j;->e:Le4/j;
+    const-wide/16 v0, 0x0
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final getCallerFrame()Lr4/d;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final getContext()Lp4/j;
-    .locals 1
-
-    sget-object v0, Lp4/k;->e:Lp4/k;
-
-    return-object v0
-.end method
-
-.method public final resumeWith(Ljava/lang/Object;)V
-    .locals 1
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Failed to capture stack frame. This is usually happens when a coroutine is running so the frame stack is changing quickly and the coroutine debug agent is unable to capture it concurrently. You may retry running your test to see this particular trace."
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {v0, v1}, Landroid/content/pm/PackageManager$PackageInfoFlags;->of(J)Landroid/content/pm/PackageManager$PackageInfoFlags;
 
     move-result-object v0
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0, p1, v0}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;Landroid/content/pm/PackageManager$PackageInfoFlags;)Landroid/content/pm/PackageInfo;
 
-    throw p1
+    move-result-object p0
+
+    return-object p0
 .end method

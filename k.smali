@@ -1,160 +1,249 @@
-.class public final Le4/k;
+.class public final Lf1/k;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lp4/e;
-.implements Lr4/d;
-
 
 # instance fields
-.field public e:I
+.field public final a:I
 
-.field public final synthetic f:Le4/l;
+.field public final b:I
+
+.field public final c:J
+
+.field public final d:J
 
 
 # direct methods
-.method public constructor <init>(Le4/l;)V
+.method public constructor <init>(IIJJ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Le4/k;->f:Le4/l;
+    iput p1, p0, Lf1/k;->a:I
 
-    const/high16 p1, -0x80000000
+    iput p2, p0, Lf1/k;->b:I
 
-    iput p1, p0, Le4/k;->e:I
+    iput-wide p3, p0, Lf1/k;->c:J
+
+    iput-wide p5, p0, Lf1/k;->d:J
 
     return-void
+.end method
+
+.method public static a(Ljava/io/File;)Lf1/k;
+    .locals 9
+
+    new-instance v0, Ljava/io/DataInputStream;
+
+    new-instance v1, Ljava/io/FileInputStream;
+
+    invoke-direct {v1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    invoke-direct {v0, v1}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
+
+    :try_start_0
+    new-instance p0, Lf1/k;
+
+    invoke-virtual {v0}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v3
+
+    invoke-virtual {v0}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v4
+
+    invoke-virtual {v0}, Ljava/io/DataInputStream;->readLong()J
+
+    move-result-wide v5
+
+    invoke-virtual {v0}, Ljava/io/DataInputStream;->readLong()J
+
+    move-result-wide v7
+
+    move-object v2, p0
+
+    invoke-direct/range {v2 .. v8}, Lf1/k;-><init>(IIJJ)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
+
+    return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    :try_start_1
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    goto :goto_0
+
+    :catchall_1
+    move-exception v0
+
+    invoke-virtual {p0, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    :goto_0
+    throw p0
 .end method
 
 
 # virtual methods
-.method public final getCallerFrame()Lr4/d;
-    .locals 5
+.method public final b(Ljava/io/File;)V
+    .locals 3
 
-    sget-object v0, Le4/j;->e:Le4/j;
+    invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
-    iget v1, p0, Le4/k;->e:I
+    new-instance v0, Ljava/io/DataOutputStream;
 
-    iget-object v2, p0, Le4/k;->f:Le4/l;
+    new-instance v1, Ljava/io/FileOutputStream;
 
-    const/high16 v3, -0x80000000
+    invoke-direct {v1, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    if-ne v1, v3, :cond_0
+    invoke-direct {v0, v1}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    iget v1, v2, Le4/l;->j:I
+    :try_start_0
+    iget p1, p0, Lf1/k;->a:I
 
-    iput v1, p0, Le4/k;->e:I
+    invoke-virtual {v0, p1}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    :cond_0
-    iget v1, p0, Le4/k;->e:I
+    iget p1, p0, Lf1/k;->b:I
 
-    const/4 v4, 0x0
+    invoke-virtual {v0, p1}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    if-gez v1, :cond_1
+    iget-wide v1, p0, Lf1/k;->c:J
 
-    iput v3, p0, Le4/k;->e:I
+    invoke-virtual {v0, v1, v2}, Ljava/io/DataOutputStream;->writeLong(J)V
 
-    move-object v0, v4
+    iget-wide v1, p0, Lf1/k;->d:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/io/DataOutputStream;->writeLong(J)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     goto :goto_0
 
-    :cond_1
-    :try_start_0
-    iget-object v2, v2, Le4/l;->i:[Lp4/e;
+    :catchall_1
+    move-exception v0
 
-    aget-object v2, v2, v1
+    invoke-virtual {p1, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    :goto_0
+    throw p1
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 6
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_3
+
+    instance-of v2, p1, Lf1/k;
+
+    if-nez v2, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    check-cast p1, Lf1/k;
+
+    iget v2, p0, Lf1/k;->b:I
+
+    iget v3, p1, Lf1/k;->b:I
+
+    if-ne v2, v3, :cond_2
+
+    iget-wide v2, p0, Lf1/k;->c:J
+
+    iget-wide v4, p1, Lf1/k;->c:J
+
+    cmp-long v2, v2, v4
 
     if-nez v2, :cond_2
+
+    iget v2, p0, Lf1/k;->a:I
+
+    iget v3, p1, Lf1/k;->a:I
+
+    if-ne v2, v3, :cond_2
+
+    iget-wide v2, p0, Lf1/k;->d:J
+
+    iget-wide v4, p1, Lf1/k;->d:J
+
+    cmp-long p1, v2, v4
+
+    if-nez p1, :cond_2
 
     goto :goto_0
 
     :cond_2
-    add-int/lit8 v1, v1, -0x1
+    move v0, v1
 
-    iput v1, p0, Le4/k;->e:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-object v0, v2
-
-    :catchall_0
     :goto_0
-    instance-of v1, v0, Lr4/d;
-
-    if-eqz v1, :cond_3
-
-    move-object v4, v0
-
-    check-cast v4, Lr4/d;
+    return v0
 
     :cond_3
-    return-object v4
+    :goto_1
+    return v1
 .end method
 
-.method public final getContext()Lp4/j;
-    .locals 2
+.method public final hashCode()I
+    .locals 5
 
-    iget-object v0, p0, Le4/k;->f:Le4/l;
+    iget v0, p0, Lf1/k;->b:I
 
-    iget-object v1, v0, Le4/l;->i:[Lp4/e;
-
-    iget v0, v0, Le4/l;->j:I
-
-    aget-object v0, v1, v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Lp4/e;->getContext()Lp4/j;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    iget-wide v1, p0, Lf1/k;->c:J
 
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Not started"
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget v2, p0, Lf1/k;->a:I
 
-    throw v0
-.end method
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.method public final resumeWith(Ljava/lang/Object;)V
-    .locals 2
+    move-result-object v2
 
-    instance-of v0, p1, Ll4/j;
+    iget-wide v3, p0, Lf1/k;->d:J
 
-    iget-object v1, p0, Le4/k;->f:Le4/l;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    if-eqz v0, :cond_0
+    move-result-object v3
 
-    invoke-static {p1}, Ll4/k;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
+    filled-new-array {v0, v1, v2, v3}, [Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-static {p1}, Lk3/e;->i(Ljava/lang/Object;)V
+    invoke-static {v0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
 
-    invoke-static {p1}, Lk3/e;->s(Ljava/lang/Throwable;)Ll4/j;
+    move-result v0
 
-    move-result-object p1
-
-    invoke-virtual {v1, p1}, Le4/l;->g(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    invoke-virtual {v1, p1}, Le4/l;->f(Z)Z
-
-    return-void
+    return v0
 .end method
