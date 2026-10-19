@@ -1,17 +1,31 @@
-.class public interface abstract Lh/g0;
-.super Ljava/lang/Object;
+.class public final Li/g0;
+.super Landroid/widget/PopupWindow;
 .source "SourceFile"
 
 
 # virtual methods
-.method public abstract a()Z
+.method public final showAsDropDown(Landroid/view/View;II)V
+    .locals 0
+
+    .line 1
+    invoke-super {p0, p1, p2, p3}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;II)V
+
+    return-void
 .end method
 
-.method public abstract dismiss()V
+.method public final showAsDropDown(Landroid/view/View;III)V
+    .locals 0
+
+    .line 2
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;III)V
+
+    return-void
 .end method
 
-.method public abstract f()V
-.end method
+.method public final update(Landroid/view/View;IIII)V
+    .locals 0
 
-.method public abstract k()Li/y1;
+    invoke-super/range {p0 .. p5}, Landroid/widget/PopupWindow;->update(Landroid/view/View;IIII)V
+
+    return-void
 .end method

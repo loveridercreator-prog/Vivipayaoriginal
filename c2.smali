@@ -1,8 +1,3 @@
-.class public interface abstract Lf5/c2;
-.super Ljava/lang/Object;
+.class public Li/c2;
+.super Landroid/widget/LinearLayout$LayoutParams;
 .source "SourceFile"
-
-
-# virtual methods
-.method public abstract a(Lk5/y;I)V
-.end method

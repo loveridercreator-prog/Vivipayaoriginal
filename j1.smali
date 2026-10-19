@@ -1,117 +1,89 @@
-.class public final Lf5/j1;
-.super Lk5/b;
+.class public abstract Li/j1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final b:Lk5/o;
-
-.field public c:Lk5/o;
-
-.field public final synthetic d:Lf5/k1;
-
-.field public final synthetic e:Ljava/lang/Object;
-
-
 # direct methods
-.method public constructor <init>(Lk5/o;Lf5/k1;Ljava/lang/Object;)V
-    .locals 0
+.method public static a(Ljava/lang/CharSequence;Landroid/text/Layout$Alignment;IILandroid/widget/TextView;Landroid/text/TextPaint;Li/m1;)Landroid/text/StaticLayout;
+    .locals 2
 
-    iput-object p2, p0, Lf5/j1;->d:Lf5/k1;
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
-    iput-object p3, p0, Lf5/j1;->e:Ljava/lang/Object;
+    move-result v0
 
-    invoke-direct {p0}, Lk5/b;-><init>()V
+    const/4 v1, 0x0
 
-    iput-object p1, p0, Lf5/j1;->b:Lk5/o;
+    invoke-static {p0, v1, v0, p5, p2}, Landroid/text/StaticLayout$Builder;->obtain(Ljava/lang/CharSequence;IILandroid/text/TextPaint;I)Landroid/text/StaticLayout$Builder;
 
-    return-void
-.end method
+    move-result-object p0
 
-
-# virtual methods
-.method public final b(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 4
-
-    check-cast p1, Lk5/o;
-
-    if-nez p2, :cond_0
-
-    const/4 p2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p2, 0x0
-
-    :goto_0
-    iget-object v0, p0, Lf5/j1;->b:Lk5/o;
-
-    if-eqz p2, :cond_1
-
-    move-object v1, v0
-
-    goto :goto_1
-
-    :cond_1
-    iget-object v1, p0, Lf5/j1;->c:Lk5/o;
-
-    :goto_1
-    if-eqz v1, :cond_4
-
-    sget-object v2, Lk5/o;->e:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    :cond_2
-    invoke-virtual {v2, p1, p0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    if-eqz p2, :cond_4
-
-    iget-object p1, p0, Lf5/j1;->c:Lk5/o;
-
-    invoke-static {p1}, Lk3/e;->i(Ljava/lang/Object;)V
-
-    invoke-virtual {v0, p1}, Lk5/o;->f(Lk5/o;)V
-
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual {v2, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    if-eq v3, p0, :cond_2
-
-    :cond_4
-    :goto_2
-    return-void
-.end method
-
-.method public final c(Ljava/lang/Object;)Le4/g;
-    .locals 1
-
-    check-cast p1, Lk5/o;
-
-    iget-object p1, p0, Lf5/j1;->d:Lf5/k1;
-
-    invoke-virtual {p1}, Lf5/k1;->P()Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
 
     move-result-object p1
 
-    iget-object v0, p0, Lf5/j1;->e:Ljava/lang/Object;
+    invoke-virtual {p4}, Landroid/widget/TextView;->getLineSpacingExtra()F
 
-    if-ne p1, v0, :cond_0
+    move-result p2
 
-    const/4 p1, 0x0
+    invoke-virtual {p4}, Landroid/widget/TextView;->getLineSpacingMultiplier()F
+
+    move-result p5
+
+    invoke-virtual {p1, p2, p5}, Landroid/text/StaticLayout$Builder;->setLineSpacing(FF)Landroid/text/StaticLayout$Builder;
+
+    move-result-object p1
+
+    invoke-virtual {p4}, Landroid/widget/TextView;->getIncludeFontPadding()Z
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/text/StaticLayout$Builder;->setIncludePad(Z)Landroid/text/StaticLayout$Builder;
+
+    move-result-object p1
+
+    invoke-virtual {p4}, Landroid/widget/TextView;->getBreakStrategy()I
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
+
+    move-result-object p1
+
+    invoke-virtual {p4}, Landroid/widget/TextView;->getHyphenationFrequency()I
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/text/StaticLayout$Builder;->setHyphenationFrequency(I)Landroid/text/StaticLayout$Builder;
+
+    move-result-object p1
+
+    const/4 p2, -0x1
+
+    if-ne p3, p2, :cond_0
+
+    const p3, 0x7fffffff
+
+    :cond_0
+    invoke-virtual {p1, p3}, Landroid/text/StaticLayout$Builder;->setMaxLines(I)Landroid/text/StaticLayout$Builder;
+
+    :try_start_0
+    invoke-virtual {p6, p0, p4}, Li/m1;->a(Landroid/text/StaticLayout$Builder;Landroid/widget/TextView;)V
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :cond_0
-    sget-object p1, Lk5/a;->e:Le4/g;
+    :catch_0
+    const-string p1, "ACTVAutoSizeHelper"
+
+    const-string p2, "Failed to obtain TextDirectionHeuristic, auto size may be incorrect"
+
+    invoke-static {p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
-    return-object p1
+    invoke-virtual {p0}, Landroid/text/StaticLayout$Builder;->build()Landroid/text/StaticLayout;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,6 +1,3 @@
-.class public interface abstract Lf5/r1;
+.class public interface abstract Li/r1;
 .super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lf5/b1;

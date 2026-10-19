@@ -1,217 +1,121 @@
-.class public final Lf5/a2;
-.super Lk5/x;
+.class public final Li/a2;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final i:Ljava/lang/ThreadLocal;
+.field public final synthetic e:I
 
-.field private volatile threadLocalIsSet:Z
+.field public final synthetic f:Li/b2;
 
 
 # direct methods
-.method public constructor <init>(La4/e;Lp4/j;)V
-    .locals 2
+.method public synthetic constructor <init>(Li/b2;I)V
+    .locals 0
 
-    sget-object v0, Lf5/b2;->e:Lf5/b2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-interface {p2, v0}, Lp4/j;->x(Lp4/i;)Lp4/h;
+    iput p2, p0, Li/a2;->e:I
 
-    move-result-object v1
+    iput-object p1, p0, Li/a2;->f:Li/b2;
 
-    if-nez v1, :cond_0
-
-    invoke-interface {p2, v0}, Lp4/j;->K(Lp4/j;)Lp4/j;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    move-object v0, p2
-
-    :goto_0
-    invoke-direct {p0, p1, v0}, Lk5/x;-><init>(Lp4/e;Lp4/j;)V
-
-    new-instance v0, Ljava/lang/ThreadLocal;
-
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
-
-    iput-object v0, p0, Lf5/a2;->i:Ljava/lang/ThreadLocal;
-
-    invoke-interface {p1}, Lp4/e;->getContext()Lp4/j;
-
-    move-result-object p1
-
-    sget-object v0, Lp4/f;->e:Lp4/f;
-
-    invoke-interface {p1, v0}, Lp4/j;->x(Lp4/i;)Lp4/h;
-
-    move-result-object p1
-
-    instance-of p1, p1, Lf5/x;
-
-    if-nez p1, :cond_1
-
-    const/4 p1, 0x0
-
-    invoke-static {p2, p1}, Lk5/a;->e(Lp4/j;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-static {p2, p1}, Lk5/a;->b(Lp4/j;Ljava/lang/Object;)V
-
-    invoke-virtual {p0, p2, p1}, Lf5/a2;->q0(Lp4/j;Ljava/lang/Object;)V
-
-    :cond_1
     return-void
 .end method
 
 
 # virtual methods
-.method public final p0()Z
-    .locals 3
+.method public final run()V
+    .locals 12
 
-    iget-boolean v0, p0, Lf5/a2;->threadLocalIsSet:Z
+    iget v0, p0, Li/a2;->e:I
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_0
+    iget-object v2, p0, Li/a2;->f:Li/b2;
 
-    iget-object v0, p0, Lf5/a2;->i:Ljava/lang/ThreadLocal;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Li/b2;->a()V
 
-    move-result-object v0
+    iget-object v0, v2, Li/b2;->h:Landroid/view/View;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Landroid/view/View;->isEnabled()Z
 
-    move v0, v1
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    invoke-virtual {v0}, Landroid/view/View;->isLongClickable()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {v2}, Li/b2;->c()Z
 
-    :goto_0
-    iget-object v2, p0, Lf5/a2;->i:Ljava/lang/ThreadLocal;
+    move-result v3
 
-    invoke-virtual {v2}, Ljava/lang/ThreadLocal;->remove()V
+    if-nez v3, :cond_1
 
-    xor-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final q(Ljava/lang/Object;)V
-    .locals 5
-
-    iget-boolean v0, p0, Lf5/a2;->threadLocalIsSet:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lf5/a2;->i:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ll4/i;
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, v0, Ll4/i;->e:Ljava/lang/Object;
-
-    check-cast v1, Lp4/j;
-
-    iget-object v0, v0, Ll4/i;->f:Ljava/lang/Object;
-
-    invoke-static {v1, v0}, Lk5/a;->b(Lp4/j;Ljava/lang/Object;)V
-
-    :cond_0
-    iget-object v0, p0, Lf5/a2;->i:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->remove()V
+    goto :goto_0
 
     :cond_1
-    invoke-static {p1}, Lk3/e;->E(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lk5/x;->h:Lp4/e;
-
-    invoke-interface {v0}, Lp4/e;->getContext()Lp4/j;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2}, Lk5/a;->e(Lp4/j;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
 
-    sget-object v4, Lk5/a;->f:Le4/g;
+    invoke-interface {v3, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    if-eq v3, v4, :cond_2
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    invoke-static {v0, v1, v3}, Ls1/d;->D(Lp4/e;Lp4/j;Ljava/lang/Object;)Lf5/a2;
+    move-result-wide v6
 
-    move-result-object v2
+    const/4 v8, 0x3
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    move-wide v4, v6
+
+    invoke-static/range {v4 .. v11}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    invoke-virtual {v3}, Landroid/view/MotionEvent;->recycle()V
+
+    iput-boolean v1, v2, Li/b2;->k:Z
 
     :cond_2
-    :try_start_0
-    iget-object v0, p0, Lk5/x;->h:Lp4/e;
+    :goto_0
+    return-void
 
-    invoke-interface {v0, p1}, Lp4/e;->resumeWith(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :pswitch_0
+    iget-object v0, v2, Li/b2;->h:Landroid/view/View;
 
-    if-eqz v2, :cond_3
+    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    invoke-virtual {v2}, Lf5/a2;->p0()Z
+    move-result-object v0
 
-    move-result p1
+    if-eqz v0, :cond_3
 
-    if-eqz p1, :cond_4
+    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
     :cond_3
-    invoke-static {v1, v3}, Lk5/a;->b(Lp4/j;Ljava/lang/Object;)V
-
-    :cond_4
     return-void
 
-    :catchall_0
-    move-exception p1
-
-    if-eqz v2, :cond_5
-
-    invoke-virtual {v2}, Lf5/a2;->p0()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    :cond_5
-    invoke-static {v1, v3}, Lk5/a;->b(Lp4/j;Ljava/lang/Object;)V
-
-    :cond_6
-    throw p1
-.end method
-
-.method public final q0(Lp4/j;Ljava/lang/Object;)V
-    .locals 2
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lf5/a2;->threadLocalIsSet:Z
-
-    iget-object v0, p0, Lf5/a2;->i:Ljava/lang/ThreadLocal;
-
-    new-instance v1, Ll4/i;
-
-    invoke-direct {v1, p1, p2}, Ll4/i;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

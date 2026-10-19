@@ -1,3 +1,11 @@
-.class public interface abstract Lf5/q1;
+.class public interface abstract Li/q1;
 .super Ljava/lang/Object;
 .source "SourceFile"
+
+
+# virtual methods
+.method public abstract setWindowCallback(Landroid/view/Window$Callback;)V
+.end method
+
+.method public abstract setWindowTitle(Ljava/lang/CharSequence;)V
+.end method

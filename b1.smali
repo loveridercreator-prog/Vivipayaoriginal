@@ -1,42 +1,41 @@
-.class public interface abstract Lf5/b1;
+.class public abstract Li/b1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lp4/h;
 
+# direct methods
+.method public static a(Landroid/widget/TextView;)I
+    .locals 0
 
-# static fields
-.field public static final synthetic b:I
+    invoke-virtual {p0}, Landroid/widget/TextView;->getAutoSizeStepGranularity()I
 
+    move-result p0
 
-# virtual methods
-.method public abstract I(Lf5/k1;)Lf5/k;
+    return p0
 .end method
 
-.method public abstract b(Ljava/util/concurrent/CancellationException;)V
+.method public static b(Landroid/widget/TextView;IIII)V
+    .locals 0
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithConfiguration(IIII)V
+
+    return-void
 .end method
 
-.method public abstract c()Z
+.method public static c(Landroid/widget/TextView;[II)V
+    .locals 0
+
+    invoke-virtual {p0, p1, p2}, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithPresetSizes([II)V
+
+    return-void
 .end method
 
-.method public abstract g(ZZLv4/c;)Lf5/l0;
-.end method
+.method public static d(Landroid/widget/TextView;Ljava/lang/String;)Z
+    .locals 0
 
-.method public abstract getParent()Lf5/b1;
-.end method
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setFontVariationSettings(Ljava/lang/String;)Z
 
-.method public abstract isCancelled()Z
-.end method
+    move-result p0
 
-.method public abstract m()Ljava/util/concurrent/CancellationException;
-.end method
-
-.method public abstract p()Z
-.end method
-
-.method public abstract w(Lv4/c;)Lf5/l0;
-.end method
-
-.method public abstract y(Lp4/e;)Ljava/lang/Object;
+    return p0
 .end method

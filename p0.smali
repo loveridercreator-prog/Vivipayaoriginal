@@ -1,55 +1,24 @@
-.class public final Lf5/p0;
-.super Lf5/q0;
+.class public abstract Li/p0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final g:Ljava/lang/Runnable;
-
-
 # direct methods
-.method public constructor <init>(Ljava/lang/Runnable;J)V
-    .locals 0
-
-    invoke-direct {p0, p2, p3}, Lf5/q0;-><init>(J)V
-
-    iput-object p1, p0, Lf5/p0;->g:Ljava/lang/Runnable;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
+.method public static a(Landroid/widget/ThemedSpinnerAdapter;Landroid/content/res/Resources$Theme;)V
     .locals 1
 
-    iget-object v0, p0, Lf5/p0;->g:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-super {p0}, Lf5/q0;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lf5/p0;->g:Ljava/lang/Runnable;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p0}, Landroid/widget/ThemedSpinnerAdapter;->getDropDownViewTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v0
 
-    return-object v0
+    invoke-static {v0, p1}, Lt0/b;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-interface {p0, p1}, Landroid/widget/ThemedSpinnerAdapter;->setDropDownViewTheme(Landroid/content/res/Resources$Theme;)V
+
+    :cond_0
+    return-void
 .end method

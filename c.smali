@@ -1,85 +1,108 @@
-.class public final enum Lh5/c;
-.super Ljava/lang/Enum;
+.class public final Li/c;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
-# static fields
-.field public static final enum e:Lh5/c;
 
-.field public static final enum f:Lh5/c;
+# instance fields
+.field public final synthetic e:I
 
-.field public static final enum g:Lh5/c;
+.field public final f:Ljava/lang/Object;
 
-.field public static final synthetic h:[Lh5/c;
+.field public final synthetic g:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Landroidx/appcompat/widget/ActionBarContextView;Lg/b;)V
+    .locals 1
 
-    new-instance v0, Lh5/c;
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "SUSPEND"
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    iput v0, p0, Li/c;->e:I
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Li/c;->g:Ljava/lang/Object;
 
-    sput-object v0, Lh5/c;->e:Lh5/c;
-
-    new-instance v1, Lh5/c;
-
-    const-string v2, "DROP_OLDEST"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lh5/c;->f:Lh5/c;
-
-    new-instance v2, Lh5/c;
-
-    const-string v3, "DROP_LATEST"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lh5/c;->g:Lh5/c;
-
-    filled-new-array {v0, v1, v2}, [Lh5/c;
-
-    move-result-object v0
-
-    sput-object v0, Lh5/c;->h:[Lh5/c;
+    iput-object p2, p0, Li/c;->f:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lh5/c;
-    .locals 1
+.method public constructor <init>(Li/v3;)V
+    .locals 2
 
-    const-class v0, Lh5/c;
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const/4 v0, 0x1
 
-    move-result-object p0
+    iput v0, p0, Li/c;->e:I
 
-    check-cast p0, Lh5/c;
+    iput-object p1, p0, Li/c;->g:Ljava/lang/Object;
 
-    return-object p0
+    .line 3
+    new-instance v0, Lh/a;
+
+    iget-object v1, p1, Li/v3;->a:Landroidx/appcompat/widget/Toolbar;
+
+    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    iget-object p1, p1, Li/v3;->h:Ljava/lang/CharSequence;
+
+    invoke-direct {v0, v1, p1}, Lh/a;-><init>(Landroid/content/Context;Ljava/lang/CharSequence;)V
+
+    iput-object v0, p0, Li/c;->f:Ljava/lang/Object;
+
+    return-void
 .end method
 
-.method public static values()[Lh5/c;
-    .locals 1
 
-    sget-object v0, Lh5/c;->h:[Lh5/c;
+# virtual methods
+.method public final onClick(Landroid/view/View;)V
+    .locals 2
 
-    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget p1, p0, Li/c;->e:I
 
-    move-result-object v0
+    iget-object v0, p0, Li/c;->f:Ljava/lang/Object;
 
-    check-cast v0, [Lh5/c;
+    packed-switch p1, :pswitch_data_0
 
-    return-object v0
+    iget-object p1, p0, Li/c;->g:Ljava/lang/Object;
+
+    check-cast p1, Li/v3;
+
+    iget-object v1, p1, Li/v3;->k:Landroid/view/Window$Callback;
+
+    if-eqz v1, :cond_0
+
+    iget-boolean p1, p1, Li/v3;->l:Z
+
+    if-eqz p1, :cond_0
+
+    check-cast v0, Lh/a;
+
+    const/4 p1, 0x0
+
+    invoke-interface {v1, p1, v0}, Landroid/view/Window$Callback;->onMenuItemSelected(ILandroid/view/MenuItem;)Z
+
+    :cond_0
+    return-void
+
+    :pswitch_0
+    check-cast v0, Lg/b;
+
+    invoke-virtual {v0}, Lg/b;->b()V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,23 +1,19 @@
-.class public interface abstract Lh5/i;
-.super Ljava/lang/Object;
+.class public final Li/i;
+.super Lh/c;
 .source "SourceFile"
 
-# interfaces
-.implements Lh5/v;
-.implements Lh5/u;
 
-
-# static fields
-.field public static final c:Lh5/h;
+# instance fields
+.field public final synthetic a:Li/m;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Li/m;)V
+    .locals 0
 
-    sget-object v0, Lh5/h;->a:Lh5/h;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lh5/i;->c:Lh5/h;
+    iput-object p1, p0, Li/i;->a:Li/m;
 
     return-void
 .end method

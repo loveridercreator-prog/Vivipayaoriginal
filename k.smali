@@ -1,95 +1,166 @@
-.class public final Lh5/k;
-.super Lh5/l;
+.class public final Li/k;
+.super Li/b2;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Ljava/lang/Throwable;
+.field public final synthetic n:I
+
+.field public final synthetic o:Ljava/lang/Object;
+
+.field public final synthetic p:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Throwable;)V
+.method public synthetic constructor <init>(Landroid/view/View;Landroid/view/View;Ljava/lang/Object;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p4, p0, Li/k;->n:I
 
-    iput-object p1, p0, Lh5/k;->a:Ljava/lang/Throwable;
+    iput-object p1, p0, Li/k;->p:Landroid/view/View;
+
+    iput-object p3, p0, Li/k;->o:Ljava/lang/Object;
+
+    invoke-direct {p0, p2}, Li/b2;-><init>(Landroid/view/View;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final b()Lh/g0;
     .locals 1
 
-    instance-of v0, p1, Lh5/k;
+    iget v0, p0, Li/k;->n:I
 
-    if-eqz v0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    check-cast p1, Lh5/k;
+    iget-object v0, p0, Li/k;->o:Ljava/lang/Object;
 
-    iget-object p1, p1, Lh5/k;->a:Ljava/lang/Throwable;
+    check-cast v0, Li/t0;
 
-    iget-object v0, p0, Lh5/k;->a:Ljava/lang/Throwable;
+    return-object v0
 
-    invoke-static {v0, p1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :pswitch_0
+    iget-object v0, p0, Li/k;->p:Landroid/view/View;
 
-    move-result p1
+    check-cast v0, Li/l;
 
-    if-eqz p1, :cond_0
+    iget-object v0, v0, Li/l;->h:Li/m;
 
-    const/4 p1, 0x1
+    iget-object v0, v0, Li/m;->w:Li/h;
 
-    goto :goto_0
+    if-nez v0, :cond_0
 
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Lh5/k;->a:Ljava/lang/Throwable;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
     const/4 v0, 0x0
 
-    :goto_0
-    return v0
-.end method
+    goto :goto_0
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Closed("
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lh5/k;->a:Ljava/lang/Throwable;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x29
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_0
+    invoke-virtual {v0}, Lh/a0;->a()Lh/x;
 
     move-result-object v0
 
+    :goto_0
     return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final c()Z
+    .locals 4
+
+    iget v0, p0, Li/k;->n:I
+
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Li/k;->p:Landroid/view/View;
+
+    packed-switch v0, :pswitch_data_0
+
+    check-cast v2, Li/w0;
+
+    invoke-virtual {v2}, Li/w0;->getInternalPopup()Li/v0;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Li/v0;->a()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {v2}, Li/o0;->b(Landroid/view/View;)I
+
+    move-result v0
+
+    invoke-static {v2}, Li/o0;->a(Landroid/view/View;)I
+
+    move-result v3
+
+    iget-object v2, v2, Li/w0;->j:Li/v0;
+
+    invoke-interface {v2, v0, v3}, Li/v0;->d(II)V
+
+    :cond_0
+    return v1
+
+    :pswitch_0
+    check-cast v2, Li/l;
+
+    iget-object v0, v2, Li/l;->h:Li/m;
+
+    invoke-virtual {v0}, Li/m;->l()Z
+
+    return v1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final d()Z
+    .locals 3
+
+    iget v0, p0, Li/k;->n:I
+
+    const/4 v1, 0x1
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0}, Li/b2;->d()Z
+
+    return v1
+
+    :pswitch_0
+    iget-object v0, p0, Li/k;->p:Landroid/view/View;
+
+    check-cast v0, Li/l;
+
+    iget-object v0, v0, Li/l;->h:Li/m;
+
+    iget-object v2, v0, Li/m;->y:Li/j;
+
+    if-eqz v2, :cond_0
+
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Li/m;->f()Z
+
+    :goto_0
+    return v1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

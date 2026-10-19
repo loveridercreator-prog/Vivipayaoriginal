@@ -1,13 +1,13 @@
-.class public final Lf5/t1;
-.super Lf5/e1;
+.class public abstract Li/t1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final z(Ljava/lang/Throwable;)Z
+# direct methods
+.method public static a(Landroid/view/View;FF)V
     .locals 0
 
-    const/4 p1, 0x0
+    invoke-virtual {p0, p1, p2}, Landroid/view/View;->drawableHotspotChanged(FF)V
 
-    return p1
+    return-void
 .end method
