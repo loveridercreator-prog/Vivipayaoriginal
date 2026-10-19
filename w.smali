@@ -1,30 +1,27 @@
-.class public final Lf5/w;
-.super Lp4/b;
+.class public final Lg6/w;
+.super Lg6/x;
 .source "SourceFile"
 
 
-# direct methods
-.method public constructor <init>(I)V
-    .locals 1
+# virtual methods
+.method public final d(J)Lg6/x;
+    .locals 0
 
-    const/4 v0, 0x1
+    return-object p0
+.end method
 
-    if-eq p1, v0, :cond_0
-
-    sget-object p1, Lp4/f;->e:Lp4/f;
-
-    sget-object v0, Lf5/v;->f:Lf5/v;
-
-    invoke-direct {p0, p1, v0}, Lp4/b;-><init>(Lp4/i;Lf5/v;)V
+.method public final f()V
+    .locals 0
 
     return-void
+.end method
 
-    :cond_0
-    sget-object p1, Lf5/x;->f:Lf5/w;
+.method public final g(JLjava/util/concurrent/TimeUnit;)Lg6/x;
+    .locals 0
 
-    sget-object v0, Lf5/v;->g:Lf5/v;
+    const-string p1, "unit"
 
-    invoke-direct {p0, p1, v0}, Lp4/b;-><init>(Lp4/i;Lf5/v;)V
+    invoke-static {p3, p1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    return-void
+    return-object p0
 .end method

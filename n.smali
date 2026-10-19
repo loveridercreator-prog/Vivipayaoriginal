@@ -1,6 +1,23 @@
-.class public interface abstract Lf5/n;
+.class public abstract synthetic Lg6/n;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lf5/b1;
+
+# static fields
+.field public static final a:Ljava/util/logging/Logger;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "okio.Okio"
+
+    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
+
+    move-result-object v0
+
+    sput-object v0, Lg6/n;->a:Ljava/util/logging/Logger;
+
+    return-void
+.end method

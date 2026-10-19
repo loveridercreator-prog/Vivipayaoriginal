@@ -1,199 +1,205 @@
-.class public abstract Lf5/x;
-.super Lp4/a;
+.class public Lg6/x;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lp4/g;
 
 
 # static fields
-.field public static final f:Lf5/w;
+.field public static final d:Lg6/w;
+
+
+# instance fields
+.field public a:Z
+
+.field public b:J
+
+.field public c:J
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lf5/w;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lf5/w;-><init>(I)V
-
-    sput-object v0, Lf5/x;->f:Lf5/w;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
     .locals 1
 
-    sget-object v0, Lp4/f;->e:Lp4/f;
+    new-instance v0, Lg6/w;
 
-    invoke-direct {p0, v0}, Lp4/a;-><init>(Lp4/i;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lg6/x;->d:Lg6/w;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public C(Lp4/j;Ljava/lang/Runnable;)V
-    .locals 0
+.method public a()Lg6/x;
+    .locals 1
 
-    invoke-virtual {p0, p1, p2}, Lf5/x;->o(Lp4/j;Ljava/lang/Runnable;)V
+    const/4 v0, 0x0
 
-    return-void
+    iput-boolean v0, p0, Lg6/x;->a:Z
+
+    return-object p0
 .end method
 
-.method public E(Lp4/j;)Z
-    .locals 0
-
-    instance-of p0, p0, Lf5/z1;
-
-    xor-int/lit8 p0, p0, 0x1
-
-    return p0
-.end method
-
-.method public final G(Lp4/i;)Lp4/j;
-    .locals 3
-
-    const-string v0, "key"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    instance-of v1, p1, Lp4/b;
-
-    sget-object v2, Lp4/k;->e:Lp4/k;
-
-    if-eqz v1, :cond_2
-
-    check-cast p1, Lp4/b;
-
-    iget-object v1, p0, Lp4/a;->e:Lp4/i;
-
-    invoke-static {v1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    if-eq v1, p1, :cond_0
-
-    iget-object v0, p1, Lp4/b;->f:Lp4/i;
-
-    if-ne v0, v1, :cond_1
-
-    :cond_0
-    iget-object p1, p1, Lp4/b;->e:Lv4/c;
-
-    invoke-interface {p1, p0}, Lv4/c;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lp4/h;
-
-    if-eqz p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move-object v2, p0
-
-    goto :goto_0
-
-    :cond_2
-    sget-object v0, Lp4/f;->e:Lp4/f;
-
-    if-ne v0, p1, :cond_1
-
-    :goto_0
-    return-object v2
-.end method
-
-.method public abstract o(Lp4/j;Ljava/lang/Runnable;)V
-.end method
-
-.method public toString()Ljava/lang/String;
+.method public b()Lg6/x;
     .locals 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-wide/16 v0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    iput-wide v0, p0, Lg6/x;->c:J
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object p0
+.end method
+
+.method public c()J
+    .locals 2
+
+    iget-boolean v0, p0, Lg6/x;->a:Z
+
+    if-eqz v0, :cond_0
+
+    iget-wide v0, p0, Lg6/x;->b:J
+
+    return-wide v0
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "No deadline"
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v1
+    throw v0
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public d(J)Lg6/x;
+    .locals 1
 
-    const/16 v1, 0x40
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    iput-boolean v0, p0, Lg6/x;->a:Z
 
-    invoke-static {p0}, Lf5/c0;->F(Ljava/lang/Object;)Ljava/lang/String;
+    iput-wide p1, p0, Lg6/x;->b:J
 
-    move-result-object v1
+    return-object p0
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public e()Z
+    .locals 1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-boolean v0, p0, Lg6/x;->a:Z
+
+    return v0
+.end method
+
+.method public f()V
+    .locals 4
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    invoke-virtual {v0}, Ljava/lang/Thread;->isInterrupted()Z
 
-.method public final x(Lp4/i;)Lp4/h;
-    .locals 3
+    move-result v0
 
-    const-string v0, "key"
+    if-nez v0, :cond_2
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-boolean v0, p0, Lg6/x;->a:Z
 
-    instance-of v1, p1, Lp4/b;
+    if-eqz v0, :cond_1
 
-    const/4 v2, 0x0
+    iget-wide v0, p0, Lg6/x;->b:J
 
-    if-eqz v1, :cond_1
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    check-cast p1, Lp4/b;
+    move-result-wide v2
 
-    iget-object v1, p0, Lp4/a;->e:Lp4/i;
+    sub-long/2addr v0, v2
 
-    invoke-static {v1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    const-wide/16 v2, 0x0
 
-    if-eq v1, p1, :cond_0
+    cmp-long v0, v0, v2
 
-    iget-object v0, p1, Lp4/b;->f:Lp4/i;
-
-    if-ne v0, v1, :cond_2
-
-    :cond_0
-    iget-object p1, p1, Lp4/b;->e:Lv4/c;
-
-    invoke-interface {p1, p0}, Lv4/c;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lp4/h;
-
-    instance-of v0, p1, Lp4/h;
-
-    if-eqz v0, :cond_2
-
-    move-object v2, p1
+    if-lez v0, :cond_0
 
     goto :goto_0
 
+    :cond_0
+    new-instance v0, Ljava/io/InterruptedIOException;
+
+    const-string v1, "deadline reached"
+
+    invoke-direct {v0, v1}, Ljava/io/InterruptedIOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
     :cond_1
-    sget-object v0, Lp4/f;->e:Lp4/f;
-
-    if-ne v0, p1, :cond_2
-
-    move-object v2, p0
+    :goto_0
+    return-void
 
     :cond_2
-    :goto_0
-    return-object v2
+    new-instance v0, Ljava/io/InterruptedIOException;
+
+    const-string v1, "interrupted"
+
+    invoke-direct {v0, v1}, Ljava/io/InterruptedIOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public g(JLjava/util/concurrent/TimeUnit;)Lg6/x;
+    .locals 2
+
+    const-string v0, "unit"
+
+    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, p1, v0
+
+    if-ltz v0, :cond_0
+
+    invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lg6/x;->c:J
+
+    return-object p0
+
+    :cond_0
+    new-instance p3, Ljava/lang/StringBuilder;
+
+    const-string v0, "timeout < 0: "
+
+    invoke-direct {p3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance p2, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+.end method
+
+.method public h()J
+    .locals 2
+
+    iget-wide v0, p0, Lg6/x;->c:J
+
+    return-wide v0
 .end method

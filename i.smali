@@ -1,64 +1,60 @@
-.class public final Lf5/i;
-.super Lf5/r;
+.class public interface abstract Lg6/i;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final c:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-
-# instance fields
-.field private volatile _resumed:I
+# interfaces
+.implements Lg6/v;
+.implements Ljava/nio/channels/ReadableByteChannel;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    const-class v0, Lf5/i;
-
-    const-string v1, "_resumed"
-
-    invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    move-result-object v0
-
-    sput-object v0, Lf5/i;->c:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    return-void
+# virtual methods
+.method public abstract D()I
 .end method
 
-.method public constructor <init>(Lp4/e;Ljava/lang/Throwable;Z)V
-    .locals 2
+.method public abstract H()J
+.end method
 
-    if-nez p2, :cond_0
+.method public abstract M()Ljava/lang/String;
+.end method
 
-    new-instance p2, Ljava/util/concurrent/CancellationException;
+.method public abstract P(J)V
+.end method
 
-    new-instance v0, Ljava/lang/StringBuilder;
+.method public abstract U()Z
+.end method
 
-    const-string v1, "Continuation "
+.method public abstract W()J
+.end method
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+.method public abstract Y(Ljava/nio/charset/Charset;)Ljava/lang/String;
+.end method
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+.method public abstract b0()Lg6/f;
+.end method
 
-    const-string p1, " was cancelled normally"
+.method public abstract c0()B
+.end method
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public abstract d()Lg6/g;
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+.method public abstract h(Lg6/o;)I
+.end method
 
-    move-result-object p1
+.method public abstract i([B)V
+.end method
 
-    invoke-direct {p2, p1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
+.method public abstract n(J)Lg6/j;
+.end method
 
-    :cond_0
-    invoke-direct {p0, p2, p3}, Lf5/r;-><init>(Ljava/lang/Throwable;Z)V
+.method public abstract q(J)Ljava/lang/String;
+.end method
 
-    const/4 p1, 0x0
+.method public abstract r(Lg6/g;J)V
+.end method
 
-    iput p1, p0, Lf5/i;->_resumed:I
+.method public abstract s(J)V
+.end method
 
-    return-void
+.method public abstract v()S
 .end method

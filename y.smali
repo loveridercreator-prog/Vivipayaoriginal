@@ -1,32 +1,31 @@
-.class public final Lf5/y;
+.class public abstract Lg6/y;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lp4/i;
-
 
 # static fields
-.field public static final synthetic e:Lf5/y;
-
-.field public static final synthetic f:Lf5/y;
+.field public static final a:[B
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
+.method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lf5/y;
+    sget-object v0, Lg6/j;->h:Lg6/j;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
-    sput-object v0, Lf5/y;->e:Lf5/y;
+    invoke-static {v0}, Lc6/a;->f(Ljava/lang/String;)Lg6/j;
 
-    new-instance v0, Lf5/y;
+    move-result-object v0
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, v0, Lg6/j;->e:[B
 
-    sput-object v0, Lf5/y;->f:Lf5/y;
+    sput-object v0, Lg6/y;->a:[B
+
+    const-string v0, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
+
+    invoke-static {v0}, Lc6/a;->f(Ljava/lang/String;)Lg6/j;
 
     return-void
 .end method
