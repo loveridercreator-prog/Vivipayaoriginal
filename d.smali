@@ -1,223 +1,342 @@
-.class public final synthetic Lz2/d;
-.super Ljava/lang/Object;
+.class public final Lz5/d;
+.super Lz5/b;
 .source "SourceFile"
-
-# interfaces
-.implements Lr2/g;
 
 
 # instance fields
-.field public final synthetic e:I
+.field public final h:Lt5/s;
 
-.field public final synthetic f:Ljava/lang/String;
+.field public i:J
 
-.field public final synthetic g:Ljava/lang/Object;
+.field public j:Z
+
+.field public final synthetic k:Lz5/h;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Lz5/h;Lt5/s;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "this$0"
 
-    iput p1, p0, Lz2/d;->e:I
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput-object p3, p0, Lz2/d;->f:Ljava/lang/String;
+    const-string v0, "url"
 
-    iput-object p2, p0, Lz2/d;->g:Ljava/lang/Object;
+    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object p1, p0, Lz5/d;->k:Lz5/h;
+
+    invoke-direct {p0, p1}, Lz5/b;-><init>(Lz5/h;)V
+
+    iput-object p2, p0, Lz5/d;->h:Lt5/s;
+
+    const-wide/16 p1, -0x1
+
+    iput-wide p1, p0, Lz5/d;->i:J
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lz5/d;->j:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Li/x3;)Ljava/lang/Object;
-    .locals 4
+.method public final A(Lg6/g;J)J
+    .locals 10
 
-    iget v0, p0, Lz2/d;->e:I
+    const-string v0, "sink"
 
-    iget-object v1, p0, Lz2/d;->g:Ljava/lang/Object;
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v2, p0, Lz2/d;->f:Ljava/lang/String;
+    const-wide/16 v0, 0x0
 
-    packed-switch v0, :pswitch_data_0
+    cmp-long v2, p2, v0
 
-    check-cast v1, Lr2/c;
+    if-ltz v2, :cond_9
 
-    :try_start_0
-    invoke-static {v2}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+    iget-boolean v2, p0, Lz5/b;->f:Z
 
-    iget-object v0, v1, Lr2/c;->f:Lr2/g;
+    xor-int/lit8 v2, v2, 0x1
 
-    invoke-interface {v0, p1}, Lr2/g;->c(Li/x3;)Ljava/lang/Object;
+    if-eqz v2, :cond_8
 
-    move-result-object p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-boolean v2, p0, Lz5/d;->j:Z
 
-    invoke-static {}, Landroid/os/Trace;->endSection()V
+    const-wide/16 v3, -0x1
 
-    return-object p1
+    if-nez v2, :cond_0
 
-    :catchall_0
-    move-exception p1
-
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    throw p1
-
-    :pswitch_0
-    check-cast v1, Lz2/e;
-
-    const-class v0, Landroid/content/Context;
-
-    invoke-virtual {p1, v0}, Li/x3;->a(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/content/Context;
-
-    check-cast v1, Ln2/b;
-
-    iget v0, v1, Ln2/b;->e:I
-
-    const-string v1, ""
-
-    packed-switch v0, :pswitch_data_1
-
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Landroid/content/pm/PackageManager;->getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_3
-
-    invoke-static {p1}, Lcom/google/firebase/FirebaseCommonRegistrar;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :pswitch_1
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
-    const-string v3, "android.hardware.type.television"
-
-    invoke-virtual {v0, v3}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const-string v1, "tv"
-
-    goto :goto_0
+    return-wide v3
 
     :cond_0
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    iget-wide v5, p0, Lz5/d;->i:J
 
-    move-result-object v0
+    cmp-long v2, v5, v0
 
-    const-string v3, "android.hardware.type.watch"
+    iget-object v7, p0, Lz5/d;->k:Lz5/h;
 
-    invoke-virtual {v0, v3}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+    if-eqz v2, :cond_1
 
-    move-result v0
+    cmp-long v2, v5, v3
 
-    if-eqz v0, :cond_1
-
-    const-string v1, "watch"
-
-    goto :goto_0
+    if-nez v2, :cond_5
 
     :cond_1
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    const-string v2, "expected chunk size and optional extensions but was \""
 
-    move-result-object v0
+    cmp-long v5, v5, v3
 
-    const-string v3, "android.hardware.type.automotive"
+    if-eqz v5, :cond_2
 
-    invoke-virtual {v0, v3}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+    iget-object v5, v7, Lz5/h;->c:Lg6/i;
 
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    const-string v1, "auto"
-
-    goto :goto_0
+    invoke-interface {v5}, Lg6/i;->M()Ljava/lang/String;
 
     :cond_2
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    :try_start_0
+    iget-object v5, v7, Lz5/h;->c:Lg6/i;
 
-    move-result-object p1
+    invoke-interface {v5}, Lg6/i;->W()J
 
-    const-string v0, "android.hardware.type.embedded"
+    move-result-wide v5
 
-    invoke-virtual {p1, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+    iput-wide v5, p0, Lz5/d;->i:J
 
-    move-result p1
+    iget-object v5, v7, Lz5/h;->c:Lg6/i;
 
-    if-eqz p1, :cond_3
+    invoke-interface {v5}, Lg6/i;->M()Ljava/lang/String;
 
-    const-string v1, "embedded"
+    move-result-object v5
+
+    invoke-static {v5}, Ld5/j;->X0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    iget-wide v8, p0, Lz5/d;->i:J
+
+    cmp-long v6, v8, v0
+
+    if-ltz v6, :cond_7
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    const/4 v8, 0x0
+
+    if-lez v6, :cond_3
+
+    const-string v6, ";"
+
+    invoke-static {v5, v8, v6}, Ld5/j;->R0(Ljava/lang/String;ZLjava/lang/String;)Z
+
+    move-result v6
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    if-eqz v6, :cond_7
 
     goto :goto_0
 
-    :pswitch_2
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+    :catch_0
+    move-exception p1
 
-    move-result-object p1
-
-    if-eqz p1, :cond_3
-
-    iget p1, p1, Landroid/content/pm/ApplicationInfo;->minSdkVersion:I
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :pswitch_3
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_3
-
-    iget p1, p1, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v1
+    goto :goto_1
 
     :cond_3
     :goto_0
-    new-instance p1, Lz2/a;
+    iget-wide v5, p0, Lz5/d;->i:J
 
-    invoke-direct {p1, v2, v1}, Lz2/a;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    cmp-long v0, v5, v0
 
-    return-object p1
+    if-nez v0, :cond_4
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iput-boolean v8, p0, Lz5/d;->j:Z
 
-    :pswitch_data_1
-    .packed-switch 0x3
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    iget-object v0, v7, Lz5/h;->f:Lz5/a;
+
+    invoke-virtual {v0}, Lz5/a;->a()Lt5/q;
+
+    move-result-object v0
+
+    iput-object v0, v7, Lz5/h;->g:Lt5/q;
+
+    iget-object v0, v7, Lz5/h;->a:Lt5/w;
+
+    invoke-static {v0}, Lk3/e;->i(Ljava/lang/Object;)V
+
+    iget-object v1, v7, Lz5/h;->g:Lt5/q;
+
+    invoke-static {v1}, Lk3/e;->i(Ljava/lang/Object;)V
+
+    iget-object v0, v0, Lt5/w;->n:Lt5/l;
+
+    iget-object v2, p0, Lz5/d;->h:Lt5/s;
+
+    invoke-static {v0, v2, v1}, Ly5/e;->b(Lt5/l;Lt5/s;Lt5/q;)V
+
+    invoke-virtual {p0}, Lz5/b;->a()V
+
+    :cond_4
+    iget-boolean v0, p0, Lz5/d;->j:Z
+
+    if-nez v0, :cond_5
+
+    return-wide v3
+
+    :cond_5
+    iget-wide v0, p0, Lz5/d;->i:J
+
+    invoke-static {p2, p3, v0, v1}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide p2
+
+    invoke-super {p0, p1, p2, p3}, Lz5/b;->A(Lg6/g;J)J
+
+    move-result-wide p1
+
+    cmp-long p3, p1, v3
+
+    if-eqz p3, :cond_6
+
+    iget-wide v0, p0, Lz5/d;->i:J
+
+    sub-long/2addr v0, p1
+
+    iput-wide v0, p0, Lz5/d;->i:J
+
+    return-wide p1
+
+    :cond_6
+    iget-object p1, v7, Lz5/h;->b:Lx5/m;
+
+    invoke-virtual {p1}, Lx5/m;->k()V
+
+    new-instance p1, Ljava/net/ProtocolException;
+
+    const-string p2, "unexpected end of stream"
+
+    invoke-direct {p1, p2}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lz5/b;->a()V
+
+    throw p1
+
+    :cond_7
+    :try_start_1
+    new-instance p1, Ljava/net/ProtocolException;
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v0, p0, Lz5/d;->i:J
+
+    invoke-virtual {p2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 p3, 0x22
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+    :try_end_1
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_0
+
+    :goto_1
+    new-instance p2, Ljava/net/ProtocolException;
+
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_8
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "closed"
+
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_9
+    const-string p1, "byteCount < 0: "
+
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p2
+
+    invoke-static {p2, p1}, Lk3/e;->K(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance p2, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+.end method
+
+.method public final close()V
+    .locals 1
+
+    iget-boolean v0, p0, Lz5/b;->f:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-boolean v0, p0, Lz5/d;->j:Z
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-static {p0, v0}, Lu5/b;->h(Lg6/v;Ljava/util/concurrent/TimeUnit;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lz5/d;->k:Lz5/h;
+
+    iget-object v0, v0, Lz5/h;->b:Lx5/m;
+
+    invoke-virtual {v0}, Lx5/m;->k()V
+
+    invoke-virtual {p0}, Lz5/b;->a()V
+
+    :cond_1
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lz5/b;->f:Z
+
+    return-void
 .end method

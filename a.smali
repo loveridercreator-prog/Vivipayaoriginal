@@ -1,151 +1,131 @@
-.class public final Lz2/a;
+.class public final Lz5/a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:Lg6/i;
 
-.field public final b:Ljava/lang/String;
+.field public b:J
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Lg6/i;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_1
+    iput-object p1, p0, Lz5/a;->a:Lg6/i;
 
-    iput-object p1, p0, Lz2/a;->a:Ljava/lang/String;
+    const-wide/32 v0, 0x40000
 
-    if-eqz p2, :cond_0
-
-    iput-object p2, p0, Lz2/a;->b:Ljava/lang/String;
+    iput-wide v0, p0, Lz5/a;->b:J
 
     return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null version"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null libraryName"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a()Lt5/q;
+    .locals 8
 
-    const/4 v0, 0x1
+    new-instance v0, Lt5/p;
 
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lz2/a;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
-
-    check-cast p1, Lz2/a;
-
-    iget-object v1, p1, Lz2/a;->a:Ljava/lang/String;
-
-    iget-object v3, p0, Lz2/a;->a:Ljava/lang/String;
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lz2/a;->b:Ljava/lang/String;
-
-    iget-object p1, p1, Lz2/a;->b:Ljava/lang/String;
-
-    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v2
+    invoke-direct {v0}, Lt5/p;-><init>()V
 
     :goto_0
-    return v0
+    iget-object v1, p0, Lz5/a;->a:Lg6/i;
 
-    :cond_2
-    return v2
-.end method
+    iget-wide v2, p0, Lz5/a;->b:J
 
-.method public final hashCode()I
-    .locals 2
+    invoke-interface {v1, v2, v3}, Lg6/i;->q(J)Ljava/lang/String;
 
-    iget-object v0, p0, Lz2/a;->a:Ljava/lang/String;
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    iget-wide v2, p0, Lz5/a;->b:J
 
-    move-result v0
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    const v1, 0xf4243
+    move-result v4
 
-    xor-int/2addr v0, v1
+    int-to-long v4, v4
 
-    mul-int/2addr v0, v1
+    sub-long/2addr v2, v4
 
-    iget-object v1, p0, Lz2/a;->b:Ljava/lang/String;
+    iput-wide v2, p0, Lz5/a;->b:J
 
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v2
 
-    xor-int/2addr v0, v1
+    if-nez v2, :cond_0
 
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "LibraryVersion{libraryName="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lz2/a;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", version="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lz2/a;->b:Ljava/lang/String;
-
-    const-string v2, "}"
-
-    invoke-static {v0, v1, v2}, Landroidx/fragment/app/u;->p(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0}, Lt5/p;->c()Lt5/q;
 
     move-result-object v0
 
     return-object v0
+
+    :cond_0
+    const/4 v2, 0x4
+
+    const/16 v3, 0x3a
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    invoke-static {v1, v3, v4, v5, v2}, Ld5/j;->y0(Ljava/lang/CharSequence;CIZI)I
+
+    move-result v2
+
+    const/4 v6, -0x1
+
+    const-string v7, "this as java.lang.String).substring(startIndex)"
+
+    if-eq v2, v6, :cond_1
+
+    invoke-virtual {v1, v5, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+
+    invoke-static {v3, v4}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1, v7}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v3, v1}, Lt5/p;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v1, v5}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    const-string v5, ""
+
+    if-ne v2, v3, :cond_2
+
+    invoke-virtual {v1, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1, v7}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v5, v1}, Lt5/p;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {v0, v5, v1}, Lt5/p;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_0
 .end method

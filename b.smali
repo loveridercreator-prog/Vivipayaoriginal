@@ -1,84 +1,138 @@
-.class public final Lz2/b;
+.class public abstract Lz5/b;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lg6/v;
+
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final e:Lg6/k;
 
-.field public final b:Lz2/c;
+.field public f:Z
+
+.field public final synthetic g:Lz5/h;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Set;Lz2/c;)V
-    .locals 0
+.method public constructor <init>(Lz5/h;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lz2/b;->a(Ljava/util/Set;)Ljava/lang/String;
+    const-string v0, "this$0"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object p1, p0, Lz5/b;->g:Lz5/h;
+
+    new-instance v0, Lg6/k;
+
+    iget-object p1, p1, Lz5/h;->c:Lg6/i;
+
+    invoke-interface {p1}, Lg6/v;->e()Lg6/x;
 
     move-result-object p1
 
-    iput-object p1, p0, Lz2/b;->a:Ljava/lang/String;
+    invoke-direct {v0, p1}, Lg6/k;-><init>(Lg6/x;)V
 
-    iput-object p2, p0, Lz2/b;->b:Lz2/c;
+    iput-object v0, p0, Lz5/b;->e:Lg6/k;
 
     return-void
 .end method
 
-.method public static a(Ljava/util/Set;)Ljava/lang/String;
-    .locals 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+# virtual methods
+.method public A(Lg6/g;J)J
+    .locals 2
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    iget-object v0, p0, Lz5/b;->g:Lz5/h;
 
-    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    const-string v1, "sink"
 
-    move-result-object p0
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :try_start_0
+    iget-object v1, v0, Lz5/h;->c:Lg6/i;
+
+    invoke-interface {v1, p1, p2, p3}, Lg6/v;->A(Lg6/g;J)J
+
+    move-result-wide p1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-wide p1
+
+    :catch_0
+    move-exception p1
+
+    iget-object p2, v0, Lz5/h;->b:Lx5/m;
+
+    invoke-virtual {p2}, Lx5/m;->k()V
+
+    invoke-virtual {p0}, Lz5/b;->a()V
+
+    throw p1
+.end method
+
+.method public final a()V
+    .locals 5
+
+    iget-object v0, p0, Lz5/b;->g:Lz5/h;
+
+    iget v1, v0, Lz5/h;->e:I
+
+    const/4 v2, 0x6
+
+    if-ne v1, v2, :cond_0
+
+    return-void
 
     :cond_0
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    const/4 v3, 0x5
 
-    move-result v1
+    if-ne v1, v3, :cond_1
 
-    if-eqz v1, :cond_1
+    iget-object v1, p0, Lz5/b;->e:Lg6/k;
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v3, v1, Lg6/k;->e:Lg6/x;
 
-    move-result-object v1
+    sget-object v4, Lg6/x;->d:Lg6/w;
 
-    check-cast v1, Lz2/a;
+    iput-object v4, v1, Lg6/k;->e:Lg6/x;
 
-    iget-object v2, v1, Lz2/a;->a:Ljava/lang/String;
+    invoke-virtual {v3}, Lg6/x;->a()Lg6/x;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Lg6/x;->b()Lg6/x;
 
-    const/16 v2, 0x2f
+    iput v2, v0, Lz5/h;->e:I
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    iget-object v1, v1, Lz2/a;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/16 v1, 0x20
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_0
+    return-void
 
     :cond_1
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    move-result-object p0
+    iget v0, v0, Lz5/h;->e:I
 
-    return-object p0
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    const-string v2, "state: "
+
+    invoke-static {v0, v2}, Lk3/e;->K(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
+.method public final e()Lg6/x;
+    .locals 1
+
+    iget-object v0, p0, Lz5/b;->e:Lg6/k;
+
+    return-object v0
 .end method
