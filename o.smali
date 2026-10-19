@@ -1,45 +1,37 @@
-.class public final Ln5/o;
-.super Ln5/p;
+.class public final Lp3/o;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ln5/o;
+# instance fields
+.field public final a:Ljava/util/ArrayList;
 
-.field public static final b:Ln5/o;
+.field public final b:Ljava/util/ArrayList;
 
-.field public static final c:Ln5/o;
-
-.field public static final d:Ln5/o;
+.field public c:Z
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
 
-    new-instance v0, Ln5/o;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/util/ArrayList;
 
-    sput-object v0, Ln5/o;->a:Ln5/o;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    new-instance v0, Ln5/o;
+    iput-object v0, p0, Lp3/o;->a:Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/util/ArrayList;
 
-    sput-object v0, Ln5/o;->b:Ln5/o;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    new-instance v0, Ln5/o;
+    iput-object v0, p0, Lp3/o;->b:Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x1
 
-    sput-object v0, Ln5/o;->c:Ln5/o;
-
-    new-instance v0, Ln5/o;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Ln5/o;->d:Ln5/o;
+    iput-boolean v0, p0, Lp3/o;->c:Z
 
     return-void
 .end method

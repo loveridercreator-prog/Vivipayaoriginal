@@ -1,63 +1,53 @@
-.class public final Ln1/j0;
-.super Ln1/y;
+.class public final Lp3/j0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final e:Ljava/lang/Object;
+# static fields
+.field public static final b:Lp3/a;
 
-.field public final f:Z
+.field public static final c:Lb4/a;
+
+
+# instance fields
+.field public final a:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ZLjava/lang/Boolean;Z)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0, p1, p2}, Ln1/y;-><init>(Ljava/lang/String;Z)V
+    new-instance v0, Lp3/a;
 
-    const/4 p1, 0x1
+    const/4 v1, 0x4
 
-    iput-boolean p1, p0, Ln1/j0;->f:Z
+    const/4 v2, 0x0
 
-    if-eqz p3, :cond_0
+    invoke-direct {v0, v1, v2}, Lp3/a;-><init>(II)V
 
-    iput-object p3, p0, Ln1/j0;->e:Ljava/lang/Object;
+    sput-object v0, Lp3/j0;->b:Lp3/a;
 
-    iput-boolean p4, p0, Ln1/j0;->f:Z
+    new-instance v0, Lb4/a;
+
+    const-string v1, "HttpSend"
+
+    invoke-direct {v0, v1}, Lb4/a;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lp3/j0;->c:Lb4/a;
 
     return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "value is null"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
+.method public constructor <init>()V
+    .locals 1
 
-# virtual methods
-.method public final a(Ln1/l0;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0, p1, p2, p4}, Ln1/y;->b(Ln1/l0;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v0, Ljava/util/ArrayList;
 
-    move-result-object p1
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iget-object p2, p0, Ln1/j0;->e:Ljava/lang/Object;
+    iput-object v0, p0, Lp3/j0;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {p2, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    iget-boolean p2, p0, Ln1/j0;->f:Z
-
-    if-nez p2, :cond_0
-
-    xor-int/lit8 p1, p1, 0x1
-
-    :cond_0
-    return p1
+    return-void
 .end method

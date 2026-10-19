@@ -1,227 +1,53 @@
-.class public final Ln3/q;
-.super Ljava/lang/Object;
+.class public final Lp3/q;
+.super Lr4/c;
 .source "SourceFile"
-
-# interfaces
-.implements Lw3/o;
 
 
 # instance fields
-.field public final synthetic c:Lt5/q;
+.field public e:Lu3/c;
+
+.field public f:Ljava/util/Iterator;
+
+.field public synthetic g:Ljava/lang/Object;
+
+.field public final synthetic h:Lp3/r;
+
+.field public i:I
 
 
 # direct methods
-.method public constructor <init>(Lt5/q;)V
+.method public constructor <init>(Lp3/r;Lp4/e;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lp3/q;->h:Lp3/r;
 
-    iput-object p1, p0, Ln3/q;->c:Lt5/q;
+    invoke-direct {p0, p2}, Lr4/c;-><init>(Lp4/e;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/Set;
-    .locals 8
-
-    iget-object v0, p0, Ln3/q;->c:Lt5/q;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v1, Ljava/util/TreeMap;
-
-    sget-object v2, Ljava/lang/String;->CASE_INSENSITIVE_ORDER:Ljava/util/Comparator;
-
-    const-string v3, "CASE_INSENSITIVE_ORDER"
-
-    invoke-static {v2, v3}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {v1, v2}, Ljava/util/TreeMap;-><init>(Ljava/util/Comparator;)V
-
-    invoke-virtual {v0}, Lt5/q;->size()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    :goto_0
-    if-ge v3, v2, :cond_1
-
-    add-int/lit8 v4, v3, 0x1
-
-    invoke-virtual {v0, v3}, Lt5/q;->b(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    sget-object v6, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    const-string v7, "US"
-
-    invoke-static {v6, v7}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
-
-    move-result-object v5
-
-    const-string v6, "this as java.lang.String).toLowerCase(locale)"
-
-    invoke-static {v5, v6}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v1, v5}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Ljava/util/List;
-
-    if-nez v6, :cond_0
-
-    new-instance v6, Ljava/util/ArrayList;
-
-    const/4 v7, 0x2
-
-    invoke-direct {v6, v7}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-virtual {v1, v5, v6}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    invoke-virtual {v0, v3}, Lt5/q;->d(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v6, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    move v3, v4
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v1}, Ljava/util/TreeMap;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b(Lv4/e;)V
-    .locals 0
-
-    check-cast p1, Ln3/k;
-
-    invoke-static {p0, p1}, Ll6/a;->M(Lb4/r;Ln3/k;)V
-
-    return-void
-.end method
-
-.method public final c()Z
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lp3/q;->g:Ljava/lang/Object;
 
-    return v0
-.end method
+    iget p1, p0, Lp3/q;->i:I
 
-.method public final d(Ljava/lang/String;)Ljava/lang/String;
-    .locals 0
+    const/high16 v0, -0x80000000
 
-    invoke-virtual {p0, p1}, Ln3/q;->e(Ljava/lang/String;)Ljava/util/List;
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lp3/q;->i:I
+
+    iget-object p1, p0, Lp3/q;->h:Lp3/r;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0, p0}, Lp3/r;->b(Lp3/r;Lu3/c;Lp4/e;)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
-
-    invoke-static {p1}, Lm4/l;->b0(Ljava/util/List;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/String;
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
     return-object p1
-.end method
-
-.method public final e(Ljava/lang/String;)Ljava/util/List;
-    .locals 1
-
-    const-string v0, "name"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, Ln3/q;->c:Lt5/q;
-
-    invoke-virtual {v0, p1}, Lt5/q;->e(Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return-object p1
-.end method
-
-.method public final names()Ljava/util/Set;
-    .locals 5
-
-    iget-object v0, p0, Ln3/q;->c:Lt5/q;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v1, Ljava/util/TreeSet;
-
-    sget-object v2, Ljava/lang/String;->CASE_INSENSITIVE_ORDER:Ljava/util/Comparator;
-
-    const-string v3, "CASE_INSENSITIVE_ORDER"
-
-    invoke-static {v2, v3}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {v1, v2}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
-
-    invoke-virtual {v0}, Lt5/q;->size()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    :goto_0
-    if-ge v3, v2, :cond_0
-
-    add-int/lit8 v4, v3, 0x1
-
-    invoke-virtual {v0, v3}, Lt5/q;->b(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
-
-    move v3, v4
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {v1}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
-
-    move-result-object v0
-
-    const-string v1, "unmodifiableSet(result)"
-
-    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object v0
 .end method

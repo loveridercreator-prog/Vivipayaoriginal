@@ -1,15 +1,11 @@
-.class public final Lo6/h;
-.super Ljava/lang/SecurityManager;
+.class public interface abstract Lp4/h;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lp4/j;
 
 
 # virtual methods
-.method public final getClassContext()[Ljava/lang/Class;
-    .locals 1
-
-    invoke-super {p0}, Ljava/lang/SecurityManager;->getClassContext()[Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract getKey()Lp4/i;
 .end method

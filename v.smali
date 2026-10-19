@@ -1,92 +1,112 @@
-.class public final Ln1/v;
+.class public abstract Lp3/v;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ln1/e0;
 
-
-# instance fields
-.field public final a:[Ljava/lang/String;
-
-.field public final b:[J
+# static fields
+.field public static final a:Lb4/a;
 
 
 # direct methods
-.method public constructor <init>([Ljava/lang/String;)V
-    .locals 4
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lb4/a;
 
-    iput-object p1, p0, Ln1/v;->a:[Ljava/lang/String;
+    const-string v1, "ApplicationPluginRegistry"
 
-    array-length v0, p1
+    invoke-direct {v0, v1}, Lb4/a;-><init>(Ljava/lang/String;)V
 
-    new-array v0, v0, [J
+    sput-object v0, Lp3/v;->a:Lb4/a;
 
-    iput-object v0, p0, Ln1/v;->b:[J
-
-    const/4 v0, 0x0
-
-    :goto_0
-    iget-object v1, p0, Ln1/v;->b:[J
-
-    array-length v2, v1
-
-    if-ge v0, v2, :cond_0
-
-    aget-object v2, p1, v0
-
-    invoke-static {v2}, Lv1/r;->t(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    aput-wide v2, v1, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
     return-void
 .end method
 
+.method public static final a(Lj3/e;Lp3/a;)Ljava/lang/Object;
+    .locals 2
 
-# virtual methods
-.method public final a(Ln1/l0;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+    const-string v0, "<this>"
 
-    new-instance p2, Ljava/util/ArrayList;
+    invoke-static {p0, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object v0, p0, Ln1/v;->a:[Ljava/lang/String;
+    invoke-static {p0, p1}, Lp3/v;->b(Lj3/e;Lp3/u;)Ljava/lang/Object;
 
-    array-length v1, v0
+    move-result-object p0
 
-    invoke-direct {p2, v1}, Ljava/util/ArrayList;-><init>(I)V
+    if-eqz p0, :cond_0
 
-    const/4 v1, 0x0
+    return-object p0
 
-    :goto_0
-    array-length v2, v0
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    if-ge v1, v2, :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    aget-object v2, v0, v1
+    const-string v1, "Plugin "
 
-    iget-object v3, p0, Ln1/v;->b:[J
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    aget-wide v4, v3, v1
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, p3, v2, v4, v5}, Ln1/l0;->h(Ljava/lang/Object;Ljava/lang/String;J)Ljava/lang/Object;
+    const-string v1, " is not installed. Consider using `install("
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Lp3/a;->getKey()Lb4/a;
 
-    add-int/lit8 v1, v1, 0x1
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p1, ")` in client config first."
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static final b(Lj3/e;Lp3/u;)Ljava/lang/Object;
+    .locals 1
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "plugin"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v0, Lp3/v;->a:Lb4/a;
+
+    iget-object p0, p0, Lj3/e;->m:Lb4/h;
+
+    invoke-virtual {p0, v0}, Lb4/b;->c(Lb4/a;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lb4/b;
+
+    if-eqz p0, :cond_0
+
+    invoke-interface {p1}, Lp3/u;->getKey()Lb4/a;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lb4/b;->c(Lb4/a;)Ljava/lang/Object;
+
+    move-result-object p0
 
     goto :goto_0
 
     :cond_0
-    return-object p2
+    const/4 p0, 0x0
+
+    :goto_0
+    return-object p0
 .end method

@@ -1,160 +1,227 @@
-.class public final Ln1/k0;
+.class public final Lp3/k0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ln1/e0;
-
-
-# static fields
-.field public static final b:Ln1/k0;
-
-.field public static final c:Ln1/k0;
-
-.field public static final d:Ln1/k0;
-
 
 # instance fields
-.field public final a:Z
+.field public a:Ljava/lang/Long;
+
+.field public b:Ljava/lang/Long;
+
+.field public c:Ljava/lang/Long;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Ln1/k0;
+    const-string v0, "TimeoutConfiguration"
 
-    const/4 v1, 0x0
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
 
-    invoke-direct {v0, v1}, Ln1/k0;-><init>(Z)V
+    move-result v0
 
-    sput-object v0, Ln1/k0;->b:Ln1/k0;
+    if-eqz v0, :cond_0
 
-    new-instance v0, Ln1/k0;
+    return-void
 
-    const/4 v1, 0x1
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v0, v1}, Ln1/k0;-><init>(Z)V
+    const-string v1, "Name can\'t be blank"
 
-    sput-object v0, Ln1/k0;->c:Ln1/k0;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    new-instance v0, Ln1/k0;
+    throw v0
+.end method
 
-    invoke-direct {v0, v1}, Ln1/k0;-><init>(Z)V
+.method public constructor <init>()V
+    .locals 2
 
-    sput-object v0, Ln1/k0;->d:Ln1/k0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-wide/16 v0, 0x0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lp3/k0;->a:Ljava/lang/Long;
+
+    iput-object v0, p0, Lp3/k0;->b:Ljava/lang/Long;
+
+    iput-object v0, p0, Lp3/k0;->c:Ljava/lang/Long;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lp3/k0;->a:Ljava/lang/Long;
+
+    iput-object v0, p0, Lp3/k0;->b:Ljava/lang/Long;
+
+    iput-object v0, p0, Lp3/k0;->c:Ljava/lang/Long;
 
     return-void
 .end method
 
-.method public constructor <init>(Z)V
-    .locals 0
+.method public static a(Ljava/lang/Long;)V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    if-eqz p0, :cond_1
 
-    iput-boolean p1, p0, Ln1/k0;->a:Z
+    invoke-virtual {p0}, Ljava/lang/Long;->longValue()J
 
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long p0, v0, v2
+
+    if-lez p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Only positive timeout values are allowed, for infinite timeout use HttpTimeout.INFINITE_TIMEOUT_MS"
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ln1/l0;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-boolean p2, p0, Ln1/k0;->a:Z
+    const/4 v0, 0x1
 
-    if-nez p2, :cond_4
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_5
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-nez p3, :cond_0
+    move-result-object v2
 
-    const/4 p1, 0x0
+    const-class v3, Lp3/k0;
+
+    if-eq v3, v2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lp3/k0;
+
+    iget-object v2, p0, Lp3/k0;->a:Ljava/lang/Long;
+
+    iget-object v3, p1, Lp3/k0;->a:Ljava/lang/Long;
+
+    invoke-static {v2, v3}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    return v1
+
+    :cond_2
+    iget-object v2, p0, Lp3/k0;->b:Ljava/lang/Long;
+
+    iget-object v3, p1, Lp3/k0;->b:Ljava/lang/Long;
+
+    invoke-static {v2, v3}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    return v1
+
+    :cond_3
+    iget-object v2, p0, Lp3/k0;->c:Ljava/lang/Long;
+
+    iget-object p1, p1, Lp3/k0;->c:Ljava/lang/Long;
+
+    invoke-static {v2, p1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_4
+
+    return v1
+
+    :cond_4
+    return v0
+
+    :cond_5
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lp3/k0;->a:Ljava/lang/Long;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Ln1/l0;->g(Ljava/lang/Class;)Ls1/l0;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_1
-
-    :try_start_0
-    invoke-virtual {p2, p3}, Ls1/l0;->j(Ljava/lang/Object;)Ljava/util/ArrayList;
-
-    move-result-object p1
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p2
-
-    new-instance p3, Ln1/m0;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "jsonpath error, path "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p1, p1, Ln1/l0;->e:Ljava/lang/String;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p3, p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p3
-
-    :cond_1
-    instance-of p1, p3, Ljava/util/Map;
-
-    if-eqz p1, :cond_2
-
-    check-cast p3, Ljava/util/Map;
-
-    invoke-interface {p3}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_2
-    instance-of p1, p3, Ljava/util/Collection;
-
-    if-eqz p1, :cond_3
-
-    move-object p1, p3
-
-    check-cast p1, Ljava/util/Collection;
+    move v0, v1
 
     :goto_0
-    return-object p1
+    mul-int/lit8 v0, v0, 0x1f
 
-    :cond_3
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    iget-object v2, p0, Lp3/k0;->b:Ljava/lang/Long;
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    if-eqz v2, :cond_1
 
-    throw p1
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
-    :cond_4
-    new-instance p2, Ljava/util/ArrayList;
+    move-result v2
 
-    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
+    goto :goto_1
 
-    invoke-virtual {p1, p3, p2}, Ln1/l0;->d(Ljava/lang/Object;Ljava/util/ArrayList;)V
+    :cond_1
+    move v2, v1
 
-    return-object p2
+    :goto_1
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lp3/k0;->c:Ljava/lang/Long;
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :cond_2
+    add-int/2addr v0, v1
+
+    return v0
 .end method

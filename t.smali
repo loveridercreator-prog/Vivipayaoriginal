@@ -1,54 +1,33 @@
-.class public final Ln3/t;
-.super Ljava/lang/IllegalArgumentException;
+.class public abstract Lp3/t;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lf5/t;
 
+# static fields
+.field public static final a:Lm6/b;
 
-# instance fields
-.field public final e:Lio/ktor/websocket/q;
+.field public static final b:Lb4/a;
 
 
 # direct methods
-.method public constructor <init>(Lio/ktor/websocket/q;)V
+.method static constructor <clinit>()V
     .locals 2
 
-    const-string v0, "frame"
+    const-string v0, "io.ktor.client.plugins.HttpCallValidator"
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Unsupported frame type: "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0}, Lk3/e;->c(Ljava/lang/String;)Lm6/b;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    sput-object v0, Lp3/t;->a:Lm6/b;
 
-    iput-object p1, p0, Ln3/t;->e:Lio/ktor/websocket/q;
+    new-instance v0, Lb4/a;
+
+    const-string v1, "ExpectSuccessAttributeKey"
+
+    invoke-direct {v0, v1}, Lb4/a;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lp3/t;->b:Lb4/a;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()Ljava/lang/Throwable;
-    .locals 2
-
-    new-instance v0, Ln3/t;
-
-    iget-object v1, p0, Ln3/t;->e:Lio/ktor/websocket/q;
-
-    invoke-direct {v0, v1}, Ln3/t;-><init>(Lio/ktor/websocket/q;)V
-
-    invoke-virtual {v0, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    return-object v0
 .end method

@@ -1,63 +1,17 @@
-.class public final Ln5/j;
+.class public interface abstract Lp4/j;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Iterable;
-.implements Lx4/a;
-
-
-# instance fields
-.field public final synthetic e:I
-
-.field public final synthetic f:Ln5/g;
-
-
-# direct methods
-.method public synthetic constructor <init>(Ln5/g;I)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p2, p0, Ln5/j;->e:I
-
-    iput-object p1, p0, Ln5/j;->f:Ln5/g;
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .locals 3
+.method public abstract G(Lp4/i;)Lp4/j;
+.end method
 
-    iget v0, p0, Ln5/j;->e:I
+.method public abstract J(Ljava/lang/Object;Lv4/e;)Ljava/lang/Object;
+.end method
 
-    iget-object v1, p0, Ln5/j;->f:Ln5/g;
+.method public abstract K(Lp4/j;)Lp4/j;
+.end method
 
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Ln5/i;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v0, v1, v2}, Ln5/i;-><init>(Ln5/g;I)V
-
-    return-object v0
-
-    :pswitch_0
-    new-instance v0, Ln5/i;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ln5/i;-><init>(Ln5/g;I)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public abstract x(Lp4/i;)Lp4/h;
 .end method

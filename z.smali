@@ -1,61 +1,75 @@
-.class public final Ln1/z;
-.super Ljava/lang/Object;
+.class public final Lp3/z;
+.super Lr4/c;
 .source "SourceFile"
-
-# interfaces
-.implements Ln1/e0;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public e:Lp3/a0;
 
-.field public final b:J
+.field public f:Lp3/p0;
 
-.field public final c:Z
+.field public g:Lt3/d;
+
+.field public h:Lj3/e;
+
+.field public i:Lw4/r;
+
+.field public j:Lw4/r;
+
+.field public k:Lw3/f0;
+
+.field public l:Ljava/lang/String;
+
+.field public m:Lw4/r;
+
+.field public n:Z
+
+.field public synthetic o:Ljava/lang/Object;
+
+.field public final synthetic p:Lp3/a0;
+
+.field public q:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Z)V
-    .locals 2
+.method public constructor <init>(Lp3/a0;Lp4/e;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lp3/z;->p:Lp3/a0;
 
-    iput-object p1, p0, Ln1/z;->a:Ljava/lang/String;
-
-    invoke-static {p1}, Lv1/r;->t(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Ln1/z;->b:J
-
-    iput-boolean p2, p0, Ln1/z;->c:Z
+    invoke-direct {p0, p2}, Lr4/c;-><init>(Lp4/e;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ln1/l0;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    iget-boolean p2, p0, Ln1/z;->c:Z
+    iput-object p1, p0, Lp3/z;->o:Ljava/lang/Object;
 
-    iget-object v0, p0, Ln1/z;->a:Ljava/lang/String;
+    iget p1, p0, Lp3/z;->q:I
 
-    if-eqz p2, :cond_0
+    const/high16 v0, -0x80000000
 
-    new-instance p2, Ljava/util/ArrayList;
+    or-int/2addr p1, v0
 
-    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
+    iput p1, p0, Lp3/z;->q:I
 
-    invoke-virtual {p1, p3, v0, p2}, Ln1/l0;->e(Ljava/lang/Object;Ljava/lang/String;Ljava/util/ArrayList;)V
+    iget-object v0, p0, Lp3/z;->p:Lp3/a0;
 
-    return-object p2
+    const/4 v1, 0x0
 
-    :cond_0
-    iget-wide v1, p0, Ln1/z;->b:J
+    const/4 v2, 0x0
 
-    invoke-virtual {p1, p3, v0, v1, v2}, Ln1/l0;->h(Ljava/lang/Object;Ljava/lang/String;J)Ljava/lang/Object;
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    move-object v5, p0
+
+    invoke-static/range {v0 .. v5}, Lp3/a0;->c(Lp3/a0;Lp3/p0;Lt3/d;Lk3/b;Lj3/e;Lp4/e;)Ljava/lang/Object;
 
     move-result-object p1
 

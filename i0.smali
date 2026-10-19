@@ -1,90 +1,46 @@
-.class public final Ln1/i0;
+.class public final Lp3/i0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ln1/e0;
+.implements Lp3/p0;
 
 
-# static fields
-.field public static final a:Ln1/i0;
+# instance fields
+.field public final a:Lv4/f;
+
+.field public final b:Lp3/p0;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lv4/f;Lp3/p0;)V
     .locals 1
 
-    new-instance v0, Ln1/i0;
+    const-string v0, "interceptor"
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sput-object v0, Ln1/i0;->a:Ln1/i0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lp3/i0;->a:Lv4/f;
+
+    iput-object p2, p0, Lp3/i0;->b:Lp3/p0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ln1/l0;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a(Lt3/d;Lp4/e;)Ljava/lang/Object;
+    .locals 2
 
-    if-nez p3, :cond_0
+    iget-object v0, p0, Lp3/i0;->a:Lv4/f;
 
-    const-string p1, "null"
+    iget-object v1, p0, Lp3/i0;->b:Lp3/p0;
 
-    goto :goto_1
+    invoke-interface {v0, v1, p1, p2}, Lv4/f;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_0
-    instance-of p1, p3, Ljava/util/Collection;
+    move-result-object p1
 
-    if-eqz p1, :cond_1
-
-    const-string p1, "array"
-
-    goto :goto_1
-
-    :cond_1
-    instance-of p1, p3, Ljava/lang/Number;
-
-    if-eqz p1, :cond_2
-
-    const-string p1, "number"
-
-    goto :goto_1
-
-    :cond_2
-    instance-of p1, p3, Ljava/lang/Boolean;
-
-    if-eqz p1, :cond_3
-
-    const-string p1, "boolean"
-
-    goto :goto_1
-
-    :cond_3
-    instance-of p1, p3, Ljava/lang/String;
-
-    if-nez p1, :cond_5
-
-    instance-of p1, p3, Ljava/util/UUID;
-
-    if-nez p1, :cond_5
-
-    instance-of p1, p3, Ljava/lang/Enum;
-
-    if-eqz p1, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    const-string p1, "object"
-
-    goto :goto_1
-
-    :cond_5
-    :goto_0
-    const-string p1, "string"
-
-    :goto_1
     return-object p1
 .end method

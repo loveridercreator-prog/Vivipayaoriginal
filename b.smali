@@ -1,46 +1,39 @@
-.class public abstract Lo6/b;
+.class public abstract Lp4/b;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lm6/b;
-.implements Ljava/io/Serializable;
+.implements Lp4/i;
 
 
-# virtual methods
-.method public e(Ljava/lang/String;)V
-    .locals 0
+# instance fields
+.field public final e:Lv4/c;
 
-    invoke-interface {p0}, Lm6/b;->b()Z
+.field public final f:Lp4/i;
 
-    move-result p1
 
-    if-eqz p1, :cond_0
+# direct methods
+.method public constructor <init>(Lp4/i;Lf5/v;)V
+    .locals 1
 
-    const/4 p1, 0x2
+    const-string v0, "baseKey"
 
-    invoke-virtual {p0, p1}, Lo6/b;->j(I)V
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_0
-    return-void
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public g(Ljava/lang/String;)V
-    .locals 0
+    iput-object p2, p0, Lp4/b;->e:Lv4/c;
 
-    invoke-interface {p0}, Lm6/b;->d()Z
+    instance-of p2, p1, Lp4/b;
 
-    move-result p1
+    if-eqz p2, :cond_0
 
-    if-eqz p1, :cond_0
+    check-cast p1, Lp4/b;
 
-    const/4 p1, 0x5
-
-    invoke-virtual {p0, p1}, Lo6/b;->j(I)V
+    iget-object p1, p1, Lp4/b;->f:Lp4/i;
 
     :cond_0
-    return-void
-.end method
+    iput-object p1, p0, Lp4/b;->f:Lp4/i;
 
-.method public abstract j(I)V
+    return-void
 .end method

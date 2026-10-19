@@ -1,27 +1,56 @@
-.class public final Lo6/a;
-.super Ljava/lang/InheritableThreadLocal;
+.class public final Lp6/a;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lq6/a;
+
+
+# instance fields
+.field public final a:Lc6/a;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lc6/a;
+
+    const/16 v1, 0x1d
+
+    invoke-direct {v0, v1}, Lc6/a;-><init>(I)V
+
+    iput-object v0, p0, Lp6/a;->a:Lc6/a;
+
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final childValue(Ljava/lang/Object;)Ljava/lang/Object;
+.method public a()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public b()Ljava/lang/String;
     .locals 1
 
-    check-cast p1, Ljava/util/Map;
+    const-string v0, "2.0.99"
 
-    if-nez p1, :cond_0
+    return-object v0
+.end method
 
-    const/4 p1, 0x0
+.method public c()Lm6/a;
+    .locals 1
 
-    goto :goto_0
+    iget-object v0, p0, Lp6/a;->a:Lc6/a;
 
-    :cond_0
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0, p1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
-
-    move-object p1, v0
-
-    :goto_0
-    return-object p1
+    return-object v0
 .end method

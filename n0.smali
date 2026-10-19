@@ -1,119 +1,53 @@
-.class public abstract Ln1/n0;
+.class public final Lp3/n0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/io/Closeable;
+
+# static fields
+.field public static final d:Lp3/m0;
+
+.field public static final e:Lb4/a;
 
 
-# virtual methods
-.method public a()Ljava/lang/String;
-    .locals 4
+# instance fields
+.field public final a:Ljava/lang/Long;
 
-    move-object v0, p0
+.field public final b:Ljava/lang/Long;
 
-    check-cast v0, Lt5/e0;
+.field public final c:Ljava/lang/Long;
 
-    iget-object v0, v0, Lt5/e0;->g:Lg6/i;
 
-    :try_start_0
-    move-object v1, p0
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-    check-cast v1, Lt5/e0;
+    new-instance v0, Lp3/m0;
 
-    iget v2, v1, Lt5/e0;->e:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v1, v1, Lt5/e0;->h:Ljava/lang/Object;
+    sput-object v0, Lp3/n0;->d:Lp3/m0;
 
-    const/4 v3, 0x0
+    new-instance v0, Lb4/a;
 
-    packed-switch v2, :pswitch_data_0
+    const-string v1, "TimeoutPlugin"
 
-    check-cast v1, Ljava/lang/String;
+    invoke-direct {v0, v1}, Lb4/a;-><init>(Ljava/lang/String;)V
 
-    if-nez v1, :cond_0
+    sput-object v0, Lp3/n0;->e:Lb4/a;
 
-    move-object v1, v3
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v2, Lt5/u;->c:Ljava/util/regex/Pattern;
-
-    invoke-static {v1}, Lx1/h;->w(Ljava/lang/String;)Lt5/u;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :pswitch_0
-    check-cast v1, Lt5/u;
-
-    :goto_0
-    if-nez v1, :cond_1
-
-    move-object v1, v3
-
-    goto :goto_1
-
-    :cond_1
-    sget-object v2, Ld5/a;->a:Ljava/nio/charset/Charset;
-
-    invoke-virtual {v1, v2}, Lt5/u;->a(Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
-
-    move-result-object v1
-
-    :goto_1
-    if-nez v1, :cond_2
-
-    sget-object v1, Ld5/a;->a:Ljava/nio/charset/Charset;
-
-    :cond_2
-    invoke-static {v0, v1}, Lu5/b;->s(Lg6/i;Ljava/nio/charset/Charset;)Ljava/nio/charset/Charset;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lg6/i;->Y(Ljava/nio/charset/Charset;)Ljava/lang/String;
-
-    move-result-object v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-static {v0, v3}, Ls1/d;->d(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    :try_start_1
-    throw v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :catchall_1
-    move-exception v2
-
-    invoke-static {v0, v1}, Ls1/d;->d(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
-    throw v2
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method
 
-.method public close()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;)V
+    .locals 0
 
-    move-object v0, p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    check-cast v0, Lt5/e0;
+    iput-object p1, p0, Lp3/n0;->a:Ljava/lang/Long;
 
-    iget-object v0, v0, Lt5/e0;->g:Lg6/i;
+    iput-object p2, p0, Lp3/n0;->b:Ljava/lang/Long;
 
-    invoke-static {v0}, Lu5/b;->c(Ljava/io/Closeable;)V
+    iput-object p3, p0, Lp3/n0;->c:Ljava/lang/Long;
 
     return-void
 .end method
