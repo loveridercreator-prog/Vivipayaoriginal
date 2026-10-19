@@ -1,119 +1,160 @@
-.class public abstract Li/k0;
+.class public final Ln1/k0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ln1/e0;
+
+
+# static fields
+.field public static final b:Ln1/k0;
+
+.field public static final c:Ln1/k0;
+
+.field public static final d:Ln1/k0;
+
+
+# instance fields
+.field public final a:Z
+
 
 # direct methods
-.method public static a(Landroid/view/DragEvent;Landroid/widget/TextView;Landroid/app/Activity;)Z
+.method static constructor <clinit>()V
     .locals 2
 
-    invoke-virtual {p2, p0}, Landroid/app/Activity;->requestDragAndDropPermissions(Landroid/view/DragEvent;)Landroid/view/DragAndDropPermissions;
+    new-instance v0, Ln1/k0;
 
-    invoke-virtual {p0}, Landroid/view/DragEvent;->getX()F
+    const/4 v1, 0x0
 
-    move-result p2
+    invoke-direct {v0, v1}, Ln1/k0;-><init>(Z)V
 
-    invoke-virtual {p0}, Landroid/view/DragEvent;->getY()F
+    sput-object v0, Ln1/k0;->b:Ln1/k0;
 
-    move-result v0
+    new-instance v0, Ln1/k0;
 
-    invoke-virtual {p1, p2, v0}, Landroid/widget/TextView;->getOffsetForPosition(FF)I
+    const/4 v1, 0x1
 
-    move-result p2
+    invoke-direct {v0, v1}, Ln1/k0;-><init>(Z)V
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->beginBatchEdit()V
+    sput-object v0, Ln1/k0;->c:Ln1/k0;
 
-    :try_start_0
-    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    new-instance v0, Ln1/k0;
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Ln1/k0;-><init>(Z)V
 
-    check-cast v0, Landroid/text/Spannable;
+    sput-object v0, Ln1/k0;->d:Ln1/k0;
 
-    invoke-static {v0, p2}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
-
-    invoke-virtual {p0}, Landroid/view/DragEvent;->getClipData()Landroid/content/ClipData;
-
-    move-result-object p0
-
-    sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v0, 0x1f
-
-    const/4 v1, 0x3
-
-    if-lt p2, v0, :cond_0
-
-    new-instance p2, Lu0/d;
-
-    invoke-direct {p2, p0, v1}, Lu0/d;-><init>(Landroid/content/ClipData;I)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p2, Lu0/f;
-
-    invoke-direct {p2, p0, v1}, Lu0/f;-><init>(Landroid/content/ClipData;I)V
-
-    :goto_0
-    invoke-interface {p2}, Lu0/e;->a()Lu0/h;
-
-    move-result-object p0
-
-    invoke-static {p1, p0}, Lu0/n0;->f(Landroid/view/View;Lu0/h;)Lu0/h;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {p1}, Landroid/widget/TextView;->endBatchEdit()V
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :catchall_0
-    move-exception p0
-
-    invoke-virtual {p1}, Landroid/widget/TextView;->endBatchEdit()V
-
-    throw p0
+    return-void
 .end method
 
-.method public static b(Landroid/view/DragEvent;Landroid/view/View;Landroid/app/Activity;)Z
+.method public constructor <init>(Z)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-boolean p1, p0, Ln1/k0;->a:Z
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ln1/l0;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    invoke-virtual {p2, p0}, Landroid/app/Activity;->requestDragAndDropPermissions(Landroid/view/DragEvent;)Landroid/view/DragAndDropPermissions;
+    iget-boolean p2, p0, Ln1/k0;->a:Z
 
-    invoke-virtual {p0}, Landroid/view/DragEvent;->getClipData()Landroid/content/ClipData;
+    if-nez p2, :cond_4
 
-    move-result-object p0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
+    if-nez p3, :cond_0
 
-    const/16 v0, 0x1f
-
-    const/4 v1, 0x3
-
-    if-lt p2, v0, :cond_0
-
-    new-instance p2, Lu0/d;
-
-    invoke-direct {p2, p0, v1}, Lu0/d;-><init>(Landroid/content/ClipData;I)V
+    const/4 p1, 0x0
 
     goto :goto_0
 
     :cond_0
-    new-instance p2, Lu0/f;
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p2, p0, v1}, Lu0/f;-><init>(Landroid/content/ClipData;I)V
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Ln1/l0;->g(Ljava/lang/Class;)Ls1/l0;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_1
+
+    :try_start_0
+    invoke-virtual {p2, p3}, Ls1/l0;->j(Ljava/lang/Object;)Ljava/util/ArrayList;
+
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p2
+
+    new-instance p3, Ln1/m0;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "jsonpath error, path "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p1, p1, Ln1/l0;->e:Ljava/lang/String;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p3, p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p3
+
+    :cond_1
+    instance-of p1, p3, Ljava/util/Map;
+
+    if-eqz p1, :cond_2
+
+    check-cast p3, Ljava/util/Map;
+
+    invoke-interface {p3}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_2
+    instance-of p1, p3, Ljava/util/Collection;
+
+    if-eqz p1, :cond_3
+
+    move-object p1, p3
+
+    check-cast p1, Ljava/util/Collection;
 
     :goto_0
-    invoke-interface {p2}, Lu0/e;->a()Lu0/h;
+    return-object p1
 
-    move-result-object p0
+    :cond_3
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
 
-    invoke-static {p1, p0}, Lu0/n0;->f(Landroid/view/View;Lu0/h;)Lu0/h;
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    const/4 p0, 0x1
+    throw p1
 
-    return p0
+    :cond_4
+    new-instance p2, Ljava/util/ArrayList;
+
+    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-virtual {p1, p3, p2}, Ln1/l0;->d(Ljava/lang/Object;Ljava/util/ArrayList;)V
+
+    return-object p2
 .end method

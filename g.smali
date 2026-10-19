@@ -1,17 +1,38 @@
-.class public interface abstract annotation Lm5/g;
+.class public interface abstract Ln5/g;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/annotation/Annotation;
-
-
-# annotations
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
-
 
 # virtual methods
-.method public abstract value()Ljava/lang/String;
+.method public abstract a(I)Ljava/lang/String;
+.end method
+
+.method public abstract b()Z
+.end method
+
+.method public abstract c(Ljava/lang/String;)I
+.end method
+
+.method public abstract d()Ljava/lang/String;
+.end method
+
+.method public abstract f()Z
+.end method
+
+.method public abstract g(I)Ljava/util/List;
+.end method
+
+.method public abstract h(I)Ln5/g;
+.end method
+
+.method public abstract i()Ln5/n;
+.end method
+
+.method public abstract j(I)Z
+.end method
+
+.method public abstract k()Ljava/util/List;
+.end method
+
+.method public abstract l()I
 .end method

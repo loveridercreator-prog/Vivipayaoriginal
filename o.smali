@@ -1,47 +1,45 @@
-.class public Lm5/o;
-.super Lm5/i;
+.class public final Ln5/o;
+.super Ln5/p;
 .source "SourceFile"
 
 
+# static fields
+.field public static final a:Ln5/o;
+
+.field public static final b:Ln5/o;
+
+.field public static final c:Ln5/o;
+
+.field public static final d:Ln5/o;
+
+
 # direct methods
-.method public constructor <init>(I)V
+.method static synthetic constructor <clinit>()V
     .locals 1
 
-    const-string v0, "An unknown field for index "
+    new-instance v0, Ln5/o;
 
-    .line 1
-    invoke-static {v0, p1}, Landroidx/fragment/app/u;->i(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p1
+    sput-object v0, Ln5/o;->a:Ln5/o;
 
-    const/4 v0, 0x0
+    new-instance v0, Ln5/o;
 
-    .line 2
-    invoke-direct {p0, p1, v0}, Lm5/o;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    sput-object v0, Ln5/o;->b:Ln5/o;
 
-.method public constructor <init>(Ljava/lang/String;I)V
-    .locals 1
+    new-instance v0, Ln5/o;
 
-    const/4 v0, 0x1
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    if-eq p2, v0, :cond_0
+    sput-object v0, Ln5/o;->c:Ln5/o;
 
-    .line 7
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    new-instance v0, Ln5/o;
 
-    return-void
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    :cond_0
-    const-string p2, "message"
-
-    .line 8
-    invoke-static {p1, p2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 9
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    sput-object v0, Ln5/o;->d:Ln5/o;
 
     return-void
 .end method

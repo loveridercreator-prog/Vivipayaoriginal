@@ -1,38 +1,29 @@
-.class public final synthetic Lm6/c;
-.super Ljava/lang/Object;
+.class public final Ln5/c;
+.super Ln5/d;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/security/PrivilegedAction;
 
+# static fields
+.field public static final a:Ln5/c;
 
-# instance fields
-.field public final synthetic a:Ljava/lang/ClassLoader;
+.field public static final b:Ln5/c;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/ClassLoader;)V
-    .locals 0
+.method static synthetic constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ln5/c;
 
-    iput-object p1, p0, Lm6/c;->a:Ljava/lang/ClassLoader;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ln5/c;->a:Ln5/c;
+
+    new-instance v0, Ln5/c;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ln5/c;->b:Ln5/c;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final run()Ljava/lang/Object;
-    .locals 2
-
-    const-class v0, Lq6/a;
-
-    iget-object v1, p0, Lm6/c;->a:Ljava/lang/ClassLoader;
-
-    invoke-static {v0, v1}, Ljava/util/ServiceLoader;->load(Ljava/lang/Class;Ljava/lang/ClassLoader;)Ljava/util/ServiceLoader;
-
-    move-result-object v0
-
-    return-object v0
 .end method

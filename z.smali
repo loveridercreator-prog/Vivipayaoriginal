@@ -1,90 +1,63 @@
-.class public final Ll4/z;
+.class public final Ln1/z;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ll4/e;
-.implements Ljava/io/Serializable;
+.implements Ln1/e0;
 
 
 # instance fields
-.field public e:Lv4/a;
+.field public final a:Ljava/lang/String;
 
-.field public f:Ljava/lang/Object;
+.field public final b:J
+
+.field public final c:Z
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;Z)V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ln1/z;->a:Ljava/lang/String;
+
+    invoke-static {p1}, Lv1/r;->t(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Ln1/z;->b:J
+
+    iput-boolean p2, p0, Ln1/z;->c:Z
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 2
+.method public final a(Ln1/l0;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Ll4/z;->f:Ljava/lang/Object;
+    iget-boolean p2, p0, Ln1/z;->c:Z
 
-    sget-object v1, Ll4/v;->a:Ll4/v;
+    iget-object v0, p0, Ln1/z;->a:Ljava/lang/String;
 
-    if-eq v0, v1, :cond_0
+    if-eqz p2, :cond_0
 
-    const/4 v0, 0x1
+    new-instance p2, Ljava/util/ArrayList;
 
-    goto :goto_0
+    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {p1, p3, v0, p2}, Ln1/l0;->e(Ljava/lang/Object;Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    :goto_0
-    return v0
-.end method
-
-.method public final getValue()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Ll4/z;->f:Ljava/lang/Object;
-
-    sget-object v1, Ll4/v;->a:Ll4/v;
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p0, Ll4/z;->e:Lv4/a;
-
-    invoke-static {v0}, Lk3/e;->i(Ljava/lang/Object;)V
-
-    invoke-interface {v0}, Lv4/a;->invoke()Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ll4/z;->f:Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ll4/z;->e:Lv4/a;
+    return-object p2
 
     :cond_0
-    iget-object v0, p0, Ll4/z;->f:Ljava/lang/Object;
+    iget-wide v1, p0, Ln1/z;->b:J
 
-    return-object v0
-.end method
+    invoke-virtual {p1, p3, v0, v1, v2}, Ln1/l0;->h(Ljava/lang/Object;Ljava/lang/String;J)Ljava/lang/Object;
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    move-result-object p1
 
-    invoke-virtual {p0}, Ll4/z;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Ll4/z;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "Lazy value not initialized yet."
-
-    :goto_0
-    return-object v0
+    return-object p1
 .end method

@@ -1,3 +1,3 @@
-.class public interface abstract Lm5/f;
-.super Ljava/lang/Object;
+.class public abstract Ln5/f;
+.super Ln5/n;
 .source "SourceFile"

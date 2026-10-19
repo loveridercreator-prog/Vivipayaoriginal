@@ -1,61 +1,54 @@
-.class public abstract Lm4/t;
-.super Lr2/f;
+.class public final Ln3/t;
+.super Ljava/lang/IllegalArgumentException;
 .source "SourceFile"
+
+# interfaces
+.implements Lf5/t;
+
+
+# instance fields
+.field public final e:Lio/ktor/websocket/q;
 
 
 # direct methods
-.method public static b0(Ljava/util/Set;Ljava/util/Set;)Ljava/util/LinkedHashSet;
+.method public constructor <init>(Lio/ktor/websocket/q;)V
     .locals 2
 
-    const-string v0, "<this>"
-
-    invoke-static {p0, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "elements"
+    const-string v0, "frame"
 
     invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-interface {p1}, Ljava/util/Collection;->size()I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result v0
+    const-string v1, "Unsupported frame type: "
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
+    iput-object p1, p0, Ln3/t;->e:Lio/ktor/websocket/q;
 
-    move-result v0
+    return-void
+.end method
 
-    invoke-interface {p0}, Ljava/util/Set;->size()I
 
-    move-result v1
+# virtual methods
+.method public final a()Ljava/lang/Throwable;
+    .locals 2
 
-    add-int/2addr v1, v0
+    new-instance v0, Ln3/t;
 
-    goto :goto_0
+    iget-object v1, p0, Ln3/t;->e:Lio/ktor/websocket/q;
 
-    :cond_0
-    invoke-interface {p0}, Ljava/util/Set;->size()I
+    invoke-direct {v0, v1}, Ln3/t;-><init>(Lio/ktor/websocket/q;)V
 
-    move-result v0
+    invoke-virtual {v0, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    mul-int/lit8 v1, v0, 0x2
-
-    :goto_0
-    invoke-static {v1}, Ls1/d;->t(I)I
-
-    move-result v0
-
-    new-instance v1, Ljava/util/LinkedHashSet;
-
-    invoke-direct {v1, v0}, Ljava/util/LinkedHashSet;-><init>(I)V
-
-    invoke-virtual {v1, p0}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
-
-    invoke-static {p1, v1}, Lm4/j;->X(Ljava/lang/Iterable;Ljava/util/AbstractCollection;)V
-
-    return-object v1
+    return-object v0
 .end method

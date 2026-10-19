@@ -1,80 +1,56 @@
-.class public final Lm5/j;
-.super Lw4/i;
+.class public final Ln5/j;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lv4/a;
+.implements Ljava/lang/Iterable;
+.implements Lx4/a;
 
 
 # instance fields
 .field public final synthetic e:I
 
-.field public final synthetic f:Ljava/util/List;
+.field public final synthetic f:Ln5/g;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/util/List;)V
+.method public synthetic constructor <init>(Ln5/g;I)V
     .locals 0
 
-    iput p1, p0, Lm5/j;->e:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lm5/j;->f:Ljava/util/List;
+    iput p2, p0, Ln5/j;->e:I
 
-    const/4 p1, 0x0
-
-    invoke-direct {p0, p1}, Lw4/i;-><init>(I)V
+    iput-object p1, p0, Ln5/j;->f:Ln5/g;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lb5/c;
+.method public final iterator()Ljava/util/Iterator;
     .locals 3
 
-    iget v0, p0, Lm5/j;->e:I
+    iget v0, p0, Ln5/j;->e:I
 
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Lm5/j;->f:Ljava/util/List;
+    iget-object v1, p0, Ln5/j;->f:Ln5/g;
 
     packed-switch v0, :pswitch_data_0
 
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    new-instance v0, Ln5/i;
 
-    move-result-object v0
+    const/4 v2, 0x1
 
-    check-cast v0, Lb5/g;
-
-    invoke-interface {v0}, Lb5/g;->c()Lb5/c;
-
-    move-result-object v0
+    invoke-direct {v0, v1, v2}, Ln5/i;-><init>(Ln5/g;I)V
 
     return-object v0
 
     :pswitch_0
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    new-instance v0, Ln5/i;
 
-    move-result-object v0
+    const/4 v2, 0x0
 
-    check-cast v0, Lb5/g;
-
-    invoke-interface {v0}, Lb5/g;->c()Lb5/c;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_1
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lb5/g;
-
-    invoke-interface {v0}, Lb5/g;->c()Lb5/c;
-
-    move-result-object v0
+    invoke-direct {v0, v1, v2}, Ln5/i;-><init>(Ln5/g;I)V
 
     return-object v0
 
@@ -82,49 +58,6 @@
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invoke()Ljava/lang/Object;
-    .locals 1
-
-    iget v0, p0, Lm5/j;->e:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lm5/j;->f:Ljava/util/List;
-
-    return-object v0
-
-    :pswitch_0
-    invoke-virtual {p0}, Lm5/j;->a()Lb5/c;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_1
-    invoke-virtual {p0}, Lm5/j;->a()Lb5/c;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_2
-    invoke-virtual {p0}, Lm5/j;->a()Lb5/c;
-
-    move-result-object v0
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

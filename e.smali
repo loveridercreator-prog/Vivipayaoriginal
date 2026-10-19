@@ -1,81 +1,85 @@
-.class public final Lm5/e;
-.super Lp5/b;
+.class public final Ln5/e;
+.super Ln5/f;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lb5/b;
+# static fields
+.field public static final a:Ln5/e;
 
-.field public final b:Lm4/n;
+.field public static final b:Ln5/e;
 
-.field public final c:Ll4/e;
+.field public static final c:Ln5/e;
+
+.field public static final d:Ln5/e;
+
+.field public static final e:Ln5/e;
+
+.field public static final f:Ln5/e;
+
+.field public static final g:Ln5/e;
+
+.field public static final h:Ln5/e;
+
+.field public static final i:Ln5/e;
 
 
 # direct methods
-.method public constructor <init>(Lw4/d;)V
-    .locals 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lm5/e;->a:Lb5/b;
-
-    sget-object p1, Lm4/n;->e:Lm4/n;
-
-    iput-object p1, p0, Lm5/e;->b:Lm4/n;
-
-    sget-object p1, Ll4/f;->e:Ll4/f;
-
-    new-instance v0, Lc0/d;
-
-    const/16 v1, 0x9
-
-    invoke-direct {v0, v1, p0}, Lc0/d;-><init>(ILjava/lang/Object;)V
-
-    invoke-static {p1, v0}, Lb5/k;->w(Ll4/f;Lv4/a;)Ll4/e;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lm5/e;->c:Ll4/e;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final getDescriptor()Ln5/g;
+.method static synthetic constructor <clinit>()V
     .locals 1
 
-    iget-object v0, p0, Lm5/e;->c:Ll4/e;
+    new-instance v0, Ln5/e;
 
-    invoke-interface {v0}, Ll4/e;->getValue()Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    sput-object v0, Ln5/e;->a:Ln5/e;
 
-    check-cast v0, Ln5/g;
+    new-instance v0, Ln5/e;
 
-    return-object v0
-.end method
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    sput-object v0, Ln5/e;->b:Ln5/e;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v0, Ln5/e;
 
-    const-string v1, "kotlinx.serialization.PolymorphicSerializer(baseClass: "
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    sput-object v0, Ln5/e;->c:Ln5/e;
 
-    iget-object v1, p0, Lm5/e;->a:Lb5/b;
+    new-instance v0, Ln5/e;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x29
+    sput-object v0, Ln5/e;->d:Ln5/e;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    new-instance v0, Ln5/e;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    sput-object v0, Ln5/e;->e:Ln5/e;
 
-    return-object v0
+    new-instance v0, Ln5/e;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ln5/e;->f:Ln5/e;
+
+    new-instance v0, Ln5/e;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ln5/e;->g:Ln5/e;
+
+    new-instance v0, Ln5/e;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ln5/e;->h:Ln5/e;
+
+    new-instance v0, Ln5/e;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ln5/e;->i:Ln5/e;
+
+    return-void
 .end method
