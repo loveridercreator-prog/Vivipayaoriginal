@@ -1,5 +1,5 @@
-.class public final Lcom/google/firebase/ai/common/ServiceDisabledException;
-.super Lcom/google/firebase/ai/common/FirebaseCommonAIException;
+.class public final Lcom/google/firebase/ai/type/ServiceDisabledException;
+.super Lcom/google/firebase/ai/type/FirebaseAIException;
 .source "SourceFile"
 
 
@@ -11,10 +11,8 @@
 
     invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x0
-
     .line 2
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/firebase/ai/common/FirebaseCommonAIException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Lw4/f;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/firebase/ai/type/FirebaseAIException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
@@ -30,7 +28,7 @@
 
     .line 1
     :cond_0
-    invoke-direct {p0, p1, p2}, Lcom/google/firebase/ai/common/ServiceDisabledException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/firebase/ai/type/ServiceDisabledException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

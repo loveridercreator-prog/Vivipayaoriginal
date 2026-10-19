@@ -1,5 +1,5 @@
-.class public final Lcom/google/firebase/ai/common/UnsupportedUserLocationException;
-.super Lcom/google/firebase/ai/common/FirebaseCommonAIException;
+.class public final Lcom/google/firebase/ai/type/UnsupportedUserLocationException;
+.super Lcom/google/firebase/ai/type/FirebaseAIException;
 .source "SourceFile"
 
 
@@ -12,20 +12,18 @@
 
     const/4 v1, 0x1
 
-    invoke-direct {p0, v0, v1, v0}, Lcom/google/firebase/ai/common/UnsupportedUserLocationException;-><init>(Ljava/lang/Throwable;ILw4/f;)V
+    invoke-direct {p0, v0, v1, v0}, Lcom/google/firebase/ai/type/UnsupportedUserLocationException;-><init>(Ljava/lang/Throwable;ILw4/f;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 2
+    .locals 1
 
     const-string v0, "User location is not supported for the API use."
 
-    const/4 v1, 0x0
-
     .line 3
-    invoke-direct {p0, v0, p1, v1}, Lcom/google/firebase/ai/common/FirebaseCommonAIException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Lw4/f;)V
+    invoke-direct {p0, v0, p1}, Lcom/google/firebase/ai/type/FirebaseAIException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
@@ -41,7 +39,7 @@
 
     .line 2
     :cond_0
-    invoke-direct {p0, p1}, Lcom/google/firebase/ai/common/UnsupportedUserLocationException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {p0, p1}, Lcom/google/firebase/ai/type/UnsupportedUserLocationException;-><init>(Ljava/lang/Throwable;)V
 
     return-void
 .end method
