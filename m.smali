@@ -1,43 +1,109 @@
-.class public Landroidx/fragment/app/m;
-.super Ljava/lang/RuntimeException;
+.class public final enum Landroidx/lifecycle/m;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
+# static fields
+.field public static final enum e:Landroidx/lifecycle/m;
+
+.field public static final enum f:Landroidx/lifecycle/m;
+
+.field public static final enum g:Landroidx/lifecycle/m;
+
+.field public static final enum h:Landroidx/lifecycle/m;
+
+.field public static final enum i:Landroidx/lifecycle/m;
+
+.field public static final synthetic j:[Landroidx/lifecycle/m;
+
+
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Landroid/os/Parcel;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 7
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->dataPosition()I
+    new-instance v0, Landroidx/lifecycle/m;
 
-    move-result v0
+    const-string v1, "DESTROYED"
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->dataSize()I
+    const/4 v2, 0x0
 
-    move-result p2
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    sput-object v0, Landroidx/lifecycle/m;->e:Landroidx/lifecycle/m;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v1, Landroidx/lifecycle/m;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "INITIALIZED"
 
-    const-string p1, " Parcel: pos="
+    const/4 v3, 0x1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    sput-object v1, Landroidx/lifecycle/m;->f:Landroidx/lifecycle/m;
 
-    const-string p1, " size="
+    new-instance v2, Landroidx/lifecycle/m;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v3, "CREATED"
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/4 v4, 0x2
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    move-result-object p1
+    sput-object v2, Landroidx/lifecycle/m;->g:Landroidx/lifecycle/m;
 
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    new-instance v3, Landroidx/lifecycle/m;
+
+    const-string v4, "STARTED"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Landroidx/lifecycle/m;->h:Landroidx/lifecycle/m;
+
+    new-instance v4, Landroidx/lifecycle/m;
+
+    const-string v5, "RESUMED"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v4, Landroidx/lifecycle/m;->i:Landroidx/lifecycle/m;
+
+    filled-new-array {v0, v1, v2, v3, v4}, [Landroidx/lifecycle/m;
+
+    move-result-object v0
+
+    sput-object v0, Landroidx/lifecycle/m;->j:[Landroidx/lifecycle/m;
 
     return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Landroidx/lifecycle/m;
+    .locals 1
+
+    const-class v0, Landroidx/lifecycle/m;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Landroidx/lifecycle/m;
+
+    return-object p0
+.end method
+
+.method public static values()[Landroidx/lifecycle/m;
+    .locals 1
+
+    sget-object v0, Landroidx/lifecycle/m;->j:[Landroidx/lifecycle/m;
+
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Landroidx/lifecycle/m;
+
+    return-object v0
 .end method

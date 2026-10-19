@@ -1,241 +1,419 @@
-.class public final Landroidx/fragment/app/y;
+.class public Landroidx/lifecycle/y;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final b:Ll/k;
+.field public static final j:Ljava/lang/Object;
 
 
 # instance fields
-.field public final synthetic a:Landroidx/fragment/app/e0;
+.field public final a:Ljava/lang/Object;
+
+.field public final b:Lk/g;
+
+.field public c:I
+
+.field public d:Z
+
+.field public volatile e:Ljava/lang/Object;
+
+.field public volatile f:Ljava/lang/Object;
+
+.field public g:I
+
+.field public h:Z
+
+.field public i:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Ll/k;
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ll/k;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Landroidx/fragment/app/y;->b:Ll/k;
+    sput-object v0, Landroidx/lifecycle/y;->j:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroidx/fragment/app/e0;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Landroidx/fragment/app/y;->a:Landroidx/fragment/app/e0;
+    new-instance v0, Lk/g;
+
+    invoke-direct {v0}, Lk/g;-><init>()V
+
+    iput-object v0, p0, Landroidx/lifecycle/y;->b:Lk/g;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Landroidx/lifecycle/y;->c:I
+
+    sget-object v0, Landroidx/lifecycle/y;->j:Ljava/lang/Object;
+
+    iput-object v0, p0, Landroidx/lifecycle/y;->f:Ljava/lang/Object;
+
+    iput-object v0, p0, Landroidx/lifecycle/y;->e:Ljava/lang/Object;
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Landroidx/lifecycle/y;->g:I
 
     return-void
 .end method
 
-.method public static b(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/Class;
+.method public static a(Ljava/lang/String;)V
     .locals 3
 
-    sget-object v0, Landroidx/fragment/app/y;->b:Ll/k;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p0, v1}, Ll/k;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ll/k;
-
-    if-nez v2, :cond_0
-
-    new-instance v2, Ll/k;
-
-    invoke-direct {v2}, Ll/k;-><init>()V
-
-    invoke-virtual {v0, p0, v2}, Ll/k;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    invoke-virtual {v2, p1, v1}, Ll/k;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {}, Lj/b;->c()Lj/b;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Class;
+    iget-object v0, v0, Lj/b;->a:Lj/d;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v1
+
+    if-ne v0, v1, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Cannot invoke "
+
+    const-string v2, " on a background thread"
+
+    invoke-static {v1, p0, v2}, Landroidx/fragment/app/u;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+
+# virtual methods
+.method public final b(Landroidx/lifecycle/x;)V
+    .locals 5
+
+    iget-boolean v0, p1, Landroidx/lifecycle/x;->f:Z
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroidx/lifecycle/x;->e()Z
+
+    move-result v0
 
     if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0, p0}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v2, p1, v0}, Ll/k;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_1
-    return-object v0
-.end method
-
-.method public static c(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/Class;
-    .locals 3
-
-    const-string v0, "Unable to instantiate fragment "
-
-    :try_start_0
-    invoke-static {p0, p1}, Landroidx/fragment/app/y;->b(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception p0
-
-    new-instance v1, Landroidx/fragment/app/m;
-
-    const-string v2, ": make sure class is a valid subclass of Fragment"
-
-    invoke-static {v0, p1, v2}, Landroidx/fragment/app/u;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v1, p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
-
-    :catch_1
-    move-exception p0
-
-    new-instance v1, Landroidx/fragment/app/m;
-
-    const-string v2, ": make sure class name exists"
-
-    invoke-static {v0, p1, v2}, Landroidx/fragment/app/u;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v1, p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
-
-# virtual methods
-.method public final a(Ljava/lang/String;)Landroidx/fragment/app/n;
-    .locals 5
-
-    iget-object v0, p0, Landroidx/fragment/app/y;->a:Landroidx/fragment/app/e0;
-
-    iget-object v0, v0, Landroidx/fragment/app/e0;->o:Landroidx/fragment/app/q;
-
-    iget-object v0, v0, Landroidx/fragment/app/q;->f:Landroid/content/Context;
-
-    sget-object v1, Landroidx/fragment/app/n;->S:Ljava/lang/Object;
-
-    const-string v1, ": make sure class name exists, is public, and has an empty constructor that is public"
-
-    const-string v2, "Unable to instantiate fragment "
-
-    :try_start_0
-    invoke-virtual {v0}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Landroidx/fragment/app/y;->c(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    const/4 v3, 0x0
-
-    new-array v4, v3, [Ljava/lang/Class;
-
-    invoke-virtual {v0, v4}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
-
-    move-result-object v0
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-virtual {v0, v3}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroidx/fragment/app/n;
-    :try_end_0
-    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_3
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
+    invoke-virtual {p1, v0}, Landroidx/lifecycle/x;->a(Z)V
 
     goto :goto_0
 
-    :catch_1
-    move-exception v0
+    :cond_1
+    iget v0, p1, Landroidx/lifecycle/x;->g:I
+
+    iget v1, p0, Landroidx/lifecycle/y;->g:I
+
+    if-lt v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iput v1, p1, Landroidx/lifecycle/x;->g:I
+
+    iget-object p1, p1, Landroidx/lifecycle/x;->e:La2/c;
+
+    iget-object v0, p0, Landroidx/lifecycle/y;->e:Ljava/lang/Object;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    check-cast v0, Landroidx/lifecycle/s;
+
+    if-eqz v0, :cond_5
+
+    iget-object v0, p1, La2/c;->e:Ljava/lang/Object;
+
+    check-cast v0, Landroidx/fragment/app/j;
+
+    iget-boolean v1, v0, Landroidx/fragment/app/j;->Y:Z
+
+    if-eqz v1, :cond_5
+
+    invoke-virtual {v0}, Landroidx/fragment/app/n;->z()Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v2
+
+    if-nez v2, :cond_4
+
+    iget-object v2, v0, Landroidx/fragment/app/j;->c0:Landroid/app/Dialog;
+
+    if-eqz v2, :cond_5
+
+    const/4 v2, 0x3
+
+    const-string v3, "FragmentManager"
+
+    invoke-static {v3, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v4, "DialogFragment "
+
+    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p1, " setting the content view on "
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p1, v0, Landroidx/fragment/app/j;->c0:Landroid/app/Dialog;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {v3, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_3
+    iget-object p1, v0, Landroidx/fragment/app/j;->c0:Landroid/app/Dialog;
+
+    invoke-virtual {p1, v1}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
+
+    goto :goto_0
+
+    :cond_4
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "DialogFragment can not be attached to a container view"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_5
+    :goto_0
+    return-void
+.end method
+
+.method public final c(Landroidx/lifecycle/x;)V
+    .locals 4
+
+    iget-boolean v0, p0, Landroidx/lifecycle/y;->h:Z
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_0
+
+    iput-boolean v1, p0, Landroidx/lifecycle/y;->i:Z
 
     goto :goto_1
 
-    :catch_2
-    move-exception v0
+    :cond_0
+    iput-boolean v1, p0, Landroidx/lifecycle/y;->h:Z
+
+    :cond_1
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroidx/lifecycle/y;->i:Z
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p0, p1}, Landroidx/lifecycle/y;->b(Landroidx/lifecycle/x;)V
+
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v1, p0, Landroidx/lifecycle/y;->b:Lk/g;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v2, Lk/d;
+
+    invoke-direct {v2, v1}, Lk/d;-><init>(Lk/g;)V
+
+    iget-object v1, v1, Lk/g;->g:Ljava/util/WeakHashMap;
+
+    sget-object v3, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-virtual {v1, v2, v3}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_3
+    invoke-virtual {v2}, Lk/d;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    invoke-virtual {v2}, Lk/d;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroidx/lifecycle/x;
+
+    invoke-virtual {p0, v1}, Landroidx/lifecycle/y;->b(Landroidx/lifecycle/x;)V
+
+    iget-boolean v1, p0, Landroidx/lifecycle/y;->i:Z
+
+    if-eqz v1, :cond_3
+
+    :cond_4
+    :goto_0
+    iget-boolean v1, p0, Landroidx/lifecycle/y;->i:Z
+
+    if-nez v1, :cond_1
+
+    iput-boolean v0, p0, Landroidx/lifecycle/y;->h:Z
+
+    :goto_1
+    return-void
+.end method
+
+.method public final d(La2/c;)V
+    .locals 4
+
+    const-string v0, "observeForever"
+
+    invoke-static {v0}, Landroidx/lifecycle/y;->a(Ljava/lang/String;)V
+
+    new-instance v0, Landroidx/lifecycle/w;
+
+    invoke-direct {v0, p0, p1}, Landroidx/lifecycle/x;-><init>(Landroidx/lifecycle/y;La2/c;)V
+
+    iget-object v1, p0, Landroidx/lifecycle/y;->b:Lk/g;
+
+    invoke-virtual {v1, p1}, Lk/g;->a(Ljava/lang/Object;)Lk/c;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    if-eqz v2, :cond_0
+
+    iget-object p1, v2, Lk/c;->f:Ljava/lang/Object;
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v2, Lk/c;
+
+    invoke-direct {v2, p1, v0}, Lk/c;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    iget p1, v1, Lk/g;->h:I
+
+    add-int/2addr p1, v3
+
+    iput p1, v1, Lk/g;->h:I
+
+    iget-object p1, v1, Lk/g;->f:Lk/c;
+
+    if-nez p1, :cond_1
+
+    iput-object v2, v1, Lk/g;->e:Lk/c;
+
+    iput-object v2, v1, Lk/g;->f:Lk/c;
+
+    goto :goto_0
+
+    :cond_1
+    iput-object v2, p1, Lk/c;->g:Lk/c;
+
+    iput-object p1, v2, Lk/c;->h:Lk/c;
+
+    iput-object v2, v1, Lk/g;->f:Lk/c;
+
+    :goto_0
+    const/4 p1, 0x0
+
+    :goto_1
+    check-cast p1, Landroidx/lifecycle/x;
+
+    instance-of v1, p1, Landroidx/lifecycle/LiveData$LifecycleBoundObserver;
+
+    if-nez v1, :cond_3
+
+    if-eqz p1, :cond_2
 
     goto :goto_2
 
-    :catch_3
-    move-exception v0
-
-    goto :goto_3
-
-    :goto_0
-    new-instance v1, Landroidx/fragment/app/m;
-
-    const-string v3, ": calling Fragment constructor caused an exception"
-
-    invoke-static {v2, p1, v3}, Landroidx/fragment/app/u;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v1, p1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
-
-    :goto_1
-    new-instance v1, Landroidx/fragment/app/m;
-
-    const-string v3, ": could not find Fragment constructor"
-
-    invoke-static {v2, p1, v3}, Landroidx/fragment/app/u;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v1, p1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
+    :cond_2
+    invoke-virtual {v0, v3}, Landroidx/lifecycle/x;->a(Z)V
 
     :goto_2
-    new-instance v3, Landroidx/fragment/app/m;
+    return-void
 
-    invoke-static {v2, p1, v1}, Landroidx/fragment/app/u;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    :cond_3
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    move-result-object p1
+    const-string v0, "Cannot add the same observer with different lifecycles"
 
-    invoke-direct {v3, p1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw p1
+.end method
 
-    :goto_3
-    new-instance v3, Landroidx/fragment/app/m;
+.method public final e(Ljava/lang/Object;)V
+    .locals 1
 
-    invoke-static {v2, p1, v1}, Landroidx/fragment/app/u;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const-string v0, "setValue"
 
-    move-result-object p1
+    invoke-static {v0}, Landroidx/lifecycle/y;->a(Ljava/lang/String;)V
 
-    invoke-direct {v3, p1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    iget v0, p0, Landroidx/lifecycle/y;->g:I
 
-    throw v3
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Landroidx/lifecycle/y;->g:I
+
+    iput-object p1, p0, Landroidx/lifecycle/y;->e:Ljava/lang/Object;
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Landroidx/lifecycle/y;->c(Landroidx/lifecycle/x;)V
+
+    return-void
 .end method

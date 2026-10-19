@@ -1,76 +1,29 @@
-.class public final Landroidx/fragment/app/o;
-.super Ljava/lang/Object;
+.class public final Landroidx/lifecycle/o;
+.super Landroidx/lifecycle/f;
 .source "SourceFile"
-
-# interfaces
-.implements Lg1/c;
-
-
-# instance fields
-.field public final synthetic a:Landroidx/fragment/app/r;
 
 
 # direct methods
-.method public constructor <init>(Le/j;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Landroidx/fragment/app/o;->a:Landroidx/fragment/app/r;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/os/Bundle;
-    .locals 4
+.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
 
-    new-instance v0, Landroid/os/Bundle;
+    const-string p2, "activity"
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    invoke-static {p1, p2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_0
-    iget-object v1, p0, Landroidx/fragment/app/o;->a:Landroidx/fragment/app/r;
+    sget p2, Landroidx/lifecycle/i0;->f:I
 
-    iget-object v2, v1, Landroidx/fragment/app/r;->u:La2/c;
+    invoke-static {p1}, Lx1/h;->q(Landroid/app/Activity;)V
 
-    iget-object v2, v2, La2/c;->e:Ljava/lang/Object;
-
-    check-cast v2, Landroidx/fragment/app/q;
-
-    iget-object v2, v2, Landroidx/fragment/app/q;->h:Landroidx/fragment/app/e0;
-
-    invoke-static {v2}, Landroidx/fragment/app/r;->l(Landroidx/fragment/app/e0;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    iget-object v2, v1, Landroidx/fragment/app/r;->v:Landroidx/lifecycle/u;
-
-    sget-object v3, Landroidx/lifecycle/l;->ON_STOP:Landroidx/lifecycle/l;
-
-    invoke-virtual {v2, v3}, Landroidx/lifecycle/u;->e(Landroidx/lifecycle/l;)V
-
-    iget-object v1, v1, Landroidx/fragment/app/r;->u:La2/c;
-
-    iget-object v1, v1, La2/c;->e:Ljava/lang/Object;
-
-    check-cast v1, Landroidx/fragment/app/q;
-
-    iget-object v1, v1, Landroidx/fragment/app/q;->h:Landroidx/fragment/app/e0;
-
-    invoke-virtual {v1}, Landroidx/fragment/app/e0;->O()Landroidx/fragment/app/f0;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1
-
-    const-string v2, "android:support:fragments"
-
-    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
-
-    :cond_1
-    return-object v0
+    return-void
 .end method

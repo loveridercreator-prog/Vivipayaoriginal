@@ -1,226 +1,139 @@
-.class public final Landroidx/fragment/app/f;
-.super Landroidx/fragment/app/s0;
+.class public final Lb1/f;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/text/InputFilter;
+
+
+# instance fields
+.field public final a:Landroid/widget/TextView;
+
+.field public b:Lb1/e;
+
+
+# direct methods
+.method public constructor <init>(Landroid/widget/TextView;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lb1/f;->a:Landroid/widget/TextView;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(Ljava/util/ArrayList;Z)V
-    .locals 5
+.method public final filter(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;
+    .locals 3
 
-    invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Lb1/f;->a:Landroid/widget/TextView;
 
-    move-result-object p2
+    invoke-virtual {v0}, Landroid/view/View;->isInEditMode()Z
 
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+    move-result v1
 
-    move-result v0
+    if-eqz v1, :cond_0
 
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_8
-
-    new-instance p2, Ljava/util/ArrayList;
-
-    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-nez v3, :cond_7
-
-    new-instance p1, Ljava/util/HashMap;
-
-    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-nez v4, :cond_6
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-nez v3, :cond_5
-
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {p1, v0}, Ljava/util/HashMap;->containsValue(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    iget-object v0, p0, Landroidx/fragment/app/s0;->a:Landroid/view/ViewGroup;
-
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p2
-
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-nez v3, :cond_4
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p2
-
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Landroidx/fragment/app/d;
-
-    iget-object v0, p2, Le/y;->b:Ljava/lang/Object;
-
-    check-cast v0, Landroidx/fragment/app/r0;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    if-eqz p1, :cond_1
-
-    const-string p1, "FragmentManager"
-
-    const/4 v0, 0x2
-
-    invoke-static {p1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "Ignoring Animation set on null as Animations cannot run alongside Transitions."
-
-    invoke-static {p1, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    return-object p1
 
     :cond_0
-    invoke-virtual {p2}, Le/y;->b()V
+    invoke-static {}, Landroidx/emoji2/text/m;->a()Landroidx/emoji2/text/m;
 
-    throw v1
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroidx/emoji2/text/m;->b()I
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    const/4 v2, 0x1
+
+    if-eq v1, v2, :cond_1
+
+    const/4 p2, 0x3
+
+    if-eq v1, p2, :cond_5
+
+    return-object p1
 
     :cond_1
-    throw v1
+    if-nez p6, :cond_2
+
+    if-nez p5, :cond_2
+
+    invoke-interface {p4}, Ljava/lang/CharSequence;->length()I
+
+    move-result p4
+
+    if-nez p4, :cond_2
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object p4
+
+    if-ne p1, p4, :cond_2
+
+    goto :goto_1
 
     :cond_2
-    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p2
+    if-eqz p1, :cond_4
 
     if-nez p2, :cond_3
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    return-void
+    move-result p4
+
+    if-ne p3, p4, :cond_3
+
+    goto :goto_0
 
     :cond_3
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p1, p2, p3}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
     move-result-object p1
 
-    check-cast p1, Landroidx/fragment/app/r0;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    throw v1
-
-    :cond_4
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroidx/fragment/app/d;
-
-    invoke-virtual {p1}, Le/y;->f()Z
-
-    throw v1
-
-    :cond_5
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    :goto_0
+    invoke-static {}, Landroidx/emoji2/text/m;->a()Landroidx/emoji2/text/m;
 
     move-result-object p2
 
-    check-cast p2, Landroidx/fragment/app/e;
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    iget-object v0, p2, Le/y;->b:Ljava/lang/Object;
+    move-result p3
 
-    check-cast v0, Landroidx/fragment/app/r0;
+    const/4 p4, 0x0
 
-    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    invoke-virtual {p2, p4, p3, p1}, Landroidx/emoji2/text/m;->f(IILjava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    invoke-virtual {p1, v0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p1
 
-    invoke-virtual {p2}, Le/y;->b()V
+    :cond_4
+    :goto_1
+    return-object p1
 
-    throw v1
+    :cond_5
+    invoke-static {}, Landroidx/emoji2/text/m;->a()Landroidx/emoji2/text/m;
+
+    move-result-object p2
+
+    iget-object p3, p0, Lb1/f;->b:Lb1/e;
+
+    if-nez p3, :cond_6
+
+    new-instance p3, Lb1/e;
+
+    invoke-direct {p3, v0, p0}, Lb1/e;-><init>(Landroid/widget/TextView;Lb1/f;)V
+
+    iput-object p3, p0, Lb1/f;->b:Lb1/e;
 
     :cond_6
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object p3, p0, Lb1/f;->b:Lb1/e;
 
-    move-result-object p1
+    invoke-virtual {p2, p3}, Landroidx/emoji2/text/m;->g(Landroidx/emoji2/text/k;)V
 
-    check-cast p1, Landroidx/fragment/app/e;
-
-    invoke-virtual {p1}, Le/y;->f()Z
-
-    throw v1
-
-    :cond_7
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroidx/fragment/app/r0;
-
-    invoke-virtual {p1}, Landroidx/fragment/app/r0;->b()V
-
-    throw v1
-
-    :cond_8
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroidx/fragment/app/r0;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    throw v1
+    return-object p1
 .end method
