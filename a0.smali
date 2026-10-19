@@ -1,37 +1,108 @@
-.class public final Le/a0;
-.super Ljava/lang/Object;
+.class public final Lf5/a0;
+.super Lp4/a;
 .source "SourceFile"
 
 
+# static fields
+.field public static final g:La2/i;
+
+
 # instance fields
-.field public a:I
+.field public final f:Ljava/lang/String;
 
-.field public b:I
 
-.field public c:I
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-.field public d:I
+    new-instance v0, La2/i;
 
-.field public e:Le/z;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-.field public f:Landroid/view/View;
+    sput-object v0, Lf5/a0;->g:La2/i;
 
-.field public g:Landroid/view/View;
+    return-void
+.end method
 
-.field public h:Lh/o;
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
-.field public i:Lh/k;
+    sget-object v0, Lf5/a0;->g:La2/i;
 
-.field public j:Lg/e;
+    invoke-direct {p0, v0}, Lp4/a;-><init>(Lp4/i;)V
 
-.field public k:Z
+    iput-object p1, p0, Lf5/a0;->f:Ljava/lang/String;
 
-.field public l:Z
+    return-void
+.end method
 
-.field public m:Z
 
-.field public n:Z
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-.field public o:Z
+    const/4 v0, 0x1
 
-.field public p:Landroid/os/Bundle;
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lf5/a0;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lf5/a0;
+
+    iget-object v1, p0, Lf5/a0;->f:Ljava/lang/String;
+
+    iget-object p1, p1, Lf5/a0;->f:Ljava/lang/String;
+
+    invoke-static {v1, p1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lf5/a0;->f:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "CoroutineName("
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lf5/a0;->f:Ljava/lang/String;
+
+    const/16 v2, 0x29
+
+    invoke-static {v0, v1, v2}, Landroidx/fragment/app/u;->o(Ljava/lang/StringBuilder;Ljava/lang/String;C)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method

@@ -1,25 +1,34 @@
-.class public abstract Lf6/b;
+.class public final Lf5/b;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lf5/q1;
+
 
 # static fields
-.field public static final a:Lg6/j;
+.field public static final e:Lf5/b;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    sget-object v0, Lg6/j;->h:Lg6/j;
+    new-instance v0, Lf5/b;
 
-    const-string v0, "000000ffff"
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lc6/a;->e(Ljava/lang/String;)Lg6/j;
-
-    move-result-object v0
-
-    sput-object v0, Lf6/b;->a:Lg6/j;
+    sput-object v0, Lf5/b;->e:Lf5/b;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "Active"
+
+    return-object v0
 .end method

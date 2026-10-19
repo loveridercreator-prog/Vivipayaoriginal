@@ -1,224 +1,482 @@
-.class public final Le/d0;
-.super Ljava/lang/Object;
+.class public final Lf5/d0;
+.super Lf5/s0;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
-# instance fields
-.field public final e:Landroid/view/View;
+# static fields
+.field private static volatile _thread:Ljava/lang/Thread;
 
-.field public final f:Ljava/lang/String;
+.field private static volatile debugStatus:I
 
-.field public g:Ljava/lang/reflect/Method;
+.field public static final n:Lf5/d0;
 
-.field public h:Landroid/content/Context;
+.field public static final o:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Ljava/lang/String;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lf5/d0;
 
-    iput-object p1, p0, Le/d0;->e:Landroid/view/View;
+    invoke-direct {v0}, Lf5/s0;-><init>()V
 
-    iput-object p2, p0, Le/d0;->f:Ljava/lang/String;
+    sput-object v0, Lf5/d0;->n:Lf5/d0;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lf5/t0;->T(Z)V
+
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v1, 0x3e8
+
+    :try_start_0
+    const-string v3, "kotlinx.coroutines.DefaultExecutor.keepAlive"
+
+    invoke-static {v3, v1, v2}, Ljava/lang/Long;->getLong(Ljava/lang/String;J)Ljava/lang/Long;
+
+    move-result-object v1
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+
+    move-result-wide v0
+
+    sput-wide v0, Lf5/d0;->o:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 7
+.method public final S()Ljava/lang/Thread;
+    .locals 2
 
-    iget-object v0, p0, Le/d0;->g:Ljava/lang/reflect/Method;
+    sget-object v0, Lf5/d0;->_thread:Ljava/lang/Thread;
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_1
 
-    iget-object v0, p0, Le/d0;->e:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    :goto_0
-    iget-object v2, p0, Le/d0;->f:Ljava/lang/String;
-
-    if-eqz v1, :cond_2
+    monitor-enter p0
 
     :try_start_0
-    invoke-virtual {v1}, Landroid/content/Context;->isRestricted()Z
+    sget-object v0, Lf5/d0;->_thread:Ljava/lang/Thread;
 
-    move-result v3
+    if-nez v0, :cond_0
 
-    if-nez v3, :cond_0
+    new-instance v0, Ljava/lang/Thread;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v1, "kotlinx.coroutines.DefaultExecutor"
 
-    move-result-object v3
+    invoke-direct {v0, p0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    const/4 v4, 0x1
+    sput-object v0, Lf5/d0;->_thread:Ljava/lang/Thread;
 
-    new-array v4, v4, [Ljava/lang/Class;
+    const/4 v1, 0x1
 
-    const-class v5, Landroid/view/View;
+    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setDaemon(Z)V
 
-    const/4 v6, 0x0
-
-    aput-object v5, v4, v6
-
-    invoke-virtual {v3, v2, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_0
-
-    iput-object v2, p0, Le/d0;->g:Ljava/lang/reflect/Method;
-
-    iput-object v1, p0, Le/d0;->h:Landroid/content/Context;
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
     :try_end_0
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    monitor-exit p0
 
     goto :goto_2
 
-    :catch_0
+    :goto_1
+    monitor-exit p0
+
+    throw v0
+
+    :cond_1
+    :goto_2
+    return-object v0
+.end method
+
+.method public final f0(JLf5/q0;)V
+    .locals 0
+
+    new-instance p1, Ljava/util/concurrent/RejectedExecutionException;
+
+    const-string p2, "DefaultExecutor was shut down. This error indicates that Dispatchers.shutdown() was invoked prior to completion of exiting coroutines, leaving coroutines in incomplete state. Please refer to Dispatchers.shutdown documentation for more details"
+
+    invoke-direct {p1, p2}, Ljava/util/concurrent/RejectedExecutionException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public final g0(Ljava/lang/Runnable;)V
+    .locals 2
+
+    sget v0, Lf5/d0;->debugStatus:I
+
+    const/4 v1, 0x4
+
+    if-eq v0, v1, :cond_0
+
+    invoke-super {p0, p1}, Lf5/s0;->g0(Ljava/lang/Runnable;)V
+
+    return-void
+
     :cond_0
-    instance-of v2, v1, Landroid/content/ContextWrapper;
+    new-instance p1, Ljava/util/concurrent/RejectedExecutionException;
 
-    if-eqz v2, :cond_1
+    const-string v0, "DefaultExecutor was shut down. This error indicates that Dispatchers.shutdown() was invoked prior to completion of exiting coroutines, leaving coroutines in incomplete state. Please refer to Dispatchers.shutdown documentation for more details"
 
-    check-cast v1, Landroid/content/ContextWrapper;
+    invoke-direct {p1, v0}, Ljava/util/concurrent/RejectedExecutionException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
+    throw p1
+.end method
 
-    move-result-object v1
+.method public final declared-synchronized k0()V
+    .locals 3
+
+    monitor-enter p0
+
+    :try_start_0
+    sget v0, Lf5/d0;->debugStatus:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x3
+
+    if-eq v0, v1, :cond_1
+
+    if-ne v0, v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit p0
+
+    return-void
+
+    :cond_1
+    :goto_0
+    :try_start_1
+    sput v2, Lf5/d0;->debugStatus:I
+
+    sget-object v0, Lf5/s0;->k:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    sget-object v0, Lf5/s0;->l:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {v0, p0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final l(JLjava/lang/Runnable;Lp4/j;)Lf5/l0;
+    .locals 2
+
+    const-wide/16 v0, 0x0
+
+    cmp-long p4, p1, v0
+
+    if-gtz p4, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const-wide v0, 0x8637bd05af6L
+
+    cmp-long p4, p1, v0
+
+    if-ltz p4, :cond_1
+
+    const-wide v0, 0x7fffffffffffffffL
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    const-wide/32 v0, 0xf4240
 
-    goto :goto_0
+    mul-long/2addr v0, p1
 
-    :cond_2
-    invoke-virtual {v0}, Landroid/view/View;->getId()I
+    :goto_0
+    const-wide p1, 0x3fffffffffffffffL    # 1.9999999999999998
 
-    move-result p1
+    cmp-long p1, v0, p1
 
-    const/4 v1, -0x1
+    if-gez p1, :cond_2
 
-    if-ne p1, v1, :cond_3
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    const-string p1, ""
+    move-result-wide p1
+
+    new-instance p4, Lf5/p0;
+
+    add-long/2addr v0, p1
+
+    invoke-direct {p4, p3, v0, v1}, Lf5/p0;-><init>(Ljava/lang/Runnable;J)V
+
+    invoke-virtual {p0, p1, p2, p4}, Lf5/s0;->j0(JLf5/q0;)V
 
     goto :goto_1
 
-    :cond_3
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v3, " with id \'"
-
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Landroid/content/res/Resources;->getResourceEntryName(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, "\'"
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
+    :cond_2
+    sget-object p4, Lf5/p1;->e:Lf5/p1;
 
     :goto_1
-    new-instance v1, Ljava/lang/IllegalStateException;
+    return-object p4
+.end method
 
-    new-instance v3, Ljava/lang/StringBuilder;
+.method public final run()V
+    .locals 14
 
-    const-string v4, "Could not find method "
+    sget-object v0, Lf5/v1;->a:Ljava/lang/ThreadLocal;
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v0, 0x0
 
-    const-string v2, "(View) in a parent or ancestor Context for android:onClick attribute defined on view "
+    :try_start_0
+    monitor-enter p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v1, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_4
-    :goto_2
     :try_start_1
-    iget-object v0, p0, Le/d0;->g:Ljava/lang/reflect/Method;
+    sget v1, Lf5/d0;->debugStatus:I
 
-    iget-object v1, p0, Le/d0;->h:Landroid/content/Context;
+    const/4 v2, 0x2
 
-    filled-new-array {p1}, [Ljava/lang/Object;
+    if-eq v1, v2, :cond_a
 
-    move-result-object p1
+    const/4 v3, 0x3
 
-    invoke-virtual {v0, v1, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    if-ne v1, v3, :cond_0
+
+    goto/16 :goto_4
+
+    :cond_0
+    const/4 v1, 0x1
+
+    sput v1, Lf5/d0;->debugStatus:I
+
+    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
     :try_end_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
+    :try_start_2
+    monitor-exit p0
+
+    const-wide v4, 0x7fffffffffffffffL
+
+    move-wide v6, v4
+
+    :cond_1
+    :goto_0
+    invoke-static {}, Ljava/lang/Thread;->interrupted()Z
+
+    invoke-virtual {p0}, Lf5/s0;->Z()J
+
+    move-result-wide v8
+
+    cmp-long v1, v8, v4
+
+    const-wide/16 v10, 0x0
+
+    if-nez v1, :cond_5
+
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v12
+
+    cmp-long v1, v6, v4
+
+    if-nez v1, :cond_2
+
+    sget-wide v6, Lf5/d0;->o:J
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    add-long/2addr v6, v12
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v1
+
+    goto :goto_6
+
+    :cond_2
+    :goto_1
+    sub-long v12, v6, v12
+
+    cmp-long v1, v12, v10
+
+    if-gtz v1, :cond_4
+
+    sput-object v0, Lf5/d0;->_thread:Ljava/lang/Thread;
+
+    invoke-virtual {p0}, Lf5/d0;->k0()V
+
+    invoke-virtual {p0}, Lf5/s0;->i0()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    invoke-virtual {p0}, Lf5/d0;->S()Ljava/lang/Thread;
+
+    :cond_3
     return-void
 
-    :catch_1
-    move-exception p1
+    :cond_4
+    cmp-long v1, v8, v12
+
+    if-lez v1, :cond_6
+
+    move-wide v8, v12
+
+    goto :goto_2
+
+    :cond_5
+    move-wide v6, v4
+
+    :cond_6
+    :goto_2
+    cmp-long v1, v8, v10
+
+    if-lez v1, :cond_1
+
+    :try_start_3
+    sget v1, Lf5/d0;->debugStatus:I
+
+    if-eq v1, v2, :cond_8
+
+    if-ne v1, v3, :cond_7
 
     goto :goto_3
 
-    :catch_2
-    move-exception p1
+    :cond_7
+    invoke-static {p0, v8, v9}, Ljava/util/concurrent/locks/LockSupport;->parkNanos(Ljava/lang/Object;J)V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto :goto_4
+    goto :goto_0
 
+    :cond_8
     :goto_3
-    new-instance v0, Ljava/lang/IllegalStateException;
+    sput-object v0, Lf5/d0;->_thread:Ljava/lang/Thread;
 
-    const-string v1, "Could not execute method for android:onClick"
+    invoke-virtual {p0}, Lf5/d0;->k0()V
 
-    invoke-direct {v0, v1, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0}, Lf5/s0;->i0()Z
 
-    throw v0
+    move-result v0
 
+    if-nez v0, :cond_9
+
+    invoke-virtual {p0}, Lf5/d0;->S()Ljava/lang/Thread;
+
+    :cond_9
+    return-void
+
+    :catchall_1
+    move-exception v1
+
+    goto :goto_5
+
+    :cond_a
     :goto_4
-    new-instance v0, Ljava/lang/IllegalStateException;
+    :try_start_4
+    monitor-exit p0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    const-string v1, "Could not execute non-public method for android:onClick"
+    sput-object v0, Lf5/d0;->_thread:Ljava/lang/Thread;
 
-    invoke-direct {v0, v1, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0}, Lf5/d0;->k0()V
 
-    throw v0
+    invoke-virtual {p0}, Lf5/s0;->i0()Z
+
+    move-result v0
+
+    if-nez v0, :cond_b
+
+    invoke-virtual {p0}, Lf5/d0;->S()Ljava/lang/Thread;
+
+    :cond_b
+    return-void
+
+    :goto_5
+    :try_start_5
+    monitor-exit p0
+
+    throw v1
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    :goto_6
+    sput-object v0, Lf5/d0;->_thread:Ljava/lang/Thread;
+
+    invoke-virtual {p0}, Lf5/d0;->k0()V
+
+    invoke-virtual {p0}, Lf5/s0;->i0()Z
+
+    move-result v0
+
+    if-nez v0, :cond_c
+
+    invoke-virtual {p0}, Lf5/d0;->S()Ljava/lang/Thread;
+
+    :cond_c
+    throw v1
+.end method
+
+.method public final shutdown()V
+    .locals 1
+
+    const/4 v0, 0x4
+
+    sput v0, Lf5/d0;->debugStatus:I
+
+    invoke-super {p0}, Lf5/s0;->shutdown()V
+
+    return-void
 .end method

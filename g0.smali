@@ -1,7 +1,11 @@
-.class public abstract Le/g0;
-.super Landroid/app/Service;
+.class public interface abstract Lf5/g0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic e:I
+# virtual methods
+.method public abstract a(JLf5/h;)V
+.end method
+
+.method public abstract l(JLjava/lang/Runnable;Lp4/j;)Lf5/l0;
+.end method

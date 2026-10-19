@@ -1,8 +1,7 @@
-.class public interface abstract Landroidx/lifecycle/r0;
-.super Ljava/lang/Object;
+.class public final Lf5/r0;
+.super Lk5/c0;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract e()Landroidx/lifecycle/q0;
-.end method
+# instance fields
+.field public c:J

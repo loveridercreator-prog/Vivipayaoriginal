@@ -1,13 +1,3 @@
-.class public abstract Le/f0;
-.super Ljava/lang/Object;
+.class public Lf5/f0;
+.super Lf5/a;
 .source "SourceFile"
-
-
-# direct methods
-.method public static a()I
-    .locals 1
-
-    const/16 v0, 0x200
-
-    return v0
-.end method
