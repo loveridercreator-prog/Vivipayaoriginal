@@ -1,60 +1,87 @@
-.class public final La6/s;
-.super Lw5/a;
+.class public final Landroidx/activity/s;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic e:La6/t;
-
-.field public final synthetic f:I
-
-.field public final synthetic g:J
+# static fields
+.field public static final a:Landroidx/activity/s;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;La6/t;IJ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p2, p0, La6/s;->e:La6/t;
+    new-instance v0, Landroidx/activity/s;
 
-    iput p3, p0, La6/s;->f:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p4, p0, La6/s;->g:J
-
-    const/4 p2, 0x1
-
-    invoke-direct {p0, p1, p2}, Lw5/a;-><init>(Ljava/lang/String;Z)V
+    sput-object v0, Landroidx/activity/s;->a:Landroidx/activity/s;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 5
+.method public final a(Lv4/a;)Landroid/window/OnBackInvokedCallback;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lv4/a;",
+            ")",
+            "Landroid/window/OnBackInvokedCallback;"
+        }
+    .end annotation
 
-    iget-object v0, p0, La6/s;->e:La6/t;
+    const-string v0, "onBackInvoked"
 
-    :try_start_0
-    iget-object v1, v0, La6/t;->C:La6/a0;
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget v2, p0, La6/s;->f:I
+    new-instance v0, Landroidx/activity/r;
 
-    iget-wide v3, p0, La6/s;->g:J
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v2, v3, v4}, La6/a0;->o(IJ)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {v0, v1, p1}, Landroidx/activity/r;-><init>(ILjava/lang/Object;)V
 
-    goto :goto_0
+    return-object v0
+.end method
 
-    :catch_0
-    move-exception v1
+.method public final b(Ljava/lang/Object;ILjava/lang/Object;)V
+    .locals 1
 
-    invoke-virtual {v0, v1}, La6/t;->b(Ljava/io/IOException;)V
+    const-string v0, "dispatcher"
 
-    :goto_0
-    const-wide/16 v0, -0x1
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    return-wide v0
+    const-string v0, "callback"
+
+    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast p1, Landroid/window/OnBackInvokedDispatcher;
+
+    check-cast p3, Landroid/window/OnBackInvokedCallback;
+
+    invoke-interface {p1, p2, p3}, Landroid/window/OnBackInvokedDispatcher;->registerOnBackInvokedCallback(ILandroid/window/OnBackInvokedCallback;)V
+
+    return-void
+.end method
+
+.method public final c(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "dispatcher"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "callback"
+
+    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast p1, Landroid/window/OnBackInvokedDispatcher;
+
+    check-cast p2, Landroid/window/OnBackInvokedCallback;
+
+    invoke-interface {p1, p2}, Landroid/window/OnBackInvokedDispatcher;->unregisterOnBackInvokedCallback(Landroid/window/OnBackInvokedCallback;)V
+
+    return-void
 .end method

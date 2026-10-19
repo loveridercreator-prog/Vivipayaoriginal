@@ -1,21 +1,33 @@
-.class public final La6/i;
-.super La6/j;
+.class public abstract Landroidx/emoji2/text/i;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final b(La6/z;)V
-    .locals 2
+# instance fields
+.field public final a:Landroidx/emoji2/text/l;
 
-    const-string v0, "stream"
+.field public b:I
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+.field public final c:Landroidx/emoji2/text/f;
 
-    sget-object v0, La6/b;->j:La6/b;
 
-    const/4 v1, 0x0
+# direct methods
+.method public constructor <init>(Landroidx/emoji2/text/l;)V
+    .locals 1
 
-    invoke-virtual {p1, v0, v1}, La6/z;->c(La6/b;Ljava/io/IOException;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Landroidx/emoji2/text/i;->b:I
+
+    new-instance v0, Landroidx/emoji2/text/f;
+
+    invoke-direct {v0}, Landroidx/emoji2/text/f;-><init>()V
+
+    iput-object v0, p0, Landroidx/emoji2/text/i;->c:Landroidx/emoji2/text/f;
+
+    iput-object p1, p0, Landroidx/emoji2/text/i;->a:Landroidx/emoji2/text/l;
 
     return-void
 .end method

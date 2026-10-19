@@ -1,109 +1,92 @@
-.class public final La6/o;
-.super Lw5/a;
+.class public final Landroidx/activity/o;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic e:La6/t;
+.field public final a:Ljava/lang/Object;
 
-.field public final synthetic f:I
+.field public b:Z
 
-.field public final synthetic g:Lg6/g;
-
-.field public final synthetic h:I
+.field public final c:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;La6/t;ILg6/g;IZ)V
+.method public constructor <init>(Landroidx/activity/k;Landroidx/activity/c;)V
     .locals 0
 
-    iput-object p2, p0, La6/o;->e:La6/t;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p3, p0, La6/o;->f:I
+    new-instance p1, Ljava/lang/Object;
 
-    iput-object p4, p0, La6/o;->g:Lg6/g;
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    iput p5, p0, La6/o;->h:I
+    iput-object p1, p0, Landroidx/activity/o;->a:Ljava/lang/Object;
 
-    const/4 p2, 0x1
+    new-instance p1, Ljava/util/ArrayList;
 
-    invoke-direct {p0, p1, p2}, Lw5/a;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object p1, p0, Landroidx/activity/o;->c:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 4
+.method public final a()V
+    .locals 3
 
-    :try_start_0
-    iget-object v0, p0, La6/o;->e:La6/t;
-
-    iget-object v0, v0, La6/t;->p:La2/i;
-
-    iget-object v1, p0, La6/o;->g:Lg6/g;
-
-    iget v2, p0, La6/o;->h:I
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v0, "source"
-
-    invoke-static {v1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    int-to-long v2, v2
-
-    invoke-virtual {v1, v2, v3}, Lg6/g;->s(J)V
-
-    iget-object v0, p0, La6/o;->e:La6/t;
-
-    iget-object v0, v0, La6/t;->C:La6/a0;
-
-    iget v1, p0, La6/o;->f:I
-
-    sget-object v2, La6/b;->k:La6/b;
-
-    invoke-virtual {v0, v1, v2}, La6/a0;->m(ILa6/b;)V
-
-    iget-object v0, p0, La6/o;->e:La6/t;
+    iget-object v0, p0, Landroidx/activity/o;->a:Ljava/lang/Object;
 
     monitor-enter v0
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :try_start_1
-    iget-object v1, p0, La6/o;->e:La6/t;
+    const/4 v1, 0x1
 
-    iget-object v1, v1, La6/t;->E:Ljava/util/LinkedHashSet;
+    :try_start_0
+    iput-boolean v1, p0, Landroidx/activity/o;->b:Z
 
-    iget v2, p0, La6/o;->f:I
+    iget-object v1, p0, Landroidx/activity/o;->c:Ljava/util/ArrayList;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-interface {v1, v2}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    check-cast v2, Lv4/a;
 
-    :try_start_2
-    monitor-exit v0
+    invoke-interface {v2}, Lv4/a;->invoke()Ljava/lang/Object;
 
     goto :goto_0
 
     :catchall_0
     move-exception v1
 
+    goto :goto_1
+
+    :cond_0
+    iget-object v1, p0, Landroidx/activity/o;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v0
+
+    return-void
+
+    :goto_1
     monitor-exit v0
 
     throw v1
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-
-    :catch_0
-    :goto_0
-    const-wide/16 v0, -0x1
-
-    return-wide v0
 .end method

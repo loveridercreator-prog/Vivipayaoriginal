@@ -1,64 +1,147 @@
-.class public final La6/l;
-.super Lw5/a;
+.class public final Landroidx/compose/ui/platform/l;
+.super Landroid/database/ContentObserver;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic e:La6/t;
+.field public final synthetic a:I
 
-.field public final synthetic f:I
-
-.field public final synthetic g:I
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;La6/t;II)V
-    .locals 0
+.method public constructor <init>(Ly0/a;)V
+    .locals 1
 
-    iput-object p2, p0, La6/l;->e:La6/t;
+    const/4 v0, 0x1
 
-    iput p3, p0, La6/l;->f:I
+    iput v0, p0, Landroidx/compose/ui/platform/l;->a:I
 
-    iput p4, p0, La6/l;->g:I
+    iput-object p1, p0, Landroidx/compose/ui/platform/l;->b:Ljava/lang/Object;
 
-    const/4 p2, 0x1
+    new-instance p1, Landroid/os/Handler;
 
-    invoke-direct {p0, p1, p2}, Lw5/a;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {p1}, Landroid/os/Handler;-><init>()V
+
+    invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 5
+.method public final deliverSelfNotifications()Z
+    .locals 1
 
-    iget v0, p0, La6/l;->f:I
+    iget v0, p0, Landroidx/compose/ui/platform/l;->a:I
 
-    iget v1, p0, La6/l;->g:I
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v2, p0, La6/l;->e:La6/t;
+    invoke-super {p0}, Landroid/database/ContentObserver;->deliverSelfNotifications()Z
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result v0
 
-    :try_start_0
-    iget-object v3, v2, La6/t;->C:La6/a0;
+    return v0
 
-    const/4 v4, 0x1
+    :pswitch_0
+    const/4 v0, 0x1
 
-    invoke-virtual {v3, v0, v1, v4}, La6/a0;->l(IIZ)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    return v0
 
-    goto :goto_0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    :catch_0
-    move-exception v0
+.method public final onChange(Z)V
+    .locals 1
 
-    invoke-virtual {v2, v0}, La6/t;->b(Ljava/io/IOException;)V
+    iget v0, p0, Landroidx/compose/ui/platform/l;->a:I
 
-    :goto_0
-    const-wide/16 v0, -0x1
+    packed-switch v0, :pswitch_data_0
 
-    return-wide v0
+    invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
+
+    return-void
+
+    :pswitch_0
+    iget-object p1, p0, Landroidx/compose/ui/platform/l;->b:Ljava/lang/Object;
+
+    check-cast p1, Ly0/a;
+
+    .line 3
+    iget-boolean v0, p1, Ly0/a;->f:Z
+
+    if-eqz v0, :cond_0
+
+    .line 4
+    iget-object v0, p1, Ly0/a;->g:Landroid/database/Cursor;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Landroid/database/Cursor;->isClosed()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 5
+    iget-object v0, p1, Ly0/a;->g:Landroid/database/Cursor;
+
+    invoke-interface {v0}, Landroid/database/Cursor;->requery()Z
+
+    move-result v0
+
+    iput-boolean v0, p1, Ly0/a;->e:Z
+
+    :cond_0
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onChange(ZLandroid/net/Uri;)V
+    .locals 2
+
+    iget v0, p0, Landroidx/compose/ui/platform/l;->a:I
+
+    iget-object v1, p0, Landroidx/compose/ui/platform/l;->b:Ljava/lang/Object;
+
+    packed-switch v0, :pswitch_data_0
+
+    :pswitch_0
+    invoke-super {p0, p1, p2}, Landroid/database/ContentObserver;->onChange(ZLandroid/net/Uri;)V
+
+    return-void
+
+    :pswitch_1
+    check-cast v1, Landroidx/emoji2/text/u;
+
+    .line 1
+    invoke-virtual {v1}, Landroidx/emoji2/text/u;->c()V
+
+    return-void
+
+    :pswitch_2
+    check-cast v1, Lh5/i;
+
+    sget-object p1, Ll4/y;->a:Ll4/y;
+
+    .line 2
+    invoke-interface {v1, p1}, Lh5/v;->h(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method

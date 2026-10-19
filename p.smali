@@ -1,99 +1,29 @@
-.class public final La6/p;
-.super Lw5/a;
+.class public abstract Landroidx/activity/p;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic e:La6/t;
+.field public a:Z
 
-.field public final synthetic f:I
+.field public final b:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-.field public final synthetic g:Ljava/util/List;
+.field public c:Lv4/a;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;La6/t;ILjava/util/List;Z)V
+.method public constructor <init>(Z)V
     .locals 0
 
-    iput-object p2, p0, La6/p;->e:La6/t;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p3, p0, La6/p;->f:I
+    iput-boolean p1, p0, Landroidx/activity/p;->a:Z
 
-    iput-object p4, p0, La6/p;->g:Ljava/util/List;
+    new-instance p1, Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    const/4 p2, 0x1
+    invoke-direct {p1}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
-    invoke-direct {p0, p1, p2}, Lw5/a;-><init>(Ljava/lang/String;Z)V
+    iput-object p1, p0, Landroidx/activity/p;->b:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()J
-    .locals 3
-
-    iget-object v0, p0, La6/p;->e:La6/t;
-
-    iget-object v0, v0, La6/t;->p:La2/i;
-
-    iget-object v1, p0, La6/p;->g:Ljava/util/List;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v0, "responseHeaders"
-
-    invoke-static {v1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :try_start_0
-    iget-object v0, p0, La6/p;->e:La6/t;
-
-    iget-object v0, v0, La6/t;->C:La6/a0;
-
-    iget v1, p0, La6/p;->f:I
-
-    sget-object v2, La6/b;->k:La6/b;
-
-    invoke-virtual {v0, v1, v2}, La6/a0;->m(ILa6/b;)V
-
-    iget-object v0, p0, La6/p;->e:La6/t;
-
-    monitor-enter v0
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :try_start_1
-    iget-object v1, p0, La6/p;->e:La6/t;
-
-    iget-object v1, v1, La6/t;->E:Ljava/util/LinkedHashSet;
-
-    iget v2, p0, La6/p;->f:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    monitor-exit v0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-
-    throw v1
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-
-    :catch_0
-    :goto_0
-    const-wide/16 v0, -0x1
-
-    return-wide v0
 .end method

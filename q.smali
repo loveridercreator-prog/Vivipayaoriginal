@@ -1,192 +1,84 @@
-.class public final La6/q;
-.super Lw5/a;
+.class public final Landroidx/activity/q;
+.super Lw4/i;
 .source "SourceFile"
+
+# interfaces
+.implements Lv4/a;
 
 
 # instance fields
 .field public final synthetic e:I
 
-.field public final synthetic f:La6/t;
-
-.field public final synthetic g:I
-
-.field public final synthetic h:Ljava/lang/Object;
+.field public final synthetic f:Landroidx/activity/u;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;La6/t;ILjava/lang/Object;I)V
+.method public synthetic constructor <init>(Landroidx/activity/u;I)V
     .locals 0
 
-    iput p5, p0, La6/q;->e:I
+    iput p2, p0, Landroidx/activity/q;->e:I
 
-    iput-object p2, p0, La6/q;->f:La6/t;
+    iput-object p1, p0, Landroidx/activity/q;->f:Landroidx/activity/u;
 
-    iput p3, p0, La6/q;->g:I
+    const/4 p1, 0x0
 
-    iput-object p4, p0, La6/q;->h:Ljava/lang/Object;
-
-    const/4 p2, 0x1
-
-    invoke-direct {p0, p1, p2}, Lw5/a;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {p0, p1}, Lw4/i;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 6
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
-    iget v0, p0, La6/q;->e:I
+    sget-object v0, Ll4/y;->a:Ll4/y;
 
-    const-wide/16 v1, -0x1
+    iget-object v1, p0, Landroidx/activity/q;->f:Landroidx/activity/u;
 
-    packed-switch v0, :pswitch_data_0
+    iget v2, p0, Landroidx/activity/q;->e:I
 
-    iget-object v0, p0, La6/q;->f:La6/t;
+    packed-switch v2, :pswitch_data_0
 
-    iget-object v0, v0, La6/t;->p:La2/i;
+    packed-switch v2, :pswitch_data_1
 
-    iget-object v3, p0, La6/q;->h:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/List;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v0, "requestHeaders"
-
-    invoke-static {v3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :try_start_0
-    iget-object v0, p0, La6/q;->f:La6/t;
-
-    iget-object v0, v0, La6/t;->C:La6/a0;
-
-    iget v3, p0, La6/q;->g:I
-
-    sget-object v4, La6/b;->k:La6/b;
-
-    invoke-virtual {v0, v3, v4}, La6/a0;->m(ILa6/b;)V
-
-    iget-object v0, p0, La6/q;->f:La6/t;
-
-    monitor-enter v0
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :try_start_1
-    iget-object v3, p0, La6/q;->f:La6/t;
-
-    iget-object v3, v3, La6/t;->E:Ljava/util/LinkedHashSet;
-
-    iget v4, p0, La6/q;->g:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-interface {v3, v4}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    monitor-exit v0
+    invoke-virtual {v1}, Landroidx/activity/u;->b()V
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v3
-
-    monitor-exit v0
-
-    throw v3
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-
-    :catch_0
-    :goto_0
-    return-wide v1
-
     :pswitch_0
-    iget-object v0, p0, La6/q;->f:La6/t;
+    invoke-virtual {v1}, Landroidx/activity/u;->c()V
 
-    :try_start_3
-    iget v3, p0, La6/q;->g:I
+    :goto_0
+    return-object v0
 
-    iget-object v4, p0, La6/q;->h:Ljava/lang/Object;
+    :pswitch_1
+    packed-switch v2, :pswitch_data_2
 
-    check-cast v4, La6/b;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v5, "statusCode"
-
-    invoke-static {v4, v5}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v5, v0, La6/t;->C:La6/a0;
-
-    invoke-virtual {v5, v3, v4}, La6/a0;->m(ILa6/b;)V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+    invoke-virtual {v1}, Landroidx/activity/u;->b()V
 
     goto :goto_1
 
-    :catch_1
-    move-exception v3
-
-    invoke-virtual {v0, v3}, La6/t;->b(Ljava/io/IOException;)V
+    :pswitch_2
+    invoke-virtual {v1}, Landroidx/activity/u;->c()V
 
     :goto_1
-    return-wide v1
+    return-object v0
 
-    :pswitch_1
-    iget-object v0, p0, La6/q;->f:La6/t;
-
-    iget-object v0, v0, La6/t;->p:La2/i;
-
-    iget-object v3, p0, La6/q;->h:Ljava/lang/Object;
-
-    check-cast v3, La6/b;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v0, "errorCode"
-
-    invoke-static {v3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, La6/q;->f:La6/t;
-
-    monitor-enter v0
-
-    :try_start_4
-    iget-object v3, p0, La6/q;->f:La6/t;
-
-    iget-object v3, v3, La6/t;->E:Ljava/util/LinkedHashSet;
-
-    iget v4, p0, La6/q;->g:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-interface {v3, v4}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    monitor-exit v0
-
-    return-wide v1
-
-    :catchall_1
-    move-exception v1
-
-    monitor-exit v0
-
-    throw v1
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x0
         :pswitch_0
+    .end packed-switch
+
+    :pswitch_data_2
+    .packed-switch 0x0
+        :pswitch_2
     .end packed-switch
 .end method

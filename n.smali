@@ -1,121 +1,206 @@
-.class public final La6/n;
-.super Ljava/lang/Object;
+.class public abstract Landroidx/activity/n;
+.super Landroid/app/Dialog;
 .source "SourceFile"
 
 # interfaces
-.implements Lv4/a;
+.implements Landroidx/lifecycle/s;
+.implements Landroidx/activity/v;
+.implements Lg1/f;
 
 
 # instance fields
-.field public final e:La6/w;
+.field public e:Landroidx/lifecycle/u;
 
-.field public final synthetic f:La6/t;
+.field public final f:Lg1/e;
+
+.field public final g:Landroidx/activity/u;
 
 
 # direct methods
-.method public constructor <init>(La6/t;La6/w;)V
+.method public constructor <init>(Landroid/content/Context;I)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-string v0, "this$0"
+    const-string v0, "context"
 
     invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput-object p1, p0, La6/n;->f:La6/t;
+    invoke-direct {p0, p1, p2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
-    iput-object p2, p0, La6/n;->e:La6/w;
+    invoke-static {p0}, Lf1/d;->d(Lg1/f;)Lg1/e;
+
+    move-result-object p1
+
+    iput-object p1, p0, Landroidx/activity/n;->f:Lg1/e;
+
+    new-instance p1, Landroidx/activity/u;
+
+    new-instance p2, Landroidx/activity/b;
+
+    const/4 v0, 0x2
+
+    invoke-direct {p2, v0, p0}, Landroidx/activity/b;-><init>(ILjava/lang/Object;)V
+
+    invoke-direct {p1, p2}, Landroidx/activity/u;-><init>(Ljava/lang/Runnable;)V
+
+    iput-object p1, p0, Landroidx/activity/n;->g:Landroidx/activity/u;
+
+    return-void
+.end method
+
+.method public static a(Landroidx/activity/n;)V
+    .locals 1
+
+    const-string v0, "this$0"
+
+    invoke-static {p0, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-super {p0}, Landroid/app/Dialog;->onBackPressed()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 6
+.method public final b()Lg1/d;
+    .locals 1
 
-    iget-object v0, p0, La6/n;->f:La6/t;
+    iget-object v0, p0, Landroidx/activity/n;->f:Lg1/e;
 
-    iget-object v1, p0, La6/n;->e:La6/w;
-
-    sget-object v2, La6/b;->h:La6/b;
-
-    const/4 v3, 0x0
-
-    :try_start_0
-    invoke-virtual {v1, p0}, La6/w;->b(La6/n;)V
-
-    :goto_0
-    const/4 v4, 0x0
-
-    invoke-virtual {v1, v4, p0}, La6/w;->a(ZLa6/n;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v4, La6/b;->f:La6/b;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    :try_start_1
-    sget-object v2, La6/b;->k:La6/b;
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    invoke-virtual {v0, v4, v2, v3}, La6/t;->a(La6/b;La6/b;Ljava/io/IOException;)V
-
-    :goto_1
-    invoke-static {v1}, Lu5/b;->c(Ljava/io/Closeable;)V
-
-    goto :goto_3
-
-    :catchall_0
-    move-exception v5
-
-    goto :goto_4
-
-    :catch_0
-    move-exception v3
-
-    goto :goto_2
-
-    :catchall_1
-    move-exception v5
-
-    move-object v4, v2
-
-    goto :goto_4
-
-    :catch_1
-    move-exception v3
-
-    move-object v4, v2
-
-    :goto_2
-    :try_start_2
-    sget-object v2, La6/b;->g:La6/b;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    invoke-virtual {v0, v2, v2, v3}, La6/t;->a(La6/b;La6/b;Ljava/io/IOException;)V
-
-    goto :goto_1
-
-    :goto_3
-    sget-object v0, Ll4/y;->a:Ll4/y;
+    iget-object v0, v0, Lg1/e;->b:Lg1/d;
 
     return-object v0
+.end method
 
-    :goto_4
-    invoke-virtual {v0, v4, v2, v3}, La6/t;->a(La6/b;La6/b;Ljava/io/IOException;)V
+.method public final d()Landroidx/lifecycle/u;
+    .locals 1
 
-    invoke-static {v1}, Lu5/b;->c(Ljava/io/Closeable;)V
+    iget-object v0, p0, Landroidx/activity/n;->e:Landroidx/lifecycle/u;
 
-    throw v5
+    if-nez v0, :cond_0
+
+    new-instance v0, Landroidx/lifecycle/u;
+
+    invoke-direct {v0, p0}, Landroidx/lifecycle/u;-><init>(Landroidx/lifecycle/s;)V
+
+    iput-object v0, p0, Landroidx/activity/n;->e:Landroidx/lifecycle/u;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public final h()Landroidx/lifecycle/u;
+    .locals 1
+
+    invoke-virtual {p0}, Landroidx/activity/n;->d()Landroidx/lifecycle/u;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final onBackPressed()V
+    .locals 1
+
+    iget-object v0, p0, Landroidx/activity/n;->g:Landroidx/activity/u;
+
+    invoke-virtual {v0}, Landroidx/activity/u;->b()V
+
+    return-void
+.end method
+
+.method public onCreate(Landroid/os/Bundle;)V
+    .locals 2
+
+    invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x21
+
+    if-lt v0, v1, :cond_0
+
+    invoke-static {p0}, Landroidx/activity/m;->d(Landroidx/activity/n;)Landroid/window/OnBackInvokedDispatcher;
+
+    move-result-object v0
+
+    const-string v1, "onBackInvokedDispatcher"
+
+    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v1, p0, Landroidx/activity/n;->g:Landroidx/activity/u;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object v0, v1, Landroidx/activity/u;->e:Landroid/window/OnBackInvokedDispatcher;
+
+    invoke-virtual {v1}, Landroidx/activity/u;->c()V
+
+    :cond_0
+    iget-object v0, p0, Landroidx/activity/n;->f:Lg1/e;
+
+    invoke-virtual {v0, p1}, Lg1/e;->b(Landroid/os/Bundle;)V
+
+    invoke-virtual {p0}, Landroidx/activity/n;->d()Landroidx/lifecycle/u;
+
+    move-result-object p1
+
+    sget-object v0, Landroidx/lifecycle/l;->ON_CREATE:Landroidx/lifecycle/l;
+
+    invoke-virtual {p1, v0}, Landroidx/lifecycle/u;->e(Landroidx/lifecycle/l;)V
+
+    return-void
+.end method
+
+.method public final onSaveInstanceState()Landroid/os/Bundle;
+    .locals 2
+
+    invoke-super {p0}, Landroid/app/Dialog;->onSaveInstanceState()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    const-string v1, "super.onSaveInstanceState()"
+
+    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v1, p0, Landroidx/activity/n;->f:Lg1/e;
+
+    invoke-virtual {v1, v0}, Lg1/e;->c(Landroid/os/Bundle;)V
+
+    return-object v0
+.end method
+
+.method public final onStart()V
+    .locals 2
+
+    invoke-super {p0}, Landroid/app/Dialog;->onStart()V
+
+    invoke-virtual {p0}, Landroidx/activity/n;->d()Landroidx/lifecycle/u;
+
+    move-result-object v0
+
+    sget-object v1, Landroidx/lifecycle/l;->ON_RESUME:Landroidx/lifecycle/l;
+
+    invoke-virtual {v0, v1}, Landroidx/lifecycle/u;->e(Landroidx/lifecycle/l;)V
+
+    return-void
+.end method
+
+.method public onStop()V
+    .locals 2
+
+    invoke-virtual {p0}, Landroidx/activity/n;->d()Landroidx/lifecycle/u;
+
+    move-result-object v0
+
+    sget-object v1, Landroidx/lifecycle/l;->ON_DESTROY:Landroidx/lifecycle/l;
+
+    invoke-virtual {v0, v1}, Landroidx/lifecycle/u;->e(Landroidx/lifecycle/l;)V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroidx/activity/n;->e:Landroidx/lifecycle/u;
+
+    invoke-super {p0}, Landroid/app/Dialog;->onStop()V
+
+    return-void
 .end method
