@@ -1,115 +1,48 @@
-.class public abstract Lc6/d;
+.class public final Ld5/d;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/io/Serializable;
 
-# static fields
-.field public static final a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-.field public static final b:Ljava/util/Map;
+# instance fields
+.field public final e:Ljava/util/regex/Pattern;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+    invoke-static {p1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+    move-result-object p1
 
-    sput-object v0, Lc6/d;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    const-string v0, "compile(...)"
 
-    new-instance v0, Ljava/util/LinkedHashMap;
+    invoke-static {p1, v0}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-class v1, Lt5/w;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getPackage()Ljava/lang/Package;
-
-    move-result-object v2
-
-    if-nez v2, :cond_0
-
-    const/4 v2, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v2}, Ljava/lang/Package;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    :goto_0
-    if-eqz v2, :cond_1
-
-    const-string v3, "OkHttp"
-
-    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_1
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "okhttp.OkHttpClient"
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-class v1, La6/g;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "okhttp.Http2"
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-class v1, Lw5/f;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "okhttp.TaskRunner"
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string v1, "okhttp3.mockwebserver.MockWebServer"
-
-    const-string v2, "okhttp.MockWebServer"
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-interface {v0}, Ljava/util/Map;->size()I
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    const/4 v2, 0x1
-
-    if-eq v1, v2, :cond_2
-
-    new-instance v1, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v1, v0}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
-
-    goto :goto_1
-
-    :cond_2
-    invoke-static {v0}, Ls1/d;->C(Ljava/util/LinkedHashMap;)Ljava/util/Map;
-
-    move-result-object v1
-
-    goto :goto_1
-
-    :cond_3
-    sget-object v1, Lm4/o;->e:Lm4/o;
-
-    :goto_1
-    sput-object v1, Lc6/d;->b:Ljava/util/Map;
+    iput-object p1, p0, Ld5/d;->e:Ljava/util/regex/Pattern;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    iget-object v0, p0, Ld5/d;->e:Ljava/util/regex/Pattern;
+
+    invoke-virtual {v0}, Ljava/util/regex/Pattern;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "toString(...)"
+
+    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object v0
 .end method

@@ -1,46 +1,206 @@
-.class public final Lc6/k;
-.super Ljava/lang/Object;
+.class public abstract Ld5/k;
+.super Ld5/j;
 .source "SourceFile"
 
-# interfaces
-.implements Lc6/m;
 
+# direct methods
+.method public static Y0(Ljava/lang/String;)Ljava/util/ArrayList;
+    .locals 5
 
-# virtual methods
-.method public final a(Ljavax/net/ssl/SSLSocket;)Z
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    div-int/lit8 v1, v0, 0x10
+
+    rem-int/lit8 v2, v0, 0x10
+
+    const/4 v3, 0x0
+
+    if-nez v2, :cond_0
+
+    move v2, v3
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v2, 0x1
+
+    :goto_0
+    add-int/2addr v1, v2
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    :goto_1
+    if-ltz v3, :cond_3
+
+    if-ge v3, v0, :cond_3
+
+    add-int/lit8 v1, v3, 0x10
+
+    if-ltz v1, :cond_2
+
+    if-le v1, v0, :cond_1
+
+    goto :goto_2
+
+    :cond_1
+    move v4, v1
+
+    goto :goto_3
+
+    :cond_2
+    :goto_2
+    move v4, v0
+
+    :goto_3
+    invoke-virtual {p0, v3, v4}, Ljava/lang/String;->subSequence(II)Ljava/lang/CharSequence;
+
+    move-result-object v3
+
+    const-string v4, "it"
+
+    invoke-static {v3, v4}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    move v3, v1
+
+    goto :goto_1
+
+    :cond_3
+    return-object v2
+.end method
+
+.method public static Z0(Ljava/lang/String;I)Ljava/lang/String;
     .locals 1
 
-    sget-boolean v0, Lb6/g;->d:Z
+    const-string v0, "<this>"
 
-    invoke-static {}, Lb6/e;->b()Z
+    invoke-static {p0, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-ltz p1, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-le p1, v0, :cond_0
+
+    move p1, v0
+
+    :cond_0
+    invoke-virtual {p0, p1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string p1, "substring(...)"
+
+    invoke-static {p0, p1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p0
+
+    :cond_1
+    const-string p0, "Requested character count "
+
+    const-string v0, " is less than zero."
+
+    invoke-static {p0, p1, v0}, Landroidx/fragment/app/u;->j(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public static a1(Ljava/lang/CharSequence;)C
+    .locals 1
+
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {p1}, Lorg/conscrypt/Conscrypt;->isConscrypt(Ljavax/net/ssl/SSLSocket;)Z
+    invoke-static {p0}, Ld5/j;->v0(Ljava/lang/CharSequence;)I
 
-    move-result p1
+    move-result v0
 
-    if-eqz p1, :cond_0
+    invoke-interface {p0, v0}, Ljava/lang/CharSequence;->charAt(I)C
 
-    const/4 p1, 0x1
+    move-result p0
 
-    goto :goto_0
+    return p0
 
     :cond_0
-    const/4 p1, 0x0
+    new-instance p0, Ljava/util/NoSuchElementException;
 
-    :goto_0
-    return p1
+    const-string v0, "Char sequence is empty."
+
+    invoke-direct {p0, v0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
-.method public final b(Ljavax/net/ssl/SSLSocket;)Lc6/o;
-    .locals 0
+.method public static b1(Ljava/lang/String;I)Ljava/lang/String;
+    .locals 1
 
-    new-instance p1, Lc6/l;
+    const-string v0, "<this>"
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    invoke-static {p0, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    return-object p1
+    if-ltz p1, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-le p1, v0, :cond_0
+
+    move p1, v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string p1, "substring(...)"
+
+    invoke-static {p0, p1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p0
+
+    :cond_1
+    const-string p0, "Requested character count "
+
+    const-string v0, " is less than zero."
+
+    invoke-static {p0, p1, v0}, Landroidx/fragment/app/u;->j(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
