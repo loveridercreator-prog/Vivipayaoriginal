@@ -1,9 +1,3 @@
-.class public final Lu0/p;
-.super Ljava/lang/Object;
+.class public final Lv1/p;
+.super Ljava/util/HashSet;
 .source "SourceFile"
-
-
-# instance fields
-.field public a:I
-
-.field public b:I
