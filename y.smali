@@ -1,100 +1,27 @@
-.class public final Lw3/y;
-.super Ljava/lang/IllegalArgumentException;
+.class public final Lz1/y;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:Lz1/v;
+
+.field public final b:I
+
+.field public final c:Ly1/e;
+
+
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;II)V
-    .locals 4
+.method public constructor <init>(Lz1/b0;ILy1/e;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x29
+    iput-object p1, p0, Lz1/y;->a:Lz1/v;
 
-    const-string v2, "\' (code "
+    iput p2, p0, Lz1/y;->b:I
 
-    const-string v3, "\' contains illegal character \'"
-
-    if-eq p3, v0, :cond_0
-
-    const-string p3, "headerName"
-
-    invoke-static {p1, p3}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    const-string v0, "Header name \'"
-
-    invoke-direct {p3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, p2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, p2}, Ljava/lang/String;->charAt(I)C
-
-    move-result p1
-
-    and-int/lit16 p1, p1, 0xff
-
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    return-void
-
-    :cond_0
-    const-string p3, "headerValue"
-
-    invoke-static {p1, p3}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    const-string v0, "Header value \'"
-
-    invoke-direct {p3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, p2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, p2}, Ljava/lang/String;->charAt(I)C
-
-    move-result p1
-
-    and-int/lit16 p1, p1, 0xff
-
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    iput-object p3, p0, Lz1/y;->c:Ly1/e;
 
     return-void
 .end method

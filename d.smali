@@ -1,350 +1,223 @@
-.class public final Lx5/d;
+.class public final synthetic Lz2/d;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lg6/v;
+.implements Lr2/g;
 
 
 # instance fields
-.field public final e:Lg6/v;
+.field public final synthetic e:I
 
-.field public final f:J
+.field public final synthetic f:Ljava/lang/String;
 
-.field public g:J
-
-.field public h:Z
-
-.field public i:Z
-
-.field public j:Z
-
-.field public final synthetic k:Lx5/e;
+.field public final synthetic g:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lx5/e;Lg6/v;J)V
-    .locals 1
+.method public synthetic constructor <init>(ILjava/lang/Object;Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "this$0"
+    iput p1, p0, Lz2/d;->e:I
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    iput-object p3, p0, Lz2/d;->f:Ljava/lang/String;
 
-    const-string v0, "delegate"
+    iput-object p2, p0, Lz2/d;->g:Ljava/lang/Object;
 
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iput-object p1, p0, Lx5/d;->k:Lx5/e;
-
-    iput-object p2, p0, Lx5/d;->e:Lg6/v;
-
-    iput-wide p3, p0, Lx5/d;->f:J
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lx5/d;->h:Z
-
-    const-wide/16 p1, 0x0
-
-    cmp-long p1, p3, p1
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1}, Lx5/d;->b(Ljava/io/IOException;)Ljava/io/IOException;
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final A(Lg6/g;J)J
-    .locals 8
+.method public final c(Li/x3;)Ljava/lang/Object;
+    .locals 4
 
-    const-string v0, "expected "
+    iget v0, p0, Lz2/d;->e:I
 
-    const-string v1, "sink"
+    iget-object v1, p0, Lz2/d;->g:Ljava/lang/Object;
 
-    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-object v2, p0, Lz2/d;->f:Ljava/lang/String;
 
-    iget-boolean v1, p0, Lx5/d;->j:Z
+    packed-switch v0, :pswitch_data_0
 
-    xor-int/lit8 v1, v1, 0x1
-
-    if-eqz v1, :cond_5
+    check-cast v1, Lr2/c;
 
     :try_start_0
-    iget-object v1, p0, Lx5/d;->e:Lg6/v;
+    invoke-static {v2}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    invoke-interface {v1, p1, p2, p3}, Lg6/v;->A(Lg6/g;J)J
+    iget-object v0, v1, Lr2/c;->f:Lr2/g;
 
-    move-result-wide p1
+    invoke-interface {v0, p1}, Lr2/g;->c(Li/x3;)Ljava/lang/Object;
 
-    iget-boolean p3, p0, Lx5/d;->h:Z
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz p3, :cond_0
+    invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    const/4 p3, 0x0
+    return-object p1
 
-    iput-boolean p3, p0, Lx5/d;->h:Z
-
-    iget-object p3, p0, Lx5/d;->k:Lx5/e;
-
-    iget-object v1, p3, Lx5/e;->b:Lt5/n;
-
-    iget-object p3, p3, Lx5/e;->a:Lx5/j;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v1, "call"
-
-    invoke-static {p3, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :catch_0
+    :catchall_0
     move-exception p1
 
-    goto :goto_2
-
-    :cond_0
-    :goto_0
-    const-wide/16 v1, -0x1
-
-    cmp-long p3, p1, v1
-
-    const/4 v3, 0x0
-
-    if-nez p3, :cond_1
-
-    invoke-virtual {p0, v3}, Lx5/d;->b(Ljava/io/IOException;)Ljava/io/IOException;
-
-    return-wide v1
-
-    :cond_1
-    iget-wide v4, p0, Lx5/d;->g:J
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    add-long/2addr v4, p1
-
-    iget-wide v6, p0, Lx5/d;->f:J
-
-    cmp-long p3, v6, v1
-
-    if-eqz p3, :cond_3
-
-    cmp-long p3, v4, v6
-
-    if-gtz p3, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    :try_start_1
-    new-instance p1, Ljava/net/ProtocolException;
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p2, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p3, " bytes but received "
-
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
+    invoke-static {}, Landroid/os/Trace;->endSection()V
 
     throw p1
 
-    :cond_3
-    :goto_1
-    iput-wide v4, p0, Lx5/d;->g:J
+    :pswitch_0
+    check-cast v1, Lz2/e;
 
-    cmp-long p3, v4, v6
+    const-class v0, Landroid/content/Context;
 
-    if-nez p3, :cond_4
-
-    invoke-virtual {p0, v3}, Lx5/d;->b(Ljava/io/IOException;)Ljava/io/IOException;
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-
-    :cond_4
-    return-wide p1
-
-    :goto_2
-    invoke-virtual {p0, p1}, Lx5/d;->b(Ljava/io/IOException;)Ljava/io/IOException;
+    invoke-virtual {p1, v0}, Li/x3;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p1
 
-    throw p1
+    check-cast p1, Landroid/content/Context;
 
-    :cond_5
-    new-instance p1, Ljava/lang/IllegalStateException;
+    check-cast v1, Ln2/b;
 
-    const-string p2, "closed"
+    iget v0, v1, Ln2/b;->e:I
 
-    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    const-string v1, ""
 
-    move-result-object p2
+    packed-switch v0, :pswitch_data_1
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    throw p1
-.end method
+    move-result-object v0
 
-.method public final a()V
-    .locals 1
-
-    iget-object v0, p0, Lx5/d;->e:Lg6/v;
-
-    invoke-interface {v0}, Ljava/io/Closeable;->close()V
-
-    return-void
-.end method
-
-.method public final b(Ljava/io/IOException;)Ljava/io/IOException;
-    .locals 5
-
-    iget-boolean v0, p0, Lx5/d;->i:Z
-
-    if-eqz v0, :cond_0
-
-    return-object p1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lx5/d;->i:Z
-
-    iget-object v1, p0, Lx5/d;->k:Lx5/e;
-
-    const/4 v2, 0x0
-
-    if-nez p1, :cond_1
-
-    iget-boolean v3, p0, Lx5/d;->h:Z
-
-    if-eqz v3, :cond_1
-
-    iput-boolean v2, p0, Lx5/d;->h:Z
-
-    iget-object v3, v1, Lx5/e;->b:Lt5/n;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v3, "call"
-
-    iget-object v4, v1, Lx5/e;->a:Lx5/j;
-
-    invoke-static {v4, v3}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    :cond_1
-    invoke-virtual {v1, v0, v2, p1}, Lx5/e;->a(ZZLjava/io/IOException;)Ljava/io/IOException;
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object p1
 
-    return-object p1
-.end method
+    invoke-virtual {v0, p1}, Landroid/content/pm/PackageManager;->getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;
 
-.method public final c()Ljava/lang/String;
-    .locals 2
+    move-result-object p1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    if-eqz p1, :cond_3
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-class v1, Lx5/d;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-static {p1}, Lcom/google/firebase/FirebaseCommonRegistrar;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    const/16 v1, 0x28
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lx5/d;->e:Lg6/v;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x29
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :pswitch_1
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    const-string v3, "android.hardware.type.television"
 
-.method public final close()V
-    .locals 1
+    invoke-virtual {v0, v3}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
 
-    iget-boolean v0, p0, Lx5/d;->j:Z
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    return-void
+    const-string v1, "tv"
+
+    goto :goto_0
 
     :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lx5/d;->j:Z
-
-    :try_start_0
-    invoke-virtual {p0}, Lx5/d;->a()V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lx5/d;->b(Ljava/io/IOException;)Ljava/io/IOException;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {p0, v0}, Lx5/d;->b(Ljava/io/IOException;)Ljava/io/IOException;
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    throw v0
-.end method
+    const-string v3, "android.hardware.type.watch"
 
-.method public final e()Lg6/x;
-    .locals 1
+    invoke-virtual {v0, v3}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
 
-    iget-object v0, p0, Lx5/d;->e:Lg6/v;
+    move-result v0
 
-    invoke-interface {v0}, Lg6/v;->e()Lg6/x;
+    if-eqz v0, :cond_1
 
-    move-result-object v0
+    const-string v1, "watch"
 
-    return-object v0
-.end method
+    goto :goto_0
 
-.method public final bridge synthetic toString()Ljava/lang/String;
-    .locals 1
-
-    invoke-virtual {p0}, Lx5/d;->c()Ljava/lang/String;
+    :cond_1
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    return-object v0
+    const-string v3, "android.hardware.type.automotive"
+
+    invoke-virtual {v0, v3}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    const-string v1, "auto"
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object p1
+
+    const-string v0, "android.hardware.type.embedded"
+
+    invoke-virtual {p1, v0}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_3
+
+    const-string v1, "embedded"
+
+    goto :goto_0
+
+    :pswitch_2
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    iget p1, p1, Landroid/content/pm/ApplicationInfo;->minSdkVersion:I
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    :pswitch_3
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    iget p1, p1, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    :cond_3
+    :goto_0
+    new-instance p1, Lz2/a;
+
+    invoke-direct {p1, v2, v1}, Lz2/a;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x3
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

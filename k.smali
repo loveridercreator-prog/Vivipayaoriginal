@@ -1,45 +1,44 @@
-.class public abstract synthetic Lx5/k;
+.class public final Lz1/k;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ll2/b;
 
-# static fields
-.field public static final synthetic a:[I
+
+# instance fields
+.field public final synthetic a:Ll2/c;
+
+.field public final synthetic b:Li/a0;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Li/a0;Ll2/c;)V
+    .locals 0
 
-    invoke-static {}, Ljava/net/Proxy$Type;->values()[Ljava/net/Proxy$Type;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    iput-object p1, p0, Lz1/k;->b:Li/a0;
 
-    array-length v0, v0
+    iput-object p2, p0, Lz1/k;->a:Ll2/c;
 
-    new-array v0, v0, [I
+    return-void
+.end method
 
-    sget-object v1, Ljava/net/Proxy$Type;->DIRECT:Ljava/net/Proxy$Type;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+# virtual methods
+.method public final a(Ll2/h;)V
+    .locals 1
 
-    move-result v1
+    iget-object p1, p0, Lz1/k;->b:Li/a0;
 
-    const/4 v2, 0x1
+    iget-object p1, p1, Li/a0;->c:Ljava/lang/Object;
 
-    aput v2, v0, v1
+    check-cast p1, Ljava/util/Map;
 
-    sget-object v1, Ljava/net/Proxy$Type;->HTTP:Ljava/net/Proxy$Type;
+    iget-object v0, p0, Lz1/k;->a:Ll2/c;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-
-    sput-object v0, Lx5/k;->a:[I
+    invoke-interface {p1, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method

@@ -1,96 +1,122 @@
-.class public final Lw3/f0;
-.super Ljava/lang/Object;
+.class public final Lz1/f0;
+.super Landroidx/fragment/app/n;
 .source "SourceFile"
 
-
-# static fields
-.field public static final c:Lw3/f0;
-
-.field public static final d:Lw3/f0;
-
-.field public static final e:Ljava/util/LinkedHashMap;
+# interfaces
+.implements Lz1/g;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final T:Ljava/util/Map;
 
-.field public final b:I
+.field public U:I
+
+.field public V:Landroid/os/Bundle;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 7
+    .locals 1
 
-    new-instance v0, Lw3/f0;
+    new-instance v0, Ljava/util/WeakHashMap;
 
-    const-string v1, "http"
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
-    const/16 v2, 0x50
+    return-void
+.end method
 
-    invoke-direct {v0, v1, v2}, Lw3/f0;-><init>(Ljava/lang/String;I)V
+.method public constructor <init>()V
+    .locals 1
 
-    sput-object v0, Lw3/f0;->c:Lw3/f0;
+    invoke-direct {p0}, Landroidx/fragment/app/n;-><init>()V
 
-    new-instance v1, Lw3/f0;
+    new-instance v0, Ll/b;
 
-    const-string v3, "https"
+    invoke-direct {v0}, Ll/k;-><init>()V
 
-    const/16 v4, 0x1bb
-
-    invoke-direct {v1, v3, v4}, Lw3/f0;-><init>(Ljava/lang/String;I)V
-
-    new-instance v3, Lw3/f0;
-
-    const-string v5, "ws"
-
-    invoke-direct {v3, v5, v2}, Lw3/f0;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lw3/f0;->d:Lw3/f0;
-
-    new-instance v2, Lw3/f0;
-
-    const-string v5, "wss"
-
-    invoke-direct {v2, v5, v4}, Lw3/f0;-><init>(Ljava/lang/String;I)V
-
-    new-instance v4, Lw3/f0;
-
-    const-string v5, "socks"
-
-    const/16 v6, 0x438
-
-    invoke-direct {v4, v5, v6}, Lw3/f0;-><init>(Ljava/lang/String;I)V
-
-    filled-new-array {v0, v1, v3, v2, v4}, [Lw3/f0;
+    invoke-static {v0}, Ljava/util/Collections;->synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    invoke-static {v0}, Lk3/e;->B([Ljava/lang/Object;)Ljava/util/List;
+    iput-object v0, p0, Lz1/f0;->T:Ljava/util/Map;
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    const/16 v1, 0xa
+    iput v0, p0, Lz1/f0;->U:I
 
-    invoke-static {v0, v1}, Lm4/h;->W(Ljava/lang/Iterable;I)I
+    return-void
+.end method
 
-    move-result v1
 
-    invoke-static {v1}, Ls1/d;->t(I)I
+# virtual methods
+.method public final c()Landroid/app/Activity;
+    .locals 1
 
-    move-result v1
+    iget-object v0, p0, Landroidx/fragment/app/n;->w:Landroidx/fragment/app/q;
 
-    const/16 v2, 0x10
+    if-nez v0, :cond_0
 
-    if-ge v1, v2, :cond_0
+    const/4 v0, 0x0
 
-    move v1, v2
+    goto :goto_0
 
     :cond_0
-    new-instance v2, Ljava/util/LinkedHashMap;
+    iget-object v0, v0, Landroidx/fragment/app/q;->e:Landroid/app/Activity;
 
-    invoke-direct {v2, v1}, Ljava/util/LinkedHashMap;-><init>(I)V
+    check-cast v0, Landroidx/fragment/app/r;
 
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    :goto_0
+    return-object v0
+.end method
+
+.method public final f(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+    .locals 0
+
+    invoke-super {p0, p1, p2, p3, p4}, Landroidx/fragment/app/n;->f(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+
+    iget-object p1, p0, Lz1/f0;->T:Ljava/util/Map;
+
+    invoke-interface {p1}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lcom/google/android/gms/common/api/internal/LifecycleCallback;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final l(IILandroid/content/Intent;)V
+    .locals 2
+
+    invoke-super {p0, p1, p2, p3}, Landroidx/fragment/app/n;->l(IILandroid/content/Intent;)V
+
+    iget-object v0, p0, Lz1/f0;->T:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
@@ -99,175 +125,353 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    move-object v3, v1
+    check-cast v1, Lcom/google/android/gms/common/api/internal/LifecycleCallback;
 
-    check-cast v3, Lw3/f0;
-
-    iget-object v3, v3, Lw3/f0;->a:Ljava/lang/String;
-
-    invoke-interface {v2, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_1
-    sput-object v2, Lw3/f0;->e:Ljava/util/LinkedHashMap;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;I)V
-    .locals 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lw3/f0;->a:Ljava/lang/String;
-
-    iput p2, p0, Lw3/f0;->b:I
-
-    const/4 p2, 0x0
-
-    :goto_0
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    if-ge p2, v0, :cond_1
-
-    invoke-virtual {p1, p2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Character;->toLowerCase(C)C
-
-    move-result v1
-
-    if-ne v1, v0, :cond_0
-
-    add-int/lit8 p2, p2, 0x1
+    invoke-virtual {v1, p1, p2, p3}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->b(IILandroid/content/Intent;)V
 
     goto :goto_0
 
     :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "All characters should be lower case"
-
-    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
     return-void
 .end method
 
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final n(Landroid/os/Bundle;)V
     .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
+    iput-boolean v0, p0, Landroidx/fragment/app/n;->G:Z
 
-    return v0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_0
+
+    const-string v2, "android:support:fragments"
+
+    invoke-virtual {p1, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    iget-object v3, p0, Landroidx/fragment/app/n;->x:Landroidx/fragment/app/e0;
+
+    invoke-virtual {v3, v2}, Landroidx/fragment/app/e0;->N(Landroid/os/Parcelable;)V
+
+    iget-object v2, p0, Landroidx/fragment/app/n;->x:Landroidx/fragment/app/e0;
+
+    iput-boolean v1, v2, Landroidx/fragment/app/e0;->z:Z
+
+    iput-boolean v1, v2, Landroidx/fragment/app/e0;->A:Z
+
+    iget-object v3, v2, Landroidx/fragment/app/e0;->G:Landroidx/fragment/app/g0;
+
+    iput-boolean v1, v3, Landroidx/fragment/app/g0;->h:Z
+
+    invoke-virtual {v2, v0}, Landroidx/fragment/app/e0;->s(I)V
 
     :cond_0
-    instance-of v1, p1, Lw3/f0;
+    iget-object v2, p0, Landroidx/fragment/app/n;->x:Landroidx/fragment/app/e0;
 
-    const/4 v2, 0x0
+    iget v3, v2, Landroidx/fragment/app/e0;->n:I
 
-    if-nez v1, :cond_1
+    if-lt v3, v0, :cond_1
 
-    return v2
+    goto :goto_0
 
     :cond_1
-    check-cast p1, Lw3/f0;
+    iput-boolean v1, v2, Landroidx/fragment/app/e0;->z:Z
 
-    iget-object v1, p1, Lw3/f0;->a:Ljava/lang/String;
+    iput-boolean v1, v2, Landroidx/fragment/app/e0;->A:Z
 
-    iget-object v3, p0, Lw3/f0;->a:Ljava/lang/String;
+    iget-object v3, v2, Landroidx/fragment/app/e0;->G:Landroidx/fragment/app/g0;
 
-    invoke-static {v3, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iput-boolean v1, v3, Landroidx/fragment/app/g0;->h:Z
 
-    move-result v1
+    invoke-virtual {v2, v0}, Landroidx/fragment/app/e0;->s(I)V
 
-    if-nez v1, :cond_2
+    :goto_0
+    iput v0, p0, Lz1/f0;->U:I
 
-    return v2
+    iput-object p1, p0, Lz1/f0;->V:Landroid/os/Bundle;
 
-    :cond_2
-    iget v1, p0, Lw3/f0;->b:I
+    iget-object v0, p0, Lz1/f0;->T:Ljava/util/Map;
 
-    iget p1, p1, Lw3/f0;->b:I
-
-    if-eq v1, p1, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-object v0, p0, Lw3/f0;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget v1, p0, Lw3/f0;->b:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v1
-
-    add-int/2addr v1, v0
-
-    return v1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "URLProtocol(name="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lw3/f0;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", defaultPort="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lw3/f0;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x29
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
-    return-object v0
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/android/gms/common/api/internal/LifecycleCallback;
+
+    if-eqz p1, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-virtual {p1, v1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    goto :goto_2
+
+    :cond_2
+    const/4 v1, 0x0
+
+    :goto_2
+    invoke-virtual {v2, v1}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->c(Landroid/os/Bundle;)V
+
+    goto :goto_1
+
+    :cond_3
+    return-void
+.end method
+
+.method public final o()V
+    .locals 2
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroidx/fragment/app/n;->G:Z
+
+    const/4 v0, 0x5
+
+    iput v0, p0, Lz1/f0;->U:I
+
+    iget-object v0, p0, Lz1/f0;->T:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/gms/common/api/internal/LifecycleCallback;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final s()V
+    .locals 2
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroidx/fragment/app/n;->G:Z
+
+    const/4 v0, 0x3
+
+    iput v0, p0, Lz1/f0;->U:I
+
+    iget-object v0, p0, Lz1/f0;->T:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/gms/common/api/internal/LifecycleCallback;
+
+    invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->d()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final t(Landroid/os/Bundle;)V
+    .locals 4
+
+    iget-object v0, p0, Lz1/f0;->T:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    new-instance v2, Landroid/os/Bundle;
+
+    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/android/gms/common/api/internal/LifecycleCallback;
+
+    invoke-virtual {v3, v2}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->e(Landroid/os/Bundle;)V
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-virtual {p1, v1, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final u()V
+    .locals 2
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroidx/fragment/app/n;->G:Z
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lz1/f0;->U:I
+
+    iget-object v0, p0, Lz1/f0;->T:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/gms/common/api/internal/LifecycleCallback;
+
+    invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->f()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final v()V
+    .locals 2
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroidx/fragment/app/n;->G:Z
+
+    const/4 v0, 0x4
+
+    iput v0, p0, Lz1/f0;->U:I
+
+    iget-object v0, p0, Lz1/f0;->T:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/gms/common/api/internal/LifecycleCallback;
+
+    invoke-virtual {v1}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->g()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

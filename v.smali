@@ -1,158 +1,81 @@
-.class public final Lw3/v;
+.class public abstract Lz1/v;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final b:Lw3/v;
-
-.field public static final c:Lw3/v;
-
-.field public static final d:Lw3/v;
-
-
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
-
-    new-instance v0, Lw3/v;
-
-    const-string v1, "GET"
-
-    invoke-direct {v0, v1}, Lw3/v;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lw3/v;->b:Lw3/v;
-
-    new-instance v1, Lw3/v;
-
-    const-string v2, "POST"
-
-    invoke-direct {v1, v2}, Lw3/v;-><init>(Ljava/lang/String;)V
-
-    sput-object v1, Lw3/v;->c:Lw3/v;
-
-    new-instance v2, Lw3/v;
-
-    const-string v3, "PUT"
-
-    invoke-direct {v2, v3}, Lw3/v;-><init>(Ljava/lang/String;)V
-
-    new-instance v3, Lw3/v;
-
-    const-string v4, "PATCH"
-
-    invoke-direct {v3, v4}, Lw3/v;-><init>(Ljava/lang/String;)V
-
-    new-instance v4, Lw3/v;
-
-    const-string v5, "DELETE"
-
-    invoke-direct {v4, v5}, Lw3/v;-><init>(Ljava/lang/String;)V
-
-    new-instance v5, Lw3/v;
-
-    const-string v6, "HEAD"
-
-    invoke-direct {v5, v6}, Lw3/v;-><init>(Ljava/lang/String;)V
-
-    sput-object v5, Lw3/v;->d:Lw3/v;
-
-    new-instance v6, Lw3/v;
-
-    const-string v7, "OPTIONS"
-
-    invoke-direct {v6, v7}, Lw3/v;-><init>(Ljava/lang/String;)V
-
-    filled-new-array/range {v0 .. v6}, [Lw3/v;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lk3/e;->B([Ljava/lang/Object;)Ljava/util/List;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lw3/v;->a:Ljava/lang/String;
+    iput p1, p0, Lz1/v;->a:I
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lw3/v;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lw3/v;
-
-    iget-object v1, p0, Lw3/v;->a:Ljava/lang/String;
-
-    iget-object p1, p1, Lw3/v;->a:Ljava/lang/String;
-
-    invoke-static {v1, p1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Lw3/v;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public static g(Landroid/os/RemoteException;)Lcom/google/android/gms/common/api/Status;
     .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "HttpMethod(value="
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v1, p0, Lw3/v;->a:Ljava/lang/String;
+    move-result-object v1
 
-    const/16 v2, 0x29
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    invoke-static {v0, v1, v2}, Landroidx/fragment/app/u;->o(Ljava/lang/StringBuilder;Ljava/lang/String;C)Ljava/lang/String;
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ": "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/Throwable;->getLocalizedMessage()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    new-instance p0, Lcom/google/android/gms/common/api/Status;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
+    const/4 v1, 0x0
+
+    const/16 v2, 0x13
+
+    invoke-direct {p0, v2, v0, v1, v1}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;Landroid/app/PendingIntent;Lx1/a;)V
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public abstract a(Lz1/q;)Z
+.end method
+
+.method public abstract b(Lz1/q;)[Lx1/c;
+.end method
+
+.method public abstract c(Lcom/google/android/gms/common/api/Status;)V
+.end method
+
+.method public abstract d(Ljava/lang/RuntimeException;)V
+.end method
+
+.method public abstract e(Lz1/q;)V
+.end method
+
+.method public abstract f(Li/a0;Z)V
 .end method
