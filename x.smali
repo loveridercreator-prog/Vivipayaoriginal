@@ -1,205 +1,242 @@
-.class public Lg6/x;
+.class public abstract Lh/x;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final d:Lg6/w;
+# interfaces
+.implements Lh/g0;
+.implements Lh/c0;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field public a:Z
-
-.field public b:J
-
-.field public c:J
+.field public e:Landroid/graphics/Rect;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public static m(Lh/l;Landroid/content/Context;I)I
+    .locals 10
 
-    new-instance v0, Lg6/w;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    sput-object v0, Lg6/x;->d:Lg6/w;
+    move-result v1
 
-    return-void
+    invoke-static {v0, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v2
+
+    invoke-virtual {p0}, Lh/l;->getCount()I
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    move v5, v0
+
+    move v6, v5
+
+    move-object v7, v4
+
+    move-object v8, v7
+
+    :goto_0
+    if-ge v0, v3, :cond_4
+
+    invoke-virtual {p0, v0}, Landroid/widget/BaseAdapter;->getItemViewType(I)I
+
+    move-result v9
+
+    if-eq v9, v6, :cond_0
+
+    move-object v8, v4
+
+    move v6, v9
+
+    :cond_0
+    if-nez v7, :cond_1
+
+    new-instance v7, Landroid/widget/FrameLayout;
+
+    invoke-direct {v7, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    :cond_1
+    invoke-virtual {p0, v0, v8, v7}, Lh/l;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v1, v2}, Landroid/view/View;->measure(II)V
+
+    invoke-virtual {v8}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v9
+
+    if-lt v9, p2, :cond_2
+
+    return p2
+
+    :cond_2
+    if-le v9, v5, :cond_3
+
+    move v5, v9
+
+    :cond_3
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    return v5
+.end method
+
+.method public static u(Lh/o;)Z
+    .locals 5
+
+    iget-object v0, p0, Lh/o;->f:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    invoke-virtual {p0, v2}, Lh/o;->getItem(I)Landroid/view/MenuItem;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Landroid/view/MenuItem;->isVisible()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-interface {v3}, Landroid/view/MenuItem;->getIcon()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_0
+
+    const/4 v1, 0x1
+
+    goto :goto_1
+
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    return v1
 .end method
 
 
 # virtual methods
-.method public a()Lg6/x;
-    .locals 1
+.method public final d(Landroid/content/Context;Lh/o;)V
+    .locals 0
 
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lg6/x;->a:Z
-
-    return-object p0
+    return-void
 .end method
 
-.method public b()Lg6/x;
-    .locals 2
+.method public final g(Lh/q;)Z
+    .locals 0
 
-    const-wide/16 v0, 0x0
+    const/4 p1, 0x0
 
-    iput-wide v0, p0, Lg6/x;->c:J
-
-    return-object p0
+    return p1
 .end method
 
-.method public c()J
-    .locals 2
+.method public final i(Lh/q;)Z
+    .locals 0
 
-    iget-boolean v0, p0, Lg6/x;->a:Z
+    const/4 p1, 0x0
 
-    if-eqz v0, :cond_0
-
-    iget-wide v0, p0, Lg6/x;->b:J
-
-    return-wide v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "No deadline"
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return p1
 .end method
 
-.method public d(J)Lg6/x;
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lg6/x;->a:Z
-
-    iput-wide p1, p0, Lg6/x;->b:J
-
-    return-object p0
+.method public abstract l(Lh/o;)V
 .end method
 
-.method public e()Z
-    .locals 1
-
-    iget-boolean v0, p0, Lg6/x;->a:Z
-
-    return v0
+.method public abstract n(Landroid/view/View;)V
 .end method
 
-.method public f()V
-    .locals 4
+.method public abstract o(Z)V
+.end method
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .locals 0
 
-    move-result-object v0
+    invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
 
-    invoke-virtual {v0}, Ljava/lang/Thread;->isInterrupted()Z
+    move-result-object p1
 
-    move-result v0
+    check-cast p1, Landroid/widget/ListAdapter;
 
-    if-nez v0, :cond_2
+    instance-of p2, p1, Landroid/widget/HeaderViewListAdapter;
 
-    iget-boolean v0, p0, Lg6/x;->a:Z
+    if-eqz p2, :cond_0
 
-    if-eqz v0, :cond_1
+    move-object p2, p1
 
-    iget-wide v0, p0, Lg6/x;->b:J
+    check-cast p2, Landroid/widget/HeaderViewListAdapter;
 
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
+    invoke-virtual {p2}, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
 
-    move-result-wide v2
+    move-result-object p2
 
-    sub-long/2addr v0, v2
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_0
+    check-cast p2, Lh/l;
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Ljava/io/InterruptedIOException;
+    move-object p2, p1
 
-    const-string v1, "deadline reached"
+    check-cast p2, Lh/l;
 
-    invoke-direct {v0, v1}, Ljava/io/InterruptedIOException;-><init>(Ljava/lang/String;)V
+    :goto_0
+    iget-object p2, p2, Lh/l;->e:Lh/o;
 
-    throw v0
+    invoke-interface {p1, p3}, Landroid/widget/Adapter;->getItem(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/MenuItem;
+
+    instance-of p3, p0, Lh/i;
+
+    xor-int/lit8 p3, p3, 0x1
+
+    if-eqz p3, :cond_1
+
+    const/4 p3, 0x0
+
+    goto :goto_1
 
     :cond_1
-    :goto_0
+    const/4 p3, 0x4
+
+    :goto_1
+    invoke-virtual {p2, p1, p0, p3}, Lh/o;->q(Landroid/view/MenuItem;Lh/c0;I)Z
+
     return-void
-
-    :cond_2
-    new-instance v0, Ljava/io/InterruptedIOException;
-
-    const-string v1, "interrupted"
-
-    invoke-direct {v0, v1}, Ljava/io/InterruptedIOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
-.method public g(JLjava/util/concurrent/TimeUnit;)Lg6/x;
-    .locals 2
-
-    const-string v0, "unit"
-
-    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-ltz v0, :cond_0
-
-    invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Lg6/x;->c:J
-
-    return-object p0
-
-    :cond_0
-    new-instance p3, Ljava/lang/StringBuilder;
-
-    const-string v0, "timeout < 0: "
-
-    invoke-direct {p3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance p2, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p2
+.method public abstract p(I)V
 .end method
 
-.method public h()J
-    .locals 2
+.method public abstract q(I)V
+.end method
 
-    iget-wide v0, p0, Lg6/x;->c:J
+.method public abstract r(Landroid/widget/PopupWindow$OnDismissListener;)V
+.end method
 
-    return-wide v0
+.method public abstract s(Z)V
+.end method
+
+.method public abstract t(I)V
 .end method

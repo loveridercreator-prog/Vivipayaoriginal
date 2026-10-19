@@ -1,111 +1,169 @@
-.class public final Lg6/o;
-.super Lm4/d;
+.class public final Lh5/o;
+.super Lr4/i;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/RandomAccess;
+.implements Lv4/e;
 
 
 # instance fields
-.field public final e:[Lg6/j;
+.field public e:I
 
-.field public final f:[I
+.field public synthetic f:Ljava/lang/Object;
+
+.field public final synthetic g:Lh5/v;
+
+.field public final synthetic h:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>([Lg6/j;[I)V
+.method public constructor <init>(Lh5/v;Ljava/lang/Object;Lp4/e;)V
     .locals 0
 
-    invoke-direct {p0}, Lm4/d;-><init>()V
+    iput-object p1, p0, Lh5/o;->g:Lh5/v;
 
-    iput-object p1, p0, Lg6/o;->e:[Lg6/j;
+    iput-object p2, p0, Lh5/o;->h:Ljava/lang/Object;
 
-    iput-object p2, p0, Lg6/o;->f:[I
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lr4/i;-><init>(ILp4/e;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final create(Ljava/lang/Object;Lp4/e;)Lp4/e;
+    .locals 3
 
-    iget-object v0, p0, Lg6/o;->e:[Lg6/j;
+    new-instance v0, Lh5/o;
 
-    array-length v0, v0
+    iget-object v1, p0, Lh5/o;->g:Lh5/v;
 
-    return v0
+    iget-object v2, p0, Lh5/o;->h:Ljava/lang/Object;
+
+    invoke-direct {v0, v1, v2, p2}, Lh5/o;-><init>(Lh5/v;Ljava/lang/Object;Lp4/e;)V
+
+    iput-object p1, v0, Lh5/o;->f:Ljava/lang/Object;
+
+    return-object v0
 .end method
 
-.method public final bridge contains(Ljava/lang/Object;)Z
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    instance-of v0, p1, Lg6/j;
+    check-cast p1, Lf5/b0;
 
-    if-nez v0, :cond_0
+    check-cast p2, Lp4/e;
 
-    const/4 p1, 0x0
+    invoke-virtual {p0, p1, p2}, Lh5/o;->create(Ljava/lang/Object;Lp4/e;)Lp4/e;
 
-    return p1
+    move-result-object p1
 
-    :cond_0
-    check-cast p1, Lg6/j;
+    check-cast p1, Lh5/o;
 
-    invoke-super {p0, p1}, Lm4/a;->contains(Ljava/lang/Object;)Z
+    sget-object p2, Ll4/y;->a:Ll4/y;
 
-    move-result p1
+    invoke-virtual {p1, p2}, Lh5/o;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return p1
-.end method
-
-.method public final get(I)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lg6/o;->e:[Lg6/j;
-
-    aget-object p1, v0, p1
+    move-result-object p1
 
     return-object p1
 .end method
 
-.method public final bridge indexOf(Ljava/lang/Object;)I
-    .locals 1
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    instance-of v0, p1, Lg6/j;
+    sget-object v0, Lq4/a;->e:Lq4/a;
 
-    if-nez v0, :cond_0
+    iget v1, p0, Lh5/o;->e:I
 
-    const/4 p1, -0x1
+    sget-object v2, Ll4/y;->a:Ll4/y;
 
-    return p1
+    const/4 v3, 0x1
 
-    :cond_0
-    check-cast p1, Lg6/j;
+    if-eqz v1, :cond_1
 
-    invoke-super {p0, p1}, Lm4/d;->indexOf(Ljava/lang/Object;)I
+    if-ne v1, v3, :cond_0
 
-    move-result p1
+    :try_start_0
+    invoke-static {p1}, Lk3/e;->M(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return p1
-.end method
+    goto :goto_0
 
-.method public final bridge lastIndexOf(Ljava/lang/Object;)I
-    .locals 1
+    :catchall_0
+    move-exception p1
 
-    instance-of v0, p1, Lg6/j;
-
-    if-nez v0, :cond_0
-
-    const/4 p1, -0x1
-
-    return p1
+    goto :goto_1
 
     :cond_0
-    check-cast p1, Lg6/j;
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    invoke-super {p0, p1}, Lm4/d;->lastIndexOf(Ljava/lang/Object;)I
+    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
 
-    move-result p1
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    return p1
+    throw p1
+
+    :cond_1
+    invoke-static {p1}, Lk3/e;->M(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lh5/o;->f:Ljava/lang/Object;
+
+    check-cast p1, Lf5/b0;
+
+    iget-object p1, p0, Lh5/o;->g:Lh5/v;
+
+    iget-object v1, p0, Lh5/o;->h:Ljava/lang/Object;
+
+    :try_start_1
+    iput v3, p0, Lh5/o;->e:I
+
+    invoke-interface {p1, v1, p0}, Lh5/v;->d(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
+
+    move-result-object p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-ne p1, v0, :cond_2
+
+    return-object v0
+
+    :cond_2
+    :goto_0
+    move-object p1, v2
+
+    goto :goto_2
+
+    :goto_1
+    invoke-static {p1}, Lk3/e;->s(Ljava/lang/Throwable;)Ll4/j;
+
+    move-result-object p1
+
+    :goto_2
+    instance-of v0, p1, Ll4/j;
+
+    xor-int/2addr v0, v3
+
+    if-eqz v0, :cond_3
+
+    goto :goto_3
+
+    :cond_3
+    invoke-static {p1}, Ll4/k;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
+
+    move-result-object p1
+
+    new-instance v2, Lh5/k;
+
+    invoke-direct {v2, p1}, Lh5/k;-><init>(Ljava/lang/Throwable;)V
+
+    :goto_3
+    new-instance p1, Lh5/m;
+
+    invoke-direct {p1, v2}, Lh5/m;-><init>(Ljava/lang/Object;)V
+
+    return-object p1
 .end method

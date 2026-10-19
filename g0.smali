@@ -1,11 +1,17 @@
-.class public interface abstract Lf5/g0;
+.class public interface abstract Lh/g0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # virtual methods
-.method public abstract a(JLf5/h;)V
+.method public abstract a()Z
 .end method
 
-.method public abstract l(JLjava/lang/Runnable;Lp4/j;)Lf5/l0;
+.method public abstract dismiss()V
+.end method
+
+.method public abstract f()V
+.end method
+
+.method public abstract k()Li/y1;
 .end method

@@ -1,60 +1,23 @@
-.class public interface abstract Lg6/i;
+.class public interface abstract Lh5/i;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lg6/v;
-.implements Ljava/nio/channels/ReadableByteChannel;
+.implements Lh5/v;
+.implements Lh5/u;
 
 
-# virtual methods
-.method public abstract D()I
-.end method
+# static fields
+.field public static final c:Lh5/h;
 
-.method public abstract H()J
-.end method
 
-.method public abstract M()Ljava/lang/String;
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-.method public abstract P(J)V
-.end method
+    sget-object v0, Lh5/h;->a:Lh5/h;
 
-.method public abstract U()Z
-.end method
+    sput-object v0, Lh5/i;->c:Lh5/h;
 
-.method public abstract W()J
-.end method
-
-.method public abstract Y(Ljava/nio/charset/Charset;)Ljava/lang/String;
-.end method
-
-.method public abstract b0()Lg6/f;
-.end method
-
-.method public abstract c0()B
-.end method
-
-.method public abstract d()Lg6/g;
-.end method
-
-.method public abstract h(Lg6/o;)I
-.end method
-
-.method public abstract i([B)V
-.end method
-
-.method public abstract n(J)Lg6/j;
-.end method
-
-.method public abstract q(J)Ljava/lang/String;
-.end method
-
-.method public abstract r(Lg6/g;J)V
-.end method
-
-.method public abstract s(J)V
-.end method
-
-.method public abstract v()S
+    return-void
 .end method

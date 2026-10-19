@@ -1,42 +1,45 @@
-.class public interface abstract Lg6/h;
+.class public final Lh5/h;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lg6/u;
-.implements Ljava/nio/channels/WritableByteChannel;
+
+# static fields
+.field public static final synthetic a:Lh5/h;
+
+.field public static final b:I
 
 
-# virtual methods
-.method public abstract B(Lg6/j;)Lg6/h;
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 8
 
-.method public abstract F(I)Lg6/h;
-.end method
+    new-instance v0, Lh5/h;
 
-.method public abstract Q(Ljava/lang/String;)Lg6/h;
-.end method
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract V(I)Lg6/h;
-.end method
+    sput-object v0, Lh5/h;->a:Lh5/h;
 
-.method public abstract d()Lg6/g;
-.end method
+    const-string v1, "kotlinx.coroutines.channels.defaultBuffer"
 
-.method public abstract f([B)Lg6/h;
-.end method
+    const/16 v0, 0x40
 
-.method public abstract flush()V
-.end method
+    int-to-long v2, v0
 
-.method public abstract j()Lg6/h;
-.end method
+    const/4 v0, 0x1
 
-.method public abstract k(J)Lg6/h;
-.end method
+    int-to-long v4, v0
 
-.method public abstract t()Lg6/h;
-.end method
+    const v0, 0x7ffffffe
 
-.method public abstract z(I)Lg6/h;
+    int-to-long v6, v0
+
+    invoke-static/range {v1 .. v7}, La5/d;->k(Ljava/lang/String;JJJ)J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    sput v0, Lh5/h;->b:I
+
+    return-void
 .end method

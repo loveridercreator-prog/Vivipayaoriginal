@@ -1,14 +1,17 @@
-.class public interface abstract Lg6/v;
+.class public interface abstract Lh5/v;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/io/Closeable;
-
 
 # virtual methods
-.method public abstract A(Lg6/g;J)J
+.method public abstract d(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
 .end method
 
-.method public abstract e()Lg6/x;
+.method public abstract f(Ljava/lang/Throwable;)Z
+.end method
+
+.method public abstract h(Ljava/lang/Object;)Ljava/lang/Object;
+.end method
+
+.method public abstract j(Lq/a;)V
 .end method

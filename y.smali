@@ -1,31 +1,34 @@
-.class public abstract Lg6/y;
+.class public final Lh/y;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/widget/PopupWindow$OnDismissListener;
 
-# static fields
-.field public static final a:[B
+
+# instance fields
+.field public final synthetic e:Lh/a0;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lh/a0;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lh/y;->e:Lh/a0;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onDismiss()V
     .locals 1
 
-    sget-object v0, Lg6/j;->h:Lg6/j;
+    iget-object v0, p0, Lh/y;->e:Lh/a0;
 
-    const-string v0, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-
-    invoke-static {v0}, Lc6/a;->f(Ljava/lang/String;)Lg6/j;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lg6/j;->e:[B
-
-    sput-object v0, Lg6/y;->a:[B
-
-    const-string v0, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
-
-    invoke-static {v0}, Lc6/a;->f(Ljava/lang/String;)Lg6/j;
+    invoke-virtual {v0}, Lh/a0;->c()V
 
     return-void
 .end method
