@@ -1,304 +1,181 @@
-.class public final Ld5/b;
+.class public final Le6/b;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Iterator;
-.implements Lx4/a;
+.implements Le6/d;
 
 
 # instance fields
-.field public e:I
-
-.field public f:I
-
-.field public g:I
-
-.field public h:La5/h;
-
-.field public i:I
-
-.field public final synthetic j:Ld5/c;
+.field public final a:Ljava/util/LinkedHashMap;
 
 
 # direct methods
-.method public constructor <init>(Ld5/c;)V
-    .locals 3
+.method public varargs constructor <init>([Ljava/security/cert/X509Certificate;)V
+    .locals 6
+
+    const-string v0, "caCerts"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ld5/b;->j:Ld5/c;
+    new-instance v0, Ljava/util/LinkedHashMap;
 
-    const/4 v0, -0x1
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    iput v0, p0, Ld5/b;->e:I
+    array-length v1, p1
 
-    iget v0, p1, Ld5/c;->b:I
+    const/4 v2, 0x0
 
-    iget-object p1, p1, Ld5/c;->a:Ljava/lang/CharSequence;
+    :goto_0
+    if-ge v2, v1, :cond_1
 
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+    aget-object v3, p1, v2
 
-    move-result p1
+    add-int/lit8 v2, v2, 0x1
 
-    if-ltz p1, :cond_2
+    invoke-virtual {v3}, Ljava/security/cert/X509Certificate;->getSubjectX500Principal()Ljavax/security/auth/x500/X500Principal;
 
-    if-gez v0, :cond_0
+    move-result-object v4
 
-    const/4 v0, 0x0
+    const-string v5, "caCert.subjectX500Principal"
+
+    invoke-static {v4, v5}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v4}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    if-nez v5, :cond_0
+
+    new-instance v5, Ljava/util/LinkedHashSet;
+
+    invoke-direct {v5}, Ljava/util/LinkedHashSet;-><init>()V
+
+    invoke-interface {v0, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    check-cast v5, Ljava/util/Set;
+
+    invoke-interface {v5, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    :cond_0
-    if-le v0, p1, :cond_1
-
-    move v0, p1
-
     :cond_1
-    :goto_0
-    iput v0, p0, Ld5/b;->f:I
-
-    iput v0, p0, Ld5/b;->g:I
+    iput-object v0, p0, Le6/b;->a:Ljava/util/LinkedHashMap;
 
     return-void
-
-    :cond_2
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Cannot coerce value to an empty range: maximum "
-
-    const-string v2, " is less than minimum 0."
-
-    invoke-static {v1, p1, v2}, Landroidx/fragment/app/u;->j(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 7
+.method public final a(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509Certificate;
+    .locals 4
 
-    iget v0, p0, Ld5/b;->g:I
+    const-string v0, "cert"
 
-    const/4 v1, 0x0
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-gez v0, :cond_0
-
-    iput v1, p0, Ld5/b;->e:I
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ld5/b;->h:La5/h;
-
-    goto :goto_1
-
-    :cond_0
-    iget-object v2, p0, Ld5/b;->j:Ld5/c;
-
-    iget v3, v2, Ld5/c;->c:I
-
-    const/4 v4, -0x1
-
-    const/4 v5, 0x1
-
-    if-lez v3, :cond_1
-
-    iget v6, p0, Ld5/b;->i:I
-
-    add-int/2addr v6, v5
-
-    iput v6, p0, Ld5/b;->i:I
-
-    if-ge v6, v3, :cond_2
-
-    :cond_1
-    iget-object v3, v2, Ld5/c;->a:Ljava/lang/CharSequence;
-
-    invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
-
-    move-result v3
-
-    if-le v0, v3, :cond_3
-
-    :cond_2
-    new-instance v0, La5/h;
-
-    iget v1, p0, Ld5/b;->f:I
-
-    iget-object v2, v2, Ld5/c;->a:Ljava/lang/CharSequence;
-
-    invoke-static {v2}, Ld5/j;->v0(Ljava/lang/CharSequence;)I
-
-    move-result v2
-
-    invoke-direct {v0, v1, v2, v5}, La5/f;-><init>(III)V
-
-    iput-object v0, p0, Ld5/b;->h:La5/h;
-
-    iput v4, p0, Ld5/b;->g:I
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v0, v2, Ld5/c;->d:Lv4/e;
-
-    iget-object v3, v2, Ld5/c;->a:Ljava/lang/CharSequence;
-
-    iget v6, p0, Ld5/b;->g:I
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-interface {v0, v3, v6}, Lv4/e;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/security/cert/X509Certificate;->getIssuerX500Principal()Ljavax/security/auth/x500/X500Principal;
 
     move-result-object v0
 
-    check-cast v0, Ll4/i;
+    iget-object v1, p0, Le6/b;->a:Ljava/util/LinkedHashMap;
 
-    if-nez v0, :cond_4
+    invoke-virtual {v1, v0}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, La5/h;
+    move-result-object v0
 
-    iget v1, p0, Ld5/b;->f:I
+    check-cast v0, Ljava/util/Set;
 
-    iget-object v2, v2, Ld5/c;->a:Ljava/lang/CharSequence;
+    const/4 v1, 0x0
 
-    invoke-static {v2}, Ld5/j;->v0(Ljava/lang/CharSequence;)I
+    if-nez v0, :cond_0
 
-    move-result v2
+    return-object v1
 
-    invoke-direct {v0, v1, v2, v5}, La5/f;-><init>(III)V
+    :cond_0
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    iput-object v0, p0, Ld5/b;->h:La5/h;
+    move-result-object v0
 
-    iput v4, p0, Ld5/b;->g:I
-
-    goto :goto_0
-
-    :cond_4
-    iget-object v2, v0, Ll4/i;->e:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/Number;
-
-    invoke-virtual {v2}, Ljava/lang/Number;->intValue()I
+    :catch_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    iget-object v0, v0, Ll4/i;->f:Ljava/lang/Object;
+    if-eqz v2, :cond_1
 
-    check-cast v0, Ljava/lang/Number;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
+    move-result-object v2
 
-    move-result v0
+    move-object v3, v2
 
-    iget v3, p0, Ld5/b;->f:I
+    check-cast v3, Ljava/security/cert/X509Certificate;
 
-    invoke-static {v3, v2}, Lk3/e;->R(II)La5/h;
+    :try_start_0
+    invoke-virtual {v3}, Ljava/security/cert/Certificate;->getPublicKey()Ljava/security/PublicKey;
 
     move-result-object v3
 
-    iput-object v3, p0, Ld5/b;->h:La5/h;
+    invoke-virtual {p1, v3}, Ljava/security/cert/Certificate;->verify(Ljava/security/PublicKey;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    add-int/2addr v2, v0
+    move-object v1, v2
 
-    iput v2, p0, Ld5/b;->f:I
+    :cond_1
+    check-cast v1, Ljava/security/cert/X509Certificate;
 
-    if-nez v0, :cond_5
-
-    move v1, v5
-
-    :cond_5
-    add-int/2addr v2, v1
-
-    iput v2, p0, Ld5/b;->g:I
-
-    :goto_0
-    iput v5, p0, Ld5/b;->e:I
-
-    :goto_1
-    return-void
+    return-object v1
 .end method
 
-.method public final hasNext()Z
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iget v0, p0, Ld5/b;->e:I
+    if-eq p1, p0, :cond_1
 
-    const/4 v1, -0x1
+    instance-of v0, p1, Le6/b;
 
-    if-ne v0, v1, :cond_0
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Ld5/b;->a()V
+    check-cast p1, Le6/b;
 
-    :cond_0
-    iget v0, p0, Ld5/b;->e:I
+    iget-object p1, p1, Le6/b;->a:Ljava/util/LinkedHashMap;
 
-    const/4 v1, 0x1
+    iget-object v0, p0, Le6/b;->a:Ljava/util/LinkedHashMap;
 
-    if-ne v0, v1, :cond_1
+    invoke-static {p1, v0}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
 
     goto :goto_0
 
-    :cond_1
-    const/4 v1, 0x0
-
-    :goto_0
-    return v1
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .locals 3
-
-    iget v0, p0, Ld5/b;->e:I
-
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-virtual {p0}, Ld5/b;->a()V
-
     :cond_0
-    iget v0, p0, Ld5/b;->e:I
+    const/4 p1, 0x0
 
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Ld5/b;->h:La5/h;
-
-    const-string v2, "null cannot be cast to non-null type kotlin.ranges.IntRange"
-
-    invoke-static {v0, v2}, Lk3/e;->j(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v2, 0x0
-
-    iput-object v2, p0, Ld5/b;->h:La5/h;
-
-    iput v1, p0, Ld5/b;->e:I
-
-    return-object v0
+    goto :goto_1
 
     :cond_1
-    new-instance v0, Ljava/util/NoSuchElementException;
+    :goto_0
+    const/4 p1, 0x1
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
+    :goto_1
+    return p1
 .end method
 
-.method public final remove()V
-    .locals 2
+.method public final hashCode()I
+    .locals 1
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    iget-object v0, p0, Le6/b;->a:Ljava/util/LinkedHashMap;
 
-    const-string v1, "Operation is not supported for read-only collection"
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    move-result v0
 
-    throw v0
+    return v0
 .end method

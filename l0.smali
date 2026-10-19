@@ -1,114 +1,289 @@
-.class public final Landroidx/lifecycle/l0;
+.class public final Le/l0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lg1/c;
+
+# static fields
+.field public static d:Le/l0;
 
 
 # instance fields
-.field public final a:Lg1/d;
+.field public a:J
 
-.field public b:Z
+.field public b:J
 
-.field public c:Landroid/os/Bundle;
-
-.field public final d:Ll4/m;
-
-
-# direct methods
-.method public constructor <init>(Lg1/d;Landroidx/fragment/app/r;)V
-    .locals 1
-
-    const-string v0, "savedStateRegistry"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Landroidx/lifecycle/l0;->a:Lg1/d;
-
-    new-instance p1, Lc0/d;
-
-    const/4 v0, 0x3
-
-    invoke-direct {p1, v0, p2}, Lc0/d;-><init>(ILjava/lang/Object;)V
-
-    new-instance p2, Ll4/m;
-
-    invoke-direct {p2, p1}, Ll4/m;-><init>(Lv4/a;)V
-
-    iput-object p2, p0, Landroidx/lifecycle/l0;->d:Ll4/m;
-
-    return-void
-.end method
+.field public c:I
 
 
 # virtual methods
-.method public final a()Landroid/os/Bundle;
-    .locals 3
+.method public final a(JDD)V
+    .locals 15
 
-    new-instance v0, Landroid/os/Bundle;
+    move-object v0, p0
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    const-wide v1, 0xdc6d62da00L
 
-    iget-object v1, p0, Landroidx/lifecycle/l0;->c:Landroid/os/Bundle;
+    sub-long v3, p1, v1
 
-    if-eqz v1, :cond_0
+    long-to-float v3, v3
 
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+    const v4, 0x4ca4cb80    # 8.64E7f
+
+    div-float/2addr v3, v4
+
+    const v4, 0x3c8ceb25
+
+    mul-float/2addr v4, v3
+
+    const v5, 0x40c7ae92
+
+    add-float/2addr v4, v5
+
+    float-to-double v5, v4
+
+    const-wide v7, 0x3fa11c5fc0000000L    # 0.03341960161924362
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v9
+
+    mul-double/2addr v9, v7
+
+    add-double/2addr v9, v5
+
+    const/high16 v7, 0x40000000    # 2.0f
+
+    mul-float/2addr v7, v4
+
+    float-to-double v7, v7
+
+    invoke-static {v7, v8}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v7
+
+    const-wide v11, 0x3f36e05b00000000L    # 3.4906598739326E-4
+
+    mul-double/2addr v7, v11
+
+    add-double/2addr v7, v9
+
+    const/high16 v9, 0x40400000    # 3.0f
+
+    mul-float/2addr v4, v9
+
+    float-to-double v9, v4
+
+    invoke-static {v9, v10}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v9
+
+    const-wide v11, 0x3ed5f61cc0000000L    # 5.236000106378924E-6
+
+    mul-double/2addr v9, v11
+
+    add-double/2addr v9, v7
+
+    const-wide v7, 0x3ffcbed85e1ce332L    # 1.796593063
+
+    add-double/2addr v9, v7
+
+    const-wide v7, 0x400921fb54442d18L    # Math.PI
+
+    add-double/2addr v9, v7
+
+    move-wide/from16 v7, p5
+
+    neg-double v7, v7
+
+    const-wide v11, 0x4076800000000000L    # 360.0
+
+    div-double/2addr v7, v11
+
+    const v4, 0x3a6bedfa    # 9.0E-4f
+
+    sub-float/2addr v3, v4
+
+    float-to-double v11, v3
+
+    sub-double/2addr v11, v7
+
+    invoke-static {v11, v12}, Ljava/lang/Math;->round(D)J
+
+    move-result-wide v11
+
+    long-to-float v3, v11
+
+    add-float/2addr v3, v4
+
+    float-to-double v3, v3
+
+    add-double/2addr v3, v7
+
+    const-wide v7, 0x3f75b573eab367a1L    # 0.0053
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v5
+
+    mul-double/2addr v5, v7
+
+    add-double/2addr v5, v3
+
+    const-wide/high16 v3, 0x4000000000000000L    # 2.0
+
+    mul-double/2addr v3, v9
+
+    invoke-static {v3, v4}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v3
+
+    const-wide v7, -0x4083bcd35a858794L    # -0.0069
+
+    mul-double/2addr v3, v7
+
+    add-double/2addr v3, v5
+
+    invoke-static {v9, v10}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v5
+
+    const-wide v7, 0x3fda31a380000000L    # 0.4092797040939331
+
+    invoke-static {v7, v8}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v7
+
+    mul-double/2addr v7, v5
+
+    invoke-static {v7, v8}, Ljava/lang/Math;->asin(D)D
+
+    move-result-wide v5
+
+    const-wide v7, 0x3f91df46a0000000L    # 0.01745329238474369
+
+    mul-double v7, v7, p3
+
+    const-wide v9, -0x4045311600000000L    # -0.10471975803375244
+
+    invoke-static {v9, v10}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v9
+
+    invoke-static {v7, v8}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v11
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v13
+
+    mul-double/2addr v13, v11
+
+    sub-double/2addr v9, v13
+
+    invoke-static {v7, v8}, Ljava/lang/Math;->cos(D)D
+
+    move-result-wide v7
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->cos(D)D
+
+    move-result-wide v5
+
+    mul-double/2addr v5, v7
+
+    div-double/2addr v9, v5
+
+    const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
+
+    cmpl-double v5, v9, v5
+
+    const/4 v6, 0x1
+
+    const-wide/16 v7, -0x1
+
+    if-ltz v5, :cond_0
+
+    iput v6, v0, Le/l0;->c:I
+
+    iput-wide v7, v0, Le/l0;->a:J
+
+    iput-wide v7, v0, Le/l0;->b:J
+
+    return-void
 
     :cond_0
-    iget-object v1, p0, Landroidx/lifecycle/l0;->d:Ll4/m;
+    const-wide/high16 v11, -0x4010000000000000L    # -1.0
 
-    invoke-virtual {v1}, Ll4/m;->getValue()Ljava/lang/Object;
+    cmpg-double v5, v9, v11
 
-    move-result-object v1
+    const/4 v11, 0x0
 
-    check-cast v1, Landroidx/lifecycle/m0;
+    if-gtz v5, :cond_1
 
-    iget-object v1, v1, Landroidx/lifecycle/m0;->c:Ljava/util/LinkedHashMap;
+    iput v11, v0, Le/l0;->c:I
 
-    invoke-virtual {v1}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
+    iput-wide v7, v0, Le/l0;->a:J
 
-    move-result-object v1
+    iput-wide v7, v0, Le/l0;->b:J
 
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, p0, Landroidx/lifecycle/l0;->b:Z
-
-    return-object v0
+    return-void
 
     :cond_1
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v9, v10}, Ljava/lang/Math;->acos(D)D
 
-    move-result-object v0
+    move-result-wide v7
 
-    check-cast v0, Ljava/util/Map$Entry;
+    const-wide v9, 0x401921fb54442d18L    # 6.283185307179586
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    div-double/2addr v7, v9
 
-    move-result-object v1
+    double-to-float v5, v7
 
-    check-cast v1, Ljava/lang/String;
+    float-to-double v7, v5
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    add-double v9, v3, v7
 
-    move-result-object v0
+    const-wide v12, 0x4194997000000000L    # 8.64E7
 
-    invoke-static {v0}, Landroidx/fragment/app/u;->x(Ljava/lang/Object;)V
+    mul-double/2addr v9, v12
 
-    const/4 v0, 0x0
+    invoke-static {v9, v10}, Ljava/lang/Math;->round(D)J
 
-    throw v0
+    move-result-wide v9
+
+    add-long/2addr v9, v1
+
+    iput-wide v9, v0, Le/l0;->a:J
+
+    sub-double/2addr v3, v7
+
+    mul-double/2addr v3, v12
+
+    invoke-static {v3, v4}, Ljava/lang/Math;->round(D)J
+
+    move-result-wide v3
+
+    add-long/2addr v3, v1
+
+    iput-wide v3, v0, Le/l0;->b:J
+
+    cmp-long v1, v3, p1
+
+    if-gez v1, :cond_2
+
+    iget-wide v1, v0, Le/l0;->a:J
+
+    cmp-long v1, v1, p1
+
+    if-lez v1, :cond_2
+
+    iput v11, v0, Le/l0;->c:I
+
+    goto :goto_0
+
+    :cond_2
+    iput v6, v0, Le/l0;->c:I
+
+    :goto_0
+    return-void
 .end method

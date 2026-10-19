@@ -1,206 +1,160 @@
-.class public abstract Ld5/k;
-.super Ld5/j;
+.class public final Le4/k;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lp4/e;
+.implements Lr4/d;
+
+
+# instance fields
+.field public e:I
+
+.field public final synthetic f:Le4/l;
 
 
 # direct methods
-.method public static Y0(Ljava/lang/String;)Ljava/util/ArrayList;
+.method public constructor <init>(Le4/l;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Le4/k;->f:Le4/l;
+
+    const/high16 p1, -0x80000000
+
+    iput p1, p0, Le4/k;->e:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getCallerFrame()Lr4/d;
     .locals 5
 
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    sget-object v0, Le4/j;->e:Le4/j;
 
-    move-result v0
+    iget v1, p0, Le4/k;->e:I
 
-    div-int/lit8 v1, v0, 0x10
+    iget-object v2, p0, Le4/k;->f:Le4/l;
 
-    rem-int/lit8 v2, v0, 0x10
+    const/high16 v3, -0x80000000
 
-    const/4 v3, 0x0
+    if-ne v1, v3, :cond_0
 
-    if-nez v2, :cond_0
+    iget v1, v2, Le4/l;->j:I
 
-    move v2, v3
+    iput v1, p0, Le4/k;->e:I
+
+    :cond_0
+    iget v1, p0, Le4/k;->e:I
+
+    const/4 v4, 0x0
+
+    if-gez v1, :cond_1
+
+    iput v3, p0, Le4/k;->e:I
+
+    move-object v0, v4
 
     goto :goto_0
 
-    :cond_0
-    const/4 v2, 0x1
-
-    :goto_0
-    add-int/2addr v1, v2
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    :goto_1
-    if-ltz v3, :cond_3
-
-    if-ge v3, v0, :cond_3
-
-    add-int/lit8 v1, v3, 0x10
-
-    if-ltz v1, :cond_2
-
-    if-le v1, v0, :cond_1
-
-    goto :goto_2
-
     :cond_1
-    move v4, v1
+    :try_start_0
+    iget-object v2, v2, Le4/l;->i:[Lp4/e;
 
-    goto :goto_3
+    aget-object v2, v2, v1
+
+    if-nez v2, :cond_2
+
+    goto :goto_0
 
     :cond_2
-    :goto_2
-    move v4, v0
+    add-int/lit8 v1, v1, -0x1
 
-    :goto_3
-    invoke-virtual {p0, v3, v4}, Ljava/lang/String;->subSequence(II)Ljava/lang/CharSequence;
+    iput v1, p0, Le4/k;->e:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v3
+    move-object v0, v2
 
-    const-string v4, "it"
+    :catchall_0
+    :goto_0
+    instance-of v1, v0, Lr4/d;
 
-    invoke-static {v3, v4}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    if-eqz v1, :cond_3
 
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-object v4, v0
 
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    move v3, v1
-
-    goto :goto_1
+    check-cast v4, Lr4/d;
 
     :cond_3
-    return-object v2
+    return-object v4
 .end method
 
-.method public static Z0(Ljava/lang/String;I)Ljava/lang/String;
-    .locals 1
+.method public final getContext()Lp4/j;
+    .locals 2
 
-    const-string v0, "<this>"
+    iget-object v0, p0, Le4/k;->f:Le4/l;
 
-    invoke-static {p0, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-object v1, v0, Le4/l;->i:[Lp4/e;
 
-    if-ltz p1, :cond_1
+    iget v0, v0, Le4/l;->j:I
 
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    if-le p1, v0, :cond_0
-
-    move p1, v0
-
-    :cond_0
-    invoke-virtual {p0, p1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string p1, "substring(...)"
-
-    invoke-static {p0, p1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object p0
-
-    :cond_1
-    const-string p0, "Requested character count "
-
-    const-string v0, " is less than zero."
-
-    invoke-static {p0, p1, v0}, Landroidx/fragment/app/u;->j(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public static a1(Ljava/lang/CharSequence;)C
-    .locals 1
-
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
-
-    move-result v0
+    aget-object v0, v1, v0
 
     if-eqz v0, :cond_0
 
-    invoke-static {p0}, Ld5/j;->v0(Ljava/lang/CharSequence;)I
+    invoke-interface {v0}, Lp4/e;->getContext()Lp4/j;
 
-    move-result v0
+    move-result-object v0
 
-    invoke-interface {p0, v0}, Ljava/lang/CharSequence;->charAt(I)C
+    if-eqz v0, :cond_0
 
-    move-result p0
-
-    return p0
+    return-object v0
 
     :cond_0
-    new-instance p0, Ljava/util/NoSuchElementException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v0, "Char sequence is empty."
+    const-string v1, "Not started"
 
-    invoke-direct {p0, v0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    throw p0
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
-.method public static b1(Ljava/lang/String;I)Ljava/lang/String;
-    .locals 1
+.method public final resumeWith(Ljava/lang/Object;)V
+    .locals 2
 
-    const-string v0, "<this>"
+    instance-of v0, p1, Ll4/j;
 
-    invoke-static {p0, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-object v1, p0, Le4/k;->f:Le4/l;
 
-    if-ltz p1, :cond_1
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    invoke-static {p1}, Ll4/k;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
 
-    move-result v0
+    move-result-object p1
 
-    if-le p1, v0, :cond_0
+    invoke-static {p1}, Lk3/e;->i(Ljava/lang/Object;)V
 
-    move p1, v0
+    invoke-static {p1}, Lk3/e;->s(Ljava/lang/Throwable;)Ll4/j;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Le4/l;->g(Ljava/lang/Object;)V
+
+    return-void
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    invoke-virtual {p0, v0, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v1, p1}, Le4/l;->f(Z)Z
 
-    move-result-object p0
-
-    const-string p1, "substring(...)"
-
-    invoke-static {p0, p1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object p0
-
-    :cond_1
-    const-string p0, "Requested character count "
-
-    const-string v0, " is less than zero."
-
-    invoke-static {p0, p1, v0}, Landroidx/fragment/app/u;->j(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return-void
 .end method

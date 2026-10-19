@@ -1,23 +1,40 @@
-.class public abstract Ld5/e;
+.class public abstract Le4/e;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lf5/b0;
 
-# static fields
-.field public static final a:Ld5/d;
+
+# instance fields
+.field public final e:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 1
 
-    new-instance v0, Ld5/d;
+    const-string v0, "context"
 
-    const-string v1, "[\\x00-\\x20]*[+-]?(NaN|Infinity|((((\\p{Digit}+)(\\.)?((\\p{Digit}+)?)([eE][+-]?(\\p{Digit}+))?)|(\\.((\\p{Digit}+))([eE][+-]?(\\p{Digit}+))?)|(((0[xX](\\p{XDigit}+)(\\.)?)|(0[xX](\\p{XDigit}+)?(\\.)(\\p{XDigit}+)))[pP][+-]?(\\p{Digit}+)))[fFdD]?))[\\x00-\\x20]*"
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Ld5/d;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Ld5/e;->a:Ld5/d;
+    iput-object p1, p0, Le4/e;->e:Ljava/lang/Object;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract b(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
+.end method
+
+.method public abstract c()Ljava/lang/Object;
+.end method
+
+.method public abstract d(Lp4/e;)Ljava/lang/Object;
+.end method
+
+.method public abstract e(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
 .end method

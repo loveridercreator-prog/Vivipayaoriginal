@@ -1,129 +1,188 @@
-.class public final Landroidx/lifecycle/e0;
+.class public final Le/e0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroidx/lifecycle/s;
-
 
 # static fields
-.field public static final m:Landroidx/lifecycle/e0;
+.field public static final b:[Ljava/lang/Class;
+
+.field public static final c:[I
+
+.field public static final d:[I
+
+.field public static final e:[I
+
+.field public static final f:[I
+
+.field public static final g:[Ljava/lang/String;
+
+.field public static final h:Ll/k;
 
 
 # instance fields
-.field public e:I
-
-.field public f:I
-
-.field public g:Z
-
-.field public h:Z
-
-.field public i:Landroid/os/Handler;
-
-.field public final j:Landroidx/lifecycle/u;
-
-.field public final k:Landroidx/activity/b;
-
-.field public final l:Landroidx/lifecycle/d0;
+.field public final a:[Ljava/lang/Object;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 3
 
-    new-instance v0, Landroidx/lifecycle/e0;
+    const/4 v0, 0x2
 
-    invoke-direct {v0}, Landroidx/lifecycle/e0;-><init>()V
+    new-array v0, v0, [Ljava/lang/Class;
 
-    sput-object v0, Landroidx/lifecycle/e0;->m:Landroidx/lifecycle/e0;
+    const/4 v1, 0x0
+
+    const-class v2, Landroid/content/Context;
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    const-class v2, Landroid/util/AttributeSet;
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Le/e0;->b:[Ljava/lang/Class;
+
+    const v0, 0x101026f
+
+    filled-new-array {v0}, [I
+
+    move-result-object v0
+
+    sput-object v0, Le/e0;->c:[I
+
+    const v0, 0x1010580
+
+    filled-new-array {v0}, [I
+
+    move-result-object v0
+
+    sput-object v0, Le/e0;->d:[I
+
+    const v0, 0x101057c
+
+    filled-new-array {v0}, [I
+
+    move-result-object v0
+
+    sput-object v0, Le/e0;->e:[I
+
+    const v0, 0x1010574
+
+    filled-new-array {v0}, [I
+
+    move-result-object v0
+
+    sput-object v0, Le/e0;->f:[I
+
+    const-string v0, "android.view."
+
+    const-string v1, "android.webkit."
+
+    const-string v2, "android.widget."
+
+    filled-new-array {v2, v0, v1}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Le/e0;->g:[Ljava/lang/String;
+
+    new-instance v0, Ll/k;
+
+    invoke-direct {v0}, Ll/k;-><init>()V
+
+    sput-object v0, Le/e0;->h:Ll/k;
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    const/4 v0, 0x2
 
-    iput-boolean v0, p0, Landroidx/lifecycle/e0;->g:Z
+    new-array v0, v0, [Ljava/lang/Object;
 
-    iput-boolean v0, p0, Landroidx/lifecycle/e0;->h:Z
-
-    new-instance v0, Landroidx/lifecycle/u;
-
-    invoke-direct {v0, p0}, Landroidx/lifecycle/u;-><init>(Landroidx/lifecycle/s;)V
-
-    iput-object v0, p0, Landroidx/lifecycle/e0;->j:Landroidx/lifecycle/u;
-
-    new-instance v0, Landroidx/activity/b;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1, p0}, Landroidx/activity/b;-><init>(ILjava/lang/Object;)V
-
-    iput-object v0, p0, Landroidx/lifecycle/e0;->k:Landroidx/activity/b;
-
-    new-instance v0, Landroidx/lifecycle/d0;
-
-    invoke-direct {v0, p0}, Landroidx/lifecycle/d0;-><init>(Landroidx/lifecycle/e0;)V
-
-    iput-object v0, p0, Landroidx/lifecycle/e0;->l:Landroidx/lifecycle/d0;
+    iput-object v0, p0, Le/e0;->a:[Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/view/View;
+    .locals 3
 
-    iget v0, p0, Landroidx/lifecycle/e0;->f:I
+    sget-object v0, Le/e0;->h:Ll/k;
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    add-int/2addr v0, v1
+    invoke-virtual {v0, p2, v1}, Ll/k;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput v0, p0, Landroidx/lifecycle/e0;->f:I
+    move-result-object v2
 
-    if-ne v0, v1, :cond_1
+    check-cast v2, Ljava/lang/reflect/Constructor;
 
-    iget-boolean v0, p0, Landroidx/lifecycle/e0;->g:Z
+    if-nez v2, :cond_1
 
-    if-eqz v0, :cond_0
+    if-eqz p3, :cond_0
 
-    iget-object v0, p0, Landroidx/lifecycle/e0;->j:Landroidx/lifecycle/u;
+    :try_start_0
+    invoke-virtual {p3, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    sget-object v1, Landroidx/lifecycle/l;->ON_RESUME:Landroidx/lifecycle/l;
-
-    invoke-virtual {v0, v1}, Landroidx/lifecycle/u;->e(Landroidx/lifecycle/l;)V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Landroidx/lifecycle/e0;->g:Z
+    move-result-object p3
 
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Landroidx/lifecycle/e0;->i:Landroid/os/Handler;
+    move-object p3, p2
 
-    invoke-static {v0}, Lk3/e;->i(Ljava/lang/Object;)V
+    :goto_0
+    invoke-virtual {p1}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
 
-    iget-object v1, p0, Landroidx/lifecycle/e0;->k:Landroidx/activity/b;
+    move-result-object p1
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    const/4 v2, 0x0
+
+    invoke-static {p3, v2, p1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object p1
+
+    const-class p3, Landroid/view/View;
+
+    invoke-virtual {p1, p3}, Ljava/lang/Class;->asSubclass(Ljava/lang/Class;)Ljava/lang/Class;
+
+    move-result-object p1
+
+    sget-object p3, Le/e0;->b:[Ljava/lang/Class;
+
+    invoke-virtual {p1, p3}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v2
+
+    invoke-virtual {v0, p2, v2}, Ll/k;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_1
-    :goto_0
-    return-void
-.end method
+    const/4 p1, 0x1
 
-.method public final h()Landroidx/lifecycle/u;
-    .locals 1
+    invoke-virtual {v2, p1}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
-    iget-object v0, p0, Landroidx/lifecycle/e0;->j:Landroidx/lifecycle/u;
+    iget-object p1, p0, Le/e0;->a:[Ljava/lang/Object;
 
-    return-object v0
+    invoke-virtual {v2, p1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/View;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p1
+
+    :catch_0
+    return-object v1
 .end method

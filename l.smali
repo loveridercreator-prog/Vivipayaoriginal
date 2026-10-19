@@ -1,133 +1,392 @@
-.class public final Lc6/l;
-.super Ljava/lang/Object;
+.class public final Le4/l;
+.super Le4/e;
 .source "SourceFile"
 
-# interfaces
-.implements Lc6/o;
 
+# instance fields
+.field public final f:Ljava/util/List;
 
-# static fields
-.field public static final a:Lc6/a;
+.field public final g:Le4/k;
 
-.field public static final b:Lc6/k;
+.field public h:Ljava/lang/Object;
+
+.field public final i:[Lp4/e;
+
+.field public j:I
+
+.field public k:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/List;)V
+    .locals 1
 
-    new-instance v0, Lc6/a;
+    const-string v0, "initial"
 
-    const/4 v1, 0x5
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v2, 0x0
+    const-string v0, "context"
 
-    invoke-direct {v0, v1, v2}, Lc6/a;-><init>(II)V
+    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sput-object v0, Lc6/l;->a:Lc6/a;
+    invoke-direct {p0, p2}, Le4/e;-><init>(Ljava/lang/Object;)V
 
-    new-instance v0, Lc6/k;
+    iput-object p3, p0, Le4/l;->f:Ljava/util/List;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    new-instance p2, Le4/k;
 
-    sput-object v0, Lc6/l;->b:Lc6/k;
+    invoke-direct {p2, p0}, Le4/k;-><init>(Le4/l;)V
+
+    iput-object p2, p0, Le4/l;->g:Le4/k;
+
+    iput-object p1, p0, Le4/l;->h:Ljava/lang/Object;
+
+    invoke-interface {p3}, Ljava/util/List;->size()I
+
+    move-result p1
+
+    new-array p1, p1, [Lp4/e;
+
+    iput-object p1, p0, Le4/l;->i:[Lp4/e;
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Le4/l;->j:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljavax/net/ssl/SSLSocket;)Z
-    .locals 0
-
-    invoke-static {p1}, Lorg/conscrypt/Conscrypt;->isConscrypt(Ljavax/net/ssl/SSLSocket;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final b(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
+.method public final a()Lp4/j;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lc6/l;->a(Ljavax/net/ssl/SSLSocket;)Z
+    iget-object v0, p0, Le4/l;->g:Le4/k;
+
+    invoke-virtual {v0}, Le4/k;->getContext()Lp4/j;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final b(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Le4/l;->k:I
+
+    iget-object v0, p0, Le4/l;->f:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    invoke-static {p1}, Lorg/conscrypt/Conscrypt;->getApplicationProtocol(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
+    return-object p1
+
+    :cond_0
+    const-string v0, "<set-?>"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object p1, p0, Le4/l;->h:Ljava/lang/Object;
+
+    iget p1, p0, Le4/l;->j:I
+
+    if-gez p1, :cond_1
+
+    invoke-virtual {p0, p2}, Le4/l;->d(Lp4/e;)Ljava/lang/Object;
 
     move-result-object p1
 
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
     return-object p1
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "Already started"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
-.method public final c()Z
+.method public final c()Ljava/lang/Object;
     .locals 1
 
-    sget-boolean v0, Lb6/g;->d:Z
+    iget-object v0, p0, Le4/l;->h:Ljava/lang/Object;
 
-    sget-boolean v0, Lb6/g;->d:Z
-
-    return v0
+    return-object v0
 .end method
 
-.method public final d(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
-    .locals 0
+.method public final d(Lp4/e;)Ljava/lang/Object;
+    .locals 4
 
-    const-string p2, "protocols"
+    iget v0, p0, Le4/l;->k:I
 
-    invoke-static {p3, p2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-object v1, p0, Le4/l;->f:Ljava/util/List;
 
-    invoke-virtual {p0, p1}, Lc6/l;->a(Ljavax/net/ssl/SSLSocket;)Z
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result p2
+    move-result v1
 
-    if-eqz p2, :cond_1
+    if-ne v0, v1, :cond_0
 
-    const/4 p2, 0x1
-
-    invoke-static {p1, p2}, Lorg/conscrypt/Conscrypt;->setUseSessionTickets(Ljavax/net/ssl/SSLSocket;Z)V
-
-    sget-object p2, Lb6/l;->a:Lb6/l;
-
-    invoke-static {p3}, Lt5/x;->d(Ljava/util/List;)Ljava/util/ArrayList;
-
-    move-result-object p2
-
-    const/4 p3, 0x0
-
-    new-array p3, p3, [Ljava/lang/String;
-
-    invoke-virtual {p2, p3}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_0
-
-    check-cast p2, [Ljava/lang/String;
-
-    invoke-static {p1, p2}, Lorg/conscrypt/Conscrypt;->setApplicationProtocols(Ljavax/net/ssl/SSLSocket;[Ljava/lang/String;)V
+    iget-object v0, p0, Le4/l;->h:Ljava/lang/Object;
 
     goto :goto_0
 
     :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
+    invoke-static {p1}, Lk3/e;->y(Lp4/e;)Lp4/e;
 
-    const-string p2, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
+    move-result-object v0
 
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    iget v1, p0, Le4/l;->j:I
+
+    const/4 v2, 0x1
+
+    add-int/2addr v1, v2
+
+    iput v1, p0, Le4/l;->j:I
+
+    iget-object v3, p0, Le4/l;->i:[Lp4/e;
+
+    aput-object v0, v3, v1
+
+    invoke-virtual {p0, v2}, Le4/l;->f(Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget v0, p0, Le4/l;->j:I
+
+    if-ltz v0, :cond_1
+
+    add-int/lit8 v1, v0, -0x1
+
+    iput v1, p0, Le4/l;->j:I
+
+    const/4 v1, 0x0
+
+    aput-object v1, v3, v0
+
+    iget-object v0, p0, Le4/l;->h:Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "No more continuations to resume"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
 
-    :cond_1
+    :cond_2
+    sget-object v0, Lq4/a;->e:Lq4/a;
+
     :goto_0
+    sget-object v1, Lq4/a;->e:Lq4/a;
+
+    if-ne v0, v1, :cond_3
+
+    const-string v1, "frame"
+
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :cond_3
+    return-object v0
+.end method
+
+.method public final e(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
+    .locals 1
+
+    const-string v0, "<set-?>"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object p1, p0, Le4/l;->h:Ljava/lang/Object;
+
+    invoke-virtual {p0, p2}, Le4/l;->d(Lp4/e;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final f(Z)Z
+    .locals 4
+
+    :cond_0
+    iget v0, p0, Le4/l;->k:I
+
+    iget-object v1, p0, Le4/l;->f:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    if-ne v0, v2, :cond_2
+
+    if-nez p1, :cond_1
+
+    iget-object p1, p0, Le4/l;->h:Ljava/lang/Object;
+
+    invoke-virtual {p0, p1}, Le4/l;->g(Ljava/lang/Object;)V
+
+    return v3
+
+    :cond_1
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_2
+    add-int/lit8 v2, v0, 0x1
+
+    iput v2, p0, Le4/l;->k:I
+
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lv4/f;
+
+    :try_start_0
+    iget-object v1, p0, Le4/l;->h:Ljava/lang/Object;
+
+    iget-object v2, p0, Le4/l;->g:Le4/k;
+
+    invoke-interface {v0, p0, v1, v2}, Lv4/f;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    sget-object v1, Lq4/a;->e:Lq4/a;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-ne v0, v1, :cond_0
+
+    return v3
+
+    :catchall_0
+    move-exception p1
+
+    invoke-static {p1}, Lk3/e;->s(Ljava/lang/Throwable;)Ll4/j;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Le4/l;->g(Ljava/lang/Object;)V
+
+    return v3
+.end method
+
+.method public final g(Ljava/lang/Object;)V
+    .locals 4
+
+    iget v0, p0, Le4/l;->j:I
+
+    if-ltz v0, :cond_4
+
+    iget-object v1, p0, Le4/l;->i:[Lp4/e;
+
+    aget-object v0, v1, v0
+
+    invoke-static {v0}, Lk3/e;->i(Ljava/lang/Object;)V
+
+    iget v2, p0, Le4/l;->j:I
+
+    add-int/lit8 v3, v2, -0x1
+
+    iput v3, p0, Le4/l;->j:I
+
+    const/4 v3, 0x0
+
+    aput-object v3, v1, v2
+
+    instance-of v1, p1, Ll4/j;
+
+    if-nez v1, :cond_0
+
+    invoke-interface {v0, p1}, Lp4/e;->resumeWith(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_0
+    invoke-static {p1}, Ll4/k;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lk3/e;->i(Ljava/lang/Object;)V
+
+    :try_start_0
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v2
+
+    invoke-static {v2, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-static {p1, v1}, Lio/ktor/utils/io/d0;->b(Ljava/lang/Throwable;Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    move-result-object v1
+
+    if-nez v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-object p1, v1
+
+    :catchall_0
+    :cond_3
+    :goto_0
+    invoke-static {p1}, Lk3/e;->s(Ljava/lang/Throwable;)Ll4/j;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lp4/e;->resumeWith(Ljava/lang/Object;)V
+
+    :goto_1
     return-void
+
+    :cond_4
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "No more continuations to resume"
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

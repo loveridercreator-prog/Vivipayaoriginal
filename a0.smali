@@ -1,21 +1,37 @@
-.class public abstract Landroidx/lifecycle/a0;
+.class public final Le/a0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public static final a(Landroid/app/Activity;Landroid/app/Application$ActivityLifecycleCallbacks;)V
-    .locals 1
+# instance fields
+.field public a:I
 
-    const-string v0, "activity"
+.field public b:I
 
-    invoke-static {p0, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+.field public c:I
 
-    const-string v0, "callback"
+.field public d:I
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+.field public e:Le/z;
 
-    invoke-virtual {p0, p1}, Landroid/app/Activity;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+.field public f:Landroid/view/View;
 
-    return-void
-.end method
+.field public g:Landroid/view/View;
+
+.field public h:Lh/o;
+
+.field public i:Lh/k;
+
+.field public j:Lg/e;
+
+.field public k:Z
+
+.field public l:Z
+
+.field public m:Z
+
+.field public n:Z
+
+.field public o:Z
+
+.field public p:Landroid/os/Bundle;

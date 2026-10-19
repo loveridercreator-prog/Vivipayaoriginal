@@ -1,162 +1,132 @@
-.class public final Landroidx/lifecycle/i0;
-.super Landroid/app/Fragment;
+.class public final Le/i0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final synthetic f:I
+# interfaces
+.implements Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field public e:Landroidx/lifecycle/d0;
+.field public final e:Ljava/lang/Object;
+
+.field public final f:Ljava/util/ArrayDeque;
+
+.field public final g:Ljava/util/concurrent/Executor;
+
+.field public h:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Le/j0;)V
+    .locals 1
 
-    invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Le/i0;->e:Ljava/lang/Object;
+
+    new-instance v0, Ljava/util/ArrayDeque;
+
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v0, p0, Le/i0;->f:Ljava/util/ArrayDeque;
+
+    iput-object p1, p0, Le/i0;->g:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroidx/lifecycle/l;)V
-    .locals 2
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1d
-
-    if-ge v0, v1, :cond_0
-
-    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    const-string v1, "activity"
-
-    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {v0, p1}, Lx1/h;->i(Landroid/app/Activity;Landroidx/lifecycle/l;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final onActivityCreated(Landroid/os/Bundle;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Landroid/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
-
-    sget-object p1, Landroidx/lifecycle/l;->ON_CREATE:Landroidx/lifecycle/l;
-
-    invoke-virtual {p0, p1}, Landroidx/lifecycle/i0;->a(Landroidx/lifecycle/l;)V
-
-    return-void
-.end method
-
-.method public final onDestroy()V
-    .locals 1
-
-    invoke-super {p0}, Landroid/app/Fragment;->onDestroy()V
-
-    sget-object v0, Landroidx/lifecycle/l;->ON_DESTROY:Landroidx/lifecycle/l;
-
-    invoke-virtual {p0, v0}, Landroidx/lifecycle/i0;->a(Landroidx/lifecycle/l;)V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Landroidx/lifecycle/i0;->e:Landroidx/lifecycle/d0;
-
-    return-void
-.end method
-
-.method public final onPause()V
-    .locals 1
-
-    invoke-super {p0}, Landroid/app/Fragment;->onPause()V
-
-    sget-object v0, Landroidx/lifecycle/l;->ON_PAUSE:Landroidx/lifecycle/l;
-
-    invoke-virtual {p0, v0}, Landroidx/lifecycle/i0;->a(Landroidx/lifecycle/l;)V
-
-    return-void
-.end method
-
-.method public final onResume()V
-    .locals 1
-
-    invoke-super {p0}, Landroid/app/Fragment;->onResume()V
-
-    iget-object v0, p0, Landroidx/lifecycle/i0;->e:Landroidx/lifecycle/d0;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, v0, Landroidx/lifecycle/d0;->a:Landroidx/lifecycle/e0;
-
-    invoke-virtual {v0}, Landroidx/lifecycle/e0;->a()V
-
-    :cond_0
-    sget-object v0, Landroidx/lifecycle/l;->ON_RESUME:Landroidx/lifecycle/l;
-
-    invoke-virtual {p0, v0}, Landroidx/lifecycle/i0;->a(Landroidx/lifecycle/l;)V
-
-    return-void
-.end method
-
-.method public final onStart()V
+.method public final a()V
     .locals 3
 
-    invoke-super {p0}, Landroid/app/Fragment;->onStart()V
+    iget-object v0, p0, Le/i0;->e:Ljava/lang/Object;
 
-    iget-object v0, p0, Landroidx/lifecycle/i0;->e:Landroidx/lifecycle/d0;
+    monitor-enter v0
 
-    if-eqz v0, :cond_0
+    :try_start_0
+    iget-object v1, p0, Le/i0;->f:Ljava/util/ArrayDeque;
 
-    iget-object v0, v0, Landroidx/lifecycle/d0;->a:Landroidx/lifecycle/e0;
+    invoke-virtual {v1}, Ljava/util/ArrayDeque;->poll()Ljava/lang/Object;
 
-    iget v1, v0, Landroidx/lifecycle/e0;->e:I
+    move-result-object v1
 
-    const/4 v2, 0x1
+    check-cast v1, Ljava/lang/Runnable;
 
-    add-int/2addr v1, v2
-
-    iput v1, v0, Landroidx/lifecycle/e0;->e:I
-
-    if-ne v1, v2, :cond_0
-
-    iget-boolean v1, v0, Landroidx/lifecycle/e0;->h:Z
+    iput-object v1, p0, Le/i0;->h:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, v0, Landroidx/lifecycle/e0;->j:Landroidx/lifecycle/u;
+    iget-object v2, p0, Le/i0;->g:Ljava/util/concurrent/Executor;
 
-    sget-object v2, Landroidx/lifecycle/l;->ON_START:Landroidx/lifecycle/l;
+    invoke-interface {v2, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    invoke-virtual {v1, v2}, Landroidx/lifecycle/u;->e(Landroidx/lifecycle/l;)V
+    goto :goto_0
 
-    const/4 v1, 0x0
+    :catchall_0
+    move-exception v1
 
-    iput-boolean v1, v0, Landroidx/lifecycle/e0;->h:Z
+    goto :goto_1
 
     :cond_0
-    sget-object v0, Landroidx/lifecycle/l;->ON_START:Landroidx/lifecycle/l;
-
-    invoke-virtual {p0, v0}, Landroidx/lifecycle/i0;->a(Landroidx/lifecycle/l;)V
+    :goto_0
+    monitor-exit v0
 
     return-void
+
+    :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
-.method public final onStop()V
-    .locals 1
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 4
 
-    invoke-super {p0}, Landroid/app/Fragment;->onStop()V
+    iget-object v0, p0, Le/i0;->e:Ljava/lang/Object;
 
-    sget-object v0, Landroidx/lifecycle/l;->ON_STOP:Landroidx/lifecycle/l;
+    monitor-enter v0
 
-    invoke-virtual {p0, v0}, Landroidx/lifecycle/i0;->a(Landroidx/lifecycle/l;)V
+    :try_start_0
+    iget-object v1, p0, Le/i0;->f:Ljava/util/ArrayDeque;
+
+    new-instance v2, Le/h0;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, p0, v3, p1}, Le/h0;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+
+    iget-object p1, p0, Le/i0;->h:Ljava/lang/Runnable;
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {p0}, Le/i0;->a()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    monitor-exit v0
 
     return-void
+
+    :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method

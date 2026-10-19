@@ -1,23 +1,9 @@
-.class public final Landroidx/lifecycle/m0;
-.super Landroidx/lifecycle/n0;
+.class public final Le/m0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final c:Ljava/util/LinkedHashMap;
+.field public a:Z
 
-
-# direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Landroidx/lifecycle/n0;-><init>()V
-
-    new-instance v0, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
-
-    iput-object v0, p0, Landroidx/lifecycle/m0;->c:Ljava/util/LinkedHashMap;
-
-    return-void
-.end method
+.field public b:J

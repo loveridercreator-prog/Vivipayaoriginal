@@ -1,243 +1,150 @@
-.class public abstract Lb4/t;
+.class public final Le/t;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lb4/s;
+.implements Lg/a;
 
 
 # instance fields
-.field public final a:Z
+.field public final a:Lg/a;
 
-.field public final b:Ljava/util/Map;
+.field public final synthetic b:Le/b0;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(Le/b0;Lg/g;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x1
+    iput-object p1, p0, Le/t;->b:Le/b0;
 
-    iput-boolean p1, p0, Lb4/t;->a:Z
-
-    new-instance p1, Lb4/f;
-
-    invoke-direct {p1}, Lb4/f;-><init>()V
-
-    iput-object p1, p0, Lb4/t;->b:Ljava/util/Map;
+    iput-object p2, p0, Le/t;->a:Lg/a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/Set;
+.method public final a(Lg/b;Lh/o;)Z
     .locals 2
 
-    iget-object v0, p0, Lb4/t;->b:Ljava/util/Map;
+    iget-object v0, p0, Le/t;->b:Le/b0;
 
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    iget-object v0, v0, Le/b0;->E:Landroid/view/ViewGroup;
 
-    move-result-object v0
+    sget-object v1, Lu0/n0;->a:Ljava/util/WeakHashMap;
 
-    const-string v1, "<this>"
+    invoke-static {v0}, Lu0/b0;->c(Landroid/view/View;)V
 
-    invoke-static {v0, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-object v0, p0, Le/t;->a:Lg/a;
 
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+    invoke-interface {v0, p1, p2}, Lg/a;->a(Lg/b;Lh/o;)Z
 
-    move-result-object v0
+    move-result p1
 
-    const-string v1, "unmodifiableSet(this)"
-
-    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object v0
+    return p1
 .end method
 
-.method public final b(Ljava/lang/String;)Ljava/util/List;
-    .locals 1
+.method public final b(Lg/b;)V
+    .locals 3
 
-    const-string v0, "name"
+    iget-object v0, p0, Le/t;->a:Lg/a;
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-interface {v0, p1}, Lg/a;->b(Lg/b;)V
 
-    iget-object v0, p0, Lb4/t;->b:Ljava/util/Map;
+    iget-object p1, p0, Le/t;->b:Le/b0;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/util/List;
-
-    return-object p1
-.end method
-
-.method public final c(Ljava/lang/String;Ljava/lang/Iterable;)V
-    .locals 1
-
-    const-string v0, "name"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "values"
-
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p0, p1}, Lb4/t;->e(Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p2
-
-    :goto_0
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
+    iget-object v0, p1, Le/b0;->A:Landroid/widget/PopupWindow;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v0, p1, Le/b0;->p:Landroid/view/Window;
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/String;
+    iget-object v1, p1, Le/b0;->B:Le/p;
 
-    invoke-virtual {p0, v0}, Lb4/t;->h(Ljava/lang/String;)V
-
-    invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
+    invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     :cond_0
-    return-void
-.end method
+    iget-object v0, p1, Le/b0;->z:Landroidx/appcompat/widget/ActionBarContextView;
 
-.method public final clear()V
-    .locals 1
+    if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lb4/t;->b:Ljava/util/Map;
+    iget-object v0, p1, Le/b0;->C:Lu0/u0;
 
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
+    if-eqz v0, :cond_1
 
-    return-void
-.end method
+    invoke-virtual {v0}, Lu0/u0;->b()V
 
-.method public final d(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
+    :cond_1
+    iget-object v0, p1, Le/b0;->z:Landroidx/appcompat/widget/ActionBarContextView;
 
-    const-string v0, "name"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "value"
-
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p0, p2}, Lb4/t;->h(Ljava/lang/String;)V
-
-    invoke-virtual {p0, p1}, Lb4/t;->e(Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final e(Ljava/lang/String;)Ljava/util/List;
-    .locals 2
-
-    iget-object v0, p0, Lb4/t;->b:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/List;
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {p0, p1}, Lb4/t;->g(Ljava/lang/String;)V
-
-    invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    return-object v1
-.end method
-
-.method public final f(Ljava/lang/String;)Ljava/lang/String;
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lb4/t;->b(Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    invoke-static {p1}, Lm4/l;->b0(Ljava/util/List;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/String;
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return-object p1
-.end method
-
-.method public g(Ljava/lang/String;)V
-    .locals 1
-
-    const-string v0, "name"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public h(Ljava/lang/String;)V
-    .locals 1
-
-    const-string v0, "value"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final isEmpty()Z
-    .locals 1
-
-    iget-object v0, p0, Lb4/t;->b:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final names()Ljava/util/Set;
-    .locals 1
-
-    iget-object v0, p0, Lb4/t;->b:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    invoke-static {v0}, Lu0/n0;->a(Landroid/view/View;)Lu0/u0;
 
     move-result-object v0
 
-    return-object v0
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lu0/u0;->a(F)V
+
+    iput-object v0, p1, Le/b0;->C:Lu0/u0;
+
+    new-instance v1, Le/s;
+
+    const/4 v2, 0x2
+
+    invoke-direct {v1, v2, p0}, Le/s;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Lu0/u0;->d(Lu0/v0;)V
+
+    :cond_2
+    iget-object v0, p1, Le/b0;->r:Le/k;
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v0}, Le/k;->g()V
+
+    :cond_3
+    const/4 v0, 0x0
+
+    iput-object v0, p1, Le/b0;->y:Lg/b;
+
+    iget-object v0, p1, Le/b0;->E:Landroid/view/ViewGroup;
+
+    sget-object v1, Lu0/n0;->a:Ljava/util/WeakHashMap;
+
+    invoke-static {v0}, Lu0/b0;->c(Landroid/view/View;)V
+
+    invoke-virtual {p1}, Le/b0;->I()V
+
+    return-void
+.end method
+
+.method public final c(Lg/b;Lh/o;)Z
+    .locals 1
+
+    iget-object v0, p0, Le/t;->a:Lg/a;
+
+    invoke-interface {v0, p1, p2}, Lg/a;->c(Lg/b;Lh/o;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final d(Lg/b;Landroid/view/MenuItem;)Z
+    .locals 1
+
+    iget-object v0, p0, Le/t;->a:Lg/a;
+
+    invoke-interface {v0, p1, p2}, Lg/a;->d(Lg/b;Landroid/view/MenuItem;)Z
+
+    move-result p1
+
+    return p1
 .end method
