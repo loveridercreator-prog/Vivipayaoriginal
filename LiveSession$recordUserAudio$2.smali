@@ -1,0 +1,135 @@
+.class final Lcom/google/firebase/ai/type/LiveSession$recordUserAudio$2;
+.super Lr4/i;
+.source "SourceFile"
+
+# interfaces
+.implements Lv4/f;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/firebase/ai/type/LiveSession;->recordUserAudio()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lr4/i;",
+        "Lv4/f;"
+    }
+.end annotation
+
+.annotation runtime Lr4/e;
+    c = "com.google.firebase.ai.type.LiveSession$recordUserAudio$2"
+    f = "LiveSession.kt"
+    l = {}
+    m = "invokeSuspend"
+.end annotation
+
+
+# instance fields
+.field synthetic L$0:Ljava/lang/Object;
+
+.field label:I
+
+
+# direct methods
+.method public constructor <init>(Lp4/e;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lp4/e;",
+            ")V"
+        }
+    .end annotation
+
+    const/4 v0, 0x3
+
+    invoke-direct {p0, v0, p1}, Lr4/i;-><init>(ILp4/e;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Li5/h;Ljava/lang/Throwable;Lp4/e;)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Li5/h;",
+            "Ljava/lang/Throwable;",
+            "Lp4/e;",
+            ")",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .line 1
+    new-instance p1, Lcom/google/firebase/ai/type/LiveSession$recordUserAudio$2;
+
+    invoke-direct {p1, p3}, Lcom/google/firebase/ai/type/LiveSession$recordUserAudio$2;-><init>(Lp4/e;)V
+
+    iput-object p2, p1, Lcom/google/firebase/ai/type/LiveSession$recordUserAudio$2;->L$0:Ljava/lang/Object;
+
+    sget-object p2, Ll4/y;->a:Ll4/y;
+
+    invoke-virtual {p1, p2}, Lcom/google/firebase/ai/type/LiveSession$recordUserAudio$2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 2
+    check-cast p1, Li5/h;
+
+    check-cast p2, Ljava/lang/Throwable;
+
+    check-cast p3, Lp4/e;
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/google/firebase/ai/type/LiveSession$recordUserAudio$2;->invoke(Li5/h;Ljava/lang/Throwable;Lp4/e;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Lcom/google/firebase/ai/type/LiveSession$recordUserAudio$2;->label:I
+
+    if-eqz v0, :cond_0
+
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_0
+    invoke-static {p1}, Lk3/e;->M(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lcom/google/firebase/ai/type/LiveSession$recordUserAudio$2;->L$0:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Throwable;
+
+    sget-object v0, Lcom/google/firebase/ai/type/FirebaseAIException;->Companion:Lcom/google/firebase/ai/type/FirebaseAIException$Companion;
+
+    invoke-virtual {v0, p1}, Lcom/google/firebase/ai/type/FirebaseAIException$Companion;->from$com_google_firebase_firebase_ai(Ljava/lang/Throwable;)Lcom/google/firebase/ai/type/FirebaseAIException;
+
+    move-result-object p1
+
+    throw p1
+.end method

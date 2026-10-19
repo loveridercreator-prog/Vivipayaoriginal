@@ -1,14 +1,14 @@
-.class public final Lcom/google/firebase/ai/common/PromptBlockedException;
-.super Lcom/google/firebase/ai/common/FirebaseCommonAIException;
+.class public final Lcom/google/firebase/ai/type/PromptBlockedException;
+.super Lcom/google/firebase/ai/type/FirebaseAIException;
 .source "SourceFile"
 
 
 # instance fields
-.field private final response:Lcom/google/firebase/ai/type/GenerateContentResponse$Internal;
+.field private final response:Lcom/google/firebase/ai/type/GenerateContentResponse;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/firebase/ai/type/GenerateContentResponse$Internal;Ljava/lang/Throwable;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/google/firebase/ai/type/GenerateContentResponse;Ljava/lang/Throwable;Ljava/lang/String;)V
     .locals 2
 
     .line 2
@@ -20,19 +20,19 @@
 
     if-eqz p1, :cond_1
 
-    invoke-virtual {p1}, Lcom/google/firebase/ai/type/GenerateContentResponse$Internal;->getPromptFeedback()Lcom/google/firebase/ai/type/PromptFeedback$Internal;
+    invoke-virtual {p1}, Lcom/google/firebase/ai/type/GenerateContentResponse;->getPromptFeedback()Lcom/google/firebase/ai/type/PromptFeedback;
 
     move-result-object v1
 
     if-eqz v1, :cond_1
 
-    invoke-virtual {v1}, Lcom/google/firebase/ai/type/PromptFeedback$Internal;->getBlockReason()Lcom/google/firebase/ai/type/BlockReason$Internal;
+    invoke-virtual {v1}, Lcom/google/firebase/ai/type/PromptFeedback;->getBlockReason()Lcom/google/firebase/ai/type/BlockReason;
 
     move-result-object v1
 
     if-eqz v1, :cond_1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/firebase/ai/type/BlockReason;->getName()Ljava/lang/String;
 
     move-result-object v1
 
@@ -51,17 +51,15 @@
 
     move-result-object p3
 
-    const/4 v0, 0x0
-
     .line 3
-    invoke-direct {p0, p3, p2, v0}, Lcom/google/firebase/ai/common/FirebaseCommonAIException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Lw4/f;)V
+    invoke-direct {p0, p3, p2}, Lcom/google/firebase/ai/type/FirebaseAIException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iput-object p1, p0, Lcom/google/firebase/ai/common/PromptBlockedException;->response:Lcom/google/firebase/ai/type/GenerateContentResponse$Internal;
+    iput-object p1, p0, Lcom/google/firebase/ai/type/PromptBlockedException;->response:Lcom/google/firebase/ai/type/GenerateContentResponse;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcom/google/firebase/ai/type/GenerateContentResponse$Internal;Ljava/lang/Throwable;Ljava/lang/String;ILw4/f;)V
+.method public synthetic constructor <init>(Lcom/google/firebase/ai/type/GenerateContentResponse;Ljava/lang/Throwable;Ljava/lang/String;ILw4/f;)V
     .locals 1
 
     and-int/lit8 p5, p4, 0x2
@@ -81,7 +79,7 @@
 
     .line 1
     :cond_1
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/firebase/ai/common/PromptBlockedException;-><init>(Lcom/google/firebase/ai/type/GenerateContentResponse$Internal;Ljava/lang/Throwable;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/firebase/ai/type/PromptBlockedException;-><init>(Lcom/google/firebase/ai/type/GenerateContentResponse;Ljava/lang/Throwable;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -96,7 +94,7 @@
     const/4 v0, 0x0
 
     .line 4
-    invoke-direct {p0, v0, p2, p1}, Lcom/google/firebase/ai/common/PromptBlockedException;-><init>(Lcom/google/firebase/ai/type/GenerateContentResponse$Internal;Ljava/lang/Throwable;Ljava/lang/String;)V
+    invoke-direct {p0, v0, p2, p1}, Lcom/google/firebase/ai/type/PromptBlockedException;-><init>(Lcom/google/firebase/ai/type/GenerateContentResponse;Ljava/lang/Throwable;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -112,17 +110,17 @@
 
     .line 5
     :cond_0
-    invoke-direct {p0, p1, p2}, Lcom/google/firebase/ai/common/PromptBlockedException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/firebase/ai/type/PromptBlockedException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getResponse()Lcom/google/firebase/ai/type/GenerateContentResponse$Internal;
+.method public final getResponse()Lcom/google/firebase/ai/type/GenerateContentResponse;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/firebase/ai/common/PromptBlockedException;->response:Lcom/google/firebase/ai/type/GenerateContentResponse$Internal;
+    iget-object v0, p0, Lcom/google/firebase/ai/type/PromptBlockedException;->response:Lcom/google/firebase/ai/type/GenerateContentResponse;
 
     return-object v0
 .end method
