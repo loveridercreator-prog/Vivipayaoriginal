@@ -1,340 +1,144 @@
-.class public final Lb6/i;
-.super Lb6/l;
+.class public final Lc6/i;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lc6/o;
 
 
 # static fields
-.field public static final h:Lt5/x;
+.field public static final a:Lc6/a;
 
-
-# instance fields
-.field public final c:Ljava/lang/reflect/Method;
-
-.field public final d:Ljava/lang/reflect/Method;
-
-.field public final e:Ljava/lang/reflect/Method;
-
-.field public final f:Ljava/lang/Class;
-
-.field public final g:Ljava/lang/Class;
+.field public static final b:Lc6/h;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 3
 
-    new-instance v0, Lt5/x;
+    new-instance v0, Lc6/a;
 
-    const/16 v1, 0x1a
+    const/4 v1, 0x3
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Lt5/x;-><init>(II)V
+    invoke-direct {v0, v1, v2}, Lc6/a;-><init>(II)V
 
-    sput-object v0, Lb6/i;->h:Lt5/x;
+    sput-object v0, Lc6/i;->a:Lc6/a;
 
-    return-void
-.end method
+    new-instance v0, Lc6/h;
 
-.method public constructor <init>(Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Ljava/lang/reflect/Method;Ljava/lang/Class;Ljava/lang/Class;)V
-    .locals 0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lb6/i;->c:Ljava/lang/reflect/Method;
-
-    iput-object p2, p0, Lb6/i;->d:Ljava/lang/reflect/Method;
-
-    iput-object p3, p0, Lb6/i;->e:Ljava/lang/reflect/Method;
-
-    iput-object p4, p0, Lb6/i;->f:Ljava/lang/Class;
-
-    iput-object p5, p0, Lb6/i;->g:Ljava/lang/Class;
+    sput-object v0, Lc6/i;->b:Lc6/h;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljavax/net/ssl/SSLSocket;)V
-    .locals 3
+.method public final a(Ljavax/net/ssl/SSLSocket;)Z
+    .locals 0
 
-    const-string v0, "failed to remove ALPN"
+    instance-of p1, p1, Lorg/bouncycastle/jsse/BCSSLSocket;
 
-    :try_start_0
-    iget-object v1, p0, Lb6/i;->e:Ljava/lang/reflect/Method;
+    return p1
+.end method
 
-    filled-new-array {p1}, [Ljava/lang/Object;
+.method public final b(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
+    .locals 1
+
+    check-cast p1, Lorg/bouncycastle/jsse/BCSSLSocket;
+
+    invoke-interface {p1}, Lorg/bouncycastle/jsse/BCSSLSocket;->getApplicationProtocol()Ljava/lang/String;
 
     move-result-object p1
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p1
+    if-nez p1, :cond_0
 
     goto :goto_0
 
-    :catch_1
-    move-exception p1
+    :cond_0
+    const-string v0, ""
 
-    goto :goto_1
+    invoke-static {p1, v0}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
 
     :goto_0
-    new-instance v1, Ljava/lang/AssertionError;
+    const/4 p1, 0x0
 
-    invoke-direct {v1, v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :cond_1
+    return-object p1
+.end method
 
-    throw v1
+.method public final c()Z
+    .locals 1
 
-    :goto_1
-    new-instance v1, Ljava/lang/AssertionError;
+    sget-object v0, Lb6/d;->d:Lt5/x;
 
-    invoke-direct {v1, v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {v0}, Lt5/x;->l()Z
 
-    throw v1
+    move-result v0
+
+    return v0
 .end method
 
 .method public final d(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
-    .locals 4
+    .locals 1
 
-    const-string p2, "failed to set ALPN"
+    const-string p2, "protocols"
 
-    const-string v0, "protocols"
+    invoke-static {p3, p2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lc6/i;->a(Ljavax/net/ssl/SSLSocket;)Z
 
-    new-instance v0, Ljava/util/ArrayList;
+    move-result p2
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    if-eqz p2, :cond_1
 
-    invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    check-cast p1, Lorg/bouncycastle/jsse/BCSSLSocket;
 
-    move-result-object p3
+    invoke-interface {p1}, Lorg/bouncycastle/jsse/BCSSLSocket;->getParameters()Lorg/bouncycastle/jsse/BCSSLParameters;
 
-    :cond_0
-    :goto_0
-    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+    move-result-object p2
 
-    move-result v1
+    sget-object v0, Lb6/l;->a:Lb6/l;
 
-    if-eqz v1, :cond_1
-
-    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v2, v1
-
-    check-cast v2, Lt5/y;
-
-    sget-object v3, Lt5/y;->f:Lt5/y;
-
-    if-eq v2, v3, :cond_0
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
-    new-instance p3, Ljava/util/ArrayList;
-
-    const/16 v1, 0xa
-
-    invoke-static {v0, v1}, Lm4/h;->W(Ljava/lang/Iterable;I)I
-
-    move-result v1
-
-    invoke-direct {p3, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lt5/y;
-
-    iget-object v1, v1, Lt5/y;->e:Ljava/lang/String;
-
-    invoke-virtual {p3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_2
-    :try_start_0
-    const-class v0, Lb6/l;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Class;
-
-    iget-object v2, p0, Lb6/i;->f:Ljava/lang/Class;
-
-    const/4 v3, 0x0
-
-    aput-object v2, v1, v3
-
-    iget-object v2, p0, Lb6/i;->g:Ljava/lang/Class;
-
-    const/4 v3, 0x1
-
-    aput-object v2, v1, v3
-
-    new-instance v2, Lb6/h;
-
-    invoke-direct {v2, p3}, Lb6/h;-><init>(Ljava/util/ArrayList;)V
-
-    invoke-static {v0, v1, v2}, Ljava/lang/reflect/Proxy;->newProxyInstance(Ljava/lang/ClassLoader;[Ljava/lang/Class;Ljava/lang/reflect/InvocationHandler;)Ljava/lang/Object;
+    invoke-static {p3}, Lt5/x;->d(Ljava/util/List;)Ljava/util/ArrayList;
 
     move-result-object p3
 
-    iget-object v0, p0, Lb6/i;->c:Ljava/lang/reflect/Method;
+    const/4 v0, 0x0
 
-    filled-new-array {p1, p3}, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/String;
 
-    move-result-object p1
+    invoke-virtual {p3, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    const/4 p3, 0x0
+    move-result-object p3
 
-    invoke-virtual {v0, p3, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz p3, :cond_0
 
-    return-void
+    check-cast p3, [Ljava/lang/String;
 
-    :catch_0
-    move-exception p1
+    invoke-virtual {p2, p3}, Lorg/bouncycastle/jsse/BCSSLParameters;->setApplicationProtocols([Ljava/lang/String;)V
 
-    goto :goto_2
-
-    :catch_1
-    move-exception p1
-
-    goto :goto_3
-
-    :goto_2
-    new-instance p3, Ljava/lang/AssertionError;
-
-    invoke-direct {p3, p2, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p3
-
-    :goto_3
-    new-instance p3, Ljava/lang/AssertionError;
-
-    invoke-direct {p3, p2, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p3
-.end method
-
-.method public final f(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
-    .locals 4
-
-    const-string v0, "failed to get ALPN selected protocol"
-
-    :try_start_0
-    iget-object v1, p0, Lb6/i;->d:Ljava/lang/reflect/Method;
-
-    filled-new-array {p1}, [Ljava/lang/Object;
-
-    move-result-object p1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-static {p1}, Ljava/lang/reflect/Proxy;->getInvocationHandler(Ljava/lang/Object;)Ljava/lang/reflect/InvocationHandler;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    check-cast p1, Lb6/h;
-
-    iget-boolean v1, p1, Lb6/h;->f:Z
-
-    if-nez v1, :cond_0
-
-    iget-object v3, p1, Lb6/h;->g:Ljava/lang/String;
-
-    if-nez v3, :cond_0
-
-    const-string p1, "ALPN callback dropped: HTTP/2 is disabled. Is alpn-boot on the boot class path?"
-
-    const/4 v1, 0x4
-
-    invoke-static {v1, p1, v2}, Lb6/l;->i(ILjava/lang/String;Ljava/lang/Throwable;)V
-
-    return-object v2
-
-    :catch_0
-    move-exception p1
-
-    goto :goto_1
-
-    :catch_1
-    move-exception p1
-
-    goto :goto_2
-
-    :cond_0
-    if-eqz v1, :cond_1
+    invoke-interface {p1, p2}, Lorg/bouncycastle/jsse/BCSSLSocket;->setParameters(Lorg/bouncycastle/jsse/BCSSLParameters;)V
 
     goto :goto_0
 
-    :cond_1
-    iget-object v2, p1, Lb6/h;->g:Ljava/lang/String;
-
-    :goto_0
-    return-object v2
-
-    :cond_2
+    :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string v1, "null cannot be cast to non-null type okhttp3.internal.platform.Jdk8WithJettyBootPlatform.AlpnProvider"
+    const-string p2, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
 
-    invoke-direct {p1, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
-    :try_end_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_1
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
-
-    :goto_2
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
+    :cond_1
+    :goto_0
+    return-void
 .end method

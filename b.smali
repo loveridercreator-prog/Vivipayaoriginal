@@ -1,195 +1,145 @@
-.class public final Lb6/b;
+.class public final Lc6/b;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Le6/d;
-
-
-# instance fields
-.field public final a:Ljavax/net/ssl/X509TrustManager;
-
-.field public final b:Ljava/lang/reflect/Method;
-
-
-# direct methods
-.method public constructor <init>(Ljavax/net/ssl/X509TrustManager;Ljava/lang/reflect/Method;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lb6/b;->a:Ljavax/net/ssl/X509TrustManager;
-
-    iput-object p2, p0, Lb6/b;->b:Ljava/lang/reflect/Method;
-
-    return-void
-.end method
+.implements Lc6/o;
 
 
 # virtual methods
-.method public final a(Ljava/security/cert/X509Certificate;)Ljava/security/cert/X509Certificate;
-    .locals 2
+.method public final a(Ljavax/net/ssl/SSLSocket;)Z
+    .locals 0
 
-    const-string v0, "cert"
+    invoke-static {p1}, Landroidx/lifecycle/f0;->o(Ljavax/net/ssl/SSLSocket;)Z
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result p1
 
-    :try_start_0
-    iget-object v0, p0, Lb6/b;->b:Ljava/lang/reflect/Method;
+    return p1
+.end method
 
-    iget-object v1, p0, Lb6/b;->a:Ljavax/net/ssl/X509TrustManager;
+.method public final b(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
+    .locals 1
 
-    filled-new-array {p1}, [Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-virtual {v0, v1, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Landroidx/lifecycle/f0;->g(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
-
-    check-cast p1, Ljava/security/cert/TrustAnchor;
-
-    invoke-virtual {p1}, Ljava/security/cert/TrustAnchor;->getTrustedCert()Ljava/security/cert/X509Certificate;
-
-    move-result-object p1
+    if-nez p1, :cond_0
 
     goto :goto_0
+
+    :cond_0
+    const-string v0, ""
+
+    invoke-static {p1, v0}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :goto_0
+    const/4 p1, 0x0
+
+    :cond_1
+    return-object p1
+.end method
+
+.method public final c()Z
+    .locals 2
+
+    sget-object v0, Lb6/l;->a:Lb6/l;
+
+    const-string v0, "java.vm.name"
+
+    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "Dalvik"
+
+    invoke-static {v1, v0}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1d
+
+    if-lt v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method public final d(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
+    .locals 1
+
+    const-string p2, "protocols"
+
+    invoke-static {p3, p2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :try_start_0
+    invoke-static {p1}, Landroidx/lifecycle/f0;->k(Ljavax/net/ssl/SSLSocket;)V
+
+    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getSSLParameters()Ljavax/net/ssl/SSLParameters;
+
+    move-result-object p2
+
+    sget-object v0, Lb6/l;->a:Lb6/l;
+
+    invoke-static {p3}, Lt5/x;->d(Ljava/util/List;)Ljava/util/ArrayList;
+
+    move-result-object p3
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    invoke-virtual {p3, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p3
+
+    if-eqz p3, :cond_0
+
+    check-cast p3, [Ljava/lang/String;
+
+    invoke-static {p2, p3}, Landroidx/lifecycle/f0;->j(Ljavax/net/ssl/SSLParameters;[Ljava/lang/String;)V
+
+    invoke-virtual {p1, p2}, Ljavax/net/ssl/SSLSocket;->setSSLParameters(Ljavax/net/ssl/SSLParameters;)V
+
+    return-void
 
     :catch_0
     move-exception p1
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string v0, "null cannot be cast to non-null type java.security.cert.TrustAnchor"
+    const-string p2, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
 
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
     :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
-
-    :catch_1
-    const/4 p1, 0x0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
-    return-object p1
+    new-instance p2, Ljava/io/IOException;
 
-    :goto_1
-    new-instance v0, Ljava/lang/AssertionError;
+    const-string p3, "Android internal error"
 
-    const-string v1, "unable to get issues and signature"
+    invoke-direct {p2, p3, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-direct {v0, v1, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lb6/b;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lb6/b;
-
-    iget-object v1, p1, Lb6/b;->a:Ljavax/net/ssl/X509TrustManager;
-
-    iget-object v3, p0, Lb6/b;->a:Ljavax/net/ssl/X509TrustManager;
-
-    invoke-static {v3, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lb6/b;->b:Ljava/lang/reflect/Method;
-
-    iget-object p1, p1, Lb6/b;->b:Ljava/lang/reflect/Method;
-
-    invoke-static {v1, p1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-object v0, p0, Lb6/b;->a:Ljavax/net/ssl/X509TrustManager;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lb6/b;->b:Ljava/lang/reflect/Method;
-
-    invoke-virtual {v1}, Ljava/lang/reflect/Method;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v1, v0
-
-    return v1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "CustomTrustRootIndex(trustManager="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lb6/b;->a:Ljavax/net/ssl/X509TrustManager;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", findByIssuerAndSignatureMethod="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lb6/b;->b:Ljava/lang/reflect/Method;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x29
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    throw p2
 .end method
