@@ -1,89 +1,27 @@
-.class public final Ln6/a;
-.super Lo6/b;
+.class public final Lo6/a;
+.super Ljava/lang/InheritableThreadLocal;
 .source "SourceFile"
 
 
-# instance fields
-.field public e:Ljava/lang/String;
-
-.field public f:Lo6/e;
-
-.field public g:Ljava/util/Queue;
-
-
 # virtual methods
-.method public final a()Z
+.method public final childValue(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    const/4 v0, 0x1
+    check-cast p1, Ljava/util/Map;
 
-    return v0
-.end method
+    if-nez p1, :cond_0
 
-.method public final b()Z
-    .locals 1
+    const/4 p1, 0x0
 
-    const/4 v0, 0x1
+    goto :goto_0
 
-    return v0
-.end method
+    :cond_0
+    new-instance v0, Ljava/util/HashMap;
 
-.method public final c()Z
-    .locals 1
+    invoke-direct {v0, p1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-    const/4 v0, 0x1
+    move-object p1, v0
 
-    return v0
-.end method
-
-.method public final d()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final f()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Ln6/a;->e:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final h()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final j(I)V
-    .locals 1
-
-    new-instance v0, Ln6/b;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    iput p1, v0, Ln6/b;->a:I
-
-    iget-object p1, p0, Ln6/a;->f:Lo6/e;
-
-    iput-object p1, v0, Ln6/b;->b:Lo6/e;
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Thread;->getName()Ljava/lang/String;
-
-    iget-object p1, p0, Ln6/a;->g:Ljava/util/Queue;
-
-    invoke-interface {p1, v0}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
-
-    return-void
+    :goto_0
+    return-object p1
 .end method

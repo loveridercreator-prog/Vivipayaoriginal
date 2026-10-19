@@ -1,176 +1,234 @@
-.class public final Ln5/i;
+.class public abstract Lo6/i;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Iterator;
-.implements Lx4/a;
+.implements Lo5/d;
+.implements Lo5/b;
 
 
-# instance fields
-.field public final synthetic e:I
+# static fields
+.field public static a:Lo6/h; = null
 
-.field public f:I
-
-.field public final synthetic g:Ln5/g;
+.field public static b:Z = false
 
 
 # direct methods
-.method public constructor <init>(Ln5/g;I)V
-    .locals 1
+.method public static final B(Ljava/lang/String;)V
+    .locals 3
 
-    iput p2, p0, Ln5/i;->e:I
+    sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
-    const/4 v0, 0x1
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    if-eq p2, v0, :cond_0
+    const-string v2, "SLF4J: "
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iput-object p1, p0, Ln5/i;->g:Ln5/g;
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {p1}, Ln5/g;->l()I
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result p1
+    move-result-object p0
 
-    iput p1, p0, Ln5/i;->f:I
+    invoke-virtual {v0, p0}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
     return-void
+.end method
 
-    :cond_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public static final C(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 1
 
-    iput-object p1, p0, Ln5/i;->g:Ln5/g;
+    sget-object v0, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
-    invoke-interface {p1}, Ln5/g;->l()I
+    invoke-virtual {v0, p0}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    move-result p1
+    const-string p0, "Reported exception:"
 
-    iput p1, p0, Ln5/i;->f:I
+    invoke-virtual {v0, p0}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 3
+.method public abstract A(ILandroid/content/Intent;)Ljava/lang/Object;
+.end method
 
-    iget v0, p0, Ln5/i;->e:I
+.method public abstract d(I)V
+.end method
 
-    const/4 v1, 0x0
+.method public e(Ln5/g;ILm5/b;Ljava/lang/Object;)V
+    .locals 1
 
-    const/4 v2, 0x1
+    const-string v0, "descriptor"
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget v0, p0, Ln5/i;->f:I
+    const-string v0, "serializer"
 
-    if-lez v0, :cond_0
+    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move v1, v2
+    invoke-virtual {p0, p1, p2}, Lo6/i;->u(Ln5/g;I)V
+
+    invoke-interface {p3}, Lm5/a;->getDescriptor()Ln5/g;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ln5/g;->f()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-interface {p0, p3, p4}, Lo5/d;->m(Lm5/b;Ljava/lang/Object;)V
+
+    goto :goto_0
 
     :cond_0
-    return v1
+    if-nez p4, :cond_1
 
-    :pswitch_0
-    iget v0, p0, Ln5/i;->f:I
+    invoke-interface {p0}, Lo5/d;->h()V
 
-    if-lez v0, :cond_1
-
-    move v1, v2
+    goto :goto_0
 
     :cond_1
-    return v1
+    invoke-interface {p0, p3, p4}, Lo5/d;->m(Lm5/b;Ljava/lang/Object;)V
 
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :goto_0
+    return-void
 .end method
 
-.method public final next()Ljava/lang/Object;
-    .locals 4
-
-    iget v0, p0, Ln5/i;->e:I
-
-    iget-object v1, p0, Ln5/i;->g:Ln5/g;
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-interface {v1}, Ln5/g;->l()I
-
-    move-result v0
-
-    iget v2, p0, Ln5/i;->f:I
-
-    add-int/lit8 v3, v2, -0x1
-
-    iput v3, p0, Ln5/i;->f:I
-
-    sub-int/2addr v0, v2
-
-    invoke-interface {v1, v0}, Ln5/g;->a(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_0
-    invoke-interface {v1}, Ln5/g;->l()I
-
-    move-result v0
-
-    iget v2, p0, Ln5/i;->f:I
-
-    add-int/lit8 v3, v2, -0x1
-
-    iput v3, p0, Ln5/i;->f:I
-
-    sub-int/2addr v0, v2
-
-    invoke-interface {v1, v0}, Ln5/g;->h(I)Ln5/g;
-
-    move-result-object v0
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public abstract g(F)V
 .end method
 
-.method public final remove()V
-    .locals 2
+.method public abstract i(J)V
+.end method
 
-    iget v0, p0, Ln5/i;->e:I
+.method public abstract j(D)V
+.end method
 
-    const-string v1, "Operation is not supported for read-only collection"
+.method public abstract k(S)V
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method public abstract l(C)V
+.end method
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+.method public abstract m(Lm5/b;Ljava/lang/Object;)V
+.end method
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+.method public abstract n(B)V
+.end method
 
-    throw v0
+.method public abstract o(Z)V
+.end method
 
-    :pswitch_0
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+.method public abstract q(Ljava/lang/String;)V
+.end method
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+.method public abstract r(Ln5/g;)Lo5/d;
+.end method
 
-    throw v0
+.method public abstract s(Landroidx/activity/l;Ljava/lang/Object;)Landroid/content/Intent;
+.end method
 
-    nop
+.method public t(Ln5/g;IZ)V
+    .locals 1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    const-string v0, "descriptor"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0, p1, p2}, Lo6/i;->u(Ln5/g;I)V
+
+    invoke-virtual {p0, p3}, Lo6/i;->o(Z)V
+
+    return-void
+.end method
+
+.method public abstract u(Ln5/g;I)V
+.end method
+
+.method public v(Lp5/k1;I)Lo5/d;
+    .locals 1
+
+    const-string v0, "descriptor"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0, p1, p2}, Lo6/i;->u(Ln5/g;I)V
+
+    invoke-virtual {p1, p2}, Lp5/r0;->h(I)Ln5/g;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lo6/i;->r(Ln5/g;)Lo5/d;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public w(IILn5/g;)V
+    .locals 1
+
+    const-string v0, "descriptor"
+
+    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0, p3, p1}, Lo6/i;->u(Ln5/g;I)V
+
+    invoke-virtual {p0, p2}, Lo6/i;->d(I)V
+
+    return-void
+.end method
+
+.method public x(Ln5/g;ILm5/b;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "descriptor"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "serializer"
+
+    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0, p1, p2}, Lo6/i;->u(Ln5/g;I)V
+
+    invoke-virtual {p0, p3, p4}, Lo6/i;->m(Lm5/b;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public y(Ln5/g;ILjava/lang/String;)V
+    .locals 1
+
+    const-string v0, "descriptor"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "value"
+
+    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0, p1, p2}, Lo6/i;->u(Ln5/g;I)V
+
+    invoke-virtual {p0, p3}, Lo6/i;->q(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public z(Landroidx/activity/l;Ljava/lang/Object;)La2/c;
+    .locals 0
+
+    const-string p2, "context"
+
+    invoke-static {p1, p2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 p1, 0x0
+
+    return-object p1
 .end method
