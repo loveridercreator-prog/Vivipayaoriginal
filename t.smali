@@ -1,152 +1,118 @@
-.class public final Lq5/t;
-.super Lq5/e0;
+.class public final Lr5/t;
+.super Lr5/b;
 .source "SourceFile"
 
 
 # instance fields
-.field public final e:Z
+.field public final e:Lq5/d;
 
-.field public final f:Ln5/g;
+.field public final f:I
 
-.field public final g:Ljava/lang/String;
+.field public g:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Z)V
+.method public constructor <init>(Lq5/b;Lq5/d;)V
     .locals 1
 
-    const-string v0, "body"
+    const-string v0, "json"
 
     invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "value"
 
-    iput-boolean p2, p0, Lq5/t;->e:Z
+    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 p2, 0x0
+    invoke-direct {p0, p1}, Lr5/b;-><init>(Lq5/b;)V
 
-    iput-object p2, p0, Lq5/t;->f:Ln5/g;
+    iput-object p2, p0, Lr5/t;->e:Lq5/d;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iget-object p1, p2, Lq5/d;->e:Ljava/util/List;
 
-    move-result-object p1
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    iput-object p1, p0, Lq5/t;->g:Ljava/lang/String;
+    move-result p1
+
+    iput p1, p0, Lr5/t;->f:I
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Lr5/t;->g:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
+.method public final Q(Ln5/g;I)Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lq5/t;->g:Ljava/lang/String;
+    const-string v0, "descriptor"
 
-    return-object v0
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final V(Ljava/lang/String;)Lq5/m;
+    .locals 1
 
-    const/4 v0, 0x1
+    const-string v0, "tag"
 
-    if-ne p0, p1, :cond_0
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_4
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    const-class v3, Lq5/t;
-
-    if-eq v3, v2, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lq5/t;
-
-    iget-boolean v2, p0, Lq5/t;->e:Z
-
-    iget-boolean v3, p1, Lq5/t;->e:Z
-
-    if-eq v2, v3, :cond_2
-
-    return v1
-
-    :cond_2
-    iget-object v2, p0, Lq5/t;->g:Ljava/lang/String;
-
-    iget-object p1, p1, Lq5/t;->g:Ljava/lang/String;
-
-    invoke-static {v2, p1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p1
 
-    if-nez p1, :cond_3
+    iget-object v0, p0, Lr5/t;->e:Lq5/d;
 
-    return v1
+    iget-object v0, v0, Lq5/d;->e:Ljava/util/List;
 
-    :cond_3
-    return v0
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    :cond_4
-    :goto_0
-    return v1
+    move-result-object p1
+
+    check-cast p1, Lq5/m;
+
+    return-object p1
 .end method
 
-.method public final hashCode()I
-    .locals 2
+.method public final Y()Lq5/m;
+    .locals 1
 
-    iget-boolean v0, p0, Lq5/t;->e:Z
+    iget-object v0, p0, Lr5/t;->e:Lq5/d;
 
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lq5/t;->g:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v1, v0
-
-    return v1
+    return-object v0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final q(Ln5/g;)I
+    .locals 1
 
-    iget-object v0, p0, Lq5/t;->g:Ljava/lang/String;
+    const-string v0, "descriptor"
 
-    iget-boolean v1, p0, Lq5/t;->e:Z
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-eqz v1, :cond_0
+    iget p1, p0, Lr5/t;->g:I
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    iget v0, p0, Lr5/t;->f:I
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    add-int/lit8 v0, v0, -0x1
 
-    invoke-static {v0, v1}, Lr5/c0;->a(Ljava/lang/String;Ljava/lang/StringBuilder;)V
+    if-ge p1, v0, :cond_0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    add-int/lit8 p1, p1, 0x1
 
-    move-result-object v0
+    iput p1, p0, Lr5/t;->g:I
 
-    const-string v1, "StringBuilder().apply(builderAction).toString()"
-
-    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+    return p1
 
     :cond_0
-    return-object v0
+    const/4 p1, -0x1
+
+    return p1
 .end method

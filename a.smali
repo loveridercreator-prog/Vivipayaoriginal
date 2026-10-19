@@ -1,14 +1,20 @@
-.class public interface abstract Lq6/a;
+.class public final Lr6/a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lr6/c;
+
+
+# instance fields
+.field public a:Landroid/os/IBinder;
+
 
 # virtual methods
-.method public abstract a()V
-.end method
+.method public final asBinder()Landroid/os/IBinder;
+    .locals 1
 
-.method public abstract b()Ljava/lang/String;
-.end method
+    iget-object v0, p0, Lr6/a;->a:Landroid/os/IBinder;
 
-.method public abstract c()Lm6/a;
+    return-object v0
 .end method

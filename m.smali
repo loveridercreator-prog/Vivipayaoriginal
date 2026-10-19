@@ -1,27 +1,62 @@
-.class public abstract Lq5/m;
-.super Ljava/lang/Object;
+.class public final synthetic Lr5/m;
+.super Lw4/h;
 .source "SourceFile"
 
-
-# annotations
-.annotation runtime Lm5/h;
-    with = Lq5/q;
-.end annotation
+# interfaces
+.implements Lv4/e;
 
 
-# static fields
-.field public static final Companion:Lq5/l;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
+    check-cast p1, Ln5/g;
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+    check-cast p2, Ljava/lang/Number;
 
-    new-instance v0, Lq5/l;
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    move-result p2
 
-    sput-object v0, Lq5/m;->Companion:Lq5/l;
+    const-string v0, "p0"
 
-    return-void
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lw4/b;->f:Ljava/lang/Object;
+
+    check-cast v0, Lr5/n;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-interface {p1, p2}, Ln5/g;->j(I)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-interface {p1, p2}, Ln5/g;->h(I)Ln5/g;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ln5/g;->f()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    iput-boolean p1, v0, Lr5/n;->b:Z
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
 .end method

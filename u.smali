@@ -1,227 +1,23 @@
-.class public final Lq5/u;
-.super Ljava/lang/Object;
+.class public final Lr5/u;
+.super Lr5/s;
 .source "SourceFile"
 
-# interfaces
-.implements Lm5/b;
 
+# instance fields
+.field public final j:Lq5/a0;
 
-# static fields
-.field public static final a:Lq5/u;
+.field public final k:Ljava/util/List;
 
-.field public static final b:Lp5/m1;
+.field public final l:I
+
+.field public m:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    new-instance v0, Lq5/u;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lq5/u;->a:Lq5/u;
-
-    sget-object v0, Ln5/e;->i:Ln5/e;
-
-    const-string v1, "kotlinx.serialization.json.JsonLiteral"
-
-    invoke-static {v1}, Ld5/j;->B0(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    xor-int/lit8 v2, v2, 0x1
-
-    if-eqz v2, :cond_2
-
-    sget-object v2, Lp5/n1;->a:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v2}, Ljava/util/LinkedHashMap;->keySet()Ljava/util/Set;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lb5/b;
-
-    check-cast v3, Lw4/d;
-
-    invoke-virtual {v3}, Lw4/d;->b()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lk3/e;->i(Ljava/lang/Object;)V
-
-    invoke-static {v3}, Lp5/n1;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "kotlin."
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v1, v4}, Ld5/j;->u0(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    invoke-static {v1, v3}, Ld5/j;->u0(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "\n                The name of serial descriptor should uniquely identify associated serializer.\n                For serial name kotlinx.serialization.json.JsonLiteral there already exist "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v3}, Lp5/n1;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, "Serializer.\n                Please refer to SerialDescriptor documentation for additional information.\n            "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lr2/f;->T(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1
-    new-instance v2, Lp5/m1;
-
-    invoke-direct {v2, v1, v0}, Lp5/m1;-><init>(Ljava/lang/String;Ln5/f;)V
-
-    sput-object v2, Lq5/u;->b:Lp5/m1;
-
-    return-void
-
-    :cond_2
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Blank serial names are prohibited"
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-
-# virtual methods
-.method public final deserialize(Lo5/c;)Ljava/lang/Object;
-    .locals 2
-
-    const-string v0, "decoder"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1}, Lf5/c0;->n(Lo5/c;)Lq5/k;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lq5/k;->j()Lq5/m;
-
-    move-result-object p1
-
-    instance-of v0, p1, Lq5/t;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lq5/t;
-
-    return-object p1
-
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Unexpected JSON element, expected JsonLiteral, had "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lw4/s;->a(Ljava/lang/Class;)Lw4/d;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 v1, -0x1
-
-    invoke-static {v1, v0, p1}, Lf5/c0;->i(ILjava/lang/String;Ljava/lang/CharSequence;)Lr5/l;
-
-    move-result-object p1
-
-    throw p1
-.end method
-
-.method public final getDescriptor()Ln5/g;
+.method public constructor <init>(Lq5/b;Lq5/a0;)V
     .locals 1
 
-    sget-object v0, Lq5/u;->b:Lp5/m1;
-
-    return-object v0
-.end method
-
-.method public final serialize(Lo5/d;Ljava/lang/Object;)V
-    .locals 2
-
-    check-cast p2, Lq5/t;
-
-    const-string v0, "encoder"
+    const-string v0, "json"
 
     invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -229,100 +25,148 @@
 
     invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1}, Lf5/c0;->m(Lo5/d;)V
+    const/4 v0, 0x0
 
-    iget-boolean v0, p2, Lq5/t;->e:Z
+    invoke-direct {p0, p1, p2, v0, v0}, Lr5/s;-><init>(Lq5/b;Lq5/a0;Ljava/lang/String;Ln5/g;)V
 
-    iget-object v1, p2, Lq5/t;->g:Ljava/lang/String;
+    iput-object p2, p0, Lr5/u;->j:Lq5/a0;
 
-    if-eqz v0, :cond_0
+    iget-object p1, p2, Lq5/a0;->e:Ljava/util/Map;
 
-    invoke-interface {p1, v1}, Lo5/d;->q(Ljava/lang/String;)V
+    invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lm4/l;->n0(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lr5/u;->k:Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result p1
+
+    mul-int/lit8 p1, p1, 0x2
+
+    iput p1, p0, Lr5/u;->l:I
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Lr5/u;->m:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final Q(Ln5/g;I)Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "descriptor"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    div-int/lit8 p2, p2, 0x2
+
+    iget-object p1, p0, Lr5/u;->k:Ljava/util/List;
+
+    invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/String;
+
+    return-object p1
+.end method
+
+.method public final V(Ljava/lang/String;)Lq5/m;
+    .locals 2
+
+    const-string v0, "tag"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget v0, p0, Lr5/u;->m:I
+
+    rem-int/lit8 v0, v0, 0x2
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lq5/n;->a:Lp5/k0;
+
+    new-instance v0, Lq5/t;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p1, v1}, Lq5/t;-><init>(Ljava/lang/Object;Z)V
 
     goto :goto_0
 
     :cond_0
-    iget-object v0, p2, Lq5/t;->f:Ln5/g;
+    iget-object v0, p0, Lr5/u;->j:Lq5/a0;
 
-    if-eqz v0, :cond_1
-
-    invoke-interface {p1, v0}, Lo5/d;->r(Ln5/g;)Lo5/d;
+    invoke-static {v0, p1}, Lc5/k;->G(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-interface {p1, v1}, Lo5/d;->q(Ljava/lang/String;)V
+    move-object v0, p1
 
-    goto :goto_0
-
-    :cond_1
-    sget-object v0, Lq5/n;->a:Lp5/k0;
-
-    invoke-static {v1}, Ld5/h;->o0(Ljava/lang/String;)Ljava/lang/Long;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v0
-
-    invoke-interface {p1, v0, v1}, Lo5/d;->i(J)V
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {v1}, Lb5/k;->S(Ljava/lang/String;)Ll4/t;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3
-
-    sget-object p2, Lp5/g2;->b:Lp5/k0;
-
-    invoke-interface {p1, p2}, Lo5/d;->r(Ln5/g;)Lo5/d;
-
-    move-result-object p1
-
-    iget-wide v0, v0, Ll4/t;->e:J
-
-    invoke-interface {p1, v0, v1}, Lo5/d;->i(J)V
-
-    goto :goto_0
-
-    :cond_3
-    invoke-static {v1}, Ld5/h;->m0(Ljava/lang/String;)Ljava/lang/Double;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_4
-
-    invoke-virtual {v0}, Ljava/lang/Number;->doubleValue()D
-
-    move-result-wide v0
-
-    invoke-interface {p1, v0, v1}, Lo5/d;->j(D)V
-
-    goto :goto_0
-
-    :cond_4
-    invoke-static {p2}, Lq5/n;->b(Lq5/e0;)Ljava/lang/Boolean;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_5
-
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p2
-
-    invoke-interface {p1, p2}, Lo5/d;->o(Z)V
-
-    goto :goto_0
-
-    :cond_5
-    invoke-interface {p1, v1}, Lo5/d;->q(Ljava/lang/String;)V
+    check-cast v0, Lq5/m;
 
     :goto_0
+    return-object v0
+.end method
+
+.method public final Y()Lq5/m;
+    .locals 1
+
+    iget-object v0, p0, Lr5/u;->j:Lq5/a0;
+
+    return-object v0
+.end method
+
+.method public final a(Ln5/g;)V
+    .locals 1
+
+    const-string v0, "descriptor"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
     return-void
+.end method
+
+.method public final a0()Lq5/a0;
+    .locals 1
+
+    iget-object v0, p0, Lr5/u;->j:Lq5/a0;
+
+    return-object v0
+.end method
+
+.method public final q(Ln5/g;)I
+    .locals 1
+
+    const-string v0, "descriptor"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget p1, p0, Lr5/u;->m:I
+
+    iget v0, p0, Lr5/u;->l:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    if-ge p1, v0, :cond_0
+
+    add-int/lit8 p1, p1, 0x1
+
+    iput p1, p0, Lr5/u;->m:I
+
+    return p1
+
+    :cond_0
+    const/4 p1, -0x1
+
+    return p1
 .end method

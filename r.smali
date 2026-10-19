@@ -1,182 +1,157 @@
-.class public final Lq5/r;
+.class public final Lr5/r;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ln5/g;
-
 
 # instance fields
-.field public final a:Ll4/m;
+.field public a:[C
+
+.field public b:I
 
 
-# direct methods
-.method public constructor <init>(Lq5/o;)V
-    .locals 1
+# virtual methods
+.method public final a(II)V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    add-int/2addr p2, p1
 
-    new-instance v0, Ll4/m;
+    iget-object v0, p0, Lr5/r;->a:[C
 
-    invoke-direct {v0, p1}, Ll4/m;-><init>(Lv4/a;)V
+    array-length v1, v0
 
-    iput-object v0, p0, Lq5/r;->a:Ll4/m;
+    if-gt v1, p2, :cond_1
+
+    mul-int/lit8 p1, p1, 0x2
+
+    if-ge p2, p1, :cond_0
+
+    move p2, p1
+
+    :cond_0
+    invoke-static {v0, p2}, Ljava/util/Arrays;->copyOf([CI)[C
+
+    move-result-object p1
+
+    const-string p2, "copyOf(this, newSize)"
+
+    invoke-static {p1, p2}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object p1, p0, Lr5/r;->a:[C
+
+    :cond_1
+    return-void
+.end method
+
+.method public final b()V
+    .locals 5
+
+    sget-object v0, Lr5/e;->c:Lr5/e;
+
+    iget-object v1, p0, Lr5/r;->a:[C
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const-string v2, "array"
+
+    invoke-static {v1, v2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    monitor-enter v0
+
+    :try_start_0
+    iget v2, v0, Lr5/d;->b:I
+
+    array-length v3, v1
+
+    add-int/2addr v3, v2
+
+    sget v4, Lr5/c;->a:I
+
+    if-ge v3, v4, :cond_0
+
+    array-length v3, v1
+
+    add-int/2addr v2, v3
+
+    iput v2, v0, Lr5/d;->b:I
+
+    iget-object v2, v0, Lr5/d;->a:Lm4/g;
+
+    invoke-virtual {v2, v1}, Lm4/g;->c(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    monitor-exit v0
+
+    return-void
+
+    :goto_1
+    monitor-exit v0
+
+    throw v1
+.end method
+
+.method public final c(Ljava/lang/String;)V
+    .locals 5
+
+    const-string v0, "text"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget v1, p0, Lr5/r;->b:I
+
+    invoke-virtual {p0, v1, v0}, Lr5/r;->a(II)V
+
+    iget-object v1, p0, Lr5/r;->a:[C
+
+    iget v2, p0, Lr5/r;->b:I
+
+    const/4 v3, 0x0
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    invoke-virtual {p1, v3, v4, v1, v2}, Ljava/lang/String;->getChars(II[CI)V
+
+    iget p1, p0, Lr5/r;->b:I
+
+    add-int/2addr p1, v0
+
+    iput p1, p0, Lr5/r;->b:I
 
     return-void
 .end method
 
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-# virtual methods
-.method public final a(I)Ljava/lang/String;
-    .locals 1
+    new-instance v0, Ljava/lang/String;
 
-    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
+    iget-object v1, p0, Lr5/r;->a:[C
 
-    move-result-object v0
+    const/4 v2, 0x0
 
-    invoke-interface {v0, p1}, Ln5/g;->a(I)Ljava/lang/String;
+    iget v3, p0, Lr5/r;->b:I
 
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final b()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final c(Ljava/lang/String;)I
-    .locals 1
-
-    const-string v0, "name"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ln5/g;->c(Ljava/lang/String;)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final d()Ljava/lang/String;
-    .locals 1
-
-    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ln5/g;->d()Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct {v0, v1, v2, v3}, Ljava/lang/String;-><init>([CII)V
 
     return-object v0
-.end method
-
-.method public final e()Ln5/g;
-    .locals 1
-
-    iget-object v0, p0, Lq5/r;->a:Ll4/m;
-
-    invoke-virtual {v0}, Ll4/m;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ln5/g;
-
-    return-object v0
-.end method
-
-.method public final f()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final g(I)Ljava/util/List;
-    .locals 1
-
-    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ln5/g;->g(I)Ljava/util/List;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final h(I)Ln5/g;
-    .locals 1
-
-    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ln5/g;->h(I)Ln5/g;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final i()Ln5/n;
-    .locals 1
-
-    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ln5/g;->i()Ln5/n;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final j(I)Z
-    .locals 1
-
-    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ln5/g;->j(I)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final k()Ljava/util/List;
-    .locals 1
-
-    sget-object v0, Lm4/n;->e:Lm4/n;
-
-    return-object v0
-.end method
-
-.method public final l()I
-    .locals 1
-
-    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ln5/g;->l()I
-
-    move-result v0
-
-    return v0
 .end method

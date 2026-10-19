@@ -1,98 +1,170 @@
-.class public final Lq5/f;
+.class public final Lr5/f;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lm5/b;
-
 
 # static fields
-.field public static final a:Lq5/f;
+.field public static final a:[C
 
-.field public static final b:Lq5/e;
+.field public static final b:[B
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 10
 
-    new-instance v0, Lq5/f;
+    const/16 v0, 0x75
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    new-array v1, v0, [C
 
-    sput-object v0, Lq5/f;->a:Lq5/f;
+    sput-object v1, Lr5/f;->a:[C
 
-    sget-object v0, Lq5/e;->b:Lq5/e;
+    const/16 v1, 0x7e
 
-    sput-object v0, Lq5/f;->b:Lq5/e;
+    new-array v1, v1, [B
+
+    sput-object v1, Lr5/f;->b:[B
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    const/16 v3, 0x20
+
+    if-ge v2, v3, :cond_0
+
+    invoke-static {v0, v2}, Lr5/f;->a(CI)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v0, 0x62
+
+    const/16 v2, 0x8
+
+    invoke-static {v0, v2}, Lr5/f;->a(CI)V
+
+    const/16 v0, 0x74
+
+    const/16 v4, 0x9
+
+    invoke-static {v0, v4}, Lr5/f;->a(CI)V
+
+    const/16 v0, 0x6e
+
+    const/16 v5, 0xa
+
+    invoke-static {v0, v5}, Lr5/f;->a(CI)V
+
+    const/16 v0, 0xc
+
+    const/16 v6, 0x66
+
+    invoke-static {v6, v0}, Lr5/f;->a(CI)V
+
+    const/16 v0, 0x72
+
+    const/16 v6, 0xd
+
+    invoke-static {v0, v6}, Lr5/f;->a(CI)V
+
+    const/16 v0, 0x2f
+
+    invoke-static {v0, v0}, Lr5/f;->a(CI)V
+
+    const/16 v0, 0x22
+
+    invoke-static {v0, v0}, Lr5/f;->a(CI)V
+
+    const/16 v7, 0x5c
+
+    invoke-static {v7, v7}, Lr5/f;->a(CI)V
+
+    :goto_1
+    sget-object v8, Lr5/f;->b:[B
+
+    const/16 v9, 0x21
+
+    if-ge v1, v9, :cond_1
+
+    const/16 v9, 0x7f
+
+    aput-byte v9, v8, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v1, 0x3
+
+    aput-byte v1, v8, v4
+
+    aput-byte v1, v8, v5
+
+    aput-byte v1, v8, v6
+
+    aput-byte v1, v8, v3
+
+    const/16 v1, 0x2c
+
+    const/4 v3, 0x4
+
+    aput-byte v3, v8, v1
+
+    const/16 v1, 0x3a
+
+    const/4 v3, 0x5
+
+    aput-byte v3, v8, v1
+
+    const/16 v1, 0x7b
+
+    const/4 v3, 0x6
+
+    aput-byte v3, v8, v1
+
+    const/16 v1, 0x7d
+
+    const/4 v3, 0x7
+
+    aput-byte v3, v8, v1
+
+    const/16 v1, 0x5b
+
+    aput-byte v2, v8, v1
+
+    const/16 v1, 0x5d
+
+    aput-byte v4, v8, v1
+
+    const/4 v1, 0x1
+
+    aput-byte v1, v8, v0
+
+    const/4 v0, 0x2
+
+    aput-byte v0, v8, v7
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final deserialize(Lo5/c;)Ljava/lang/Object;
-    .locals 4
-
-    const-string v0, "decoder"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1}, Lf5/c0;->n(Lo5/c;)Lq5/k;
-
-    new-instance v0, Lq5/d;
-
-    sget-object v1, Lq5/q;->a:Lq5/q;
-
-    new-instance v2, Lp5/d;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v1, v3}, Lp5/d;-><init>(Lm5/b;I)V
-
-    invoke-virtual {v2, p1}, Lp5/a;->deserialize(Lo5/c;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/util/List;
-
-    invoke-direct {v0, p1}, Lq5/d;-><init>(Ljava/util/List;)V
-
-    return-object v0
-.end method
-
-.method public final getDescriptor()Ln5/g;
+.method public static a(CI)V
     .locals 1
 
-    sget-object v0, Lq5/f;->b:Lq5/e;
+    const/16 v0, 0x75
 
-    return-object v0
-.end method
+    if-eq p0, v0, :cond_0
 
-.method public final serialize(Lo5/d;Ljava/lang/Object;)V
-    .locals 3
+    sget-object v0, Lr5/f;->a:[C
 
-    check-cast p2, Lq5/d;
+    int-to-char p1, p1
 
-    const-string v0, "encoder"
+    aput-char p1, v0, p0
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "value"
-
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-static {p1}, Lf5/c0;->m(Lo5/d;)V
-
-    sget-object v0, Lq5/q;->a:Lq5/q;
-
-    new-instance v1, Lp5/d;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v0, v2}, Lp5/d;-><init>(Lm5/b;I)V
-
-    invoke-virtual {v1, p1, p2}, Lp5/u;->serialize(Lo5/d;Ljava/lang/Object;)V
-
+    :cond_0
     return-void
 .end method

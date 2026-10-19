@@ -1,19 +1,28 @@
-.class public final Lq5/l;
-.super Ljava/lang/Object;
+.class public final Lr5/l;
+.super Lm5/o;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final serializer()Lm5/b;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lm5/b;"
-        }
-    .end annotation
+# direct methods
+.method public constructor <init>(Ljava/lang/String;I)V
+    .locals 2
 
-    sget-object v0, Lq5/q;->a:Lq5/q;
+    const-string v0, "message"
 
-    return-object v0
+    const/4 v1, 0x1
+
+    if-eq p2, v1, :cond_0
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0, p1, v1}, Lm5/o;-><init>(Ljava/lang/String;I)V
+
+    return-void
+
+    :cond_0
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0, p1, v1}, Lm5/o;-><init>(Ljava/lang/String;I)V
+
+    return-void
 .end method

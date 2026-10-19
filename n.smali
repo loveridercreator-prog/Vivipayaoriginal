@@ -1,108 +1,45 @@
-.class public abstract Lq5/n;
+.class public final Lr5/n;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lp5/k0;
+# instance fields
+.field public final a:Lp5/a0;
+
+.field public b:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ln5/g;)V
+    .locals 8
 
-    sget-object v0, Lp5/u1;->a:Lp5/u1;
+    const-string v0, "descriptor"
 
-    const-string v1, "kotlinx.serialization.json.JsonUnquotedLiteral"
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v1, v0}, Lf5/c0;->c(Ljava/lang/String;Lm5/b;)Lp5/k0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    new-instance v0, Lp5/a0;
 
-    sput-object v0, Lq5/n;->a:Lp5/k0;
+    new-instance v7, Lr5/m;
+
+    const/4 v2, 0x2
+
+    const-class v4, Lr5/n;
+
+    const-string v5, "readIfAbsent"
+
+    const-string v6, "readIfAbsent(Lkotlinx/serialization/descriptors/SerialDescriptor;I)Z"
+
+    move-object v1, v7
+
+    move-object v3, p0
+
+    invoke-direct/range {v1 .. v6}, Lw4/h;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-direct {v0, p1, v7}, Lp5/a0;-><init>(Ln5/g;Lr5/m;)V
+
+    iput-object v0, p0, Lr5/n;->a:Lp5/a0;
 
     return-void
-.end method
-
-.method public static final a(Lq5/m;Ljava/lang/String;)V
-    .locals 3
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Element "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lw4/s;->a(Ljava/lang/Class;)Lw4/d;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, " is not a "
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public static final b(Lq5/e0;)Ljava/lang/Boolean;
-    .locals 2
-
-    const-string v0, "<this>"
-
-    invoke-static {p0, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lq5/e0;->a()Ljava/lang/String;
-
-    move-result-object p0
-
-    sget-object v1, Lr5/c0;->a:[Ljava/lang/String;
-
-    invoke-static {p0, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "true"
-
-    invoke-static {p0, v0}, Ld5/j;->u0(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "false"
-
-    invoke-static {p0, v0}, Ld5/j;->u0(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    :goto_0
-    return-object p0
 .end method
