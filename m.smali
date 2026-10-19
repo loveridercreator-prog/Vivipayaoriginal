@@ -1,138 +1,93 @@
-.class public final Ll4/m;
+.class public abstract Lm5/m;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ll4/e;
-.implements Ljava/io/Serializable;
 
+# static fields
+.field public static final a:Lp5/r;
 
-# instance fields
-.field public e:Lv4/a;
+.field public static final b:Lp5/r;
 
-.field public volatile f:Ljava/lang/Object;
+.field public static final c:Lp5/t;
 
-.field public final g:Ljava/lang/Object;
+.field public static final d:Lp5/t;
 
 
 # direct methods
-.method public constructor <init>(Lv4/a;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 5
 
-    const-string v0, "initializer"
+    sget-object v0, Lm5/l;->f:Lm5/l;
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    sget-boolean v1, Lp5/m;->a:Z
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x1
 
-    iput-object p1, p0, Ll4/m;->e:Lv4/a;
+    const/4 v3, 0x0
 
-    sget-object p1, Ll4/v;->a:Ll4/v;
+    new-instance v4, Lp5/r;
 
-    iput-object p1, p0, Ll4/m;->f:Ljava/lang/Object;
+    if-eqz v1, :cond_0
 
-    iput-object p0, p0, Ll4/m;->g:Ljava/lang/Object;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Z
-    .locals 2
-
-    iget-object v0, p0, Ll4/m;->f:Ljava/lang/Object;
-
-    sget-object v1, Ll4/v;->a:Ll4/v;
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
+    invoke-direct {v4, v3, v0}, Lp5/r;-><init>(ILm5/l;)V
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    invoke-direct {v4, v2, v0}, Lp5/r;-><init>(ILm5/l;)V
 
     :goto_0
-    return v0
-.end method
+    sput-object v4, Lm5/m;->a:Lp5/r;
 
-.method public final getValue()Ljava/lang/Object;
-    .locals 3
+    sget-object v0, Lm5/l;->g:Lm5/l;
 
-    iget-object v0, p0, Ll4/m;->f:Ljava/lang/Object;
+    new-instance v4, Lp5/r;
 
-    sget-object v1, Ll4/v;->a:Ll4/v;
+    if-eqz v1, :cond_1
 
-    if-eq v0, v1, :cond_0
+    invoke-direct {v4, v3, v0}, Lp5/r;-><init>(ILm5/l;)V
 
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Ll4/m;->g:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v2, p0, Ll4/m;->f:Ljava/lang/Object;
-
-    if-eq v2, v1, :cond_1
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
-    iget-object v1, p0, Ll4/m;->e:Lv4/a;
+    invoke-direct {v4, v2, v0}, Lp5/r;-><init>(ILm5/l;)V
 
-    invoke-static {v1}, Lk3/e;->i(Ljava/lang/Object;)V
+    :goto_1
+    sput-object v4, Lm5/m;->b:Lp5/r;
 
-    invoke-interface {v1}, Lv4/a;->invoke()Ljava/lang/Object;
+    sget-object v0, Lm5/k;->f:Lm5/k;
 
-    move-result-object v2
+    new-instance v4, Lp5/t;
 
-    iput-object v2, p0, Ll4/m;->f:Ljava/lang/Object;
+    if-eqz v1, :cond_2
 
-    const/4 v1, 0x0
+    invoke-direct {v4, v0, v3}, Lp5/t;-><init>(Lm5/k;I)V
 
-    iput-object v1, p0, Ll4/m;->e:Lv4/a;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    goto :goto_2
 
-    :goto_0
-    monitor-exit v0
+    :cond_2
+    invoke-direct {v4, v0, v2}, Lp5/t;-><init>(Lm5/k;I)V
 
-    return-object v2
+    :goto_2
+    sput-object v4, Lm5/m;->c:Lp5/t;
 
-    :catchall_0
-    move-exception v1
+    sget-object v0, Lm5/k;->g:Lm5/k;
 
-    monitor-exit v0
+    if-eqz v1, :cond_3
 
-    throw v1
-.end method
+    new-instance v1, Lp5/t;
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    invoke-direct {v1, v0, v3}, Lp5/t;-><init>(Lm5/k;I)V
 
-    invoke-virtual {p0}, Ll4/m;->a()Z
+    goto :goto_3
 
-    move-result v0
+    :cond_3
+    new-instance v1, Lp5/t;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v1, v0, v2}, Lp5/t;-><init>(Lm5/k;I)V
 
-    invoke-virtual {p0}, Ll4/m;->getValue()Ljava/lang/Object;
+    :goto_3
+    sput-object v1, Lm5/m;->d:Lp5/t;
 
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "Lazy value not initialized yet."
-
-    :goto_0
-    return-object v0
+    return-void
 .end method

@@ -1,112 +1,38 @@
-.class public final Ll5/c;
-.super Lf5/u0;
+.class public final synthetic Lm6/c;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/concurrent/Executor;
+.implements Ljava/security/PrivilegedAction;
 
 
-# static fields
-.field public static final g:Ll5/c;
-
-.field public static final h:Lf5/x;
+# instance fields
+.field public final synthetic a:Ljava/lang/ClassLoader;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public synthetic constructor <init>(Ljava/lang/ClassLoader;)V
+    .locals 0
 
-    new-instance v0, Ll5/c;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lf5/x;-><init>()V
-
-    sput-object v0, Ll5/c;->g:Ll5/c;
-
-    sget-object v0, Ll5/k;->g:Ll5/k;
-
-    sget v1, Lk5/a0;->a:I
-
-    const/16 v2, 0x40
-
-    if-ge v2, v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    move v1, v2
-
-    :goto_0
-    const/16 v2, 0xc
-
-    const-string v3, "kotlinx.coroutines.io.parallelism"
-
-    const/4 v4, 0x0
-
-    invoke-static {v3, v1, v4, v4, v2}, La5/d;->l(Ljava/lang/String;IIII)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Ll5/k;->O(I)Lf5/x;
-
-    move-result-object v0
-
-    sput-object v0, Ll5/c;->h:Lf5/x;
+    iput-object p1, p0, Lm6/c;->a:Ljava/lang/ClassLoader;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final C(Lp4/j;Ljava/lang/Runnable;)V
-    .locals 1
-
-    sget-object v0, Ll5/c;->h:Lf5/x;
-
-    invoke-virtual {v0, p1, p2}, Lf5/x;->C(Lp4/j;Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final close()V
+.method public final run()Ljava/lang/Object;
     .locals 2
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    const-class v0, Lq6/a;
 
-    const-string v1, "Cannot be invoked on Dispatchers.IO"
+    iget-object v1, p0, Lm6/c;->a:Ljava/lang/ClassLoader;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/util/ServiceLoader;->load(Ljava/lang/Class;Ljava/lang/ClassLoader;)Ljava/util/ServiceLoader;
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 1
-
-    sget-object v0, Lp4/k;->e:Lp4/k;
-
-    invoke-virtual {p0, v0, p1}, Ll5/c;->o(Lp4/j;Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final o(Lp4/j;Ljava/lang/Runnable;)V
-    .locals 1
-
-    sget-object v0, Ll5/c;->h:Lf5/x;
-
-    invoke-virtual {v0, p1, p2}, Lf5/x;->o(Lp4/j;Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "Dispatchers.IO"
+    move-result-object v0
 
     return-object v0
 .end method

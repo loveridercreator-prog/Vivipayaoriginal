@@ -1,278 +1,140 @@
-.class public final Ll5/l;
-.super Ljava/lang/Object;
+.class public final Lm5/l;
+.super Lw4/i;
 .source "SourceFile"
+
+# interfaces
+.implements Lv4/c;
 
 
 # static fields
-.field public static final b:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field public static final f:Lm5/l;
 
-.field public static final c:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-.field public static final d:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-.field public static final e:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+.field public static final g:Lm5/l;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-.field private volatile blockingTasksInBuffer:I
-
-.field private volatile consumerIndex:I
-
-.field private volatile lastScheduledTask:Ljava/lang/Object;
-
-.field private volatile producerIndex:I
+.field public final synthetic e:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method static synthetic constructor <clinit>()V
+    .locals 2
 
-    const-class v0, Ljava/lang/Object;
+    new-instance v0, Lm5/l;
 
-    const-string v1, "lastScheduledTask"
+    const/4 v1, 0x0
 
-    const-class v2, Ll5/l;
+    invoke-direct {v0, v1}, Lm5/l;-><init>(I)V
 
-    invoke-static {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    sput-object v0, Lm5/l;->f:Lm5/l;
 
-    move-result-object v0
+    new-instance v0, Lm5/l;
 
-    sput-object v0, Ll5/l;->b:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    const/4 v1, 0x1
 
-    const-string v0, "producerIndex"
+    invoke-direct {v0, v1}, Lm5/l;-><init>(I)V
 
-    invoke-static {v2, v0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    move-result-object v0
-
-    sput-object v0, Ll5/l;->c:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    const-string v0, "consumerIndex"
-
-    invoke-static {v2, v0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    move-result-object v0
-
-    sput-object v0, Ll5/l;->d:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    const-string v0, "blockingTasksInBuffer"
-
-    invoke-static {v2, v0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    move-result-object v0
-
-    sput-object v0, Ll5/l;->e:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    sput-object v0, Lm5/l;->g:Lm5/l;
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 2
+.method public synthetic constructor <init>(I)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lm5/l;->e:I
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    const/4 p1, 0x1
 
-    const/16 v1, 0x80
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
-
-    iput-object v0, p0, Ll5/l;->a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    invoke-direct {p0, p1}, Lw4/i;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ll5/h;)Ll5/h;
-    .locals 4
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    sget-object v0, Ll5/l;->c:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
+    const-string v1, "it"
 
-    move-result v1
+    iget v2, p0, Lm5/l;->e:I
 
-    sget-object v2, Ll5/l;->d:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    packed-switch v2, :pswitch_data_0
 
-    invoke-virtual {v2, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
+    check-cast p1, Lb5/b;
 
-    move-result v2
+    packed-switch v2, :pswitch_data_1
 
-    sub-int/2addr v1, v2
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/16 v2, 0x7f
+    invoke-static {p1}, Lf5/c0;->Q(Lb5/b;)Lm5/b;
 
-    if-ne v1, v2, :cond_0
+    move-result-object p1
 
-    return-object p1
+    if-eqz p1, :cond_0
 
-    :cond_0
-    iget-object v1, p1, Ll5/h;->f:Lt5/x;
-
-    iget v1, v1, Lt5/x;->a:I
-
-    const/4 v3, 0x1
-
-    if-ne v1, v3, :cond_1
-
-    sget-object v1, Ll5/l;->e:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->incrementAndGet(Ljava/lang/Object;)I
-
-    :cond_1
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
-
-    move-result v1
-
-    and-int/2addr v1, v2
-
-    :goto_0
-    iget-object v2, p0, Ll5/l;->a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_2
-
-    invoke-static {}, Ljava/lang/Thread;->yield()V
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {v2, v1, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->lazySet(ILjava/lang/Object;)V
-
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->incrementAndGet(Ljava/lang/Object;)I
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public final b()Ll5/h;
-    .locals 5
-
-    :cond_0
-    :goto_0
-    sget-object v0, Ll5/l;->d:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
-
-    move-result v1
-
-    sget-object v2, Ll5/l;->c:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    invoke-virtual {v2, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
-
-    move-result v2
-
-    sub-int v2, v1, v2
-
-    const/4 v3, 0x0
-
-    if-nez v2, :cond_1
-
-    return-object v3
-
-    :cond_1
-    and-int/lit8 v2, v1, 0x7f
-
-    add-int/lit8 v4, v1, 0x1
-
-    invoke-virtual {v0, p0, v1, v4}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->compareAndSet(Ljava/lang/Object;II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Ll5/l;->a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-virtual {v0, v2, v3}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->getAndSet(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lf5/c0;->G(Lm5/b;)Lm5/b;
 
     move-result-object v0
 
-    check-cast v0, Ll5/h;
-
-    if-nez v0, :cond_2
-
     goto :goto_0
 
-    :cond_2
-    iget-object v1, v0, Ll5/h;->f:Lt5/x;
+    :pswitch_0
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget v1, v1, Lt5/x;->a:I
+    invoke-static {p1}, Lf5/c0;->Q(Lb5/b;)Lm5/b;
 
-    const/4 v2, 0x1
-
-    if-ne v1, v2, :cond_3
-
-    sget-object v1, Ll5/l;->e:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->decrementAndGet(Ljava/lang/Object;)I
-
-    :cond_3
-    return-object v0
-.end method
-
-.method public final c(IZ)Ll5/h;
-    .locals 5
-
-    and-int/lit8 p1, p1, 0x7f
-
-    iget-object v0, p0, Ll5/l;->a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ll5/h;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_4
-
-    iget-object v3, v1, Ll5/h;->f:Lt5/x;
-
-    iget v3, v3, Lt5/x;->a:I
-
-    const/4 v4, 0x1
-
-    if-ne v3, v4, :cond_0
-
-    goto :goto_0
+    move-result-object v0
 
     :cond_0
-    const/4 v4, 0x0
-
     :goto_0
-    if-ne v4, p2, :cond_4
+    return-object v0
+
+    :pswitch_1
+    check-cast p1, Lb5/b;
+
+    packed-switch v2, :pswitch_data_2
+
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1}, Lf5/c0;->Q(Lb5/b;)Lm5/b;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    invoke-static {p1}, Lf5/c0;->G(Lm5/b;)Lm5/b;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    :pswitch_2
+    invoke-static {p1, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-static {p1}, Lf5/c0;->Q(Lb5/b;)Lm5/b;
+
+    move-result-object v0
 
     :cond_1
-    invoke-virtual {v0, p1, v1, v2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->compareAndSet(ILjava/lang/Object;Ljava/lang/Object;)Z
+    :goto_1
+    return-object v0
 
-    move-result v3
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+    .end packed-switch
 
-    if-eqz v3, :cond_3
+    :pswitch_data_1
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 
-    if-eqz p2, :cond_2
-
-    sget-object p1, Ll5/l;->e:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    invoke-virtual {p1, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->decrementAndGet(Ljava/lang/Object;)I
-
-    :cond_2
-    return-object v1
-
-    :cond_3
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    if-eq v3, v1, :cond_1
-
-    :cond_4
-    return-object v2
+    :pswitch_data_2
+    .packed-switch 0x0
+        :pswitch_2
+    .end packed-switch
 .end method

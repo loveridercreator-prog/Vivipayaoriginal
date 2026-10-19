@@ -1,26 +1,23 @@
-.class public abstract Ll5/h;
+.class public interface abstract annotation Lm5/h;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/lang/annotation/Annotation;
 
 
-# instance fields
-.field public e:J
+# annotations
+.annotation system Ldalvik/annotation/AnnotationDefault;
+    value = .subannotation Lm5/h;
+        with = Lm5/b;
+    .end subannotation
+.end annotation
 
-.field public f:Lt5/x;
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
 
 
-# direct methods
-.method public constructor <init>(JLt5/x;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Ll5/h;->e:J
-
-    iput-object p3, p0, Ll5/h;->f:Lt5/x;
-
-    return-void
+# virtual methods
+.method public abstract with()Ljava/lang/Class;
 .end method

@@ -1,105 +1,85 @@
-.class public final Ll4/r;
+.class public final Lm4/r;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Comparable;
+.implements Ljava/lang/Iterable;
+.implements Lx4/a;
 
 
 # instance fields
-.field public final e:I
+.field public final synthetic e:I
+
+.field public final f:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .locals 0
+.method public constructor <init>(Lc0/d;)V
+    .locals 1
 
+    .line 2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ll4/r;->e:I
+    const/4 v0, 0x0
+
+    iput v0, p0, Lm4/r;->e:I
+
+    iput-object p1, p0, Lm4/r;->f:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ld5/c;)V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lm4/r;->e:I
+
+    iput-object p1, p0, Lm4/r;->f:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compareTo(Ljava/lang/Object;)I
+.method public final iterator()Ljava/util/Iterator;
     .locals 2
 
-    check-cast p1, Ll4/r;
+    iget v0, p0, Lm4/r;->e:I
 
-    iget p1, p1, Ll4/r;->e:I
+    iget-object v1, p0, Lm4/r;->f:Ljava/lang/Object;
 
-    iget v0, p0, Ll4/r;->e:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v1, -0x80000000
+    check-cast v1, Lc5/g;
 
-    xor-int/2addr v0, v1
-
-    xor-int/2addr p1, v1
-
-    invoke-static {v0, p1}, Lk3/e;->o(II)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    instance-of v0, p1, Ll4/r;
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    check-cast p1, Ll4/r;
-
-    iget p1, p1, Ll4/r;->e:I
-
-    iget v0, p0, Ll4/r;->e:I
-
-    if-eq v0, p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v1, 0x1
-
-    :goto_0
-    return v1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget v0, p0, Ll4/r;->e:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget v0, p0, Ll4/r;->e:I
-
-    int-to-long v0, v0
-
-    const-wide v2, 0xffffffffL
-
-    and-long/2addr v0, v2
-
-    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-interface {v1}, Lc5/g;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
     return-object v0
+
+    :pswitch_0
+    new-instance v0, Lm4/s;
+
+    check-cast v1, Lv4/a;
+
+    invoke-interface {v1}, Lv4/a;->invoke()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Iterator;
+
+    invoke-direct {v0, v1}, Lm4/s;-><init>(Ljava/util/Iterator;)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

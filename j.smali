@@ -1,138 +1,130 @@
-.class public abstract Ll5/j;
-.super Ljava/lang/Object;
+.class public final Lm5/j;
+.super Lw4/i;
 .source "SourceFile"
 
+# interfaces
+.implements Lv4/a;
 
-# static fields
-.field public static final a:Ljava/lang/String;
 
-.field public static final b:J
+# instance fields
+.field public final synthetic e:I
 
-.field public static final c:I
-
-.field public static final d:I
-
-.field public static final e:J
-
-.field public static final f:Ll5/f;
-
-.field public static final g:Lt5/x;
-
-.field public static final h:Lt5/x;
+.field public final synthetic f:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 12
+.method public synthetic constructor <init>(ILjava/util/List;)V
+    .locals 0
 
-    const-string v0, "kotlinx.coroutines.scheduler.default.name"
+    iput p1, p0, Lm5/j;->e:I
 
-    sget v1, Lk5/a0;->a:I
+    iput-object p2, p0, Lm5/j;->f:Ljava/util/List;
 
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    const/4 p1, 0x0
 
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-nez v0, :cond_0
-
-    const-string v0, "DefaultDispatcher"
-
-    :cond_0
-    sput-object v0, Ll5/j;->a:Ljava/lang/String;
-
-    const-string v1, "kotlinx.coroutines.scheduler.resolution.ns"
-
-    const-wide/32 v2, 0x186a0
-
-    const-wide/16 v4, 0x1
-
-    const-wide v6, 0x7fffffffffffffffL
-
-    invoke-static/range {v1 .. v7}, La5/d;->k(Ljava/lang/String;JJJ)J
-
-    move-result-wide v0
-
-    sput-wide v0, Ll5/j;->b:J
-
-    sget v0, Lk5/a0;->a:I
-
-    const/4 v1, 0x2
-
-    if-ge v0, v1, :cond_1
-
-    move v0, v1
-
-    :cond_1
-    const/16 v1, 0x8
-
-    const-string v2, "kotlinx.coroutines.scheduler.core.pool.size"
-
-    const/4 v3, 0x1
-
-    const/4 v4, 0x0
-
-    invoke-static {v2, v0, v3, v4, v1}, La5/d;->l(Ljava/lang/String;IIII)I
-
-    move-result v0
-
-    sput v0, Ll5/j;->c:I
-
-    const-string v0, "kotlinx.coroutines.scheduler.max.pool.size"
-
-    const/4 v1, 0x4
-
-    const v2, 0x1ffffe
-
-    invoke-static {v0, v2, v4, v2, v1}, La5/d;->l(Ljava/lang/String;IIII)I
-
-    move-result v0
-
-    sput v0, Ll5/j;->d:I
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-string v5, "kotlinx.coroutines.scheduler.keep.alive.sec"
-
-    const-wide/16 v6, 0x3c
-
-    const-wide/16 v8, 0x1
-
-    const-wide v10, 0x7fffffffffffffffL
-
-    invoke-static/range {v5 .. v11}, La5/d;->k(Ljava/lang/String;JJJ)J
-
-    move-result-wide v1
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
-
-    move-result-wide v0
-
-    sput-wide v0, Ll5/j;->e:J
-
-    sget-object v0, Ll5/f;->c:Ll5/f;
-
-    sput-object v0, Ll5/j;->f:Ll5/f;
-
-    new-instance v0, Lt5/x;
-
-    invoke-direct {v0, v4}, Lt5/x;-><init>(I)V
-
-    sput-object v0, Ll5/j;->g:Lt5/x;
-
-    new-instance v0, Lt5/x;
-
-    invoke-direct {v0, v3}, Lt5/x;-><init>(I)V
-
-    sput-object v0, Ll5/j;->h:Lt5/x;
+    invoke-direct {p0, p1}, Lw4/i;-><init>(I)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Lb5/c;
+    .locals 3
+
+    iget v0, p0, Lm5/j;->e:I
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lm5/j;->f:Ljava/util/List;
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lb5/g;
+
+    invoke-interface {v0}, Lb5/g;->c()Lb5/c;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_0
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lb5/g;
+
+    invoke-interface {v0}, Lb5/g;->c()Lb5/c;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_1
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lb5/g;
+
+    invoke-interface {v0}, Lb5/g;->c()Lb5/c;
+
+    move-result-object v0
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final invoke()Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Lm5/j;->e:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lm5/j;->f:Ljava/util/List;
+
+    return-object v0
+
+    :pswitch_0
+    invoke-virtual {p0}, Lm5/j;->a()Lb5/c;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_1
+    invoke-virtual {p0}, Lm5/j;->a()Lb5/c;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_2
+    invoke-virtual {p0}, Lm5/j;->a()Lb5/c;
+
+    move-result-object v0
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
