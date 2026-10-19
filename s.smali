@@ -1,87 +1,94 @@
-.class public final Landroidx/activity/s;
+.class public final Landroidx/fragment/app/s;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Landroidx/activity/s;
+
+# instance fields
+.field public final synthetic e:I
+
+.field public final synthetic f:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .locals 0
 
-    new-instance v0, Landroidx/activity/s;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Landroidx/fragment/app/s;->e:I
 
-    sput-object v0, Landroidx/activity/s;->a:Landroidx/activity/s;
+    iput-object p2, p0, Landroidx/fragment/app/s;->f:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lv4/a;)Landroid/window/OnBackInvokedCallback;
+.method public final run()V
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lv4/a;",
-            ")",
-            "Landroid/window/OnBackInvokedCallback;"
-        }
-    .end annotation
 
-    const-string v0, "onBackInvoked"
+    iget v0, p0, Landroidx/fragment/app/s;->e:I
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-object v1, p0, Landroidx/fragment/app/s;->f:Ljava/lang/Object;
 
-    new-instance v0, Landroidx/activity/r;
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v1, 0x0
+    check-cast v1, Ljava/util/ArrayList;
 
-    invoke-direct {v0, v1, p1}, Landroidx/activity/r;-><init>(ILjava/lang/Object;)V
+    const/4 v0, 0x4
 
-    return-object v0
-.end method
-
-.method public final b(Ljava/lang/Object;ILjava/lang/Object;)V
-    .locals 1
-
-    const-string v0, "dispatcher"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "callback"
-
-    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    check-cast p1, Landroid/window/OnBackInvokedDispatcher;
-
-    check-cast p3, Landroid/window/OnBackInvokedCallback;
-
-    invoke-interface {p1, p2, p3}, Landroid/window/OnBackInvokedDispatcher;->registerOnBackInvokedCallback(ILandroid/window/OnBackInvokedCallback;)V
+    invoke-static {v1, v0}, Landroidx/fragment/app/m0;->a(Ljava/util/ArrayList;I)V
 
     return-void
-.end method
 
-.method public final c(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
+    :pswitch_0
+    check-cast v1, Landroidx/fragment/app/e0;
 
-    const-string v0, "dispatcher"
+    const/4 v0, 0x1
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "callback"
-
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    check-cast p1, Landroid/window/OnBackInvokedDispatcher;
-
-    check-cast p2, Landroid/window/OnBackInvokedCallback;
-
-    invoke-interface {p1, p2}, Landroid/window/OnBackInvokedDispatcher;->unregisterOnBackInvokedCallback(Landroid/window/OnBackInvokedCallback;)V
+    invoke-virtual {v1, v0}, Landroidx/fragment/app/e0;->w(Z)Z
 
     return-void
+
+    :pswitch_1
+    check-cast v1, Landroidx/fragment/app/j;
+
+    iget-object v0, v1, Landroidx/fragment/app/j;->U:Landroidx/fragment/app/h;
+
+    iget-object v1, v1, Landroidx/fragment/app/j;->c0:Landroid/app/Dialog;
+
+    invoke-virtual {v0, v1}, Landroidx/fragment/app/h;->onDismiss(Landroid/content/DialogInterface;)V
+
+    return-void
+
+    :pswitch_2
+    check-cast v1, Landroidx/fragment/app/c;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v0, 0x0
+
+    throw v0
+
+    :pswitch_3
+    check-cast v1, Landroidx/fragment/app/c;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v0, 0x0
+
+    throw v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

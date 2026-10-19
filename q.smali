@@ -1,84 +1,123 @@
-.class public final Landroidx/activity/q;
-.super Lw4/i;
+.class public final Landroidx/fragment/app/q;
+.super Lk3/e;
 .source "SourceFile"
 
 # interfaces
-.implements Lv4/a;
+.implements Landroidx/lifecycle/r0;
+.implements Landroidx/activity/v;
+.implements Landroidx/activity/result/h;
+.implements Landroidx/fragment/app/h0;
 
 
 # instance fields
-.field public final synthetic e:I
+.field public final e:Landroid/app/Activity;
 
-.field public final synthetic f:Landroidx/activity/u;
+.field public final f:Landroid/content/Context;
+
+.field public final g:Landroid/os/Handler;
+
+.field public final h:Landroidx/fragment/app/e0;
+
+.field public final synthetic i:Landroidx/fragment/app/r;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/activity/u;I)V
-    .locals 0
+.method public constructor <init>(Le/j;)V
+    .locals 2
 
-    iput p2, p0, Landroidx/activity/q;->e:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Landroidx/activity/q;->f:Landroidx/activity/u;
+    iput-object p1, p0, Landroidx/fragment/app/q;->i:Landroidx/fragment/app/r;
 
-    const/4 p1, 0x0
+    new-instance v0, Landroid/os/Handler;
 
-    invoke-direct {p0, p1}, Lw4/i;-><init>(I)V
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    new-instance v1, Landroidx/fragment/app/e0;
+
+    invoke-direct {v1}, Landroidx/fragment/app/e0;-><init>()V
+
+    iput-object v1, p0, Landroidx/fragment/app/q;->h:Landroidx/fragment/app/e0;
+
+    iput-object p1, p0, Landroidx/fragment/app/q;->e:Landroid/app/Activity;
+
+    iput-object p1, p0, Landroidx/fragment/app/q;->f:Landroid/content/Context;
+
+    iput-object v0, p0, Landroidx/fragment/app/q;->g:Landroid/os/Handler;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final C(I)Landroid/view/View;
+    .locals 1
 
-    sget-object v0, Ll4/y;->a:Ll4/y;
+    iget-object v0, p0, Landroidx/fragment/app/q;->i:Landroidx/fragment/app/r;
 
-    iget-object v1, p0, Landroidx/activity/q;->f:Landroidx/activity/u;
+    invoke-virtual {v0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
-    iget v2, p0, Landroidx/activity/q;->e:I
+    move-result-object p1
 
-    packed-switch v2, :pswitch_data_0
+    return-object p1
+.end method
 
-    packed-switch v2, :pswitch_data_1
+.method public final D()Z
+    .locals 1
 
-    invoke-virtual {v1}, Landroidx/activity/u;->b()V
+    iget-object v0, p0, Landroidx/fragment/app/q;->i:Landroidx/fragment/app/r;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/Window;->peekDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
 
     goto :goto_0
 
-    :pswitch_0
-    invoke-virtual {v1}, Landroidx/activity/u;->c()V
+    :cond_0
+    const/4 v0, 0x0
 
     :goto_0
+    return v0
+.end method
+
+.method public final a()V
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/q;->i:Landroidx/fragment/app/r;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    return-void
+.end method
+
+.method public final e()Landroidx/lifecycle/q0;
+    .locals 1
+
+    iget-object v0, p0, Landroidx/fragment/app/q;->i:Landroidx/fragment/app/r;
+
+    invoke-virtual {v0}, Landroidx/activity/l;->e()Landroidx/lifecycle/q0;
+
+    move-result-object v0
+
     return-object v0
+.end method
 
-    :pswitch_1
-    packed-switch v2, :pswitch_data_2
+.method public final h()Landroidx/lifecycle/u;
+    .locals 1
 
-    invoke-virtual {v1}, Landroidx/activity/u;->b()V
+    iget-object v0, p0, Landroidx/fragment/app/q;->i:Landroidx/fragment/app/r;
 
-    goto :goto_1
+    iget-object v0, v0, Landroidx/fragment/app/r;->v:Landroidx/lifecycle/u;
 
-    :pswitch_2
-    invoke-virtual {v1}, Landroidx/activity/u;->c()V
-
-    :goto_1
     return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-    .end packed-switch
-
-    :pswitch_data_1
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-
-    :pswitch_data_2
-    .packed-switch 0x0
-        :pswitch_2
-    .end packed-switch
 .end method

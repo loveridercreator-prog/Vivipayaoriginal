@@ -1,89 +1,39 @@
-.class public final Landroidx/emoji2/text/g;
-.super Lb5/k;
+.class public final Landroidx/fragment/app/g;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnCancelListener;
 
 
 # instance fields
-.field public final synthetic a:Landroidx/emoji2/text/h;
+.field public final synthetic e:Landroidx/fragment/app/j;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/emoji2/text/h;)V
+.method public constructor <init>(Landroidx/fragment/app/j;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Landroidx/emoji2/text/g;->a:Landroidx/emoji2/text/h;
+    iput-object p1, p0, Landroidx/fragment/app/g;->e:Landroidx/fragment/app/j;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final y(Ljava/lang/Throwable;)V
+.method public final onCancel(Landroid/content/DialogInterface;)V
     .locals 1
 
-    iget-object v0, p0, Landroidx/emoji2/text/g;->a:Landroidx/emoji2/text/h;
+    iget-object p1, p0, Landroidx/fragment/app/g;->e:Landroidx/fragment/app/j;
 
-    iget-object v0, v0, Le/k0;->f:Ljava/lang/Object;
+    iget-object v0, p1, Landroidx/fragment/app/j;->c0:Landroid/app/Dialog;
 
-    check-cast v0, Landroidx/emoji2/text/m;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, p1}, Landroidx/emoji2/text/m;->d(Ljava/lang/Throwable;)V
+    invoke-virtual {p1, v0}, Landroidx/fragment/app/j;->onCancel(Landroid/content/DialogInterface;)V
 
-    return-void
-.end method
-
-.method public final z(Lg/g;)V
-    .locals 5
-
-    iget-object v0, p0, Landroidx/emoji2/text/g;->a:Landroidx/emoji2/text/h;
-
-    iput-object p1, v0, Landroidx/emoji2/text/h;->h:Lg/g;
-
-    new-instance p1, Lu0/m;
-
-    iget-object v1, v0, Landroidx/emoji2/text/h;->h:Lg/g;
-
-    new-instance v2, Lx1/h;
-
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    iget-object v3, v0, Le/k0;->f:Ljava/lang/Object;
-
-    move-object v4, v3
-
-    check-cast v4, Landroidx/emoji2/text/m;
-
-    iget-object v4, v4, Landroidx/emoji2/text/m;->h:Landroidx/emoji2/text/f;
-
-    check-cast v3, Landroidx/emoji2/text/m;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object v2, p1, Lu0/m;->c:Ljava/lang/Object;
-
-    iput-object v1, p1, Lu0/m;->d:Ljava/lang/Object;
-
-    iput-object v4, p1, Lu0/m;->e:Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, p1, Lu0/m;->a:Z
-
-    const/4 v1, 0x0
-
-    iput-object v1, p1, Lu0/m;->b:[I
-
-    iput-object p1, v0, Landroidx/emoji2/text/h;->g:Lu0/m;
-
-    iget-object p1, v0, Le/k0;->f:Ljava/lang/Object;
-
-    check-cast p1, Landroidx/emoji2/text/m;
-
-    invoke-virtual {p1}, Landroidx/emoji2/text/m;->e()V
-
+    :cond_0
     return-void
 .end method

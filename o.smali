@@ -1,92 +1,76 @@
-.class public final Landroidx/activity/o;
+.class public final Landroidx/fragment/app/o;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lg1/c;
+
 
 # instance fields
-.field public final a:Ljava/lang/Object;
-
-.field public b:Z
-
-.field public final c:Ljava/util/ArrayList;
+.field public final synthetic a:Landroidx/fragment/app/r;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/activity/k;Landroidx/activity/c;)V
+.method public constructor <init>(Le/j;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Ljava/lang/Object;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Landroidx/activity/o;->a:Ljava/lang/Object;
-
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object p1, p0, Landroidx/activity/o;->c:Ljava/util/ArrayList;
+    iput-object p1, p0, Landroidx/fragment/app/o;->a:Landroidx/fragment/app/r;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final a()Landroid/os/Bundle;
+    .locals 4
 
-    iget-object v0, p0, Landroidx/activity/o;->a:Ljava/lang/Object;
+    new-instance v0, Landroid/os/Bundle;
 
-    monitor-enter v0
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    const/4 v1, 0x1
+    :cond_0
+    iget-object v1, p0, Landroidx/fragment/app/o;->a:Landroidx/fragment/app/r;
 
-    :try_start_0
-    iput-boolean v1, p0, Landroidx/activity/o;->b:Z
+    iget-object v2, v1, Landroidx/fragment/app/r;->u:La2/c;
 
-    iget-object v1, p0, Landroidx/activity/o;->c:Ljava/util/ArrayList;
+    iget-object v2, v2, La2/c;->e:Ljava/lang/Object;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    check-cast v2, Landroidx/fragment/app/q;
 
-    move-result-object v1
+    iget-object v2, v2, Landroidx/fragment/app/q;->h:Landroidx/fragment/app/e0;
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v2}, Landroidx/fragment/app/r;->l(Landroidx/fragment/app/e0;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    if-nez v2, :cond_0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v2, v1, Landroidx/fragment/app/r;->v:Landroidx/lifecycle/u;
 
-    move-result-object v2
+    sget-object v3, Landroidx/lifecycle/l;->ON_STOP:Landroidx/lifecycle/l;
 
-    check-cast v2, Lv4/a;
+    invoke-virtual {v2, v3}, Landroidx/lifecycle/u;->e(Landroidx/lifecycle/l;)V
 
-    invoke-interface {v2}, Lv4/a;->invoke()Ljava/lang/Object;
+    iget-object v1, v1, Landroidx/fragment/app/r;->u:La2/c;
 
-    goto :goto_0
+    iget-object v1, v1, La2/c;->e:Ljava/lang/Object;
 
-    :catchall_0
-    move-exception v1
+    check-cast v1, Landroidx/fragment/app/q;
 
-    goto :goto_1
+    iget-object v1, v1, Landroidx/fragment/app/q;->h:Landroidx/fragment/app/e0;
 
-    :cond_0
-    iget-object v1, p0, Landroidx/activity/o;->c:Ljava/util/ArrayList;
+    invoke-virtual {v1}, Landroidx/fragment/app/e0;->O()Landroidx/fragment/app/f0;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v1
 
-    monitor-exit v0
+    if-eqz v1, :cond_1
 
-    return-void
+    const-string v2, "android:support:fragments"
 
-    :goto_1
-    monitor-exit v0
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    throw v1
+    :cond_1
+    return-object v0
 .end method
