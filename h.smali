@@ -1,47 +1,8 @@
-.class public final Lr5/h;
-.super Lr5/g;
+.class public interface abstract Ls2/h;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final c:Z
-
-
-# direct methods
-.method public constructor <init>(Lr5/r;Z)V
-    .locals 1
-
-    const-string v0, "writer"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {p0, p1}, Lr5/g;-><init>(Lr5/r;)V
-
-    iput-boolean p2, p0, Lr5/h;->c:Z
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public final i(Ljava/lang/String;)V
-    .locals 1
-
-    const-string v0, "value"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-boolean v0, p0, Lr5/h;->c:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-super {p0, p1}, Lr5/g;->i(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0, p1}, Lr5/g;->g(Ljava/lang/String;)V
-
-    :goto_0
-    return-void
+.method public abstract a(La2/c;)Ljava/util/concurrent/ScheduledFuture;
 .end method

@@ -1,28 +1,20 @@
-.class public final Lr5/l;
-.super Lm5/o;
+.class public abstract Ls1/l;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ls1/d1;
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
-    .locals 2
 
-    const-string v0, "message"
+# virtual methods
+.method public abstract a(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+.end method
 
-    const/4 v1, 0x1
+.method public abstract b()J
+.end method
 
-    if-eq p2, v1, :cond_0
+.method public abstract c()Lt5/u;
+.end method
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {p0, p1, v1}, Lm5/o;-><init>(Ljava/lang/String;I)V
-
-    return-void
-
-    :cond_0
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {p0, p1, v1}, Lm5/o;-><init>(Ljava/lang/String;I)V
-
-    return-void
+.method public abstract d(Lg6/p;)V
 .end method

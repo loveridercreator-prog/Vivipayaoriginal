@@ -1,170 +1,121 @@
-.class public final Lr5/f;
+.class public final synthetic Ls2/f;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:[C
 
-.field public static final b:[B
+# instance fields
+.field public final synthetic e:I
+
+.field public final synthetic f:Ljava/lang/Runnable;
+
+.field public final synthetic g:La2/c;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 10
+.method public synthetic constructor <init>(Ljava/lang/Runnable;La2/c;I)V
+    .locals 0
 
-    const/16 v0, 0x75
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v1, v0, [C
+    iput p3, p0, Ls2/f;->e:I
 
-    sput-object v1, Lr5/f;->a:[C
+    iput-object p1, p0, Ls2/f;->f:Ljava/lang/Runnable;
 
-    const/16 v1, 0x7e
-
-    new-array v1, v1, [B
-
-    sput-object v1, Lr5/f;->b:[B
-
-    const/4 v1, 0x0
-
-    move v2, v1
-
-    :goto_0
-    const/16 v3, 0x20
-
-    if-ge v2, v3, :cond_0
-
-    invoke-static {v0, v2}, Lr5/f;->a(CI)V
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v0, 0x62
-
-    const/16 v2, 0x8
-
-    invoke-static {v0, v2}, Lr5/f;->a(CI)V
-
-    const/16 v0, 0x74
-
-    const/16 v4, 0x9
-
-    invoke-static {v0, v4}, Lr5/f;->a(CI)V
-
-    const/16 v0, 0x6e
-
-    const/16 v5, 0xa
-
-    invoke-static {v0, v5}, Lr5/f;->a(CI)V
-
-    const/16 v0, 0xc
-
-    const/16 v6, 0x66
-
-    invoke-static {v6, v0}, Lr5/f;->a(CI)V
-
-    const/16 v0, 0x72
-
-    const/16 v6, 0xd
-
-    invoke-static {v0, v6}, Lr5/f;->a(CI)V
-
-    const/16 v0, 0x2f
-
-    invoke-static {v0, v0}, Lr5/f;->a(CI)V
-
-    const/16 v0, 0x22
-
-    invoke-static {v0, v0}, Lr5/f;->a(CI)V
-
-    const/16 v7, 0x5c
-
-    invoke-static {v7, v7}, Lr5/f;->a(CI)V
-
-    :goto_1
-    sget-object v8, Lr5/f;->b:[B
-
-    const/16 v9, 0x21
-
-    if-ge v1, v9, :cond_1
-
-    const/16 v9, 0x7f
-
-    aput-byte v9, v8, v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v1, 0x3
-
-    aput-byte v1, v8, v4
-
-    aput-byte v1, v8, v5
-
-    aput-byte v1, v8, v6
-
-    aput-byte v1, v8, v3
-
-    const/16 v1, 0x2c
-
-    const/4 v3, 0x4
-
-    aput-byte v3, v8, v1
-
-    const/16 v1, 0x3a
-
-    const/4 v3, 0x5
-
-    aput-byte v3, v8, v1
-
-    const/16 v1, 0x7b
-
-    const/4 v3, 0x6
-
-    aput-byte v3, v8, v1
-
-    const/16 v1, 0x7d
-
-    const/4 v3, 0x7
-
-    aput-byte v3, v8, v1
-
-    const/16 v1, 0x5b
-
-    aput-byte v2, v8, v1
-
-    const/16 v1, 0x5d
-
-    aput-byte v4, v8, v1
-
-    const/4 v1, 0x1
-
-    aput-byte v1, v8, v0
-
-    const/4 v0, 0x2
-
-    aput-byte v0, v8, v7
+    iput-object p2, p0, Ls2/f;->g:La2/c;
 
     return-void
 .end method
 
-.method public static a(CI)V
-    .locals 1
 
-    const/16 v0, 0x75
+# virtual methods
+.method public final run()V
+    .locals 5
 
-    if-eq p0, v0, :cond_0
+    iget v0, p0, Ls2/f;->e:I
 
-    sget-object v0, Lr5/f;->a:[C
+    iget-object v1, p0, Ls2/f;->g:La2/c;
 
-    int-to-char p1, p1
+    iget-object v2, p0, Ls2/f;->f:Ljava/lang/Runnable;
 
-    aput-char p1, v0, p0
+    packed-switch v0, :pswitch_data_0
+
+    :try_start_0
+    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v1, v0}, La2/c;->t(Ljava/lang/Exception;)V
+
+    :goto_0
+    return-void
+
+    :pswitch_0
+    :try_start_1
+    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
+
+    iget-object v0, v1, La2/c;->e:Ljava/lang/Object;
+
+    check-cast v0, Ls2/i;
+
+    sget v2, Ls2/i;->m:I
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v2, Li0/h;->k:Ljava/lang/Object;
+
+    sget-object v3, Li0/h;->j:Ls1/p;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v3, v0, v4, v2}, Ls1/p;->b(Li0/h;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-static {v0}, Li0/h;->c(Li0/h;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v0
+
+    invoke-virtual {v1, v0}, La2/c;->t(Ljava/lang/Exception;)V
 
     :cond_0
+    :goto_1
     return-void
+
+    :pswitch_1
+    :try_start_2
+    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+
+    return-void
+
+    :catch_2
+    move-exception v0
+
+    invoke-virtual {v1, v0}, La2/c;->t(Ljava/lang/Exception;)V
+
+    throw v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

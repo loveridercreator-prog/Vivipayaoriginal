@@ -1,172 +1,115 @@
-.class public final Lr5/u;
-.super Lr5/s;
+.class public final Ls1/u;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ls1/v0;
 
-# instance fields
-.field public final j:Lq5/a0;
 
-.field public final k:Ljava/util/List;
-
-.field public final l:I
-
-.field public m:I
+# static fields
+.field public static final a:Ls1/u;
 
 
 # direct methods
-.method public constructor <init>(Lq5/b;Lq5/a0;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "json"
+    new-instance v0, Ls1/u;
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "value"
-
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, v0, v0}, Lr5/s;-><init>(Lq5/b;Lq5/a0;Ljava/lang/String;Ln5/g;)V
-
-    iput-object p2, p0, Lr5/u;->j:Lq5/a0;
-
-    iget-object p1, p2, Lq5/a0;->e:Ljava/util/Map;
-
-    invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lm4/l;->n0(Ljava/lang/Iterable;)Ljava/util/List;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lr5/u;->k:Ljava/util/List;
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result p1
-
-    mul-int/lit8 p1, p1, 0x2
-
-    iput p1, p0, Lr5/u;->l:I
-
-    const/4 p1, -0x1
-
-    iput p1, p0, Lr5/u;->m:I
+    sput-object v0, Ls1/u;->a:Ls1/u;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final Q(Ln5/g;I)Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "descriptor"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    div-int/lit8 p2, p2, 0x2
-
-    iget-object p1, p0, Lr5/u;->k:Ljava/util/List;
-
-    invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/String;
-
-    return-object p1
-.end method
-
-.method public final V(Ljava/lang/String;)Lq5/m;
+.method public final b(Ls1/k0;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/reflect/Type;I)V
     .locals 2
 
-    const-string v0, "tag"
+    if-nez p2, :cond_0
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    :try_start_0
+    invoke-virtual {p1}, Ls1/k0;->q()V
 
-    iget v0, p0, Lr5/u;->m:I
+    return-void
 
-    rem-int/lit8 v0, v0, 0x2
+    :catch_0
+    move-exception p1
 
-    if-nez v0, :cond_0
+    goto :goto_1
 
-    sget-object v0, Lq5/n;->a:Lp5/k0;
+    :cond_0
+    check-cast p2, Ljava/sql/Clob;
 
-    new-instance v0, Lq5/t;
+    invoke-interface {p2}, Ljava/sql/Clob;->getCharacterStream()Ljava/io/Reader;
 
-    const/4 v1, 0x1
+    move-result-object p2
 
-    invoke-direct {v0, p1, v1}, Lq5/t;-><init>(Ljava/lang/Object;Z)V
+    new-instance p3, Ljava/lang/StringBuilder;
+
+    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+    :try_end_0
+    .catch Ljava/sql/SQLException; {:try_start_0 .. :try_end_0} :catch_0
+
+    const/16 p4, 0x800
+
+    :try_start_1
+    new-array p5, p4, [C
+
+    :goto_0
+    const/4 v0, 0x0
+
+    invoke-virtual {p2, p5, v0, p4}, Ljava/io/Reader;->read([CII)I
+
+    move-result v1
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    if-gez v1, :cond_1
+
+    :try_start_2
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-virtual {p2}, Ljava/io/Reader;->close()V
+
+    invoke-virtual {p1, p3}, Ls1/k0;->p(Ljava/lang/String;)V
+    :try_end_2
+    .catch Ljava/sql/SQLException; {:try_start_2 .. :try_end_2} :catch_0
+
+    return-void
+
+    :cond_1
+    :try_start_3
+    invoke-virtual {p3, p5, v0, v1}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
     goto :goto_0
 
-    :cond_0
-    iget-object v0, p0, Lr5/u;->j:Lq5/a0;
+    :catch_1
+    move-exception p1
 
-    invoke-static {v0, p1}, Lc5/k;->G(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_start_4
+    new-instance p2, Ln1/d;
 
-    move-result-object p1
+    const-string p3, "read string from reader error"
 
-    move-object v0, p1
+    invoke-direct {p2, p3, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    check-cast v0, Lq5/m;
+    throw p2
+    :try_end_4
+    .catch Ljava/sql/SQLException; {:try_start_4 .. :try_end_4} :catch_0
 
-    :goto_0
-    return-object v0
-.end method
+    :goto_1
+    new-instance p2, Ljava/io/IOException;
 
-.method public final Y()Lq5/m;
-    .locals 1
+    const-string p3, "write clob error"
 
-    iget-object v0, p0, Lr5/u;->j:Lq5/a0;
+    invoke-direct {p2, p3, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    return-object v0
-.end method
-
-.method public final a(Ln5/g;)V
-    .locals 1
-
-    const-string v0, "descriptor"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final a0()Lq5/a0;
-    .locals 1
-
-    iget-object v0, p0, Lr5/u;->j:Lq5/a0;
-
-    return-object v0
-.end method
-
-.method public final q(Ln5/g;)I
-    .locals 1
-
-    const-string v0, "descriptor"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget p1, p0, Lr5/u;->m:I
-
-    iget v0, p0, Lr5/u;->l:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    if-ge p1, v0, :cond_0
-
-    add-int/lit8 p1, p1, 0x1
-
-    iput p1, p0, Lr5/u;->m:I
-
-    return p1
-
-    :cond_0
-    const/4 p1, -0x1
-
-    return p1
+    throw p2
 .end method

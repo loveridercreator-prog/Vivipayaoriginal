@@ -1,131 +1,92 @@
-.class public final Lr5/i;
-.super Lr5/g;
+.class public final Ls2/i;
+.super Li0/h;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/concurrent/ScheduledFuture;
+
+
+# static fields
+.field public static final synthetic m:I
 
 
 # instance fields
-.field public final c:Z
+.field public final l:Ljava/util/concurrent/ScheduledFuture;
 
 
 # direct methods
-.method public constructor <init>(Lr5/r;Z)V
+.method public constructor <init>(Ls2/h;)V
     .locals 1
 
-    const-string v0, "writer"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    new-instance v0, La2/c;
 
-    invoke-direct {p0, p1}, Lr5/g;-><init>(Lr5/r;)V
+    invoke-direct {v0, p0}, La2/c;-><init>(Ljava/lang/Object;)V
 
-    iput-boolean p2, p0, Lr5/i;->c:Z
+    invoke-interface {p1, v0}, Ls2/h;->a(La2/c;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ls2/i;->l:Ljava/util/concurrent/ScheduledFuture;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(B)V
-    .locals 1
+.method public final b()V
+    .locals 3
 
-    iget-boolean v0, p0, Lr5/i;->c:Z
+    iget-object v0, p0, Ls2/i;->l:Ljava/util/concurrent/ScheduledFuture;
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Li0/h;->e:Ljava/lang/Object;
 
-    and-int/lit16 p1, p1, 0xff
+    instance-of v2, v1, Li0/a;
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    if-eqz v2, :cond_0
 
-    move-result-object p1
+    check-cast v1, Li0/a;
 
-    invoke-virtual {p0, p1}, Lr5/g;->i(Ljava/lang/String;)V
+    iget-boolean v1, v1, Li0/a;->a:Z
 
-    goto :goto_0
+    if-eqz v1, :cond_0
 
-    :cond_0
-    and-int/lit16 p1, p1, 0xff
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lr5/g;->g(Ljava/lang/String;)V
-
-    :goto_0
-    return-void
-.end method
-
-.method public final e(I)V
-    .locals 1
-
-    iget-boolean v0, p0, Lr5/i;->c:Z
-
-    invoke-static {p1}, Ljava/lang/Integer;->toUnsignedString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0, p1}, Lr5/g;->i(Ljava/lang/String;)V
+    const/4 v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, p1}, Lr5/g;->g(Ljava/lang/String;)V
+    const/4 v1, 0x0
 
     :goto_0
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Future;->cancel(Z)Z
+
     return-void
 .end method
 
-.method public final f(J)V
+.method public final compareTo(Ljava/lang/Object;)I
     .locals 1
 
-    iget-boolean v0, p0, Lr5/i;->c:Z
+    check-cast p1, Ljava/util/concurrent/Delayed;
 
-    invoke-static {p1, p2}, Ljava/lang/Long;->toUnsignedString(J)Ljava/lang/String;
+    iget-object v0, p0, Ls2/i;->l:Ljava/util/concurrent/ScheduledFuture;
 
-    move-result-object p1
+    invoke-interface {v0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
-    if-eqz v0, :cond_0
+    move-result p1
 
-    invoke-virtual {p0, p1}, Lr5/g;->i(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0, p1}, Lr5/g;->g(Ljava/lang/String;)V
-
-    :goto_0
-    return-void
+    return p1
 .end method
 
-.method public final h(S)V
+.method public final getDelay(Ljava/util/concurrent/TimeUnit;)J
     .locals 2
 
-    iget-boolean v0, p0, Lr5/i;->c:Z
+    iget-object v0, p0, Ls2/i;->l:Ljava/util/concurrent/ScheduledFuture;
 
-    const v1, 0xffff
+    invoke-interface {v0, p1}, Ljava/util/concurrent/Delayed;->getDelay(Ljava/util/concurrent/TimeUnit;)J
 
-    if-eqz v0, :cond_0
+    move-result-wide v0
 
-    and-int/2addr p1, v1
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lr5/g;->i(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_0
-    and-int/2addr p1, v1
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lr5/g;->g(Ljava/lang/String;)V
-
-    :goto_0
-    return-void
+    return-wide v0
 .end method

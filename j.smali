@@ -1,97 +1,88 @@
-.class public final Lr5/j;
-.super Lr5/g;
+.class public final enum Ls2/j;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/concurrent/Executor;
 
-# instance fields
-.field public final c:Lq5/b;
 
-.field public d:I
+# static fields
+.field public static final enum e:Ls2/j;
+
+.field public static final f:Landroid/os/Handler;
+
+.field public static final synthetic g:[Ls2/j;
 
 
 # direct methods
-.method public constructor <init>(Lr5/r;Lq5/b;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 3
 
-    const-string v0, "json"
+    new-instance v0, Ls2/j;
 
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v1, "INSTANCE"
 
-    invoke-direct {p0, p1}, Lr5/g;-><init>(Lr5/r;)V
+    const/4 v2, 0x0
 
-    iput-object p2, p0, Lr5/j;->c:Lq5/b;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ls2/j;->e:Ls2/j;
+
+    filled-new-array {v0}, [Ls2/j;
+
+    move-result-object v0
+
+    sput-object v0, Ls2/j;->g:[Ls2/j;
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    sput-object v0, Ls2/j;->f:Landroid/os/Handler;
 
     return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Ls2/j;
+    .locals 1
+
+    const-class v0, Ls2/j;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Ls2/j;
+
+    return-object p0
+.end method
+
+.method public static values()[Ls2/j;
+    .locals 1
+
+    sget-object v0, Ls2/j;->g:[Ls2/j;
+
+    invoke-virtual {v0}, [Ls2/j;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Ls2/j;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lr5/g;->b:Z
-
-    iget v1, p0, Lr5/j;->d:I
-
-    add-int/2addr v1, v0
-
-    iput v1, p0, Lr5/j;->d:I
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 3
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lr5/g;->b:Z
-
-    const-string v1, "\n"
-
-    invoke-virtual {p0, v1}, Lr5/g;->g(Ljava/lang/String;)V
-
-    iget v1, p0, Lr5/j;->d:I
-
-    :goto_0
-    if-ge v0, v1, :cond_0
-
-    iget-object v2, p0, Lr5/j;->c:Lq5/b;
-
-    iget-object v2, v2, Lq5/b;->a:Lq5/i;
-
-    iget-object v2, v2, Lq5/i;->g:Ljava/lang/String;
-
-    invoke-virtual {p0, v2}, Lr5/g;->g(Ljava/lang/String;)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final j()V
+.method public final execute(Ljava/lang/Runnable;)V
     .locals 1
 
-    const/16 v0, 0x20
+    sget-object v0, Ls2/j;->f:Landroid/os/Handler;
 
-    invoke-virtual {p0, v0}, Lr5/g;->d(C)V
-
-    return-void
-.end method
-
-.method public final k()V
-    .locals 1
-
-    iget v0, p0, Lr5/j;->d:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lr5/j;->d:I
+    invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method
