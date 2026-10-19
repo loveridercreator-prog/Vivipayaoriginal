@@ -1,37 +1,17 @@
-.class public abstract Lp5/v;
-.super Lp5/u;
+.class public interface abstract annotation Lq5/v;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
+
+
+# annotations
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
 
 
 # virtual methods
-.method public final c(Ljava/lang/Object;)Ljava/util/Iterator;
-    .locals 1
-
-    check-cast p1, Ljava/util/Collection;
-
-    const-string v0, "<this>"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final d(Ljava/lang/Object;)I
-    .locals 1
-
-    check-cast p1, Ljava/util/Collection;
-
-    const-string v0, "<this>"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {p1}, Ljava/util/Collection;->size()I
-
-    move-result p1
-
-    return p1
+.method public abstract names()[Ljava/lang/String;
 .end method

@@ -1,69 +1,42 @@
-.class public final Lp5/e0;
-.super Lp5/j1;
+.class public abstract Lq5/e0;
+.super Lq5/m;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:[F
+# annotations
+.annotation runtime Lm5/h;
+    with = Lq5/f0;
+.end annotation
 
-.field public b:I
+
+# static fields
+.field public static final Companion:Lq5/d0;
 
 
-# virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 2
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-    iget-object v0, p0, Lp5/e0;->a:[F
+    new-instance v0, Lq5/d0;
 
-    iget v1, p0, Lp5/e0;->b:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([FI)[F
+    sput-object v0, Lq5/e0;->Companion:Lq5/d0;
 
-    move-result-object v0
-
-    const-string v1, "copyOf(this, newSize)"
-
-    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public final b(I)V
-    .locals 2
-
-    iget-object v0, p0, Lp5/e0;->a:[F
-
-    array-length v1, v0
-
-    if-ge v1, p1, :cond_1
-
-    array-length v1, v0
-
-    mul-int/lit8 v1, v1, 0x2
-
-    if-ge p1, v1, :cond_0
-
-    move p1, v1
-
-    :cond_0
-    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([FI)[F
-
-    move-result-object p1
-
-    const-string v0, "copyOf(this, newSize)"
-
-    invoke-static {p1, v0}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iput-object p1, p0, Lp5/e0;->a:[F
-
-    :cond_1
     return-void
 .end method
 
-.method public final d()I
+
+# virtual methods
+.method public abstract a()Ljava/lang/String;
+.end method
+
+.method public toString()Ljava/lang/String;
     .locals 1
 
-    iget v0, p0, Lp5/e0;->b:I
+    invoke-virtual {p0}, Lq5/e0;->a()Ljava/lang/String;
 
-    return v0
+    move-result-object v0
+
+    return-object v0
 .end method

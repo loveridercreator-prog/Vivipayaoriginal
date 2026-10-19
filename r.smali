@@ -1,155 +1,182 @@
-.class public final Lp5/r;
+.class public final Lq5/r;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ln5/g;
+
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final b:Lv4/c;
-
-.field public final c:Ljava/lang/Object;
+.field public final a:Ll4/m;
 
 
 # direct methods
-.method public constructor <init>(ILm5/l;)V
+.method public constructor <init>(Lq5/o;)V
     .locals 1
 
-    iput p1, p0, Lp5/r;->a:I
-
-    const/4 v0, 0x1
-
-    if-eq p1, v0, :cond_0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lp5/r;->b:Lv4/c;
+    new-instance v0, Ll4/m;
 
-    new-instance p1, Lk5/c;
+    invoke-direct {v0, p1}, Ll4/m;-><init>(Lv4/a;)V
 
-    invoke-direct {p1, v0}, Lk5/c;-><init>(I)V
-
-    iput-object p1, p0, Lp5/r;->c:Ljava/lang/Object;
-
-    return-void
-
-    :cond_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lp5/r;->b:Lv4/c;
-
-    new-instance p1, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {p1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object p1, p0, Lp5/r;->c:Ljava/lang/Object;
+    iput-object v0, p0, Lq5/r;->a:Ll4/m;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lb5/b;)Lm5/b;
-    .locals 4
+.method public final a(I)Ljava/lang/String;
+    .locals 1
 
-    iget v0, p0, Lp5/r;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lp5/r;->c:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-static {p1}, Lr2/f;->y(Lb5/b;)Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    if-nez v2, :cond_1
-
-    new-instance v2, Lp5/k;
-
-    iget-object v3, p0, Lp5/r;->b:Lv4/c;
-
-    invoke-interface {v3, p1}, Lv4/c;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lm5/b;
-
-    invoke-direct {v2, p1}, Lp5/k;-><init>(Lm5/b;)V
-
-    invoke-interface {v0, v1, v2}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    move-object v2, p1
-
-    :cond_1
-    :goto_0
-    check-cast v2, Lp5/k;
-
-    iget-object p1, v2, Lp5/k;->a:Lm5/b;
-
-    return-object p1
-
-    :pswitch_0
-    iget-object v0, p0, Lp5/r;->c:Ljava/lang/Object;
-
-    check-cast v0, Lk5/c;
-
-    invoke-static {p1}, Lr2/f;->y(Lb5/b;)Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lp5/q;->b(Lk5/c;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
 
     move-result-object v0
 
-    const-string v1, "get(key)"
+    invoke-interface {v0, p1}, Ln5/g;->a(I)Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    check-cast v0, Lp5/a1;
-
-    iget-object v1, v0, Lp5/a1;->a:Ljava/lang/ref/SoftReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    new-instance v1, Lc0/i;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v1, p0, v2, p1}, Lc0/i;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Lp5/a1;->a(Lv4/a;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    :goto_1
-    check-cast v1, Lp5/k;
-
-    iget-object p1, v1, Lp5/k;->a:Lm5/b;
+    move-result-object p1
 
     return-object p1
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public final b()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final c(Ljava/lang/String;)I
+    .locals 1
+
+    const-string v0, "name"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ln5/g;->c(Ljava/lang/String;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final d()Ljava/lang/String;
+    .locals 1
+
+    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ln5/g;->d()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final e()Ln5/g;
+    .locals 1
+
+    iget-object v0, p0, Lq5/r;->a:Ll4/m;
+
+    invoke-virtual {v0}, Ll4/m;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ln5/g;
+
+    return-object v0
+.end method
+
+.method public final f()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final g(I)Ljava/util/List;
+    .locals 1
+
+    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ln5/g;->g(I)Ljava/util/List;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final h(I)Ln5/g;
+    .locals 1
+
+    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ln5/g;->h(I)Ln5/g;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final i()Ln5/n;
+    .locals 1
+
+    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ln5/g;->i()Ln5/n;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final j(I)Z
+    .locals 1
+
+    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ln5/g;->j(I)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final k()Ljava/util/List;
+    .locals 1
+
+    sget-object v0, Lm4/n;->e:Lm4/n;
+
+    return-object v0
+.end method
+
+.method public final l()I
+    .locals 1
+
+    invoke-virtual {p0}, Lq5/r;->e()Ln5/g;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ln5/g;->l()I
+
+    move-result v0
+
+    return v0
 .end method

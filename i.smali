@@ -1,147 +1,185 @@
-.class public final Lp5/i;
-.super Lp5/l1;
+.class public final Lq5/i;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Lp5/i;
+# instance fields
+.field public final a:Z
+
+.field public final b:Z
+
+.field public final c:Z
+
+.field public final d:Z
+
+.field public final e:Z
+
+.field public final f:Z
+
+.field public final g:Ljava/lang/String;
+
+.field public final h:Z
+
+.field public final i:Z
+
+.field public final j:Ljava/lang/String;
+
+.field public final k:Z
+
+.field public final l:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(ZZZZZZLjava/lang/String;ZZLjava/lang/String;ZZ)V
+    .locals 1
 
-    new-instance v0, Lp5/i;
+    const-string v0, "prettyPrintIndent"
 
-    sget-object v1, Lp5/j;->a:Lp5/j;
+    invoke-static {p7, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Lp5/l1;-><init>(Lm5/b;)V
+    const-string v0, "classDiscriminator"
 
-    sput-object v0, Lp5/i;->c:Lp5/i;
+    invoke-static {p10, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-boolean p1, p0, Lq5/i;->a:Z
+
+    iput-boolean p2, p0, Lq5/i;->b:Z
+
+    iput-boolean p3, p0, Lq5/i;->c:Z
+
+    iput-boolean p4, p0, Lq5/i;->d:Z
+
+    iput-boolean p5, p0, Lq5/i;->e:Z
+
+    iput-boolean p6, p0, Lq5/i;->f:Z
+
+    iput-object p7, p0, Lq5/i;->g:Ljava/lang/String;
+
+    iput-boolean p8, p0, Lq5/i;->h:Z
+
+    iput-boolean p9, p0, Lq5/i;->i:Z
+
+    iput-object p10, p0, Lq5/i;->j:Ljava/lang/String;
+
+    iput-boolean p11, p0, Lq5/i;->k:Z
+
+    iput-boolean p12, p0, Lq5/i;->l:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(Ljava/lang/Object;)I
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    check-cast p1, [B
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v0, "<this>"
+    const-string v1, "JsonConfiguration(encodeDefaults="
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    array-length p1, p1
+    iget-boolean v1, p0, Lq5/i;->a:Z
 
-    return p1
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-.method public final f(Lo5/a;ILjava/lang/Object;Z)V
-    .locals 1
+    const-string v1, ", ignoreUnknownKeys="
 
-    check-cast p3, Lp5/h;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p4, "builder"
+    iget-boolean v1, p0, Lq5/i;->b:Z
 
-    invoke-static {p3, p4}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    iget-object p4, p0, Lp5/l1;->b:Lp5/k1;
+    const-string v1, ", isLenient="
 
-    invoke-interface {p1, p4, p2}, Lo5/a;->y(Lp5/k1;I)B
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result p1
+    iget-boolean v1, p0, Lq5/i;->c:Z
 
-    invoke-static {p3}, Lp5/j1;->c(Lp5/j1;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    iget-object p2, p3, Lp5/h;->a:[B
+    const-string v1, ", allowStructuredMapKeys="
 
-    iget p4, p3, Lp5/h;->b:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v0, p4, 0x1
+    iget-boolean v1, p0, Lq5/i;->d:Z
 
-    iput v0, p3, Lp5/h;->b:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    aput-byte p1, p2, p4
+    const-string v1, ", prettyPrint="
 
-    return-void
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final g(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    iget-boolean v1, p0, Lq5/i;->e:Z
 
-    check-cast p1, [B
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v0, "<this>"
+    const-string v1, ", explicitNulls="
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v0, Lp5/h;
+    iget-boolean v1, p0, Lq5/i;->f:Z
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    iput-object p1, v0, Lp5/h;->a:[B
+    const-string v1, ", prettyPrintIndent=\'"
 
-    array-length p1, p1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput p1, v0, Lp5/h;->b:I
+    iget-object v1, p0, Lq5/i;->g:Ljava/lang/String;
 
-    const/16 p1, 0xa
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p1}, Lp5/h;->b(I)V
+    const-string v1, "\', coerceInputValues="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lq5/i;->h:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", useArrayPolymorphism="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lq5/i;->i:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", classDiscriminator=\'"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lq5/i;->j:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "\', allowSpecialFloatingPointValues="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lq5/i;->k:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", useAlternativeNames="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lq5/i;->l:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", namingStrategy=null)"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
-.end method
-
-.method public final j()Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [B
-
-    return-object v0
-.end method
-
-.method public final k(Lo5/b;Ljava/lang/Object;I)V
-    .locals 5
-
-    check-cast p2, [B
-
-    const-string v0, "encoder"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "content"
-
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, p3, :cond_0
-
-    aget-byte v1, p2, v0
-
-    move-object v2, p1
-
-    check-cast v2, Lo6/i;
-
-    const-string v3, "descriptor"
-
-    iget-object v4, p0, Lp5/l1;->b:Lp5/k1;
-
-    invoke-static {v4, v3}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v2, v4, v0}, Lo6/i;->u(Ln5/g;I)V
-
-    invoke-virtual {v2, v1}, Lo6/i;->n(B)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
 .end method

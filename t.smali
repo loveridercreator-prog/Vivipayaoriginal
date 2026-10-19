@@ -1,317 +1,152 @@
-.class public final Lp5/t;
-.super Ljava/lang/Object;
+.class public final Lq5/t;
+.super Lq5/e0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final e:Z
 
-.field public final b:Lv4/e;
+.field public final f:Ln5/g;
 
-.field public final c:Ljava/lang/Object;
+.field public final g:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lm5/k;I)V
+.method public constructor <init>(Ljava/lang/Object;Z)V
     .locals 1
 
-    iput p2, p0, Lp5/t;->a:I
+    const-string v0, "body"
 
-    const/4 v0, 0x1
-
-    if-eq p2, v0, :cond_0
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lp5/t;->b:Lv4/e;
+    iput-boolean p2, p0, Lq5/t;->e:Z
 
-    new-instance p1, Lk5/c;
+    const/4 p2, 0x0
 
-    invoke-direct {p1, v0}, Lk5/c;-><init>(I)V
+    iput-object p2, p0, Lq5/t;->f:Ln5/g;
 
-    iput-object p1, p0, Lp5/t;->c:Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    return-void
+    move-result-object p1
 
-    :cond_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lp5/t;->b:Lv4/e;
-
-    new-instance p1, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {p1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object p1, p0, Lp5/t;->c:Ljava/lang/Object;
+    iput-object p1, p0, Lq5/t;->g:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lb5/b;Ljava/util/ArrayList;)Ljava/lang/Object;
-    .locals 5
+.method public final a()Ljava/lang/String;
+    .locals 1
 
-    iget v0, p0, Lp5/t;->a:I
+    iget-object v0, p0, Lq5/t;->g:Ljava/lang/String;
 
-    const/16 v1, 0xa
+    return-object v0
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-object v0, p0, Lp5/t;->c:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    check-cast v0, Ljava/util/concurrent/ConcurrentHashMap;
+    if-ne p0, p1, :cond_0
 
-    invoke-static {p1}, Lr2/f;->y(Lb5/b;)Ljava/lang/Class;
+    return v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_4
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
 
-    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const-class v3, Lq5/t;
 
-    move-result-object v3
-
-    if-nez v3, :cond_1
-
-    new-instance v3, Lp5/f1;
-
-    invoke-direct {v3}, Lp5/f1;-><init>()V
-
-    invoke-interface {v0, v2, v3}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
+    if-eq v3, v2, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    move-object v3, v0
-
     :cond_1
-    :goto_0
-    check-cast v3, Lp5/f1;
+    check-cast p1, Lq5/t;
 
-    new-instance v0, Ljava/util/ArrayList;
+    iget-boolean v2, p0, Lq5/t;->e:Z
 
-    invoke-static {p2, v1}, Lm4/h;->W(Ljava/lang/Iterable;I)I
+    iget-boolean v3, p1, Lq5/t;->e:Z
 
-    move-result v1
+    if-eq v2, v3, :cond_2
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_1
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lb5/g;
-
-    new-instance v4, Lp5/p0;
-
-    invoke-direct {v4, v2}, Lp5/p0;-><init>(Lb5/g;)V
-
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
+    return v1
 
     :cond_2
-    iget-object v1, v3, Lp5/f1;->a:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v2, p0, Lq5/t;->g:Ljava/lang/String;
 
-    invoke-virtual {v1, v0}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object p1, p1, Lq5/t;->g:Ljava/lang/String;
 
-    move-result-object v2
+    invoke-static {v2, p1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-nez v2, :cond_4
-
-    :try_start_0
-    iget-object v2, p0, Lp5/t;->b:Lv4/e;
-
-    invoke-interface {v2, p1, p2}, Lv4/e;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lm5/b;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_2
-
-    :catchall_0
-    move-exception p1
-
-    invoke-static {p1}, Lk3/e;->s(Ljava/lang/Throwable;)Ll4/j;
-
-    move-result-object p1
-
-    :goto_2
-    new-instance p2, Ll4/k;
-
-    invoke-direct {p2, p1}, Ll4/k;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v1, v0, p2}, Ljava/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
+    move-result p1
 
     if-nez p1, :cond_3
 
-    move-object v2, p2
-
-    goto :goto_3
+    return v1
 
     :cond_3
-    move-object v2, p1
+    return v0
 
     :cond_4
-    :goto_3
-    check-cast v2, Ll4/k;
+    :goto_0
+    return v1
+.end method
 
-    iget-object p1, v2, Ll4/k;->e:Ljava/lang/Object;
+.method public final hashCode()I
+    .locals 2
 
-    return-object p1
+    iget-boolean v0, p0, Lq5/t;->e:Z
 
-    :pswitch_0
-    iget-object v0, p0, Lp5/t;->c:Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
 
-    check-cast v0, Lk5/c;
+    move-result v0
 
-    invoke-static {p1}, Lr2/f;->y(Lb5/b;)Ljava/lang/Class;
+    mul-int/lit8 v0, v0, 0x1f
 
-    move-result-object v2
+    iget-object v1, p0, Lq5/t;->g:Ljava/lang/String;
 
-    invoke-static {v0, v2}, Lp5/q;->b(Lk5/c;Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    const-string v2, "get(key)"
-
-    invoke-static {v0, v2}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    check-cast v0, Lp5/a1;
-
-    iget-object v2, v0, Lp5/a1;->a:Ljava/lang/ref/SoftReference;
-
-    invoke-virtual {v2}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_5
-
-    goto :goto_4
-
-    :cond_5
-    new-instance v2, Lp5/s;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v3}, Lw4/i;-><init>(I)V
-
-    invoke-virtual {v0, v2}, Lp5/a1;->a(Lv4/a;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    :goto_4
-    check-cast v2, Lp5/f1;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-static {p2, v1}, Lm4/h;->W(Ljava/lang/Iterable;I)I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+    add-int/2addr v1, v0
 
-    invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    return v1
+.end method
 
-    move-result-object v1
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    :goto_5
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p0, Lq5/t;->g:Ljava/lang/String;
 
-    move-result v3
+    iget-boolean v1, p0, Lq5/t;->e:Z
 
-    if-eqz v3, :cond_6
+    if-eqz v1, :cond_0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    check-cast v3, Lb5/g;
+    invoke-static {v0, v1}, Lr5/c0;->a(Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    new-instance v4, Lp5/p0;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-direct {v4, v3}, Lp5/p0;-><init>(Lb5/g;)V
+    move-result-object v0
 
-    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    const-string v1, "StringBuilder().apply(builderAction).toString()"
 
-    goto :goto_5
+    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_6
-    iget-object v1, v2, Lp5/f1;->a:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v1, v0}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    if-nez v2, :cond_8
-
-    :try_start_1
-    iget-object v2, p0, Lp5/t;->b:Lv4/e;
-
-    invoke-interface {v2, p1, p2}, Lv4/e;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lm5/b;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    goto :goto_6
-
-    :catchall_1
-    move-exception p1
-
-    invoke-static {p1}, Lk3/e;->s(Ljava/lang/Throwable;)Ll4/j;
-
-    move-result-object p1
-
-    :goto_6
-    new-instance p2, Ll4/k;
-
-    invoke-direct {p2, p1}, Ll4/k;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v1, v0, p2}, Ljava/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-nez p1, :cond_7
-
-    move-object v2, p2
-
-    goto :goto_7
-
-    :cond_7
-    move-object v2, p1
-
-    :cond_8
-    :goto_7
-    check-cast v2, Ll4/k;
-
-    iget-object p1, v2, Ll4/k;->e:Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_0
+    return-object v0
 .end method

@@ -1,19 +1,15 @@
-.class public final Lp5/k;
+.class public interface abstract Lq5/k;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lo5/c;
+.implements Lo5/a;
 
-# instance fields
-.field public final a:Lm5/b;
 
+# virtual methods
+.method public abstract d()Lq5/b;
+.end method
 
-# direct methods
-.method public constructor <init>(Lm5/b;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lp5/k;->a:Lm5/b;
-
-    return-void
+.method public abstract j()Lq5/m;
 .end method

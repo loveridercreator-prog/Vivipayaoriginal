@@ -1,82 +1,31 @@
-.class public final Lp5/g;
+.class public final Lq5/g;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lm5/b;
 
+# instance fields
+.field public a:Z
 
-# static fields
-.field public static final a:Lp5/g;
+.field public b:Z
 
-.field public static final b:Lp5/m1;
+.field public c:Z
 
+.field public d:Z
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.field public e:Z
 
-    new-instance v0, Lp5/g;
+.field public f:Z
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+.field public g:Ljava/lang/String;
 
-    sput-object v0, Lp5/g;->a:Lp5/g;
+.field public h:Z
 
-    new-instance v0, Lp5/m1;
+.field public i:Z
 
-    sget-object v1, Ln5/e;->a:Ln5/e;
+.field public j:Ljava/lang/String;
 
-    const-string v2, "kotlin.Boolean"
+.field public k:Z
 
-    invoke-direct {v0, v2, v1}, Lp5/m1;-><init>(Ljava/lang/String;Ln5/f;)V
+.field public l:Z
 
-    sput-object v0, Lp5/g;->b:Lp5/m1;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final deserialize(Lo5/c;)Ljava/lang/Object;
-    .locals 1
-
-    const-string v0, "decoder"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {p1}, Lo5/c;->k()Z
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final getDescriptor()Ln5/g;
-    .locals 1
-
-    sget-object v0, Lp5/g;->b:Lp5/m1;
-
-    return-object v0
-.end method
-
-.method public final serialize(Lo5/d;Ljava/lang/Object;)V
-    .locals 1
-
-    check-cast p2, Ljava/lang/Boolean;
-
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p2
-
-    const-string v0, "encoder"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-interface {p1, p2}, Lo5/d;->o(Z)V
-
-    return-void
-.end method
+.field public m:Ls5/a;

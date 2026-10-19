@@ -1,32 +1,27 @@
-.class public abstract Lp5/m;
+.class public abstract Lq5/m;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# annotations
+.annotation runtime Lm5/h;
+    with = Lq5/q;
+.end annotation
+
+
 # static fields
-.field public static final a:Z
+.field public static final Companion:Lq5/l;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    :try_start_0
-    const-string v0, "java.lang.ClassValue"
+    new-instance v0, Lq5/l;
 
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :catchall_0
-    const/4 v0, 0x0
-
-    :goto_0
-    sput-boolean v0, Lp5/m;->a:Z
+    sput-object v0, Lq5/m;->Companion:Lq5/l;
 
     return-void
 .end method

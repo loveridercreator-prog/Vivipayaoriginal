@@ -1,69 +1,17 @@
-.class public final Lp5/h;
-.super Lp5/j1;
+.class public interface abstract annotation Lq5/h;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
 
-# instance fields
-.field public a:[B
 
-.field public b:I
+# annotations
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lp5/h;->a:[B
-
-    iget v1, p0, Lp5/h;->b:I
-
-    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([BI)[B
-
-    move-result-object v0
-
-    const-string v1, "copyOf(this, newSize)"
-
-    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public final b(I)V
-    .locals 2
-
-    iget-object v0, p0, Lp5/h;->a:[B
-
-    array-length v1, v0
-
-    if-ge v1, p1, :cond_1
-
-    array-length v1, v0
-
-    mul-int/lit8 v1, v1, 0x2
-
-    if-ge p1, v1, :cond_0
-
-    move p1, v1
-
-    :cond_0
-    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([BI)[B
-
-    move-result-object p1
-
-    const-string v0, "copyOf(this, newSize)"
-
-    invoke-static {p1, v0}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iput-object p1, p0, Lp5/h;->a:[B
-
-    :cond_1
-    return-void
-.end method
-
-.method public final d()I
-    .locals 1
-
-    iget v0, p0, Lp5/h;->b:I
-
-    return v0
+.method public abstract discriminator()Ljava/lang/String;
 .end method
