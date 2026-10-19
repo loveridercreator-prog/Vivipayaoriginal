@@ -1,49 +1,63 @@
-.class public abstract Lk5/g;
-.super Ljava/lang/Object;
+.class public abstract Ll5/g;
+.super Lf5/u0;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/util/List;
+# instance fields
+.field public final g:Ll5/b;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(IIJLjava/lang/String;)V
+    .locals 7
 
-    invoke-static {}, Landroidx/fragment/app/u;->q()Ljava/util/Iterator;
+    invoke-direct {p0}, Lf5/x;-><init>()V
 
-    move-result-object v0
+    new-instance v6, Ll5/b;
 
-    const-string v1, "<this>"
+    move-object v0, v6
 
-    invoke-static {v0, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    move v1, p1
 
-    new-instance v1, Lc5/j;
+    move v2, p2
 
-    const/4 v2, 0x0
+    move-wide v3, p3
 
-    invoke-direct {v1, v0, v2}, Lc5/j;-><init>(Ljava/util/Iterator;I)V
+    move-object v5, p5
 
-    instance-of v0, v1, Lc5/a;
+    invoke-direct/range {v0 .. v5}, Ll5/b;-><init>(IIJLjava/lang/String;)V
 
-    if-eqz v0, :cond_0
+    iput-object v6, p0, Ll5/g;->g:Ll5/b;
 
-    goto :goto_0
+    return-void
+.end method
 
-    :cond_0
-    new-instance v0, Lc5/a;
 
-    invoke-direct {v0, v1}, Lc5/a;-><init>(Lc5/j;)V
+# virtual methods
+.method public final C(Lp4/j;Ljava/lang/Runnable;)V
+    .locals 2
 
-    move-object v1, v0
+    iget-object p1, p0, Ll5/g;->g:Ll5/b;
 
-    :goto_0
-    invoke-static {v1}, Lc5/i;->K(Lc5/g;)Ljava/util/List;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    const/4 v1, 0x2
 
-    sput-object v0, Lk5/g;->a:Ljava/util/List;
+    invoke-static {p1, p2, v0, v1}, Ll5/b;->c(Ll5/b;Ljava/lang/Runnable;ZI)V
+
+    return-void
+.end method
+
+.method public final o(Lp4/j;Ljava/lang/Runnable;)V
+    .locals 2
+
+    iget-object p1, p0, Ll5/g;->g:Ll5/b;
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x6
+
+    invoke-static {p1, p2, v0, v1}, Ll5/b;->c(Ll5/b;Ljava/lang/Runnable;ZI)V
 
     return-void
 .end method

@@ -1,121 +1,103 @@
-.class public final Lk5/w;
+.class public final Ll4/w;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Comparable;
+
 
 # instance fields
-.field private volatile array:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/concurrent/atomic/AtomicReferenceArray<",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public final e:S
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 1
+.method public synthetic constructor <init>(S)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-direct {v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
-
-    iput-object v0, p0, Lk5/w;->array:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    iput-short p1, p0, Ll4/w;->e:S
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final synthetic compareTo(Ljava/lang/Object;)I
+    .locals 2
+
+    check-cast p1, Ll4/w;
+
+    iget-short p1, p1, Ll4/w;->e:S
+
+    iget-short v0, p0, Ll4/w;->e:S
+
+    const v1, 0xffff
+
+    and-int/2addr v0, v1
+
+    and-int/2addr p1, v1
+
+    invoke-static {v0, p1}, Lk3/e;->o(II)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    instance-of v0, p1, Ll4/w;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    check-cast p1, Ll4/w;
+
+    iget-short p1, p1, Ll4/w;->e:S
+
+    iget-short v0, p0, Ll4/w;->e:S
+
+    if-eq v0, p1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x1
+
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lk5/w;->array:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    iget-short v0, p0, Ll4/w;->e:S
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->length()I
+    invoke-static {v0}, Ljava/lang/Short;->hashCode(S)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final b(I)Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
     .locals 2
 
-    iget-object v0, p0, Lk5/w;->array:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    const v0, 0xffff
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->length()I
+    iget-short v1, p0, Ll4/w;->e:S
 
-    move-result v1
+    and-int/2addr v0, v1
 
-    if-ge p1, v1, :cond_0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return-object p1
-.end method
-
-.method public final c(ILl5/a;)V
-    .locals 5
-
-    iget-object v0, p0, Lk5/w;->array:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->length()I
-
-    move-result v1
-
-    if-ge p1, v1, :cond_0
-
-    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    new-instance v2, Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    add-int/lit8 v3, p1, 0x1
-
-    mul-int/lit8 v4, v1, 0x2
-
-    if-ge v3, v4, :cond_1
-
-    move v3, v4
-
-    :cond_1
-    invoke-direct {v2, v3}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
-
-    const/4 v3, 0x0
-
-    :goto_0
-    if-ge v3, v1, :cond_2
-
-    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {v2, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
-
-    iput-object v2, p0, Lk5/w;->array:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    return-void
+    return-object v0
 .end method

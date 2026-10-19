@@ -1,45 +1,26 @@
-.class public final Lk5/h;
-.super Ljava/lang/RuntimeException;
+.class public abstract Ll5/h;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final transient e:Lp4/j;
+.field public e:J
+
+.field public f:Lt5/x;
 
 
 # direct methods
-.method public constructor <init>(Lp4/j;)V
+.method public constructor <init>(JLt5/x;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lk5/h;->e:Lp4/j;
+    iput-wide p1, p0, Ll5/h;->e:J
+
+    iput-object p3, p0, Ll5/h;->f:Lt5/x;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final fillInStackTrace()Ljava/lang/Throwable;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Ljava/lang/StackTraceElement;
-
-    invoke-virtual {p0, v0}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
-
-    return-object p0
-.end method
-
-.method public final getLocalizedMessage()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lk5/h;->e:Lp4/j;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

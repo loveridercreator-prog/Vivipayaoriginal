@@ -1,119 +1,90 @@
-.class public abstract Lk5/z;
+.class public final Ll4/z;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ll4/e;
+.implements Ljava/io/Serializable;
 
-# static fields
-.field public static final synthetic a:I
+
+# instance fields
+.field public e:Lv4/a;
+
+.field public f:Ljava/lang/Object;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 5
+# virtual methods
+.method public final a()Z
+    .locals 2
 
-    new-instance v0, Ljava/lang/Exception;
+    iget-object v0, p0, Ll4/z;->f:Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Exception;-><init>()V
+    sget-object v1, Ll4/v;->a:Ll4/v;
 
-    const-class v1, Lq1/h;
+    if-eq v0, v1, :cond_0
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    aget-object v0, v0, v2
-
-    new-instance v2, Ljava/lang/StackTraceElement;
-
-    const-string v3, "_COROUTINE."
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Ljava/lang/StackTraceElement;->getFileName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0}, Ljava/lang/StackTraceElement;->getLineNumber()I
-
-    move-result v0
-
-    const-string v4, "_"
-
-    invoke-direct {v2, v1, v4, v3, v0}, Ljava/lang/StackTraceElement;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
-
-    :try_start_0
-    const-class v0, Lr4/a;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
-
-    move-result-object v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 v0, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
-
-    invoke-static {v0}, Lk3/e;->s(Ljava/lang/Throwable;)Ll4/j;
-
-    move-result-object v0
+    :cond_0
+    const/4 v0, 0x0
 
     :goto_0
-    invoke-static {v0}, Ll4/k;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
+    return v0
+.end method
 
-    move-result-object v1
+.method public final getValue()Ljava/lang/Object;
+    .locals 2
 
-    if-nez v1, :cond_0
+    iget-object v0, p0, Ll4/z;->f:Ljava/lang/Object;
 
-    goto :goto_1
+    sget-object v1, Ll4/v;->a:Ll4/v;
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Ll4/z;->e:Lv4/a;
+
+    invoke-static {v0}, Lk3/e;->i(Ljava/lang/Object;)V
+
+    invoke-interface {v0}, Lv4/a;->invoke()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ll4/z;->f:Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Ll4/z;->e:Lv4/a;
 
     :cond_0
-    const-string v0, "kotlin.coroutines.jvm.internal.BaseContinuationImpl"
+    iget-object v0, p0, Ll4/z;->f:Ljava/lang/Object;
 
-    :goto_1
-    check-cast v0, Ljava/lang/String;
+    return-object v0
+.end method
 
-    :try_start_1
-    const-class v0, Lk5/z;
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+    invoke-virtual {p0}, Ll4/z;->a()Z
 
-    move-result-object v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    move-result v0
 
-    goto :goto_2
+    if-eqz v0, :cond_0
 
-    :catchall_1
-    move-exception v0
-
-    invoke-static {v0}, Lk3/e;->s(Ljava/lang/Throwable;)Ll4/j;
+    invoke-virtual {p0}, Ll4/z;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_2
-    invoke-static {v0}, Ll4/k;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-nez v1, :cond_1
+    goto :goto_0
 
-    goto :goto_3
+    :cond_0
+    const-string v0, "Lazy value not initialized yet."
 
-    :cond_1
-    const-string v0, "kotlinx.coroutines.internal.StackTraceRecoveryKt"
-
-    :goto_3
-    check-cast v0, Ljava/lang/String;
-
-    return-void
+    :goto_0
+    return-object v0
 .end method

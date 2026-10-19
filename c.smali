@@ -1,63 +1,112 @@
-.class public final Lk5/c;
-.super Ljava/lang/ClassValue;
+.class public final Ll5/c;
+.super Lf5/u0;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/concurrent/Executor;
 
-# instance fields
-.field public final synthetic a:I
+
+# static fields
+.field public static final g:Ll5/c;
+
+.field public static final h:Lf5/x;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput p1, p0, Lk5/c;->a:I
+    new-instance v0, Ll5/c;
 
-    invoke-direct {p0}, Ljava/lang/ClassValue;-><init>()V
+    invoke-direct {v0}, Lf5/x;-><init>()V
+
+    sput-object v0, Ll5/c;->g:Ll5/c;
+
+    sget-object v0, Ll5/k;->g:Ll5/k;
+
+    sget v1, Lk5/a0;->a:I
+
+    const/16 v2, 0x40
+
+    if-ge v2, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move v1, v2
+
+    :goto_0
+    const/16 v2, 0xc
+
+    const-string v3, "kotlinx.coroutines.io.parallelism"
+
+    const/4 v4, 0x0
+
+    invoke-static {v3, v1, v4, v4, v2}, La5/d;->l(Ljava/lang/String;IIII)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ll5/k;->O(I)Lf5/x;
+
+    move-result-object v0
+
+    sput-object v0, Ll5/c;->h:Lf5/x;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final computeValue(Ljava/lang/Class;)Ljava/lang/Object;
+.method public final C(Lp4/j;Ljava/lang/Runnable;)V
+    .locals 1
+
+    sget-object v0, Ll5/c;->h:Lf5/x;
+
+    invoke-virtual {v0, p1, p2}, Lf5/x;->C(Lp4/j;Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public final close()V
     .locals 2
 
-    iget v0, p0, Lk5/c;->a:I
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    packed-switch v0, :pswitch_data_0
+    const-string v1, "Cannot be invoked on Dispatchers.IO"
 
-    const-string v0, "type"
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result-object v1
 
-    new-instance p1, Lp5/a1;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    throw v0
+.end method
 
-    new-instance v0, Ljava/lang/ref/SoftReference;
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 1
 
-    const/4 v1, 0x0
+    sget-object v0, Lp4/k;->e:Lp4/k;
 
-    invoke-direct {v0, v1}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
+    invoke-virtual {p0, v0, p1}, Ll5/c;->o(Lp4/j;Ljava/lang/Runnable;)V
 
-    iput-object v0, p1, Lp5/a1;->a:Ljava/lang/ref/SoftReference;
+    return-void
+.end method
 
-    return-object p1
+.method public final o(Lp4/j;Ljava/lang/Runnable;)V
+    .locals 1
 
-    :pswitch_0
-    const-string v0, "null cannot be cast to non-null type java.lang.Class<out kotlin.Throwable>"
+    sget-object v0, Ll5/c;->h:Lf5/x;
 
-    invoke-static {p1, v0}, Lk3/e;->j(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {v0, p1, p2}, Lf5/x;->o(Lp4/j;Ljava/lang/Runnable;)V
 
-    invoke-static {p1}, Lk5/k;->a(Ljava/lang/Class;)Lv4/c;
+    return-void
+.end method
 
-    move-result-object p1
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    return-object p1
+    const-string v0, "Dispatchers.IO"
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

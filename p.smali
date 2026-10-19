@@ -1,245 +1,521 @@
-.class public Lk5/p;
+.class public Ll4/p;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+# interfaces
+.implements Ljava/util/Iterator;
+.implements Lx4/a;
 
 
 # instance fields
-.field private volatile _cur:Ljava/lang/Object;
+.field public final synthetic e:I
+
+.field public f:I
+
+.field public final g:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lm4/d;)V
+    .locals 1
 
-    const-class v0, Ljava/lang/Object;
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "_cur"
+    const/4 v0, 0x4
 
-    const-class v2, Lk5/p;
+    iput v0, p0, Ll4/p;->e:I
 
-    invoke-static {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    move-result-object v0
-
-    sput-object v0, Lk5/p;->a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    iput-object p1, p0, Ll4/p;->g:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 3
+.method public constructor <init>([B)V
+    .locals 1
 
+    .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lk5/r;
+    const/4 v0, 0x0
 
-    const/16 v1, 0x8
+    iput v0, p0, Ll4/p;->e:I
 
-    const/4 v2, 0x0
+    const-string v0, "array"
 
-    invoke-direct {v0, v1, v2}, Lk5/r;-><init>(IZ)V
+    .line 4
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput-object v0, p0, Lk5/p;->_cur:Ljava/lang/Object;
+    iput-object p1, p0, Ll4/p;->g:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>([I)V
+    .locals 1
+
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Ll4/p;->e:I
+
+    const-string v0, "array"
+
+    .line 6
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object p1, p0, Ll4/p;->g:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>([J)V
+    .locals 1
+
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Ll4/p;->e:I
+
+    const-string v0, "array"
+
+    .line 8
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object p1, p0, Ll4/p;->g:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>([Ljava/lang/Object;)V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x5
+
+    iput v0, p0, Ll4/p;->e:I
+
+    const-string v0, "array"
+
+    .line 2
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object p1, p0, Ll4/p;->g:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>([S)V
+    .locals 1
+
+    .line 9
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x3
+
+    iput v0, p0, Ll4/p;->e:I
+
+    const-string v0, "array"
+
+    .line 10
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iput-object p1, p0, Ll4/p;->g:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Z
+.method public final hasNext()Z
     .locals 4
 
-    :goto_0
-    sget-object v0, Lk5/p;->a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    iget v0, p0, Ll4/p;->e:I
 
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v1
+    const/4 v2, 0x1
 
-    check-cast v1, Lk5/r;
+    iget-object v3, p0, Ll4/p;->g:Ljava/lang/Object;
 
-    invoke-virtual {v1, p1}, Lk5/r;->a(Ljava/lang/Object;)I
+    packed-switch v0, :pswitch_data_0
 
-    move-result v2
+    iget v0, p0, Ll4/p;->f:I
 
-    const/4 v3, 0x1
+    check-cast v3, [Ljava/lang/Object;
 
-    if-eqz v2, :cond_4
+    array-length v3, v3
 
-    if-eq v2, v3, :cond_1
+    if-ge v0, v3, :cond_0
 
-    const/4 v0, 0x2
-
-    if-eq v2, v0, :cond_0
-
-    goto :goto_0
+    move v1, v2
 
     :cond_0
-    const/4 p1, 0x0
+    return v1
 
-    return p1
+    :pswitch_0
+    iget v0, p0, Ll4/p;->f:I
 
-    :cond_1
-    invoke-virtual {v1}, Lk5/r;->c()Lk5/r;
+    check-cast v3, Lm4/d;
 
-    move-result-object v2
-
-    :cond_2
-    invoke-virtual {v0, p0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v3}, Lm4/a;->a()I
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-ge v0, v3, :cond_1
 
-    goto :goto_0
+    move v1, v2
+
+    :cond_1
+    return v1
+
+    :pswitch_1
+    iget v0, p0, Ll4/p;->f:I
+
+    check-cast v3, [S
+
+    array-length v3, v3
+
+    if-ge v0, v3, :cond_2
+
+    move v1, v2
+
+    :cond_2
+    return v1
+
+    :pswitch_2
+    iget v0, p0, Ll4/p;->f:I
+
+    check-cast v3, [J
+
+    array-length v3, v3
+
+    if-ge v0, v3, :cond_3
+
+    move v1, v2
 
     :cond_3
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    return v1
 
-    move-result-object v3
+    :pswitch_3
+    iget v0, p0, Ll4/p;->f:I
 
-    if-eq v3, v1, :cond_2
+    check-cast v3, [I
 
-    goto :goto_0
+    array-length v3, v3
+
+    if-ge v0, v3, :cond_4
+
+    move v1, v2
 
     :cond_4
-    return v3
+    return v1
+
+    :pswitch_4
+    iget v0, p0, Ll4/p;->f:I
+
+    check-cast v3, [B
+
+    array-length v3, v3
+
+    if-ge v0, v3, :cond_5
+
+    move v1, v2
+
+    :cond_5
+    return v1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final b()V
-    .locals 4
+.method public final next()Ljava/lang/Object;
+    .locals 3
 
-    :goto_0
-    sget-object v0, Lk5/p;->a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    iget v0, p0, Ll4/p;->e:I
 
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v1, p0, Ll4/p;->g:Ljava/lang/Object;
 
-    move-result-object v1
+    packed-switch v0, :pswitch_data_0
 
-    check-cast v1, Lk5/r;
+    :try_start_0
+    check-cast v1, [Ljava/lang/Object;
 
-    invoke-virtual {v1}, Lk5/r;->b()Z
+    iget v0, p0, Ll4/p;->f:I
 
-    move-result v2
+    add-int/lit8 v2, v0, 0x1
 
-    if-eqz v2, :cond_0
+    iput v2, p0, Ll4/p;->f:I
 
-    return-void
+    aget-object v0, v1, v0
+    :try_end_0
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_0
-    invoke-virtual {v1}, Lk5/r;->c()Lk5/r;
+    return-object v0
 
-    move-result-object v2
+    :catch_0
+    move-exception v0
 
-    :cond_1
-    invoke-virtual {v0, p0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget v1, p0, Ll4/p;->f:I
 
-    move-result v3
+    add-int/lit8 v1, v1, -0x1
 
-    if-eqz v3, :cond_2
+    iput v1, p0, Ll4/p;->f:I
 
-    goto :goto_0
+    new-instance v1, Ljava/util/NoSuchElementException;
 
-    :cond_2
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    if-eq v3, v1, :cond_1
-
-    goto :goto_0
-.end method
-
-.method public final c()I
-    .locals 5
-
-    sget-object v0, Lk5/p;->a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lk5/r;
+    invoke-direct {v1, v0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    throw v1
 
-    sget-object v1, Lk5/r;->f:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    :pswitch_0
+    invoke-virtual {p0}, Ll4/p;->hasNext()Z
 
-    invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->get(Ljava/lang/Object;)J
+    move-result v0
 
-    move-result-wide v0
+    if-eqz v0, :cond_0
 
-    const-wide/32 v2, 0x3fffffff
+    check-cast v1, Lm4/d;
 
-    and-long/2addr v2, v0
+    iget v0, p0, Ll4/p;->f:I
 
-    long-to-int v2, v2
+    add-int/lit8 v2, v0, 0x1
 
-    const-wide v3, 0xfffffffc0000000L
+    iput v2, p0, Ll4/p;->f:I
 
-    and-long/2addr v0, v3
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    const/16 v3, 0x1e
+    move-result-object v0
 
-    shr-long/2addr v0, v3
+    return-object v0
 
-    long-to-int v0, v0
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    sub-int/2addr v0, v2
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    const v1, 0x3fffffff    # 1.9999999f
+    throw v0
 
-    and-int/2addr v0, v1
+    :pswitch_1
+    iget v0, p0, Ll4/p;->f:I
 
-    return v0
-.end method
+    check-cast v1, [S
 
-.method public final d()Ljava/lang/Object;
-    .locals 4
+    array-length v2, v1
 
-    :goto_0
-    sget-object v0, Lk5/p;->a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    if-ge v0, v2, :cond_1
 
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    add-int/lit8 v2, v0, 0x1
+
+    iput v2, p0, Ll4/p;->f:I
+
+    aget-short v0, v1, v0
+
+    new-instance v1, Ll4/w;
+
+    invoke-direct {v1, v0}, Ll4/w;-><init>(S)V
+
+    return-object v1
+
+    :cond_1
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    iget v1, p0, Ll4/p;->f:I
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v1, Lk5/r;
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Lk5/r;->d()Ljava/lang/Object;
+    throw v0
 
-    move-result-object v2
+    :pswitch_2
+    iget v0, p0, Ll4/p;->f:I
 
-    sget-object v3, Lk5/r;->g:Le4/g;
+    check-cast v1, [J
 
-    if-eq v2, v3, :cond_0
+    array-length v2, v1
+
+    if-ge v0, v2, :cond_2
+
+    add-int/lit8 v2, v0, 0x1
+
+    iput v2, p0, Ll4/p;->f:I
+
+    aget-wide v0, v1, v0
+
+    new-instance v2, Ll4/t;
+
+    invoke-direct {v2, v0, v1}, Ll4/t;-><init>(J)V
 
     return-object v2
 
-    :cond_0
-    invoke-virtual {v1}, Lk5/r;->c()Lk5/r;
-
-    move-result-object v2
-
-    :cond_1
-    invoke-virtual {v0, p0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    goto :goto_0
-
     :cond_2
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    move-result-object v3
+    iget v1, p0, Ll4/p;->f:I
 
-    if-eq v3, v1, :cond_1
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    goto :goto_0
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_3
+    iget v0, p0, Ll4/p;->f:I
+
+    check-cast v1, [I
+
+    array-length v2, v1
+
+    if-ge v0, v2, :cond_3
+
+    add-int/lit8 v2, v0, 0x1
+
+    iput v2, p0, Ll4/p;->f:I
+
+    aget v0, v1, v0
+
+    new-instance v1, Ll4/r;
+
+    invoke-direct {v1, v0}, Ll4/r;-><init>(I)V
+
+    return-object v1
+
+    :cond_3
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    iget v1, p0, Ll4/p;->f:I
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_4
+    iget v0, p0, Ll4/p;->f:I
+
+    check-cast v1, [B
+
+    array-length v2, v1
+
+    if-ge v0, v2, :cond_4
+
+    add-int/lit8 v2, v0, 0x1
+
+    iput v2, p0, Ll4/p;->f:I
+
+    aget-byte v0, v1, v0
+
+    new-instance v1, Ll4/o;
+
+    invoke-direct {v1, v0}, Ll4/o;-><init>(B)V
+
+    return-object v1
+
+    :cond_4
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    iget v1, p0, Ll4/p;->f:I
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final remove()V
+    .locals 2
+
+    iget v0, p0, Ll4/p;->e:I
+
+    const-string v1, "Operation is not supported for read-only collection"
+
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_0
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_1
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_2
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_3
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_4
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

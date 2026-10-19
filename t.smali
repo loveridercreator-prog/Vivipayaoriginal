@@ -1,164 +1,179 @@
-.class public abstract Lk5/t;
+.class public final Ll4/t;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Comparable;
 
-# static fields
-.field public static final a:Lf5/m1;
+
+# instance fields
+.field public final e:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public synthetic constructor <init>(J)V
+    .locals 0
 
-    const-string v0, "kotlinx.coroutines.fast.service.loader"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget v1, Lk5/a0;->a:I
+    iput-wide p1, p0, Ll4/t;->e:J
 
-    const/4 v1, 0x0
+    return-void
+.end method
 
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+# virtual methods
+.method public final compareTo(Ljava/lang/Object;)I
+    .locals 6
+
+    check-cast p1, Ll4/t;
+
+    iget-wide v0, p1, Ll4/t;->e:J
+
+    iget-wide v2, p0, Ll4/t;->e:J
+
+    const-wide/high16 v4, -0x8000000000000000L
+
+    xor-long/2addr v2, v4
+
+    xor-long/2addr v0, v4
+
+    cmp-long p1, v2, v0
+
+    if-gez p1, :cond_0
+
+    const/4 p1, -0x1
 
     goto :goto_0
 
-    :catch_0
-    move-object v0, v1
-
-    :goto_0
-    if-eqz v0, :cond_0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
-
     :cond_0
-    invoke-static {}, Landroidx/fragment/app/u;->w()Ljava/util/Iterator;
+    if-nez p1, :cond_1
 
-    move-result-object v0
+    const/4 p1, 0x0
 
-    const-string v2, "<this>"
-
-    invoke-static {v0, v2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    new-instance v2, Lc5/j;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v0, v3}, Lc5/j;-><init>(Ljava/util/Iterator;I)V
-
-    instance-of v0, v2, Lc5/a;
-
-    if-eqz v0, :cond_1
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
-    new-instance v0, Lc5/a;
+    const/4 p1, 0x1
 
-    invoke-direct {v0, v2}, Lc5/a;-><init>(Lc5/j;)V
+    :goto_0
+    return p1
+.end method
 
-    move-object v2, v0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 6
 
-    :goto_1
-    invoke-static {v2}, Lc5/i;->K(Lc5/g;)Ljava/util/List;
+    instance-of v0, p1, Ll4/t;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    check-cast p1, Ll4/t;
+
+    iget-wide v2, p1, Ll4/t;->e:J
+
+    iget-wide v4, p0, Ll4/t;->e:J
+
+    cmp-long p1, v4, v2
+
+    if-eqz p1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x1
+
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-wide v0, p0, Ll4/t;->e:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 11
+
+    iget-wide v0, p0, Ll4/t;->e:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v2, v0, v2
+
+    const/16 v3, 0xa
+
+    const-string v4, "toString(...)"
+
+    if-ltz v2, :cond_0
+
+    invoke-static {v3}, Lr2/f;->j(I)V
+
+    invoke-static {v0, v1, v3}, Ljava/lang/Long;->toString(JI)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-static {v0, v4}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v2, 0x1
+
+    ushr-long v5, v0, v2
+
+    int-to-long v7, v3
+
+    div-long/2addr v5, v7
+
+    shl-long/2addr v5, v2
+
+    mul-long v9, v5, v7
+
+    sub-long/2addr v0, v9
+
+    cmp-long v2, v0, v7
+
+    if-ltz v2, :cond_1
+
+    sub-long/2addr v0, v7
+
+    const-wide/16 v7, 0x1
+
+    add-long/2addr v5, v7
+
+    :cond_1
+    invoke-static {v3}, Lr2/f;->j(I)V
+
+    invoke-static {v5, v6, v3}, Ljava/lang/Long;->toString(JI)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v2, v4}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result v3
+    invoke-static {v3}, Lr2/f;->j(I)V
 
-    if-nez v3, :cond_2
+    invoke-static {v0, v1, v3}, Ljava/lang/Long;->toString(JI)Ljava/lang/String;
 
-    move-object v3, v1
+    move-result-object v0
 
-    goto :goto_2
+    invoke-static {v0, v4}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_2
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-nez v4, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    move-object v4, v3
-
-    check-cast v4, Lk5/s;
-
-    invoke-interface {v4}, Lk5/s;->a()I
-
-    move-result v4
-
-    :cond_4
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    move-object v6, v5
-
-    check-cast v6, Lk5/s;
-
-    invoke-interface {v6}, Lk5/s;->a()I
-
-    move-result v6
-
-    if-ge v4, v6, :cond_5
-
-    move-object v3, v5
-
-    move v4, v6
-
-    :cond_5
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v5
-
-    if-nez v5, :cond_4
-
-    :goto_2
-    check-cast v3, Lk5/s;
-
-    if-eqz v3, :cond_6
-
-    :try_start_1
-    invoke-interface {v3, v0}, Lk5/s;->c(Ljava/util/List;)Lf5/m1;
-
-    move-result-object v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_3
-
-    :catchall_0
-    invoke-interface {v3}, Lk5/s;->b()Ljava/lang/String;
-
-    :goto_3
-    if-eqz v1, :cond_6
-
-    sput-object v1, Lk5/t;->a:Lf5/m1;
-
-    return-void
-
-    :cond_6
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Module with the Main dispatcher is missing. Add dependency providing the Main dispatcher, e.g. \'kotlinx-coroutines-android\' and ensure it has the same version as \'kotlinx-coroutines-core\'"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    :goto_0
+    return-object v0
 .end method

@@ -1,44 +1,53 @@
-.class public abstract Lk5/d;
-.super Ljava/lang/Object;
+.class public final Ll5/d;
+.super Ll5/g;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:Ljava/lang/reflect/Method;
+.field public static final h:Ll5/d;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
-    :try_start_0
-    const-class v0, Ljava/util/concurrent/ScheduledThreadPoolExecutor;
+    new-instance v6, Ll5/d;
 
-    const-string v1, "setRemoveOnCancelPolicy"
+    sget v1, Ll5/j;->c:I
 
-    const/4 v2, 0x1
+    sget v2, Ll5/j;->d:I
 
-    new-array v2, v2, [Ljava/lang/Class;
+    sget-wide v3, Ll5/j;->e:J
 
-    sget-object v3, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    sget-object v5, Ll5/j;->a:Ljava/lang/String;
 
-    const/4 v4, 0x0
+    move-object v0, v6
 
-    aput-object v3, v2, v4
+    invoke-direct/range {v0 .. v5}, Ll5/g;-><init>(IIJLjava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    const/4 v0, 0x0
-
-    :goto_0
-    sput-object v0, Lk5/d;->a:Ljava/lang/reflect/Method;
+    sput-object v6, Ll5/d;->h:Ll5/d;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final close()V
+    .locals 2
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "Dispatchers.Default cannot be closed"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "Dispatchers.Default"
+
+    return-object v0
 .end method
