@@ -1,135 +1,196 @@
-.class public final Li5/y;
-.super Ljava/lang/Object;
+.class public abstract Lk5/y;
+.super Lk5/e;
 .source "SourceFile"
 
 # interfaces
-.implements Li5/h;
+.implements Lf5/q1;
+
+
+# static fields
+.field public static final h:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
 
 # instance fields
-.field public final synthetic e:Lv4/e;
+.field private volatile cleanedAndPointers:I
 
-.field public final synthetic f:Lw4/r;
+.field public final g:J
 
 
 # direct methods
-.method public constructor <init>(Lv4/e;Lw4/r;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    const-class v0, Lk5/y;
+
+    const-string v1, "cleanedAndPointers"
+
+    invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    move-result-object v0
+
+    sput-object v0, Lk5/y;->h:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    return-void
+.end method
+
+.method public constructor <init>(JLk5/y;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p3}, Lk5/e;-><init>(Lk5/e;)V
 
-    iput-object p1, p0, Li5/y;->e:Lv4/e;
+    iput-wide p1, p0, Lk5/y;->g:J
 
-    iput-object p2, p0, Li5/y;->f:Lw4/r;
+    shl-int/lit8 p1, p4, 0x10
+
+    iput p1, p0, Lk5/y;->cleanedAndPointers:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final emit(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
-    .locals 4
+.method public final c()Z
+    .locals 2
 
-    instance-of v0, p2, Li5/x;
+    sget-object v0, Lk5/y;->h:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
 
-    move-object v0, p2
+    move-result v0
 
-    check-cast v0, Li5/x;
+    invoke-virtual {p0}, Lk5/y;->f()I
 
-    iget v1, v0, Li5/x;->g:I
+    move-result v1
 
-    const/high16 v2, -0x80000000
+    if-ne v0, v1, :cond_1
 
-    and-int v3, v1, v2
+    invoke-virtual {p0}, Lk5/e;->b()Lk5/e;
 
-    if-eqz v3, :cond_0
+    move-result-object v0
 
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Li5/x;->g:I
+    if-nez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Li5/x;
-
-    invoke-direct {v0, p0, p2}, Li5/x;-><init>(Li5/y;Lp4/e;)V
-
-    :goto_0
-    iget-object p2, v0, Li5/x;->f:Ljava/lang/Object;
-
-    sget-object v1, Lq4/a;->e:Lq4/a;
-
-    iget v2, v0, Li5/x;->g:I
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_2
-
-    if-ne v2, v3, :cond_1
-
-    iget-object p1, v0, Li5/x;->i:Ljava/lang/Object;
-
-    iget-object v0, v0, Li5/x;->e:Li5/y;
-
-    invoke-static {p2}, Lk3/e;->M(Ljava/lang/Object;)V
+    const/4 v0, 0x1
 
     goto :goto_1
 
     :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    invoke-static {p2}, Lk3/e;->M(Ljava/lang/Object;)V
-
-    iput-object p0, v0, Li5/x;->e:Li5/y;
-
-    iput-object p1, v0, Li5/x;->i:Ljava/lang/Object;
-
-    iput v3, v0, Li5/x;->g:I
-
-    iget-object p2, p0, Li5/y;->e:Lv4/e;
-
-    invoke-interface {p2, p1, v0}, Lv4/e;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    if-ne p2, v1, :cond_3
-
-    return-object v1
-
-    :cond_3
-    move-object v0, p0
+    :goto_0
+    const/4 v0, 0x0
 
     :goto_1
-    check-cast p2, Ljava/lang/Boolean;
+    return v0
+.end method
 
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
+.method public final e()Z
+    .locals 2
 
-    move-result p2
+    sget-object v0, Lk5/y;->h:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
-    if-nez p2, :cond_4
+    const/high16 v1, -0x10000
 
-    sget-object p1, Ll4/y;->a:Ll4/y;
+    invoke-virtual {v0, p0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->addAndGet(Ljava/lang/Object;I)I
 
-    return-object p1
+    move-result v0
 
-    :cond_4
-    iget-object p2, v0, Li5/y;->f:Lw4/r;
+    invoke-virtual {p0}, Lk5/y;->f()I
 
-    iput-object p1, p2, Lw4/r;->e:Ljava/lang/Object;
+    move-result v1
 
-    new-instance p1, Lj5/a;
+    if-ne v0, v1, :cond_1
 
-    invoke-direct {p1, v0}, Lj5/a;-><init>(Li5/h;)V
+    invoke-virtual {p0}, Lk5/e;->b()Lk5/e;
 
-    throw p1
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v0, 0x0
+
+    :goto_1
+    return v0
+.end method
+
+.method public abstract f()I
+.end method
+
+.method public abstract g(ILp4/j;)V
+.end method
+
+.method public final h()V
+    .locals 2
+
+    sget-object v0, Lk5/y;->h:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->incrementAndGet(Ljava/lang/Object;)I
+
+    move-result v0
+
+    sget v1, Lh5/g;->b:I
+
+    if-ne v0, v1, :cond_0
+
+    invoke-virtual {p0}, Lk5/e;->d()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final i()Z
+    .locals 3
+
+    :cond_0
+    sget-object v0, Lk5/y;->h:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
+
+    move-result v1
+
+    invoke-virtual {p0}, Lk5/y;->f()I
+
+    move-result v2
+
+    if-ne v1, v2, :cond_2
+
+    invoke-virtual {p0}, Lk5/e;->b()Lk5/e;
+
+    move-result-object v2
+
+    if-nez v2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_2
+    :goto_0
+    const/high16 v2, 0x10000
+
+    add-int/2addr v2, v1
+
+    invoke-virtual {v0, p0, v1, v2}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->compareAndSet(Ljava/lang/Object;II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_1
+    return v0
 .end method

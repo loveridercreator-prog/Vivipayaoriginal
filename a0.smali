@@ -1,53 +1,25 @@
-.class public final Li5/a0;
-.super Lr4/c;
+.class public abstract synthetic Lk5/a0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public synthetic e:Ljava/lang/Object;
-
-.field public f:I
-
-.field public final synthetic g:Li5/b0;
-
-.field public h:Ljava/lang/Object;
-
-.field public i:Li5/h;
+# static fields
+.field public static final a:I
 
 
 # direct methods
-.method public constructor <init>(Li5/b0;Lp4/e;)V
-    .locals 0
-
-    iput-object p1, p0, Li5/a0;->g:Li5/b0;
-
-    invoke-direct {p0, p2}, Lr4/c;-><init>(Lp4/e;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method static constructor <clinit>()V
     .locals 1
 
-    iput-object p1, p0, Li5/a0;->e:Ljava/lang/Object;
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
-    iget p1, p0, Li5/a0;->f:I
+    move-result-object v0
 
-    const/high16 v0, -0x80000000
+    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
 
-    or-int/2addr p1, v0
+    move-result v0
 
-    iput p1, p0, Li5/a0;->f:I
+    sput v0, Lk5/a0;->a:I
 
-    iget-object p1, p0, Li5/a0;->g:Li5/b0;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Li5/b0;->emit(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

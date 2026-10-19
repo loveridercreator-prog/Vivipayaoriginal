@@ -1,363 +1,83 @@
-.class public interface abstract Lj6/a;
+.class public final Lk6/a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:Li6/d;
+.field public static final b:Lk6/a;
+
+.field public static final c:Lk6/a;
+
+.field public static final d:Lk6/a;
+
+.field public static final e:Lk6/a;
+
+
+# instance fields
+.field public final a:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 20
+    .locals 6
 
-    new-instance v0, Li6/d;
+    new-instance v0, Lk6/a;
 
-    const-string v1, "2.16.840.1.101.3.4"
+    sget-object v1, Lj6/a;->a:Li6/d;
 
-    invoke-direct {v0, v1}, Li6/d;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x1
 
-    new-instance v1, Li6/d;
+    const/16 v3, 0x109
 
-    const-string v2, "2"
+    invoke-direct {v0, v2, v2, v3, v1}, Lk6/a;-><init>(IIILi6/d;)V
 
-    invoke-direct {v1, v0, v2}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
+    sput-object v0, Lk6/a;->b:Lk6/a;
 
-    new-instance v3, Li6/d;
+    new-instance v0, Lk6/a;
 
-    const-string v4, "1"
+    const/16 v2, 0x85
 
-    invoke-direct {v3, v1, v4}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
+    const/4 v3, 0x2
 
-    sput-object v3, Lj6/a;->a:Li6/d;
+    invoke-direct {v0, v3, v3, v2, v1}, Lk6/a;-><init>(IIILi6/d;)V
 
-    new-instance v3, Li6/d;
+    sput-object v0, Lk6/a;->c:Lk6/a;
 
-    invoke-direct {v3, v1, v2}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
+    new-instance v0, Lk6/a;
 
-    new-instance v3, Li6/d;
+    const/16 v2, 0x43
 
-    const-string v5, "3"
+    const/4 v4, 0x3
 
-    invoke-direct {v3, v1, v5}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
+    const/4 v5, 0x4
 
-    new-instance v3, Li6/d;
+    invoke-direct {v0, v4, v5, v2, v1}, Lk6/a;-><init>(IIILi6/d;)V
 
-    const-string v6, "4"
+    sput-object v0, Lk6/a;->d:Lk6/a;
 
-    invoke-direct {v3, v1, v6}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
+    new-instance v0, Lk6/a;
 
-    new-instance v3, Li6/d;
+    const/16 v2, 0x8
 
-    const-string v7, "5"
+    const/16 v4, 0x22
 
-    invoke-direct {v3, v1, v7}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
+    invoke-direct {v0, v5, v2, v4, v1}, Lk6/a;-><init>(IIILi6/d;)V
 
-    new-instance v3, Li6/d;
+    sput-object v0, Lk6/a;->e:Lk6/a;
 
-    const-string v8, "6"
+    new-instance v0, Lp1/h;
 
-    invoke-direct {v3, v1, v8}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
+    invoke-direct {v0, v3}, Lp1/h;-><init>(I)V
 
-    new-instance v3, Li6/d;
+    return-void
+.end method
 
-    const-string v9, "7"
+.method public constructor <init>(IIILi6/d;)V
+    .locals 0
 
-    invoke-direct {v3, v1, v9}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v3, Li6/d;
-
-    const-string v10, "8"
-
-    invoke-direct {v3, v1, v10}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v11, "9"
-
-    invoke-direct {v3, v1, v11}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v12, "10"
-
-    invoke-direct {v3, v1, v12}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v13, "11"
-
-    invoke-direct {v3, v1, v13}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v14, "12"
-
-    invoke-direct {v3, v1, v14}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "13"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    move-object/from16 v16, v15
-
-    const-string v15, "14"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    move-object/from16 v17, v15
-
-    const-string v15, "15"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    move-object/from16 v18, v15
-
-    const-string v15, "16"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    move-object/from16 v19, v15
-
-    const-string v15, "17"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "18"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "19"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "20"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v1, Li6/d;
-
-    invoke-direct {v1, v0, v4}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    invoke-direct {v3, v1, v4}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    invoke-direct {v3, v1, v2}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    invoke-direct {v3, v1, v5}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    invoke-direct {v3, v1, v6}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    invoke-direct {v3, v1, v7}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    invoke-direct {v3, v1, v8}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    invoke-direct {v3, v1, v9}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    invoke-direct {v3, v1, v10}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "21"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "22"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "23"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "24"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "25"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "26"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "27"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "28"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "41"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "42"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "43"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "44"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "45"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "46"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "47"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v3, Li6/d;
-
-    const-string v15, "48"
-
-    invoke-direct {v3, v1, v15}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v1, Li6/d;
-
-    invoke-direct {v1, v0, v5}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    invoke-direct {v0, v1, v4}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    invoke-direct {v0, v1, v2}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    invoke-direct {v0, v1, v5}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    invoke-direct {v0, v1, v6}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    invoke-direct {v0, v1, v7}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    invoke-direct {v0, v1, v8}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    invoke-direct {v0, v1, v9}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    invoke-direct {v0, v1, v10}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    invoke-direct {v0, v1, v11}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    invoke-direct {v0, v1, v12}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    invoke-direct {v0, v1, v13}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    invoke-direct {v0, v1, v14}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    move-object/from16 v2, v16
-
-    invoke-direct {v0, v1, v2}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    move-object/from16 v2, v17
-
-    invoke-direct {v0, v1, v2}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    move-object/from16 v2, v18
-
-    invoke-direct {v0, v1, v2}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
-
-    new-instance v0, Li6/d;
-
-    move-object/from16 v2, v19
-
-    invoke-direct {v0, v1, v2}, Li6/d;-><init>(Li6/d;Ljava/lang/String;)V
+    iput p1, p0, Lk6/a;->a:I
 
     return-void
 .end method

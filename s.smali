@@ -1,114 +1,14 @@
-.class public final Lj5/s;
-.super Lr4/i;
+.class public interface abstract Lk5/s;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lv4/e;
-
-
-# instance fields
-.field public e:I
-
-.field public synthetic f:Ljava/lang/Object;
-
-.field public final synthetic g:Li5/h;
-
-
-# direct methods
-.method public constructor <init>(Li5/h;Lp4/e;)V
-    .locals 0
-
-    iput-object p1, p0, Lj5/s;->g:Li5/h;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Lr4/i;-><init>(ILp4/e;)V
-
-    return-void
-.end method
 
 
 # virtual methods
-.method public final create(Ljava/lang/Object;Lp4/e;)Lp4/e;
-    .locals 2
-
-    new-instance v0, Lj5/s;
-
-    iget-object v1, p0, Lj5/s;->g:Li5/h;
-
-    invoke-direct {v0, v1, p2}, Lj5/s;-><init>(Li5/h;Lp4/e;)V
-
-    iput-object p1, v0, Lj5/s;->f:Ljava/lang/Object;
-
-    return-object v0
+.method public abstract a()I
 .end method
 
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p2, Lp4/e;
-
-    invoke-virtual {p0, p1, p2}, Lj5/s;->create(Ljava/lang/Object;Lp4/e;)Lp4/e;
-
-    move-result-object p1
-
-    check-cast p1, Lj5/s;
-
-    sget-object p2, Ll4/y;->a:Ll4/y;
-
-    invoke-virtual {p1, p2}, Lj5/s;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+.method public abstract b()Ljava/lang/String;
 .end method
 
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    sget-object v0, Lq4/a;->e:Lq4/a;
-
-    iget v1, p0, Lj5/s;->e:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v2, :cond_0
-
-    invoke-static {p1}, Lk3/e;->M(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    invoke-static {p1}, Lk3/e;->M(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lj5/s;->f:Ljava/lang/Object;
-
-    iput v2, p0, Lj5/s;->e:I
-
-    iget-object v1, p0, Lj5/s;->g:Li5/h;
-
-    invoke-interface {v1, p1, p0}, Li5/h;->emit(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_2
-
-    return-object v0
-
-    :cond_2
-    :goto_0
-    sget-object p1, Ll4/y;->a:Ll4/y;
-
-    return-object p1
+.method public abstract c(Ljava/util/List;)Lf5/m1;
 .end method

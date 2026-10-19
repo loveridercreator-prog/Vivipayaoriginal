@@ -1,32 +1,29 @@
-.class public final Li5/e0;
-.super Ljava/lang/Object;
+.class public final Lk5/e0;
+.super Lk5/a;
 .source "SourceFile"
 
-# interfaces
-.implements Li5/h;
 
-
-# instance fields
-.field public final e:Ljava/lang/Throwable;
+# static fields
+.field public static final g:Lk5/e0;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lk5/e0;
 
-    iput-object p1, p0, Li5/e0;->e:Ljava/lang/Throwable;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lk5/e0;->g:Lk5/e0;
+
+    new-instance v0, Ljava/util/concurrent/locks/ReentrantReadWriteLock;
+
+    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;-><init>()V
+
+    new-instance v0, Ljava/util/WeakHashMap;
+
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final emit(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
-    .locals 0
-
-    iget-object p1, p0, Li5/e0;->e:Ljava/lang/Throwable;
-
-    throw p1
 .end method

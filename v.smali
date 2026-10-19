@@ -1,53 +1,45 @@
-.class public final Li5/v;
-.super Lr4/c;
+.class public final Lk5/v;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public e:Li5/w;
-
-.field public f:Ljava/lang/Object;
-
-.field public synthetic g:Ljava/lang/Object;
-
-.field public final synthetic h:Li5/w;
-
-.field public i:I
+.field public final a:Lk5/o;
 
 
 # direct methods
-.method public constructor <init>(Li5/w;Lp4/e;)V
+.method public constructor <init>(Lk5/o;)V
     .locals 0
 
-    iput-object p1, p0, Li5/v;->h:Li5/w;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lr4/c;-><init>(Lp4/e;)V
+    iput-object p1, p0, Lk5/v;->a:Lk5/o;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    iput-object p1, p0, Li5/v;->g:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget p1, p0, Li5/v;->i:I
+    const-string v1, "Removed["
 
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    or-int/2addr p1, v0
+    iget-object v1, p0, Lk5/v;->a:Lk5/o;
 
-    iput p1, p0, Li5/v;->i:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Li5/v;->h:Li5/w;
+    const/16 v1, 0x5d
 
-    const/4 v0, 0x0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0, p0}, Li5/w;->emit(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    return-object v0
 .end method

@@ -1,88 +1,42 @@
-.class public final Li5/u;
+.class public abstract Lk5/u;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Li5/g;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Li5/g;
-
-.field public final synthetic c:Lv4/e;
-
-
-# direct methods
-.method public synthetic constructor <init>(Li5/g;Lv4/e;I)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p3, p0, Li5/u;->a:I
-
-    iput-object p1, p0, Li5/u;->b:Li5/g;
-
-    iput-object p2, p0, Li5/u;->c:Lv4/e;
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final collect(Li5/h;Lp4/e;)Ljava/lang/Object;
-    .locals 6
+.method public abstract a(Ljava/lang/Object;)Ljava/lang/Object;
+.end method
 
-    sget-object v0, Ll4/y;->a:Ll4/y;
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    sget-object v1, Lq4/a;->e:Lq4/a;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget v2, p0, Li5/u;->a:I
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v3, p0, Li5/u;->b:Li5/g;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v4, p0, Li5/u;->c:Lv4/e;
+    move-result-object v1
 
-    packed-switch v2, :pswitch_data_0
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    new-instance v2, Li5/b0;
+    move-result-object v1
 
-    invoke-direct {v2, p1, v4}, Li5/b0;-><init>(Li5/h;Lv4/e;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v3, v2, p2}, Li5/g;->collect(Li5/h;Lp4/e;)Ljava/lang/Object;
+    const/16 v1, 0x40
 
-    move-result-object p1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    if-ne p1, v1, :cond_0
+    invoke-static {p0}, Lf5/c0;->F(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-object v0, p1
+    move-result-object v1
 
-    :cond_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     return-object v0
-
-    :pswitch_0
-    new-instance v2, Lw4/o;
-
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    new-instance v5, Li5/w;
-
-    invoke-direct {v5, v2, p1, v4}, Li5/w;-><init>(Lw4/o;Li5/h;Lv4/e;)V
-
-    invoke-interface {v3, v5, p2}, Li5/g;->collect(Li5/h;Lp4/e;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v1, :cond_1
-
-    move-object v0, p1
-
-    :cond_1
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

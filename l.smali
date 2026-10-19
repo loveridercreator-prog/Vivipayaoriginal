@@ -1,25 +1,36 @@
-.class public abstract Lj5/l;
+.class public abstract Lk5/l;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:Le4/g;
+.field public static final synthetic a:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 1
 
-    new-instance v0, Le4/g;
+    :try_start_0
+    const-string v0, "android.os.Build"
 
-    const-string v1, "NULL"
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    const/4 v2, 0x1
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-direct {v0, v1, v2}, Le4/g;-><init>(Ljava/lang/String;I)V
+    goto :goto_0
 
-    sput-object v0, Lj5/l;->a:Le4/g;
+    :catchall_0
+    move-exception v0
+
+    invoke-static {v0}, Lk3/e;->s(Ljava/lang/Throwable;)Ll4/j;
+
+    move-result-object v0
+
+    :goto_0
+    instance-of v0, v0, Ll4/j;
 
     return-void
 .end method

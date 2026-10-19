@@ -1,133 +1,164 @@
-.class public final Li5/t;
+.class public abstract Lk5/t;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Li5/h;
 
-
-# instance fields
-.field public final synthetic e:Li5/h;
-
-.field public final synthetic f:Lw4/r;
+# static fields
+.field public static final a:Lf5/m1;
 
 
 # direct methods
-.method public constructor <init>(Li5/h;Lw4/r;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "kotlinx.coroutines.fast.service.loader"
 
-    iput-object p1, p0, Li5/t;->e:Li5/h;
+    sget v1, Lk5/a0;->a:I
 
-    iput-object p2, p0, Li5/t;->f:Lw4/r;
+    const/4 v1, 0x0
 
-    return-void
-.end method
+    :try_start_0
+    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
-
-# virtual methods
-.method public final emit(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
-    .locals 4
-
-    instance-of v0, p2, Li5/s;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p2
-
-    check-cast v0, Li5/s;
-
-    iget v1, v0, Li5/s;->h:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Li5/s;->h:I
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :cond_0
-    new-instance v0, Li5/s;
-
-    invoke-direct {v0, p0, p2}, Li5/s;-><init>(Li5/t;Lp4/e;)V
+    :catch_0
+    move-object v0, v1
 
     :goto_0
-    iget-object p2, v0, Li5/s;->f:Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    sget-object v1, Lq4/a;->e:Lq4/a;
+    invoke-static {v0}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
 
-    iget v2, v0, Li5/s;->h:I
+    :cond_0
+    invoke-static {}, Landroidx/fragment/app/u;->w()Ljava/util/Iterator;
 
-    const/4 v3, 0x1
+    move-result-object v0
 
-    if-eqz v2, :cond_2
+    const-string v2, "<this>"
 
-    if-ne v2, v3, :cond_1
+    invoke-static {v0, v2}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-object p1, v0, Li5/s;->e:Li5/t;
+    new-instance v2, Lc5/j;
 
-    :try_start_0
-    invoke-static {p2}, Lk3/e;->M(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v0, v3}, Lc5/j;-><init>(Ljava/util/Iterator;I)V
+
+    instance-of v0, v2, Lc5/a;
+
+    if-eqz v0, :cond_1
 
     goto :goto_1
 
-    :catchall_0
-    move-exception p2
+    :cond_1
+    new-instance v0, Lc5/a;
+
+    invoke-direct {v0, v2}, Lc5/a;-><init>(Lc5/j;)V
+
+    move-object v2, v0
+
+    :goto_1
+    invoke-static {v2}, Lc5/i;->K(Lc5/g;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    move-object v3, v1
 
     goto :goto_2
 
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
     :cond_2
-    invoke-static {p2}, Lk3/e;->M(Ljava/lang/Object;)V
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :try_start_1
-    iget-object p2, p0, Li5/t;->e:Li5/h;
+    move-result-object v3
 
-    iput-object p0, v0, Li5/s;->e:Li5/t;
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    iput v3, v0, Li5/s;->h:I
+    move-result v4
 
-    invoke-interface {p2, p1, v0}, Li5/h;->emit(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
+    if-nez v4, :cond_3
 
-    move-result-object p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    if-ne p1, v1, :cond_3
-
-    return-object v1
+    goto :goto_2
 
     :cond_3
-    :goto_1
-    sget-object p1, Ll4/y;->a:Ll4/y;
+    move-object v4, v3
 
-    return-object p1
+    check-cast v4, Lk5/s;
 
-    :catchall_1
-    move-exception p2
+    invoke-interface {v4}, Lk5/s;->a()I
 
-    move-object p1, p0
+    move-result v4
+
+    :cond_4
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    move-object v6, v5
+
+    check-cast v6, Lk5/s;
+
+    invoke-interface {v6}, Lk5/s;->a()I
+
+    move-result v6
+
+    if-ge v4, v6, :cond_5
+
+    move-object v3, v5
+
+    move v4, v6
+
+    :cond_5
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-nez v5, :cond_4
 
     :goto_2
-    iget-object p1, p1, Li5/t;->f:Lw4/r;
+    check-cast v3, Lk5/s;
 
-    iput-object p2, p1, Lw4/r;->e:Ljava/lang/Object;
+    if-eqz v3, :cond_6
 
-    throw p2
+    :try_start_1
+    invoke-interface {v3, v0}, Lk5/s;->c(Ljava/util/List;)Lf5/m1;
+
+    move-result-object v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_3
+
+    :catchall_0
+    invoke-interface {v3}, Lk5/s;->b()Ljava/lang/String;
+
+    :goto_3
+    if-eqz v1, :cond_6
+
+    sput-object v1, Lk5/t;->a:Lf5/m1;
+
+    return-void
+
+    :cond_6
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Module with the Main dispatcher is missing. Add dependency providing the Main dispatcher, e.g. \'kotlinx-coroutines-android\' and ensure it has the same version as \'kotlinx-coroutines-core\'"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

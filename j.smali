@@ -1,40 +1,38 @@
-.class public final Lj5/j;
-.super Ljava/lang/Object;
+.class public final Lk5/j;
+.super Lw4/i;
 .source "SourceFile"
 
 # interfaces
-.implements Lp4/e;
+.implements Lv4/c;
 
 
 # static fields
-.field public static final e:Lj5/j;
+.field public static final e:Lk5/j;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    new-instance v0, Lj5/j;
+    new-instance v0, Lk5/j;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x1
 
-    sput-object v0, Lj5/j;->e:Lj5/j;
+    invoke-direct {v0, v1}, Lw4/i;-><init>(I)V
+
+    sput-object v0, Lk5/j;->e:Lk5/j;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getContext()Lp4/j;
-    .locals 1
-
-    sget-object v0, Lp4/k;->e:Lp4/k;
-
-    return-object v0
-.end method
-
-.method public final resumeWith(Ljava/lang/Object;)V
+.method public final bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    return-void
+    check-cast p1, Ljava/lang/Throwable;
+
+    const/4 p1, 0x0
+
+    return-object p1
 .end method

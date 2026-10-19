@@ -1,49 +1,27 @@
-.class public final Li5/d0;
-.super Lr4/c;
+.class public final Lk5/d0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public synthetic e:Ljava/lang/Object;
+.field public final a:[Ljava/lang/Object;
 
-.field public final synthetic f:Li5/b0;
-
-.field public g:I
+.field public final b:[Lf5/u1;
 
 
 # direct methods
-.method public constructor <init>(Li5/b0;Lp4/e;)V
+.method public constructor <init>(Lp4/j;I)V
     .locals 0
 
-    iput-object p1, p0, Li5/d0;->f:Li5/b0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lr4/c;-><init>(Lp4/e;)V
+    new-array p1, p2, [Ljava/lang/Object;
+
+    iput-object p1, p0, Lk5/d0;->a:[Ljava/lang/Object;
+
+    new-array p1, p2, [Lf5/u1;
+
+    iput-object p1, p0, Lk5/d0;->b:[Lf5/u1;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    iput-object p1, p0, Li5/d0;->e:Ljava/lang/Object;
-
-    iget p1, p0, Li5/d0;->g:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Li5/d0;->g:I
-
-    iget-object p1, p0, Li5/d0;->f:Li5/b0;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Li5/b0;->a(ILp4/e;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
 .end method
