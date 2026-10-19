@@ -1,39 +1,44 @@
-.class public final Ls1/b1;
+.class public abstract Lu0/b1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/lang/Class;
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
-
-.field public final d:[Lv1/d;
-
-.field public final e:[Lv1/d;
-
-.field public f:I
-
-
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;Lo1/d;Ljava/lang/String;Ljava/lang/String;I[Lv1/d;[Lv1/d;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    new-instance v0, Lu0/j1;
 
-    iput-object p1, p0, Ls1/b1;->a:Ljava/lang/Class;
+    invoke-direct {v0}, Lu0/j1;-><init>()V
 
-    iput-object p3, p0, Ls1/b1;->b:Ljava/lang/String;
-
-    iput-object p4, p0, Ls1/b1;->c:Ljava/lang/String;
-
-    iput p5, p0, Ls1/b1;->f:I
-
-    iput-object p6, p0, Ls1/b1;->d:[Lv1/d;
-
-    iput-object p7, p0, Ls1/b1;->e:[Lv1/d;
+    invoke-direct {p0, v0}, Lu0/b1;-><init>(Lu0/j1;)V
 
     return-void
+.end method
+
+.method public constructor <init>(Lu0/j1;)V
+    .locals 0
+
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public abstract b()Lu0/j1;
+.end method
+
+.method public abstract c(Ln0/c;)V
+.end method
+
+.method public abstract d(Ln0/c;)V
 .end method

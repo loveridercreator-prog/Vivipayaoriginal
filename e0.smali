@@ -1,53 +1,62 @@
-.class public final Lt5/e0;
-.super Ln1/n0;
+.class public abstract Lu0/e0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic e:I
-
-.field public final f:J
-
-.field public final g:Lg6/i;
-
-.field public final h:Ljava/lang/Object;
-
-
 # direct methods
-.method public constructor <init>(JLt5/u;Lg6/g;)V
-    .locals 1
+.method public static a(Landroid/view/View;)Lu0/j1;
+    .locals 2
 
-    .line 2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p0}, Landroid/view/View;->getRootWindowInsets()Landroid/view/WindowInsets;
 
-    const/4 v0, 0x0
+    move-result-object v0
 
-    iput v0, p0, Lt5/e0;->e:I
+    const/4 v1, 0x0
 
-    iput-object p3, p0, Lt5/e0;->h:Ljava/lang/Object;
+    if-nez v0, :cond_0
 
-    iput-wide p1, p0, Lt5/e0;->f:J
+    return-object v1
 
-    iput-object p4, p0, Lt5/e0;->g:Lg6/i;
+    :cond_0
+    invoke-static {v0, v1}, Lu0/j1;->c(Landroid/view/WindowInsets;Landroid/view/View;)Lu0/j1;
+
+    move-result-object v0
+
+    iget-object v1, v0, Lu0/j1;->a:Lu0/i1;
+
+    invoke-virtual {v1, v0}, Lu0/i1;->l(Lu0/j1;)V
+
+    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Lu0/i1;->d(Landroid/view/View;)V
+
+    return-object v0
+.end method
+
+.method public static b(Landroid/view/View;)I
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/view/View;->getScrollIndicators()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static c(Landroid/view/View;I)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setScrollIndicators(I)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;JLg6/q;)V
-    .locals 1
+.method public static d(Landroid/view/View;II)V
+    .locals 0
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lt5/e0;->e:I
-
-    iput-object p1, p0, Lt5/e0;->h:Ljava/lang/Object;
-
-    iput-wide p2, p0, Lt5/e0;->f:J
-
-    iput-object p4, p0, Lt5/e0;->g:Lg6/i;
+    invoke-virtual {p0, p1, p2}, Landroid/view/View;->setScrollIndicators(II)V
 
     return-void
 .end method

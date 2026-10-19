@@ -1,263 +1,105 @@
-.class public final Lt5/c0;
+.class public final Lu0/c0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/View$OnApplyWindowInsetsListener;
+
 
 # instance fields
-.field public a:Lt5/a0;
+.field public a:Lu0/j1;
 
-.field public b:Lt5/y;
+.field public final synthetic b:Landroid/view/View;
 
-.field public c:I
-
-.field public d:Ljava/lang/String;
-
-.field public e:Lt5/o;
-
-.field public f:Lt5/p;
-
-.field public g:Ln1/n0;
-
-.field public h:Lt5/d0;
-
-.field public i:Lt5/d0;
-
-.field public j:Lt5/d0;
-
-.field public k:J
-
-.field public l:J
-
-.field public m:Lx5/e;
+.field public final synthetic c:Lu0/q;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Landroid/view/View;Lu0/q;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
+
+    iput-object p1, p0, Lu0/c0;->b:Landroid/view/View;
+
+    iput-object p2, p0, Lu0/c0;->c:Lu0/q;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, -0x1
+    const/4 p1, 0x0
 
-    iput v0, p0, Lt5/c0;->c:I
-
-    new-instance v0, Lt5/p;
-
-    invoke-direct {v0}, Lt5/p;-><init>()V
-
-    iput-object v0, p0, Lt5/c0;->f:Lt5/p;
+    iput-object p1, p0, Lu0/c0;->a:Lu0/j1;
 
     return-void
-.end method
-
-.method public static b(Ljava/lang/String;Lt5/d0;)V
-    .locals 1
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p1, Lt5/d0;->k:Ln1/n0;
-
-    if-nez v0, :cond_4
-
-    iget-object v0, p1, Lt5/d0;->l:Lt5/d0;
-
-    if-nez v0, :cond_3
-
-    iget-object v0, p1, Lt5/d0;->m:Lt5/d0;
-
-    if-nez v0, :cond_2
-
-    iget-object p1, p1, Lt5/d0;->n:Lt5/d0;
-
-    if-nez p1, :cond_1
-
-    :goto_0
-    return-void
-
-    :cond_1
-    const-string p1, ".priorResponse != null"
-
-    invoke-static {p1, p0}, Lk3/e;->K(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    const-string p1, ".cacheResponse != null"
-
-    invoke-static {p1, p0}, Lk3/e;->K(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_3
-    const-string p1, ".networkResponse != null"
-
-    invoke-static {p1, p0}, Lk3/e;->K(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_4
-    const-string p1, ".body != null"
-
-    invoke-static {p1, p0}, Lk3/e;->K(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public final a()Lt5/d0;
-    .locals 18
+.method public onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
+    .locals 5
 
-    move-object/from16 v0, p0
+    invoke-static {p2, p1}, Lu0/j1;->c(Landroid/view/WindowInsets;Landroid/view/View;)Lu0/j1;
 
-    iget v5, v0, Lt5/c0;->c:I
+    move-result-object v0
 
-    if-ltz v5, :cond_3
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    iget-object v2, v0, Lt5/c0;->a:Lt5/a0;
+    iget-object v2, p0, Lu0/c0;->c:Lu0/q;
 
-    if-eqz v2, :cond_2
+    const/16 v3, 0x1e
 
-    iget-object v3, v0, Lt5/c0;->b:Lt5/y;
+    if-ge v1, v3, :cond_0
 
-    if-eqz v3, :cond_1
+    iget-object v4, p0, Lu0/c0;->b:Landroid/view/View;
 
-    iget-object v4, v0, Lt5/c0;->d:Ljava/lang/String;
+    invoke-static {p2, v4}, Lu0/d0;->a(Landroid/view/WindowInsets;Landroid/view/View;)V
 
-    if-eqz v4, :cond_0
+    iget-object p2, p0, Lu0/c0;->a:Lu0/j1;
 
-    iget-object v6, v0, Lt5/c0;->e:Lt5/o;
+    invoke-virtual {v0, p2}, Lu0/j1;->equals(Ljava/lang/Object;)Z
 
-    iget-object v1, v0, Lt5/c0;->f:Lt5/p;
+    move-result p2
 
-    invoke-virtual {v1}, Lt5/p;->c()Lt5/q;
+    if-eqz p2, :cond_0
 
-    move-result-object v7
+    check-cast v2, Le/q;
 
-    iget-object v8, v0, Lt5/c0;->g:Ln1/n0;
+    invoke-virtual {v2, p1, v0}, Le/q;->a(Landroid/view/View;Lu0/j1;)Lu0/j1;
 
-    iget-object v9, v0, Lt5/c0;->h:Lt5/d0;
+    move-result-object p1
 
-    iget-object v10, v0, Lt5/c0;->i:Lt5/d0;
+    invoke-virtual {p1}, Lu0/j1;->b()Landroid/view/WindowInsets;
 
-    iget-object v11, v0, Lt5/c0;->j:Lt5/d0;
+    move-result-object p1
 
-    iget-wide v12, v0, Lt5/c0;->k:J
-
-    iget-wide v14, v0, Lt5/c0;->l:J
-
-    iget-object v1, v0, Lt5/c0;->m:Lx5/e;
-
-    new-instance v17, Lt5/d0;
-
-    move-object/from16 v16, v1
-
-    move-object/from16 v1, v17
-
-    invoke-direct/range {v1 .. v16}, Lt5/d0;-><init>(Lt5/a0;Lt5/y;Ljava/lang/String;ILt5/o;Lt5/q;Ln1/n0;Lt5/d0;Lt5/d0;Lt5/d0;JJLx5/e;)V
-
-    return-object v17
+    return-object p1
 
     :cond_0
-    new-instance v1, Ljava/lang/IllegalStateException;
+    iput-object v0, p0, Lu0/c0;->a:Lu0/j1;
 
-    const-string v2, "message == null"
+    check-cast v2, Le/q;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v2, p1, v0}, Le/q;->a(Landroid/view/View;Lu0/j1;)Lu0/j1;
 
-    move-result-object v2
+    move-result-object p2
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    if-lt v1, v3, :cond_1
 
-    throw v1
+    invoke-virtual {p2}, Lu0/j1;->b()Landroid/view/WindowInsets;
+
+    move-result-object p1
+
+    return-object p1
 
     :cond_1
-    new-instance v1, Ljava/lang/IllegalStateException;
+    invoke-static {p1}, Lu0/b0;->c(Landroid/view/View;)V
 
-    const-string v2, "protocol == null"
+    invoke-virtual {p2}, Lu0/j1;->b()Landroid/view/WindowInsets;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_2
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string v2, "request == null"
-
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_3
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const-string v2, "code < 0: "
-
-    invoke-static {v1, v2}, Lk3/e;->K(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v2, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v2
+    return-object p1
 .end method

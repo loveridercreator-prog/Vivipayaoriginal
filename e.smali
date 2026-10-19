@@ -1,11 +1,33 @@
-.class public interface abstract Lt5/e;
-.super Ljava/lang/Object;
+.class public final Lu3/e;
+.super Lr4/c;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(Lx5/j;Ljava/io/IOException;)V
-.end method
+# instance fields
+.field public synthetic e:Ljava/lang/Object;
 
-.method public abstract b(Lx5/j;Lt5/d0;)V
+.field public f:I
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iput-object p1, p0, Lu3/e;->e:Ljava/lang/Object;
+
+    iget p1, p0, Lu3/e;->f:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lu3/e;->f:I
+
+    const/4 p1, 0x0
+
+    invoke-static {p1, p0}, Lr2/f;->f(Lu3/c;Lp4/e;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
 .end method
