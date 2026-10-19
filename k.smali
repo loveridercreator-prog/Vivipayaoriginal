@@ -1,43 +1,34 @@
-.class public final Li5/k;
-.super Lr4/c;
+.class public final Lj5/k;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Li5/h;
 
-# instance fields
-.field public e:Li5/h;
 
-.field public f:Lh5/u;
+# static fields
+.field public static final e:Lj5/k;
 
-.field public g:Lh5/d;
 
-.field public h:Z
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-.field public synthetic i:Ljava/lang/Object;
+    new-instance v0, Lj5/k;
 
-.field public j:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lj5/k;->e:Lj5/k;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final emit(Ljava/lang/Object;Lp4/e;)Ljava/lang/Object;
+    .locals 0
 
-    iput-object p1, p0, Li5/k;->i:Ljava/lang/Object;
-
-    iget p1, p0, Li5/k;->j:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Li5/k;->j:I
-
-    const/4 p1, 0x0
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, p1, v0, p0}, Lf5/c0;->B(Li5/h;Lh5/s;ZLp4/e;)Ljava/lang/Object;
-
-    move-result-object p1
+    sget-object p1, Ll4/y;->a:Ll4/y;
 
     return-object p1
 .end method

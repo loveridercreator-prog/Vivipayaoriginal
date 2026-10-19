@@ -1,43 +1,38 @@
-.class public final Li0/g;
-.super Ljava/lang/Object;
+.class public final Lj5/g;
+.super Lj5/f;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Li0/g;
-
-
-# instance fields
-.field public volatile a:Ljava/lang/Thread;
-
-.field public volatile b:Li0/g;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Li0/g;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Li0/g;->c:Li0/g;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+# virtual methods
+.method public final c(Lp4/j;ILh5/c;)Lj5/d;
     .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lj5/g;
 
-    sget-object v0, Li0/h;->j:Ls1/p;
+    iget-object v1, p0, Lj5/f;->d:Li5/g;
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    invoke-direct {v0, p2, p1, p3, v1}, Lj5/f;-><init>(ILp4/j;Lh5/c;Li5/g;)V
 
-    move-result-object v1
+    return-object v0
+.end method
 
-    invoke-virtual {v0, p0, v1}, Ls1/p;->g(Li0/g;Ljava/lang/Thread;)V
+.method public final d(Li5/h;Lp4/e;)Ljava/lang/Object;
+    .locals 1
 
-    return-void
+    iget-object v0, p0, Lj5/f;->d:Li5/g;
+
+    invoke-interface {v0, p1, p2}, Li5/g;->collect(Li5/h;Lp4/e;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object p2, Lq4/a;->e:Lq4/a;
+
+    if-ne p1, p2, :cond_0
+
+    return-object p1
+
+    :cond_0
+    sget-object p1, Ll4/y;->a:Ll4/y;
+
+    return-object p1
 .end method

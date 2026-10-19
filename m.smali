@@ -1,33 +1,46 @@
-.class public final Li5/m;
-.super Lr4/c;
+.class public final Lj5/m;
+.super Lw4/i;
 .source "SourceFile"
 
+# interfaces
+.implements Lv4/e;
 
-# instance fields
-.field public e:Ljava/lang/Throwable;
 
-.field public synthetic f:Ljava/lang/Object;
+# static fields
+.field public static final e:Lj5/m;
 
-.field public g:I
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lj5/m;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lw4/i;-><init>(I)V
+
+    sput-object v0, Lj5/m;->e:Lj5/m;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iput-object p1, p0, Li5/m;->f:Ljava/lang/Object;
+    check-cast p1, Ljava/lang/Number;
 
-    iget p1, p0, Li5/m;->g:I
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
 
-    const/high16 v0, -0x80000000
+    move-result p1
 
-    or-int/2addr p1, v0
+    check-cast p2, Lp4/h;
 
-    iput p1, p0, Li5/m;->g:I
+    add-int/lit8 p1, p1, 0x1
 
-    const/4 p1, 0x0
-
-    invoke-static {p1, p1, p1, p0}, La5/d;->a(Li5/e0;Lv4/f;Ljava/lang/Throwable;Lp4/e;)Ljava/lang/Object;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 

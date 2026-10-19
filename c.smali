@@ -1,41 +1,118 @@
-.class public final Li0/c;
-.super Ljava/lang/Object;
+.class public final Lj5/c;
+.super Lr4/i;
 .source "SourceFile"
+
+# interfaces
+.implements Lv4/e;
 
 
 # instance fields
-.field public final a:Ljava/lang/Throwable;
+.field public e:I
+
+.field public synthetic f:Ljava/lang/Object;
+
+.field public final synthetic g:Lj5/d;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lj5/d;Lp4/e;)V
+    .locals 0
 
-    new-instance v0, Li0/c;
+    iput-object p1, p0, Lj5/c;->g:Lj5/d;
 
-    new-instance v1, Li0/b;
+    const/4 p1, 0x2
 
-    const-string v2, "Failure occurred while trying to finish a future."
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Li0/b;-><init>(Ljava/lang/String;I)V
-
-    invoke-direct {v0, v1}, Li0/c;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {p0, p1, p2}, Lr4/i;-><init>(ILp4/e;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final create(Ljava/lang/Object;Lp4/e;)Lp4/e;
+    .locals 2
 
-    sget-boolean v0, Li0/h;->h:Z
+    new-instance v0, Lj5/c;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v1, p0, Lj5/c;->g:Lj5/d;
 
-    iput-object p1, p0, Li0/c;->a:Ljava/lang/Throwable;
+    invoke-direct {v0, v1, p2}, Lj5/c;-><init>(Lj5/d;Lp4/e;)V
 
-    return-void
+    iput-object p1, v0, Lj5/c;->f:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lh5/t;
+
+    check-cast p2, Lp4/e;
+
+    invoke-virtual {p0, p1, p2}, Lj5/c;->create(Ljava/lang/Object;Lp4/e;)Lp4/e;
+
+    move-result-object p1
+
+    check-cast p1, Lj5/c;
+
+    sget-object p2, Ll4/y;->a:Ll4/y;
+
+    invoke-virtual {p1, p2}, Lj5/c;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+
+    sget-object v0, Lq4/a;->e:Lq4/a;
+
+    iget v1, p0, Lj5/c;->e:I
+
+    const/4 v2, 0x1
+
+    if-eqz v1, :cond_1
+
+    if-ne v1, v2, :cond_0
+
+    invoke-static {p1}, Lk3/e;->M(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    invoke-static {p1}, Lk3/e;->M(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lj5/c;->f:Ljava/lang/Object;
+
+    check-cast p1, Lh5/t;
+
+    iput v2, p0, Lj5/c;->e:I
+
+    iget-object v1, p0, Lj5/c;->g:Lj5/d;
+
+    invoke-virtual {v1, p1, p0}, Lj5/d;->b(Lh5/t;Lp4/e;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v0, :cond_2
+
+    return-object v0
+
+    :cond_2
+    :goto_0
+    sget-object p1, Ll4/y;->a:Ll4/y;
+
+    return-object p1
 .end method
