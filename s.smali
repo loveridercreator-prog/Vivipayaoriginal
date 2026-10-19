@@ -1,86 +1,39 @@
-.class public abstract Lw4/s;
+.class public abstract Lx0/s;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lw4/t;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public static a(Landroid/text/PrecomputedText;)Ljava/lang/CharSequence;
+    .locals 0
 
-    const/4 v0, 0x0
-
-    :try_start_0
-    const-string v1, "kotlin.reflect.jvm.internal.ReflectionFactoryImpl"
-
-    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lw4/t;
-    :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-object v0, v1
-
-    :catch_0
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lw4/t;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    :goto_0
-    sput-object v0, Lw4/s;->a:Lw4/t;
-
-    return-void
+    return-object p0
 .end method
 
-.method public static a(Ljava/lang/Class;)Lw4/d;
-    .locals 1
+.method public static b(Landroid/icu/text/DecimalFormatSymbols;)[Ljava/lang/String;
+    .locals 0
 
-    sget-object v0, Lw4/s;->a:Lw4/t;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Lw4/d;
-
-    invoke-direct {v0, p0}, Lw4/d;-><init>(Ljava/lang/Class;)V
-
-    return-object v0
-.end method
-
-.method public static b(Ljava/lang/Class;)Lw4/u;
-    .locals 2
-
-    invoke-static {p0}, Lw4/s;->a(Ljava/lang/Class;)Lw4/d;
+    invoke-virtual {p0}, Landroid/icu/text/DecimalFormatSymbols;->getDigitStrings()[Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+    return-object p0
+.end method
 
-    move-result-object v0
+.method public static c(Landroid/widget/TextView;)Landroid/text/PrecomputedText$Params;
+    .locals 0
 
-    sget-object v1, Lw4/s;->a:Lw4/t;
+    invoke-virtual {p0}, Landroid/widget/TextView;->getTextMetricsParams()Landroid/text/PrecomputedText$Params;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object p0
 
-    new-instance v1, Lw4/u;
+    return-object p0
+.end method
 
-    invoke-direct {v1, p0, v0}, Lw4/u;-><init>(Lw4/d;Ljava/util/List;)V
+.method public static d(Landroid/widget/TextView;I)V
+    .locals 0
 
-    return-object v1
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setFirstBaselineToTopHeight(I)V
+
+    return-void
 .end method

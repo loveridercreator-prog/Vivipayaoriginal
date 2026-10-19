@@ -1,104 +1,52 @@
-.class public final Lw4/l;
+.class public final Lx5/l;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lw4/c;
+.implements Ljava/io/Closeable;
 
 
 # instance fields
-.field public final a:Ljava/lang/Class;
+.field public final e:Z
+
+.field public final f:Lg6/i;
+
+.field public final g:Lg6/h;
+
+.field public final synthetic h:Lx5/e;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;)V
-    .locals 1
-
-    const-string v0, "jClass"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+.method public constructor <init>(Lg6/i;Lg6/h;Lx5/e;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lw4/l;->a:Ljava/lang/Class;
+    iput-object p3, p0, Lx5/l;->h:Lx5/e;
+
+    const/4 p3, 0x1
+
+    iput-boolean p3, p0, Lx5/l;->e:Z
+
+    iput-object p1, p0, Lx5/l;->f:Lg6/i;
+
+    iput-object p2, p0, Lx5/l;->g:Lg6/h;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Class;
-    .locals 1
+.method public final close()V
+    .locals 3
 
-    iget-object v0, p0, Lw4/l;->a:Ljava/lang/Class;
+    const/4 v0, 0x1
 
-    return-object v0
-.end method
+    const/4 v1, 0x0
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+    iget-object v2, p0, Lx5/l;->h:Lx5/e;
 
-    instance-of v0, p1, Lw4/l;
+    invoke-virtual {v2, v0, v0, v1}, Lx5/e;->a(ZZLjava/io/IOException;)Ljava/io/IOException;
 
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lw4/l;
-
-    iget-object p1, p1, Lw4/l;->a:Ljava/lang/Class;
-
-    iget-object v0, p0, Lw4/l;->a:Ljava/lang/Class;
-
-    invoke-static {v0, p1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Lw4/l;->a:Ljava/lang/Class;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lw4/l;->a:Ljava/lang/Class;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " (Kotlin reflection is not available)"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

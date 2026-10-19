@@ -1,88 +1,363 @@
-.class public final Lw5/b;
-.super Lw5/a;
+.class public final Lx5/b;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic e:I
+.field public final a:Ljava/util/List;
 
-.field public final synthetic f:Ljava/lang/Object;
+.field public b:I
+
+.field public c:Z
+
+.field public d:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Ljava/util/List;)V
+    .locals 1
 
-    iput p1, p0, Lw5/b;->e:I
+    const-string v0, "connectionSpecs"
 
-    iput-object p2, p0, Lw5/b;->f:Ljava/lang/Object;
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 p1, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p3, p1}, Lw5/a;-><init>(Ljava/lang/String;Z)V
+    iput-object p1, p0, Lx5/b;->a:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 6
+.method public final a(Ljavax/net/ssl/SSLSocket;)Lt5/j;
+    .locals 14
 
-    iget v0, p0, Lw5/b;->e:I
+    iget v0, p0, Lx5/b;->b:I
 
-    const-wide/16 v1, -0x1
+    iget-object v1, p0, Lx5/b;->a:Ljava/util/List;
 
-    iget-object v3, p0, Lw5/b;->f:Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    packed-switch v0, :pswitch_data_0
+    move-result v2
 
-    check-cast v3, Lf6/e;
+    :goto_0
+    if-ge v0, v2, :cond_1
 
-    iget-object v0, v3, Lf6/e;->h:Lx5/j;
+    add-int/lit8 v3, v0, 0x1
 
-    invoke-static {v0}, Lk3/e;->i(Ljava/lang/Object;)V
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lx5/j;->d()V
+    move-result-object v0
 
-    return-wide v1
+    check-cast v0, Lt5/j;
 
-    :pswitch_0
-    check-cast v3, La6/t;
+    invoke-virtual {v0, p1}, Lt5/j;->b(Ljavax/net/ssl/SSLSocket;)Z
 
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result v4
 
-    :try_start_0
-    iget-object v0, v3, La6/t;->C:La6/a0;
+    if-eqz v4, :cond_0
 
-    const/4 v4, 0x0
+    iput v3, p0, Lx5/b;->b:I
 
-    const/4 v5, 0x2
+    goto :goto_1
 
-    invoke-virtual {v0, v5, v4, v4}, La6/a0;->l(IIZ)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    :cond_0
+    move v0, v3
 
     goto :goto_0
 
-    :catch_0
-    move-exception v0
+    :cond_1
+    const/4 v0, 0x0
 
-    invoke-virtual {v3, v0}, La6/t;->b(Ljava/io/IOException;)V
+    :goto_1
+    if-eqz v0, :cond_b
 
-    :goto_0
-    return-wide v1
+    iget v2, p0, Lx5/b;->b:I
 
-    :pswitch_1
-    check-cast v3, Lv4/a;
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    invoke-interface {v3}, Lv4/a;->invoke()Ljava/lang/Object;
+    move-result v3
 
-    return-wide v1
+    :goto_2
+    const/4 v4, 0x1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    const/4 v5, 0x0
+
+    if-ge v2, v3, :cond_3
+
+    add-int/lit8 v6, v2, 0x1
+
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lt5/j;
+
+    invoke-virtual {v2, p1}, Lt5/j;->b(Ljavax/net/ssl/SSLSocket;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    move v1, v4
+
+    goto :goto_3
+
+    :cond_2
+    move v2, v6
+
+    goto :goto_2
+
+    :cond_3
+    move v1, v5
+
+    :goto_3
+    iput-boolean v1, p0, Lx5/b;->c:Z
+
+    iget-boolean v1, p0, Lx5/b;->d:Z
+
+    iget-object v2, v0, Lt5/j;->c:[Ljava/lang/String;
+
+    if-eqz v2, :cond_4
+
+    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledCipherSuites()[Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v6, "sslSocket.enabledCipherSuites"
+
+    invoke-static {v3, v6}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v6, Lt5/h;->c:Lv1/q;
+
+    invoke-static {v3, v2, v6}, Lu5/b;->p([Ljava/lang/String;[Ljava/lang/String;Ljava/util/Comparator;)[Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_4
+
+    :cond_4
+    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledCipherSuites()[Ljava/lang/String;
+
+    move-result-object v3
+
+    :goto_4
+    iget-object v6, v0, Lt5/j;->d:[Ljava/lang/String;
+
+    if-eqz v6, :cond_5
+
+    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;
+
+    move-result-object v7
+
+    const-string v8, "sslSocket.enabledProtocols"
+
+    invoke-static {v7, v8}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v8, Lo4/a;->a:Lo4/a;
+
+    invoke-static {v7, v6, v8}, Lu5/b;->p([Ljava/lang/String;[Ljava/lang/String;Ljava/util/Comparator;)[Ljava/lang/String;
+
+    move-result-object v7
+
+    goto :goto_5
+
+    :cond_5
+    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;
+
+    move-result-object v7
+
+    :goto_5
+    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getSupportedCipherSuites()[Ljava/lang/String;
+
+    move-result-object v8
+
+    const-string v9, "supportedCipherSuites"
+
+    invoke-static {v8, v9}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v9, Lt5/h;->c:Lv1/q;
+
+    sget-object v10, Lu5/b;->a:[B
+
+    array-length v10, v8
+
+    :goto_6
+    const/4 v11, -0x1
+
+    if-ge v5, v10, :cond_7
+
+    aget-object v12, v8, v5
+
+    const-string v13, "TLS_FALLBACK_SCSV"
+
+    invoke-virtual {v9, v12, v13}, Lv1/q;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result v12
+
+    if-nez v12, :cond_6
+
+    goto :goto_7
+
+    :cond_6
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_6
+
+    :cond_7
+    move v5, v11
+
+    :goto_7
+    const-string v9, "cipherSuitesIntersection"
+
+    if-eqz v1, :cond_8
+
+    if-eq v5, v11, :cond_8
+
+    invoke-static {v3, v9}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    aget-object v1, v8, v5
+
+    const-string v5, "supportedCipherSuites[indexOfFallbackScsv]"
+
+    invoke-static {v1, v5}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    array-length v5, v3
+
+    add-int/2addr v5, v4
+
+    invoke-static {v3, v5}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v3
+
+    const-string v5, "copyOf(this, newSize)"
+
+    invoke-static {v3, v5}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast v3, [Ljava/lang/String;
+
+    array-length v5, v3
+
+    sub-int/2addr v5, v4
+
+    aput-object v1, v3, v5
+
+    :cond_8
+    new-instance v1, Lt5/i;
+
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+
+    iget-boolean v4, v0, Lt5/j;->a:Z
+
+    iput-boolean v4, v1, Lt5/i;->a:Z
+
+    iput-object v2, v1, Lt5/i;->b:[Ljava/lang/String;
+
+    iput-object v6, v1, Lt5/i;->c:[Ljava/lang/String;
+
+    iget-boolean v2, v0, Lt5/j;->b:Z
+
+    iput-boolean v2, v1, Lt5/i;->d:Z
+
+    invoke-static {v3, v9}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    array-length v2, v3
+
+    invoke-static {v3, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, [Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Lt5/i;->b([Ljava/lang/String;)V
+
+    const-string v2, "tlsVersionsIntersection"
+
+    invoke-static {v7, v2}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    array-length v2, v7
+
+    invoke-static {v7, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, [Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Lt5/i;->e([Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Lt5/i;->a()Lt5/j;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lt5/j;->c()Ljava/util/List;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_9
+
+    iget-object v2, v1, Lt5/j;->d:[Ljava/lang/String;
+
+    invoke-virtual {p1, v2}, Ljavax/net/ssl/SSLSocket;->setEnabledProtocols([Ljava/lang/String;)V
+
+    :cond_9
+    invoke-virtual {v1}, Lt5/j;->a()Ljava/util/List;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_a
+
+    iget-object v1, v1, Lt5/j;->c:[Ljava/lang/String;
+
+    invoke-virtual {p1, v1}, Ljavax/net/ssl/SSLSocket;->setEnabledCipherSuites([Ljava/lang/String;)V
+
+    :cond_a
+    return-object v0
+
+    :cond_b
+    new-instance v0, Ljava/net/UnknownServiceException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Unable to find acceptable protocols. isFallback="
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-boolean v3, p0, Lx5/b;->d:Z
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v3, ", modes="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", supported protocols="
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getEnabledProtocols()[Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lk3/e;->i(Ljava/lang/Object;)V
+
+    invoke-static {p1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v1, "toString(this)"
+
+    invoke-static {p1, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/net/UnknownServiceException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

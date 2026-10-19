@@ -1,24 +1,23 @@
-.class public final Lw4/p;
-.super Ljava/lang/Object;
+.class public final Lx5/p;
+.super Ljava/lang/RuntimeException;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public e:I
+.field public final e:Ljava/io/IOException;
+
+.field public f:Ljava/io/IOException;
 
 
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 1
+# direct methods
+.method public constructor <init>(Ljava/io/IOException;)V
+    .locals 0
 
-    iget v0, p0, Lw4/p;->e:I
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    iput-object p1, p0, Lx5/p;->e:Ljava/io/IOException;
 
-    move-result-object v0
+    iput-object p1, p0, Lx5/p;->f:Ljava/io/IOException;
 
-    return-object v0
+    return-void
 .end method

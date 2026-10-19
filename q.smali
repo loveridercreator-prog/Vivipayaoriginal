@@ -1,24 +1,197 @@
-.class public final Lw4/q;
+.class public final Lx5/q;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/io/Serializable;
-
 
 # instance fields
-.field public e:J
+.field public final a:Lt5/a;
+
+.field public final b:Lz2/c;
+
+.field public final c:Lt5/d;
+
+.field public final d:Lt5/n;
+
+.field public final e:Ljava/util/List;
+
+.field public f:I
+
+.field public g:Ljava/util/List;
+
+.field public final h:Ljava/util/ArrayList;
+
+
+# direct methods
+.method public constructor <init>(Lt5/a;Lz2/c;Lx5/j;Lt5/n;)V
+    .locals 1
+
+    const-string v0, "address"
+
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "routeDatabase"
+
+    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "call"
+
+    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "eventListener"
+
+    invoke-static {p4, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lx5/q;->a:Lt5/a;
+
+    iput-object p2, p0, Lx5/q;->b:Lz2/c;
+
+    iput-object p3, p0, Lx5/q;->c:Lt5/d;
+
+    iput-object p4, p0, Lx5/q;->d:Lt5/n;
+
+    sget-object p2, Lm4/n;->e:Lm4/n;
+
+    iput-object p2, p0, Lx5/q;->e:Ljava/util/List;
+
+    iput-object p2, p0, Lx5/q;->g:Ljava/util/List;
+
+    new-instance p2, Ljava/util/ArrayList;
+
+    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object p2, p0, Lx5/q;->h:Ljava/util/ArrayList;
+
+    iget-object p2, p1, Lt5/a;->i:Lt5/s;
+
+    const-string p3, "url"
+
+    invoke-static {p2, p3}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object p3, p1, Lt5/a;->g:Ljava/net/Proxy;
+
+    const/4 p4, 0x0
+
+    if-eqz p3, :cond_0
+
+    invoke-static {p3}, Lk3/e;->A(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {p2}, Lt5/s;->h()Ljava/net/URI;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Ljava/net/URI;->getHost()Ljava/lang/String;
+
+    move-result-object p3
+
+    const/4 v0, 0x1
+
+    if-nez p3, :cond_1
+
+    new-array p1, v0, [Ljava/net/Proxy;
+
+    sget-object p2, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
+
+    aput-object p2, p1, p4
+
+    invoke-static {p1}, Lu5/b;->l([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :cond_1
+    iget-object p1, p1, Lt5/a;->h:Ljava/net/ProxySelector;
+
+    invoke-virtual {p1, p2}, Ljava/net/ProxySelector;->select(Ljava/net/URI;)Ljava/util/List;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {p1}, Lu5/b;->x(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :cond_3
+    :goto_0
+    new-array p1, v0, [Ljava/net/Proxy;
+
+    sget-object p2, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
+
+    aput-object p2, p1, p4
+
+    invoke-static {p1}, Lu5/b;->l([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    :goto_1
+    iput-object p1, p0, Lx5/q;->e:Ljava/util/List;
+
+    iput p4, p0, Lx5/q;->f:I
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final a()Z
+    .locals 4
 
-    iget-wide v0, p0, Lw4/q;->e:J
+    iget v0, p0, Lx5/q;->f:I
 
-    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    iget-object v1, p0, Lx5/q;->e:Ljava/util/List;
 
-    move-result-object v0
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    return-object v0
+    move-result v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    if-ge v0, v1, :cond_0
+
+    move v0, v3
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v2
+
+    :goto_0
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lx5/q;->h:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v0
+
+    xor-int/2addr v0, v3
+
+    if-eqz v0, :cond_2
+
+    :cond_1
+    move v2, v3
+
+    :cond_2
+    return v2
 .end method

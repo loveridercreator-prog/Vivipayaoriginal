@@ -1,404 +1,178 @@
-.class public final Lw4/u;
+.class public final Lx0/u;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lb5/g;
-
-
-# instance fields
-.field public final a:Lb5/c;
-
-.field public final b:Ljava/util/List;
-
-.field public final c:I
-
-
-# direct methods
-.method public constructor <init>(Lw4/d;Ljava/util/List;)V
-    .locals 1
-
-    const-string v0, "arguments"
-
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lw4/u;->a:Lb5/c;
-
-    iput-object p2, p0, Lw4/u;->b:Ljava/util/List;
-
-    const/4 p1, 0x0
-
-    iput p1, p0, Lw4/u;->c:I
-
-    return-void
-.end method
+.implements Lu0/r;
 
 
 # virtual methods
-.method public final a()Ljava/util/List;
-    .locals 1
+.method public final a(Landroid/view/View;Lu0/h;)Lu0/h;
+    .locals 9
 
-    iget-object v0, p0, Lw4/u;->b:Ljava/util/List;
+    const/4 v0, 0x3
 
-    return-object v0
-.end method
+    const-string v1, "ReceiveContent"
 
-.method public final b()Z
-    .locals 2
-
-    iget v0, p0, Lw4/u;->c:I
-
-    const/4 v1, 0x1
-
-    and-int/2addr v0, v1
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    return v1
-.end method
-
-.method public final c()Lb5/c;
-    .locals 1
-
-    iget-object v0, p0, Lw4/u;->a:Lb5/c;
-
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    instance-of v0, p1, Lw4/u;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lw4/u;
-
-    iget-object v0, p1, Lw4/u;->a:Lb5/c;
-
-    iget-object v1, p0, Lw4/u;->a:Lb5/c;
-
-    invoke-static {v1, v0}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lw4/u;->b:Ljava/util/List;
-
-    iget-object v1, p1, Lw4/u;->b:Ljava/util/List;
-
-    invoke-static {v0, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    invoke-static {v0, v0}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Lw4/u;->c:I
-
-    iget p1, p1, Lw4/u;->c:I
-
-    if-ne v0, p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-object v0, p0, Lw4/u;->a:Lb5/c;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lw4/u;->b:Ljava/util/List;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v1, v0
-
-    mul-int/lit8 v1, v1, 0x1f
-
-    iget v0, p0, Lw4/u;->c:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    add-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 10
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v2, "onReceive: "
 
-    iget-object v1, p0, Lw4/u;->a:Lb5/c;
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    instance-of v2, v1, Lb5/b;
-
-    const/4 v3, 0x0
-
-    if-eqz v2, :cond_0
-
-    move-object v2, v1
-
-    check-cast v2, Lb5/b;
-
-    goto :goto_0
-
-    :cond_0
-    move-object v2, v3
-
-    :goto_0
-    if-eqz v2, :cond_1
-
-    invoke-static {v2}, Lr2/f;->y(Lb5/b;)Ljava/lang/Class;
-
-    move-result-object v3
-
-    :cond_1
-    if-nez v3, :cond_2
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    goto/16 :goto_1
-
-    :cond_2
-    iget v1, p0, Lw4/u;->c:I
-
-    and-int/lit8 v1, v1, 0x4
-
-    if-eqz v1, :cond_3
-
-    const-string v1, "kotlin.Nothing"
-
-    goto/16 :goto_1
-
-    :cond_3
-    invoke-virtual {v3}, Ljava/lang/Class;->isArray()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_c
-
-    const-class v1, [Z
-
-    invoke-static {v3, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    const-string v1, "kotlin.BooleanArray"
-
-    goto :goto_1
-
-    :cond_4
-    const-class v1, [C
-
-    invoke-static {v3, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    const-string v1, "kotlin.CharArray"
-
-    goto :goto_1
-
-    :cond_5
-    const-class v1, [B
-
-    invoke-static {v3, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    const-string v1, "kotlin.ByteArray"
-
-    goto :goto_1
-
-    :cond_6
-    const-class v1, [S
-
-    invoke-static {v3, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_7
-
-    const-string v1, "kotlin.ShortArray"
-
-    goto :goto_1
-
-    :cond_7
-    const-class v1, [I
-
-    invoke-static {v3, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_8
-
-    const-string v1, "kotlin.IntArray"
-
-    goto :goto_1
-
-    :cond_8
-    const-class v1, [F
-
-    invoke-static {v3, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_9
-
-    const-string v1, "kotlin.FloatArray"
-
-    goto :goto_1
-
-    :cond_9
-    const-class v1, [J
-
-    invoke-static {v3, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_a
-
-    const-string v1, "kotlin.LongArray"
-
-    goto :goto_1
-
-    :cond_a
-    const-class v1, [D
-
-    invoke-static {v3, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_b
-
-    const-string v1, "kotlin.DoubleArray"
-
-    goto :goto_1
-
-    :cond_b
-    const-string v1, "kotlin.Array"
-
-    goto :goto_1
-
-    :cond_c
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    :goto_1
-    iget-object v2, p0, Lw4/u;->b:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
-
-    move-result v2
-
-    const-string v3, ""
-
-    if-eqz v2, :cond_d
-
-    move-object v2, v3
-
-    goto :goto_2
-
-    :cond_d
-    iget-object v4, p0, Lw4/u;->b:Ljava/util/List;
-
-    const-string v5, ", "
-
-    const-string v6, "<"
-
-    const-string v7, ">"
-
-    new-instance v8, Lq/a;
-
-    const/16 v2, 0x12
-
-    invoke-direct {v8, v2, p0}, Lq/a;-><init>(ILjava/lang/Object;)V
-
-    const/16 v9, 0x18
-
-    invoke-static/range {v4 .. v9}, Lm4/l;->e0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lv4/c;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    :goto_2
-    invoke-virtual {p0}, Lw4/u;->b()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_e
-
-    const-string v3, "?"
-
-    :cond_e
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " (Kotlin reflection is not available)"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    iget-object v0, p2, Lu0/h;->a:Lu0/g;
+
+    invoke-interface {v0}, Lu0/g;->h()I
+
+    move-result v0
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_1
+
+    return-object p2
+
+    :cond_1
+    iget-object p2, p2, Lu0/h;->a:Lu0/g;
+
+    invoke-interface {p2}, Lu0/g;->b()Landroid/content/ClipData;
+
+    move-result-object v0
+
+    invoke-interface {p2}, Lu0/g;->d()I
+
+    move-result p2
+
+    check-cast p1, Landroid/widget/TextView;
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/text/Editable;
+
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    move v4, v3
+
+    :goto_0
+    invoke-virtual {v0}, Landroid/content/ClipData;->getItemCount()I
+
+    move-result v5
+
+    if-ge v3, v5, :cond_6
+
+    invoke-virtual {v0, v3}, Landroid/content/ClipData;->getItemAt(I)Landroid/content/ClipData$Item;
+
+    move-result-object v5
+
+    const/4 v6, 0x1
+
+    and-int/lit8 v7, p2, 0x1
+
+    if-eqz v7, :cond_2
+
+    invoke-virtual {v5, p1}, Landroid/content/ClipData$Item;->coerceToText(Landroid/content/Context;)Ljava/lang/CharSequence;
+
+    move-result-object v5
+
+    instance-of v7, v5, Landroid/text/Spanned;
+
+    if-eqz v7, :cond_3
+
+    invoke-interface {v5}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {v5, p1}, Landroid/content/ClipData$Item;->coerceToStyledText(Landroid/content/Context;)Ljava/lang/CharSequence;
+
+    move-result-object v5
+
+    :cond_3
+    :goto_1
+    if-eqz v5, :cond_5
+
+    if-nez v4, :cond_4
+
+    invoke-static {v1}, Landroid/text/Selection;->getSelectionStart(Ljava/lang/CharSequence;)I
+
+    move-result v4
+
+    invoke-static {v1}, Landroid/text/Selection;->getSelectionEnd(Ljava/lang/CharSequence;)I
+
+    move-result v7
+
+    invoke-static {v4, v7}, Ljava/lang/Math;->min(II)I
+
+    move-result v8
+
+    invoke-static {v2, v8}, Ljava/lang/Math;->max(II)I
+
+    move-result v8
+
+    invoke-static {v4, v7}, Ljava/lang/Math;->max(II)I
+
+    move-result v4
+
+    invoke-static {v2, v4}, Ljava/lang/Math;->max(II)I
+
+    move-result v4
+
+    invoke-static {v1, v4}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
+
+    invoke-interface {v1, v8, v4, v5}, Landroid/text/Editable;->replace(IILjava/lang/CharSequence;)Landroid/text/Editable;
+
+    move v4, v6
+
+    goto :goto_2
+
+    :cond_4
+    invoke-static {v1}, Landroid/text/Selection;->getSelectionEnd(Ljava/lang/CharSequence;)I
+
+    move-result v6
+
+    const-string v7, "\n"
+
+    invoke-interface {v1, v6, v7}, Landroid/text/Editable;->insert(ILjava/lang/CharSequence;)Landroid/text/Editable;
+
+    invoke-static {v1}, Landroid/text/Selection;->getSelectionEnd(Ljava/lang/CharSequence;)I
+
+    move-result v6
+
+    invoke-interface {v1, v6, v5}, Landroid/text/Editable;->insert(ILjava/lang/CharSequence;)Landroid/text/Editable;
+
+    :cond_5
+    :goto_2
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_6
+    const/4 p1, 0x0
+
+    return-object p1
 .end method
