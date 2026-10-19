@@ -1,214 +1,403 @@
-.class public final Ls1/k;
+.class public final Lt5/k;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lx0/k;
+
+# static fields
+.field public static final j:Ljava/util/regex/Pattern;
+
+.field public static final k:Ljava/util/regex/Pattern;
+
+.field public static final l:Ljava/util/regex/Pattern;
+
+.field public static final m:Ljava/util/regex/Pattern;
 
 
 # instance fields
-.field public a:Ljava/lang/Object;
+.field public final a:Ljava/lang/String;
 
-.field public b:Ljava/lang/Object;
+.field public final b:Ljava/lang/String;
 
-.field public c:Ljava/lang/Object;
+.field public final c:J
+
+.field public final d:Ljava/lang/String;
+
+.field public final e:Ljava/lang/String;
+
+.field public final f:Z
+
+.field public final g:Z
+
+.field public final h:Z
+
+.field public final i:Z
 
 
 # direct methods
-.method public constructor <init>(Landroidx/lifecycle/q0;Landroidx/lifecycle/p0;Ld1/b;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "store"
+    const-string v0, "(\\d{2,4})[^\\d]*"
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    const-string v0, "factory"
+    move-result-object v0
 
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    sput-object v0, Lt5/k;->j:Ljava/util/regex/Pattern;
 
-    const-string v0, "defaultCreationExtras"
+    const-string v0, "(?i)(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec).*"
 
-    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    .line 1
+    move-result-object v0
+
+    sput-object v0, Lt5/k;->k:Ljava/util/regex/Pattern;
+
+    const-string v0, "(\\d{1,2})[^\\d]*"
+
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lt5/k;->l:Ljava/util/regex/Pattern;
+
+    const-string v0, "(\\d{1,2}):(\\d{1,2}):(\\d{1,2})[^\\d]*"
+
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lt5/k;->m:Ljava/util/regex/Pattern;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ZZZZ)V
+    .locals 0
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ls1/k;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lt5/k;->a:Ljava/lang/String;
 
-    iput-object p2, p0, Ls1/k;->b:Ljava/lang/Object;
+    iput-object p2, p0, Lt5/k;->b:Ljava/lang/String;
 
-    iput-object p3, p0, Ls1/k;->c:Ljava/lang/Object;
+    iput-wide p3, p0, Lt5/k;->c:J
 
-    return-void
-.end method
+    iput-object p5, p0, Lt5/k;->d:Ljava/lang/String;
 
-.method public constructor <init>(Landroidx/lifecycle/q0;Lt5/x;)V
-    .locals 1
+    iput-object p6, p0, Lt5/k;->e:Ljava/lang/String;
 
-    const-string v0, "store"
+    iput-boolean p7, p0, Lt5/k;->f:Z
 
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    iput-boolean p8, p0, Lt5/k;->g:Z
 
-    const-string v0, "factory"
+    iput-boolean p9, p0, Lt5/k;->h:Z
 
-    invoke-static {p2, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 2
-    sget-object v0, Ld1/a;->b:Ld1/a;
-
-    .line 3
-    invoke-direct {p0, p1, p2, v0}, Ls1/k;-><init>(Landroidx/lifecycle/q0;Landroidx/lifecycle/p0;Ld1/b;)V
+    iput-boolean p10, p0, Lt5/k;->i:Z
 
     return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Runnable;)V
-    .locals 1
-
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 5
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
-
-    iput-object v0, p0, Ls1/k;->b:Ljava/lang/Object;
-
-    .line 6
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Ls1/k;->c:Ljava/lang/Object;
-
-    iput-object p1, p0, Ls1/k;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public static c()V
-    .locals 2
-
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1d
-
-    if-ge v0, v1, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/UnsupportedClassVersionError;
-
-    const-string v1, "This function can only be used for API Level < 29."
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedClassVersionError;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Class;Ljava/lang/String;)Landroidx/lifecycle/n0;
-    .locals 5
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-object v0, p0, Ls1/k;->b:Ljava/lang/Object;
+    instance-of v0, p1, Lt5/k;
 
-    const-string v1, "key"
+    if-eqz v0, :cond_0
 
-    invoke-static {p2, v1}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+    check-cast p1, Lt5/k;
 
-    iget-object v1, p0, Ls1/k;->a:Ljava/lang/Object;
+    iget-object v0, p1, Lt5/k;->a:Ljava/lang/String;
 
-    check-cast v1, Landroidx/lifecycle/q0;
+    iget-object v1, p0, Lt5/k;->a:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v0, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object v2, v1, Landroidx/lifecycle/q0;->a:Ljava/util/LinkedHashMap;
+    move-result v0
 
-    invoke-virtual {v2, p2}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v2
+    iget-object v0, p1, Lt5/k;->b:Ljava/lang/String;
 
-    check-cast v2, Landroidx/lifecycle/n0;
+    iget-object v1, p0, Lt5/k;->b:Ljava/lang/String;
 
-    invoke-virtual {p1, v2}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_0
+    if-eqz v0, :cond_0
 
-    const-string p1, "null cannot be cast to non-null type T of androidx.lifecycle.ViewModelProvider.get"
+    iget-wide v0, p1, Lt5/k;->c:J
 
-    invoke-static {v2, p1}, Lk3/e;->j(Ljava/lang/Object;Ljava/lang/String;)V
+    iget-wide v2, p0, Lt5/k;->c:J
 
-    return-object v2
+    cmp-long v0, v0, v2
 
-    :cond_0
-    new-instance v2, Ld1/d;
+    if-nez v0, :cond_0
 
-    iget-object v3, p0, Ls1/k;->c:Ljava/lang/Object;
+    iget-object v0, p1, Lt5/k;->d:Ljava/lang/String;
 
-    check-cast v3, Ld1/b;
+    iget-object v1, p0, Lt5/k;->d:Ljava/lang/String;
 
-    invoke-direct {v2, v3}, Ld1/d;-><init>(Ld1/b;)V
+    invoke-static {v0, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    sget-object v3, Landroidx/lifecycle/o0;->b:Landroidx/lifecycle/o0;
+    move-result v0
 
-    iget-object v4, v2, Ld1/b;->a:Ljava/util/LinkedHashMap;
+    if-eqz v0, :cond_0
 
-    invoke-interface {v4, v3, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p1, Lt5/k;->e:Ljava/lang/String;
 
-    :try_start_0
-    move-object v3, v0
+    iget-object v1, p0, Lt5/k;->e:Ljava/lang/String;
 
-    check-cast v3, Landroidx/lifecycle/p0;
+    invoke-static {v0, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-interface {v3, p1, v2}, Landroidx/lifecycle/p0;->b(Ljava/lang/Class;Ld1/d;)Landroidx/lifecycle/n0;
+    move-result v0
 
-    move-result-object p1
-    :try_end_0
-    .catch Ljava/lang/AbstractMethodError; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p1, Lt5/k;->f:Z
+
+    iget-boolean v1, p0, Lt5/k;->f:Z
+
+    if-ne v0, v1, :cond_0
+
+    iget-boolean v0, p1, Lt5/k;->g:Z
+
+    iget-boolean v1, p0, Lt5/k;->g:Z
+
+    if-ne v0, v1, :cond_0
+
+    iget-boolean v0, p1, Lt5/k;->h:Z
+
+    iget-boolean v1, p0, Lt5/k;->h:Z
+
+    if-ne v0, v1, :cond_0
+
+    iget-boolean p1, p1, Lt5/k;->i:Z
+
+    iget-boolean v0, p0, Lt5/k;->i:Z
+
+    if-ne p1, v0, :cond_0
+
+    const/4 p1, 0x1
 
     goto :goto_0
 
-    :catch_0
-    check-cast v0, Landroidx/lifecycle/p0;
-
-    invoke-interface {v0, p1}, Landroidx/lifecycle/p0;->a(Ljava/lang/Class;)Landroidx/lifecycle/n0;
-
-    move-result-object p1
+    :cond_0
+    const/4 p1, 0x0
 
     :goto_0
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v0, "viewModel"
-
-    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, v1, Landroidx/lifecycle/q0;->a:Ljava/util/LinkedHashMap;
-
-    invoke-interface {v0, p2, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Landroidx/lifecycle/n0;
-
-    if-eqz p2, :cond_1
-
-    invoke-virtual {p2}, Landroidx/lifecycle/n0;->a()V
-
-    :cond_1
-    return-object p1
+    return p1
 .end method
 
-.method public final b()Ljava/lang/String;
-    .locals 1
+.method public final hashCode()I
+    .locals 4
 
-    iget-object v0, p0, Ls1/k;->c:Ljava/lang/Object;
+    iget-object v0, p0, Lt5/k;->a:Ljava/lang/String;
 
-    check-cast v0, Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    add-int/lit16 v0, v0, 0x20f
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lt5/k;->b:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-wide v2, p0, Lt5/k;->c:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lt5/k;->d:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object v0, p0, Lt5/k;->e:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Lt5/k;->f:Z
+
+    invoke-static {v1}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-boolean v0, p0, Lt5/k;->g:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Lt5/k;->h:Z
+
+    invoke-static {v1}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-boolean v0, p0, Lt5/k;->i:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Lt5/k;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x3d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lt5/k;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lt5/k;->h:Z
+
+    if-eqz v1, :cond_1
+
+    iget-wide v1, p0, Lt5/k;->c:J
+
+    const-wide/high16 v3, -0x8000000000000000L
+
+    cmp-long v3, v1, v3
+
+    if-nez v3, :cond_0
+
+    const-string v1, "; max-age=0"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    :cond_0
+    const-string v3, "; expires="
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    new-instance v3, Ljava/util/Date;
+
+    invoke-direct {v3, v1, v2}, Ljava/util/Date;-><init>(J)V
+
+    sget-object v1, Ly5/c;->a:Ly4/b;
+
+    invoke-virtual {v1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/text/DateFormat;
+
+    invoke-virtual {v1, v3}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "STANDARD_DATE_FORMAT.get().format(this)"
+
+    invoke-static {v1, v2}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_1
+    :goto_0
+    iget-boolean v1, p0, Lt5/k;->i:Z
+
+    if-nez v1, :cond_2
+
+    const-string v1, "; domain="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lt5/k;->d:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    const-string v1, "; path="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lt5/k;->e:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lt5/k;->f:Z
+
+    if-eqz v1, :cond_3
+
+    const-string v1, "; secure"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    iget-boolean v1, p0, Lt5/k;->g:Z
+
+    if-eqz v1, :cond_4
+
+    const-string v1, "; httponly"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_4
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "toString()"
+
+    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
 .end method

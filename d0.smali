@@ -1,284 +1,253 @@
-.class public final Ls1/d0;
+.class public final Lt5/d0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ls1/v0;
-.implements Lr1/s;
-
-
-# static fields
-.field public static final b:Ls1/d0;
+.implements Ljava/io/Closeable;
 
 
 # instance fields
-.field public a:Ljava/text/DecimalFormat;
+.field public final e:Lt5/a0;
+
+.field public final f:Lt5/y;
+
+.field public final g:Ljava/lang/String;
+
+.field public final h:I
+
+.field public final i:Lt5/o;
+
+.field public final j:Lt5/q;
+
+.field public final k:Ln1/n0;
+
+.field public final l:Lt5/d0;
+
+.field public final m:Lt5/d0;
+
+.field public final n:Lt5/d0;
+
+.field public final o:J
+
+.field public final p:J
+
+.field public final q:Lx5/e;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lt5/a0;Lt5/y;Ljava/lang/String;ILt5/o;Lt5/q;Ln1/n0;Lt5/d0;Lt5/d0;Lt5/d0;JJLx5/e;)V
+    .locals 0
 
-    new-instance v0, Ls1/d0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lt5/d0;->e:Lt5/a0;
 
-    sput-object v0, Ls1/d0;->b:Ls1/d0;
+    iput-object p2, p0, Lt5/d0;->f:Lt5/y;
+
+    iput-object p3, p0, Lt5/d0;->g:Ljava/lang/String;
+
+    iput p4, p0, Lt5/d0;->h:I
+
+    iput-object p5, p0, Lt5/d0;->i:Lt5/o;
+
+    iput-object p6, p0, Lt5/d0;->j:Lt5/q;
+
+    iput-object p7, p0, Lt5/d0;->k:Ln1/n0;
+
+    iput-object p8, p0, Lt5/d0;->l:Lt5/d0;
+
+    iput-object p9, p0, Lt5/d0;->m:Lt5/d0;
+
+    iput-object p10, p0, Lt5/d0;->n:Lt5/d0;
+
+    iput-wide p11, p0, Lt5/d0;->o:J
+
+    iput-wide p13, p0, Lt5/d0;->p:J
+
+    iput-object p15, p0, Lt5/d0;->q:Lx5/e;
 
     return-void
 .end method
 
-.method public static e(Lq1/b;)Ljava/lang/Float;
-    .locals 5
+.method public static a(Lt5/d0;Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
 
-    iget-object v0, p0, Lq1/b;->j:Lq1/d;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-object v1, v0
+    iget-object p0, p0, Lt5/d0;->j:Lt5/q;
 
-    check-cast v1, Lq1/e;
-
-    iget v2, v1, Lq1/e;->e:I
-
-    const/4 v3, 0x2
-
-    const/16 v4, 0x10
-
-    if-ne v2, v3, :cond_0
-
-    check-cast v0, Lq1/g;
-
-    invoke-virtual {v0}, Lq1/g;->T()Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lt5/q;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {v1, v4}, Lq1/e;->O(I)V
+    if-nez p0, :cond_0
 
-    invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
-
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p0
-
-    return-object p0
+    const/4 p0, 0x0
 
     :cond_0
-    const/4 v0, 0x3
-
-    if-ne v2, v0, :cond_1
-
-    invoke-virtual {v1}, Lq1/e;->g()F
-
-    move-result p0
-
-    invoke-virtual {v1, v4}, Lq1/e;->O(I)V
-
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lq1/b;->C(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-nez p0, :cond_2
-
-    return-object v0
-
-    :cond_2
-    invoke-static {p0}, Lv1/r;->l(Ljava/lang/Object;)Ljava/lang/Float;
-
-    move-result-object p0
-
     return-object p0
 .end method
 
 
 # virtual methods
-.method public final b(Ls1/k0;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/reflect/Type;I)V
-    .locals 1
+.method public final b()Z
+    .locals 3
 
-    iget-object p1, p1, Ls1/k0;->j:Ls1/f1;
+    const/16 v0, 0xc8
 
-    if-nez p2, :cond_0
+    const/4 v1, 0x0
 
-    sget-object p2, Ls1/g1;->n:Ls1/g1;
+    iget v2, p0, Lt5/d0;->h:I
 
-    invoke-virtual {p1, p2}, Ls1/f1;->R(Ls1/g1;)V
+    if-gt v0, v2, :cond_0
+
+    const/16 v0, 0x12c
+
+    if-ge v2, v0, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    return v1
+.end method
+
+.method public final c()Lt5/c0;
+    .locals 3
+
+    new-instance v0, Lt5/c0;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iget-object v1, p0, Lt5/d0;->e:Lt5/a0;
+
+    iput-object v1, v0, Lt5/c0;->a:Lt5/a0;
+
+    iget-object v1, p0, Lt5/d0;->f:Lt5/y;
+
+    iput-object v1, v0, Lt5/c0;->b:Lt5/y;
+
+    iget v1, p0, Lt5/d0;->h:I
+
+    iput v1, v0, Lt5/c0;->c:I
+
+    iget-object v1, p0, Lt5/d0;->g:Ljava/lang/String;
+
+    iput-object v1, v0, Lt5/c0;->d:Ljava/lang/String;
+
+    iget-object v1, p0, Lt5/d0;->i:Lt5/o;
+
+    iput-object v1, v0, Lt5/c0;->e:Lt5/o;
+
+    iget-object v1, p0, Lt5/d0;->j:Lt5/q;
+
+    invoke-virtual {v1}, Lt5/q;->c()Lt5/p;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lt5/c0;->f:Lt5/p;
+
+    iget-object v1, p0, Lt5/d0;->k:Ln1/n0;
+
+    iput-object v1, v0, Lt5/c0;->g:Ln1/n0;
+
+    iget-object v1, p0, Lt5/d0;->l:Lt5/d0;
+
+    iput-object v1, v0, Lt5/c0;->h:Lt5/d0;
+
+    iget-object v1, p0, Lt5/d0;->m:Lt5/d0;
+
+    iput-object v1, v0, Lt5/c0;->i:Lt5/d0;
+
+    iget-object v1, p0, Lt5/d0;->n:Lt5/d0;
+
+    iput-object v1, v0, Lt5/c0;->j:Lt5/d0;
+
+    iget-wide v1, p0, Lt5/d0;->o:J
+
+    iput-wide v1, v0, Lt5/c0;->k:J
+
+    iget-wide v1, p0, Lt5/d0;->p:J
+
+    iput-wide v1, v0, Lt5/c0;->l:J
+
+    iget-object v1, p0, Lt5/d0;->q:Lx5/e;
+
+    iput-object v1, v0, Lt5/c0;->m:Lx5/e;
+
+    return-object v0
+.end method
+
+.method public final close()V
+    .locals 2
+
+    iget-object v0, p0, Lt5/d0;->k:Ln1/n0;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ln1/n0;->close()V
 
     return-void
 
     :cond_0
-    check-cast p2, Ljava/lang/Float;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+    const-string v1, "response is not eligible for a body and must not be closed"
 
-    move-result p2
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    iget-object p3, p0, Ls1/d0;->a:Ljava/text/DecimalFormat;
+    move-result-object v1
 
-    if-eqz p3, :cond_1
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    float-to-double p4, p2
-
-    invoke-virtual {p3, p4, p5}, Ljava/text/NumberFormat;->format(D)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Ls1/f1;->write(Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :cond_1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    cmpl-float p3, p2, p2
-
-    if-nez p3, :cond_5
-
-    const/high16 p3, 0x7f800000    # Float.POSITIVE_INFINITY
-
-    cmpl-float p3, p2, p3
-
-    if-eqz p3, :cond_5
-
-    const/high16 p3, -0x800000    # Float.NEGATIVE_INFINITY
-
-    cmpl-float p3, p2, p3
-
-    if-nez p3, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    iget p3, p1, Ls1/f1;->f:I
-
-    const/16 p4, 0xf
-
-    add-int/2addr p3, p4
-
-    iget-object p5, p1, Ls1/f1;->e:[C
-
-    array-length p5, p5
-
-    const/16 v0, 0x46
-
-    if-le p3, p5, :cond_4
-
-    iget-object p5, p1, Ls1/f1;->h:Ljava/io/Writer;
-
-    if-nez p5, :cond_3
-
-    invoke-virtual {p1, p3}, Ls1/f1;->g(I)V
-
-    goto :goto_0
-
-    :cond_3
-    new-array p3, p4, [C
-
-    const/4 p4, 0x0
-
-    invoke-static {p2, p3, p4}, Lv1/n;->a(F[CI)I
-
-    move-result p2
-
-    new-instance p5, Ljava/lang/String;
-
-    invoke-direct {p5, p3, p4, p2}, Ljava/lang/String;-><init>([CII)V
-
-    invoke-virtual {p5}, Ljava/lang/String;->length()I
-
-    move-result p2
-
-    invoke-virtual {p1, p5, p4, p2}, Ls1/f1;->write(Ljava/lang/String;II)V
-
-    sget-object p2, Ls1/g1;->s:Ls1/g1;
-
-    invoke-virtual {p1, p2}, Ls1/f1;->m(Ls1/g1;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_6
-
-    invoke-virtual {p1, v0}, Ls1/f1;->write(I)V
-
-    goto :goto_2
-
-    :cond_4
-    :goto_0
-    iget-object p3, p1, Ls1/f1;->e:[C
-
-    iget p4, p1, Ls1/f1;->f:I
-
-    invoke-static {p2, p3, p4}, Lv1/n;->a(F[CI)I
-
-    move-result p2
-
-    iget p3, p1, Ls1/f1;->f:I
-
-    add-int/2addr p3, p2
-
-    iput p3, p1, Ls1/f1;->f:I
-
-    sget-object p2, Ls1/g1;->s:Ls1/g1;
-
-    invoke-virtual {p1, p2}, Ls1/f1;->m(Ls1/g1;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_6
-
-    invoke-virtual {p1, v0}, Ls1/f1;->write(I)V
-
-    goto :goto_2
-
-    :cond_5
-    :goto_1
-    invoke-virtual {p1}, Ls1/f1;->L()V
-
-    :cond_6
-    :goto_2
-    return-void
+    throw v0
 .end method
 
-.method public final c(Lq1/b;Ljava/lang/reflect/Type;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    :try_start_0
-    invoke-static {p1}, Ls1/d0;->e(Lq1/b;)Ljava/lang/Float;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object p1
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    const-string v1, "Response{protocol="
 
-    return-object p1
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    :catch_0
-    move-exception p1
+    iget-object v1, p0, Lt5/d0;->f:Lt5/y;
 
-    new-instance p2, Ln1/d;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v0, "parseLong error, field : "
+    const-string v1, ", code="
 
-    invoke-static {v0, p3}, Landroidx/fragment/app/u;->l(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p3
+    iget v1, p0, Lt5/d0;->h:I
 
-    invoke-direct {p2, p3, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    throw p2
-.end method
+    const-string v1, ", message="
 
-.method public final d()I
-    .locals 1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v0, 0x2
+    iget-object v1, p0, Lt5/d0;->g:Ljava/lang/String;
 
-    return v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", url="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lt5/d0;->e:Lt5/a0;
+
+    iget-object v1, v1, Lt5/a0;->a:Lt5/s;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x7d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,139 +1,53 @@
-.class public final Ls1/e0;
-.super Ljava/lang/Object;
+.class public final Lt5/e0;
+.super Ln1/n0;
 .source "SourceFile"
 
-# interfaces
-.implements Ls1/v0;
-.implements Lr1/s;
 
+# instance fields
+.field public final synthetic e:I
 
-# static fields
-.field public static final a:Ls1/e0;
+.field public final f:J
+
+.field public final g:Lg6/i;
+
+.field public final h:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(JLt5/u;Lg6/g;)V
     .locals 1
 
-    new-instance v0, Ls1/e0;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Ls1/e0;->a:Ls1/e0;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b(Ls1/k0;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/reflect/Type;I)V
-    .locals 0
-
-    iget-object p3, p1, Ls1/k0;->j:Ls1/f1;
-
-    instance-of p3, p2, Lcom/google/common/collect/Multimap;
-
-    if-eqz p3, :cond_0
-
-    check-cast p2, Lcom/google/common/collect/Multimap;
-
-    invoke-interface {p2}, Lcom/google/common/collect/Multimap;->asMap()Ljava/util/Map;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Ls1/k0;->o(Ljava/lang/Object;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final c(Lq1/b;Ljava/lang/reflect/Type;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    instance-of p3, p2, Ljava/lang/reflect/ParameterizedType;
-
-    if-eqz p3, :cond_0
-
-    check-cast p2, Ljava/lang/reflect/ParameterizedType;
-
-    invoke-interface {p2}, Ljava/lang/reflect/ParameterizedType;->getRawType()Ljava/lang/reflect/Type;
-
-    move-result-object p2
-
-    :cond_0
-    const-class p3, Lcom/google/common/collect/ArrayListMultimap;
-
-    if-ne p2, p3, :cond_3
-
-    invoke-static {}, Lcom/google/common/collect/ArrayListMultimap;->create()Lcom/google/common/collect/ArrayListMultimap;
-
-    move-result-object p2
-
-    invoke-virtual {p1}, Lq1/b;->L()Ln1/e;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ln1/e;->entrySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p3
-
-    if-eqz p3, :cond_2
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Ljava/util/Map$Entry;
-
-    invoke-interface {p3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    instance-of v1, v0, Ljava/util/Collection;
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {p3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast v0, Ljava/util/List;
-
-    invoke-virtual {p2, p3, v0}, Lcom/google/common/collect/ArrayListMultimap;->putAll(Ljava/lang/Object;Ljava/lang/Iterable;)Z
-
-    goto :goto_0
-
-    :cond_1
-    invoke-interface {p3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object p3
-
-    invoke-virtual {p2, p3, v0}, Lcom/google/common/collect/ArrayListMultimap;->put(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_2
-    return-object p2
-
-    :cond_3
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public final d()I
-    .locals 1
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    return v0
+    iput v0, p0, Lt5/e0;->e:I
+
+    iput-object p3, p0, Lt5/e0;->h:Ljava/lang/Object;
+
+    iput-wide p1, p0, Lt5/e0;->f:J
+
+    iput-object p4, p0, Lt5/e0;->g:Lg6/i;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;JLg6/q;)V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lt5/e0;->e:I
+
+    iput-object p1, p0, Lt5/e0;->h:Ljava/lang/Object;
+
+    iput-wide p2, p0, Lt5/e0;->f:J
+
+    iput-object p4, p0, Lt5/e0;->g:Lg6/i;
+
+    return-void
 .end method

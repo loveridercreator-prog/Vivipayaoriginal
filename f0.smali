@@ -1,254 +1,145 @@
-.class public final Ls1/f0;
+.class public final Lt5/f0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ls1/v0;
-.implements Lr1/s;
 
+# instance fields
+.field public final a:Lt5/a;
 
-# static fields
-.field public static final a:Ls1/f0;
+.field public final b:Ljava/net/Proxy;
+
+.field public final c:Ljava/net/InetSocketAddress;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lt5/a;Ljava/net/Proxy;Ljava/net/InetSocketAddress;)V
     .locals 1
 
-    new-instance v0, Ls1/f0;
+    const-string v0, "address"
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sput-object v0, Ls1/f0;->a:Ls1/f0;
+    const-string v0, "socketAddress"
+
+    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lt5/f0;->a:Lt5/a;
+
+    iput-object p2, p0, Lt5/f0;->b:Ljava/net/Proxy;
+
+    iput-object p3, p0, Lt5/f0;->c:Ljava/net/InetSocketAddress;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ls1/k0;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/reflect/Type;I)V
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    iget-object p1, p1, Ls1/k0;->j:Ls1/f1;
+    instance-of v0, p1, Lt5/f0;
 
-    move-object p3, p2
+    if-eqz v0, :cond_0
 
-    check-cast p3, Ljava/lang/Number;
+    check-cast p1, Lt5/f0;
 
-    if-nez p3, :cond_0
+    iget-object v0, p1, Lt5/f0;->a:Lt5/a;
 
-    sget-object p2, Ls1/g1;->n:Ls1/g1;
+    iget-object v1, p0, Lt5/f0;->a:Lt5/a;
 
-    invoke-virtual {p1, p2}, Ls1/f1;->R(Ls1/g1;)V
+    invoke-static {v0, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    return-void
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p1, Lt5/f0;->b:Ljava/net/Proxy;
+
+    iget-object v1, p0, Lt5/f0;->b:Ljava/net/Proxy;
+
+    invoke-static {v0, v1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object p1, p1, Lt5/f0;->c:Ljava/net/InetSocketAddress;
+
+    iget-object v0, p0, Lt5/f0;->c:Ljava/net/InetSocketAddress;
+
+    invoke-static {p1, v0}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
 
     :cond_0
-    instance-of p2, p2, Ljava/lang/Long;
-
-    if-eqz p2, :cond_1
-
-    invoke-virtual {p3}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide p4
-
-    invoke-virtual {p1, p4, p5}, Ls1/f1;->K(J)V
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p3}, Ljava/lang/Number;->intValue()I
-
-    move-result p2
-
-    invoke-virtual {p1, p2}, Ls1/f1;->J(I)V
+    const/4 p1, 0x0
 
     :goto_0
-    sget-object p2, Ls1/g1;->s:Ls1/g1;
-
-    invoke-virtual {p1, p2}, Ls1/f1;->m(Ls1/g1;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_3
-
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p2
-
-    const-class p3, Ljava/lang/Byte;
-
-    if-ne p2, p3, :cond_2
-
-    const/16 p2, 0x42
-
-    invoke-virtual {p1, p2}, Ls1/f1;->write(I)V
-
-    goto :goto_1
-
-    :cond_2
-    const-class p3, Ljava/lang/Short;
-
-    if-ne p2, p3, :cond_3
-
-    const/16 p2, 0x53
-
-    invoke-virtual {p1, p2}, Ls1/f1;->write(I)V
-
-    :cond_3
-    :goto_1
-    return-void
+    return p1
 .end method
 
-.method public final c(Lq1/b;Ljava/lang/reflect/Type;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final hashCode()I
+    .locals 2
 
-    iget-object v0, p1, Lq1/b;->j:Lq1/d;
+    iget-object v0, p0, Lt5/f0;->a:Lt5/a;
 
-    move-object v1, v0
+    invoke-virtual {v0}, Lt5/a;->hashCode()I
 
-    check-cast v1, Lq1/e;
+    move-result v0
 
-    iget v2, v1, Lq1/e;->e:I
+    add-int/lit16 v0, v0, 0x20f
 
-    const/4 v3, 0x0
+    mul-int/lit8 v0, v0, 0x1f
 
-    const/16 v4, 0x8
+    iget-object v1, p0, Lt5/f0;->b:Ljava/net/Proxy;
 
-    const/16 v5, 0x10
+    invoke-virtual {v1}, Ljava/net/Proxy;->hashCode()I
 
-    if-ne v2, v4, :cond_0
+    move-result v1
 
-    invoke-virtual {v1, v5}, Lq1/e;->O(I)V
+    add-int/2addr v1, v0
 
-    return-object v3
+    mul-int/lit8 v1, v1, 0x1f
 
-    :cond_0
-    const/4 v1, 0x2
+    iget-object v0, p0, Lt5/f0;->c:Ljava/net/InetSocketAddress;
 
-    if-ne v2, v1, :cond_1
+    invoke-virtual {v0}, Ljava/net/InetSocketAddress;->hashCode()I
 
-    :try_start_0
-    check-cast v0, Lq1/e;
+    move-result v0
 
-    invoke-virtual {v0}, Lq1/e;->w()I
-
-    move-result p1
-
-    invoke-virtual {v0, v5}, Lq1/e;->O(I)V
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v1, 0x3
-
-    if-ne v2, v1, :cond_2
-
-    move-object p1, v0
-
-    check-cast p1, Lq1/g;
-
-    invoke-virtual {p1}, Lq1/g;->c()Ljava/math/BigDecimal;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lv1/r;->Q(Ljava/math/BigDecimal;)I
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    check-cast v0, Lq1/e;
-
-    invoke-virtual {v0, v5}, Lq1/e;->O(I)V
-
-    goto :goto_0
-
-    :cond_2
-    const/16 v0, 0xc
-
-    if-ne v2, v0, :cond_3
-
-    new-instance v0, Ln1/e;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ln1/e;-><init>(Z)V
-
-    invoke-virtual {p1, v0, v3}, Lq1/b;->K(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {v0}, Lv1/r;->m(Ljava/lang/Object;)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {p1, v3}, Lq1/b;->C(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lv1/r;->m(Ljava/lang/Object;)Ljava/lang/Integer;
-
-    move-result-object p1
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_0
-    const-class p3, Ljava/util/concurrent/atomic/AtomicInteger;
-
-    if-ne p2, p3, :cond_4
-
-    new-instance p2, Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    invoke-direct {p2, p1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
-
-    return-object p2
-
-    :cond_4
-    return-object p1
-
-    :goto_1
-    if-eqz p3, :cond_5
-
-    const-string p2, "parseInt error, field : "
-
-    invoke-static {p2, p3}, Landroidx/fragment/app/u;->l(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    goto :goto_2
-
-    :cond_5
-    const-string p2, "parseInt error"
-
-    :goto_2
-    new-instance p3, Ln1/d;
-
-    invoke-direct {p3, p2, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p3
-.end method
-
-.method public final d()I
-    .locals 1
-
-    const/4 v0, 0x2
+    add-int/2addr v0, v1
 
     return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Route{"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lt5/f0;->c:Ljava/net/InetSocketAddress;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x7d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
