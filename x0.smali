@@ -1,50 +1,34 @@
-.class public final Lf5/x0;
+.class public abstract Li/x0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lf5/y0;
-
-
-# instance fields
-.field public final e:Lf5/n1;
-
 
 # direct methods
-.method public constructor <init>(Lf5/n1;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lf5/x0;->e:Lf5/n1;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final c()Z
+.method public static a(Landroid/widget/TextView;)Landroid/view/textclassifier/TextClassifier;
     .locals 1
 
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    return v0
-.end method
+    move-result-object p0
 
-.method public final d()Lf5/n1;
-    .locals 1
+    const-class v0, Landroid/view/textclassifier/TextClassificationManager;
 
-    iget-object v0, p0, Lf5/x0;->e:Lf5/n1;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
-    return-object v0
-.end method
+    move-result-object p0
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    check-cast p0, Landroid/view/textclassifier/TextClassificationManager;
 
-    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    if-eqz p0, :cond_0
 
-    move-result-object v0
+    invoke-virtual {p0}, Landroid/view/textclassifier/TextClassificationManager;->getTextClassifier()Landroid/view/textclassifier/TextClassifier;
 
-    return-object v0
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    sget-object p0, Landroid/view/textclassifier/TextClassifier;->NO_OP:Landroid/view/textclassifier/TextClassifier;
+
+    return-object p0
 .end method

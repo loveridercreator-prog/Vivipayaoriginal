@@ -1,183 +1,49 @@
-.class public final Li/d0;
-.super Ljava/lang/Object;
+.class public final Li5/d0;
+.super Lr4/c;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Landroid/widget/ImageView;
+.field public synthetic e:Ljava/lang/Object;
 
-.field public b:Li/n3;
+.field public final synthetic f:Li5/b0;
 
-.field public c:I
+.field public g:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/ImageView;)V
-    .locals 1
+.method public constructor <init>(Li5/b0;Lp4/e;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Li5/d0;->f:Li5/b0;
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Li/d0;->c:I
-
-    iput-object p1, p0, Li/d0;->a:Landroid/widget/ImageView;
+    invoke-direct {p0, p2}, Lr4/c;-><init>(Lp4/e;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Li/d0;->a:Landroid/widget/ImageView;
+    iput-object p1, p0, Li5/d0;->e:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+    iget p1, p0, Li5/d0;->g:I
 
-    move-result-object v1
+    const/high16 v0, -0x80000000
 
-    if-eqz v1, :cond_0
+    or-int/2addr p1, v0
 
-    invoke-static {v1}, Li/s1;->a(Landroid/graphics/drawable/Drawable;)V
+    iput p1, p0, Li5/d0;->g:I
 
-    :cond_0
-    if-eqz v1, :cond_1
+    iget-object p1, p0, Li5/d0;->f:Li5/b0;
 
-    iget-object v2, p0, Li/d0;->b:Li/n3;
+    const/4 v0, 0x0
 
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v0}, Landroid/view/View;->getDrawableState()[I
-
-    move-result-object v0
-
-    invoke-static {v1, v2, v0}, Li/x;->d(Landroid/graphics/drawable/Drawable;Li/n3;[I)V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final b(Landroid/util/AttributeSet;I)V
-    .locals 8
-
-    iget-object v6, p0, Li/d0;->a:Landroid/widget/ImageView;
-
-    invoke-virtual {v6}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    sget-object v2, Ld/a;->f:[I
-
-    invoke-static {v0, p1, v2, p2}, Lc3/d;->w(Landroid/content/Context;Landroid/util/AttributeSet;[II)Lc3/d;
-
-    move-result-object v7
-
-    invoke-virtual {v6}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    iget-object v0, v7, Lc3/d;->f:Ljava/lang/Object;
-
-    move-object v4, v0
-
-    check-cast v4, Landroid/content/res/TypedArray;
-
-    move-object v0, v6
-
-    move-object v3, p1
-
-    move v5, p2
-
-    invoke-static/range {v0 .. v5}, Lu0/n0;->g(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;I)V
-
-    :try_start_0
-    invoke-virtual {v6}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, v0, p0}, Li5/b0;->a(ILp4/e;)Ljava/lang/Object;
 
     move-result-object p1
 
-    const/4 p2, -0x1
-
-    if-nez p1, :cond_0
-
-    const/4 v0, 0x1
-
-    invoke-virtual {v7, v0, p2}, Lc3/d;->r(II)I
-
-    move-result v0
-
-    if-eq v0, p2, :cond_0
-
-    invoke-virtual {v6}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    invoke-static {p1, v0}, Ls1/o0;->f(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {v6, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    if-eqz p1, :cond_1
-
-    invoke-static {p1}, Li/s1;->a(Landroid/graphics/drawable/Drawable;)V
-
-    :cond_1
-    const/4 p1, 0x2
-
-    invoke-virtual {v7, p1}, Lc3/d;->v(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v7, p1}, Lc3/d;->e(I)Landroid/content/res/ColorStateList;
-
-    move-result-object p1
-
-    invoke-static {v6, p1}, Lx0/f;->c(Landroid/widget/ImageView;Landroid/content/res/ColorStateList;)V
-
-    :cond_2
-    const/4 p1, 0x3
-
-    invoke-virtual {v7, p1}, Lc3/d;->v(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v7, p1, p2}, Lc3/d;->o(II)I
-
-    move-result p1
-
-    const/4 p2, 0x0
-
-    invoke-static {p1, p2}, Li/s1;->b(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
-
-    move-result-object p1
-
-    invoke-static {v6, p1}, Lx0/f;->d(Landroid/widget/ImageView;Landroid/graphics/PorterDuff$Mode;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_3
-    invoke-virtual {v7}, Lc3/d;->x()V
-
-    return-void
-
-    :goto_1
-    invoke-virtual {v7}, Lc3/d;->x()V
-
-    throw p1
+    return-object p1
 .end method

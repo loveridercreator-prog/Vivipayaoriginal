@@ -1,79 +1,65 @@
-.class public final Li/a;
+.class public final Li0/a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lu0/v0;
+
+# static fields
+.field public static final c:Li0/a;
+
+.field public static final d:Li0/a;
 
 
 # instance fields
-.field public a:Z
+.field public final a:Z
 
-.field public b:I
-
-.field public final synthetic c:Landroidx/appcompat/widget/ActionBarContextView;
+.field public final b:Ljava/lang/Throwable;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/appcompat/widget/ActionBarContextView;)V
+.method static constructor <clinit>()V
+    .locals 3
+
+    sget-boolean v0, Li0/h;->h:Z
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    sput-object v1, Li0/a;->d:Li0/a;
+
+    sput-object v1, Li0/a;->c:Li0/a;
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Li0/a;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Li0/a;-><init>(Ljava/lang/Throwable;Z)V
+
+    sput-object v0, Li0/a;->d:Li0/a;
+
+    new-instance v0, Li0/a;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v0, v1, v2}, Li0/a;-><init>(Ljava/lang/Throwable;Z)V
+
+    sput-object v0, Li0/a;->c:Li0/a;
+
+    :goto_0
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/Throwable;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Li/a;->c:Landroidx/appcompat/widget/ActionBarContextView;
+    iput-boolean p2, p0, Li0/a;->a:Z
 
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Li/a;->a:Z
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
-    .locals 2
-
-    iget-boolean v0, p0, Li/a;->a:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Li/a;->c:Landroidx/appcompat/widget/ActionBarContextView;
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Landroidx/appcompat/widget/ActionBarContextView;->j:Lu0/u0;
-
-    iget v1, p0, Li/a;->b:I
-
-    invoke-static {v0, v1}, Landroidx/appcompat/widget/ActionBarContextView;->b(Landroidx/appcompat/widget/ActionBarContextView;I)V
-
-    return-void
-.end method
-
-.method public final b(Landroid/view/View;)V
-    .locals 0
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Li/a;->a:Z
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 1
-
-    iget-object v0, p0, Li/a;->c:Landroidx/appcompat/widget/ActionBarContextView;
-
-    invoke-static {v0}, Landroidx/appcompat/widget/ActionBarContextView;->a(Landroidx/appcompat/widget/ActionBarContextView;)V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Li/a;->a:Z
+    iput-object p1, p0, Li0/a;->b:Ljava/lang/Throwable;
 
     return-void
 .end method

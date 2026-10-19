@@ -1,100 +1,146 @@
-.class public final Li/e;
-.super Ljava/lang/Object;
+.class public final Li0/e;
+.super Ls1/p;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic e:I
+.field public final e:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-.field public final synthetic f:Landroidx/appcompat/widget/ActionBarOverlayLayout;
+.field public final f:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+.field public final g:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+.field public final h:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+.field public final i:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/appcompat/widget/ActionBarOverlayLayout;I)V
+.method public constructor <init>(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Li/e;->e:I
+    iput-object p1, p0, Li0/e;->e:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    iput-object p1, p0, Li/e;->f:Landroidx/appcompat/widget/ActionBarOverlayLayout;
+    iput-object p2, p0, Li0/e;->f:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    iput-object p3, p0, Li0/e;->g:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    iput-object p4, p0, Li0/e;->h:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    iput-object p5, p0, Li0/e;->i:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final a(Li0/h;Li0/d;)Z
     .locals 3
 
-    iget v0, p0, Li/e;->e:I
+    sget-object v0, Li0/d;->b:Li0/d;
 
-    iget-object v1, p0, Li/e;->f:Landroidx/appcompat/widget/ActionBarOverlayLayout;
+    :cond_0
+    iget-object v1, p0, Li0/e;->h:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {v1}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->h()V
-
-    iget-object v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->h:Landroidx/appcompat/widget/ActionBarContainer;
-
-    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->h:Landroidx/appcompat/widget/ActionBarContainer;
-
-    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
+    invoke-virtual {v1, p1, p2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
-    neg-int v2, v2
+    if-eqz v2, :cond_1
 
-    int-to-float v2, v2
+    const/4 p1, 0x1
 
-    invoke-virtual {v0, v2}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v1, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-eq v1, p2, :cond_0
+
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public final b(Li0/h;Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 2
+
+    :cond_0
+    iget-object v0, p0, Li0/e;->i:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {v0, p1, p2, p3}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->B:Li/d;
+    if-eq v0, p2, :cond_0
 
-    invoke-virtual {v0, v2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public final c(Li0/h;Li0/g;Li0/g;)Z
+    .locals 2
+
+    :cond_0
+    iget-object v0, p0, Li0/e;->g:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {v0, p1, p2, p3}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->A:Landroid/view/ViewPropertyAnimator;
+    if-eq v0, p2, :cond_0
+
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public final f(Li0/g;Li0/g;)V
+    .locals 1
+
+    iget-object v0, p0, Li0/e;->f:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->lazySet(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
+.end method
 
-    :pswitch_0
-    invoke-virtual {v1}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->h()V
+.method public final g(Li0/g;Ljava/lang/Thread;)V
+    .locals 1
 
-    iget-object v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->h:Landroidx/appcompat/widget/ActionBarContainer;
+    iget-object v0, p0, Li0/e;->e:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
-    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v2, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->B:Li/d;
-
-    invoke-virtual {v0, v2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iput-object v0, v1, Landroidx/appcompat/widget/ActionBarOverlayLayout;->A:Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->lazySet(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

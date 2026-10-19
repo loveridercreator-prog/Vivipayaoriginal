@@ -1,19 +1,31 @@
-.class public final Lf5/z0;
+.class public abstract Li/z0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lf5/y0;
-
-
 # direct methods
-.method public constructor <init>(Lf5/y0;)V
+.method public static a(Landroid/widget/TextView;)[Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p0}, Landroid/widget/TextView;->getCompoundDrawablesRelative()[Landroid/graphics/drawable/Drawable;
 
-    iput-object p1, p0, Lf5/z0;->a:Lf5/y0;
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static b(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+.end method
+
+.method public static c(Landroid/widget/TextView;Ljava/util/Locale;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextLocale(Ljava/util/Locale;)V
 
     return-void
 .end method
