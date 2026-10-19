@@ -1,140 +1,254 @@
-.class public final Lb1/d;
-.super Landroid/view/inputmethod/InputConnectionWrapper;
+.class public final Lb6/d;
+.super Lb6/l;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Landroid/widget/TextView;
+# static fields
+.field public static final d:Lt5/x;
 
-.field public final b:Lx1/h;
+.field public static final e:Z
+
+
+# instance fields
+.field public final c:Ljava/security/Provider;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/EditText;Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 3
 
-    new-instance v0, Lx1/h;
+    new-instance v0, Lt5/x;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/16 v1, 0x19
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-direct {p0, p2, v1}, Landroid/view/inputmethod/InputConnectionWrapper;-><init>(Landroid/view/inputmethod/InputConnection;Z)V
+    invoke-direct {v0, v1, v2}, Lt5/x;-><init>(II)V
 
-    iput-object p1, p0, Lb1/d;->a:Landroid/widget/TextView;
+    sput-object v0, Lb6/d;->d:Lt5/x;
 
-    iput-object v0, p0, Lb1/d;->b:Lx1/h;
+    :try_start_0
+    const-string v0, "org.bouncycastle.jsse.provider.BouncyCastleJsseProvider"
 
-    sget-object p1, Landroidx/emoji2/text/m;->j:Landroidx/emoji2/text/m;
+    const-class v1, Lt5/x;
 
-    if-eqz p1, :cond_2
+    invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    invoke-static {}, Landroidx/emoji2/text/m;->a()Landroidx/emoji2/text/m;
+    move-result-object v1
 
-    move-result-object p1
+    invoke-static {v0, v2, v1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {p1}, Landroidx/emoji2/text/m;->b()I
+    const/4 v2, 0x1
 
-    move-result p2
+    :catch_0
+    sput-boolean v2, Lb6/d;->e:Z
 
-    const/4 v0, 0x1
+    return-void
+.end method
 
-    if-ne p2, v0, :cond_2
+.method public constructor <init>()V
+    .locals 1
 
-    if-nez p3, :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    goto :goto_0
+    new-instance v0, Lorg/bouncycastle/jsse/provider/BouncyCastleJsseProvider;
 
-    :cond_0
-    iget-object p2, p3, Landroid/view/inputmethod/EditorInfo;->extras:Landroid/os/Bundle;
+    invoke-direct {v0}, Lorg/bouncycastle/jsse/provider/BouncyCastleJsseProvider;-><init>()V
 
-    if-nez p2, :cond_1
+    check-cast v0, Ljava/security/Provider;
 
-    new-instance p2, Landroid/os/Bundle;
+    iput-object v0, p0, Lb6/d;->c:Ljava/security/Provider;
 
-    invoke-direct {p2}, Landroid/os/Bundle;-><init>()V
-
-    iput-object p2, p3, Landroid/view/inputmethod/EditorInfo;->extras:Landroid/os/Bundle;
-
-    :cond_1
-    iget-object p1, p1, Landroidx/emoji2/text/m;->e:Landroidx/emoji2/text/h;
-
-    invoke-virtual {p1, p3}, Landroidx/emoji2/text/h;->w(Landroid/view/inputmethod/EditorInfo;)V
-
-    :cond_2
-    :goto_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final deleteSurroundingText(II)Z
-    .locals 2
+.method public final d(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
+    .locals 1
 
-    iget-object v0, p0, Lb1/d;->a:Landroid/widget/TextView;
+    const-string v0, "protocols"
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->getEditableText()Landroid/text/Editable;
+    invoke-static {p3, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object v0
+    instance-of v0, p1, Lorg/bouncycastle/jsse/BCSSLSocket;
 
-    iget-object v1, p0, Lb1/d;->b:Lx1/h;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p1, Lorg/bouncycastle/jsse/BCSSLSocket;
 
-    const/4 v1, 0x0
+    invoke-interface {p1}, Lorg/bouncycastle/jsse/BCSSLSocket;->getParameters()Lorg/bouncycastle/jsse/BCSSLParameters;
 
-    invoke-static {p0, v0, p1, p2, v1}, Lx1/h;->p(Landroid/view/inputmethod/InputConnection;Landroid/text/Editable;IIZ)Z
+    move-result-object p2
 
-    move-result v0
+    invoke-static {p3}, Lt5/x;->d(Ljava/util/List;)Ljava/util/ArrayList;
 
-    if-nez v0, :cond_0
+    move-result-object p3
 
-    invoke-super {p0, p1, p2}, Landroid/view/inputmethod/InputConnectionWrapper;->deleteSurroundingText(II)Z
+    const/4 v0, 0x0
 
-    move-result p1
+    new-array v0, v0, [Ljava/lang/String;
 
-    if-eqz p1, :cond_1
+    invoke-virtual {p3, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    :cond_0
-    const/4 v1, 0x1
+    move-result-object p3
 
-    :cond_1
-    return v1
-.end method
+    if-eqz p3, :cond_0
 
-.method public final deleteSurroundingTextInCodePoints(II)Z
-    .locals 2
+    check-cast p3, [Ljava/lang/String;
 
-    iget-object v0, p0, Lb1/d;->a:Landroid/widget/TextView;
+    invoke-virtual {p2, p3}, Lorg/bouncycastle/jsse/BCSSLParameters;->setApplicationProtocols([Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->getEditableText()Landroid/text/Editable;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lb1/d;->b:Lx1/h;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v1, 0x1
-
-    invoke-static {p0, v0, p1, p2, v1}, Lx1/h;->p(Landroid/view/inputmethod/InputConnection;Landroid/text/Editable;IIZ)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    invoke-super {p0, p1, p2}, Landroid/view/inputmethod/InputConnectionWrapper;->deleteSurroundingTextInCodePoints(II)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
+    invoke-interface {p1, p2}, Lorg/bouncycastle/jsse/BCSSLSocket;->setParameters(Lorg/bouncycastle/jsse/BCSSLParameters;)V
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 
     :cond_1
+    invoke-super {p0, p1, p2, p3}, Lb6/l;->d(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
+
     :goto_0
-    return v1
+    return-void
+.end method
+
+.method public final f(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
+    .locals 2
+
+    instance-of v0, p1, Lorg/bouncycastle/jsse/BCSSLSocket;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_2
+
+    check-cast p1, Lorg/bouncycastle/jsse/BCSSLSocket;
+
+    invoke-interface {p1}, Lorg/bouncycastle/jsse/BCSSLSocket;->getApplicationProtocol()Ljava/lang/String;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const-string v0, ""
+
+    invoke-static {p1, v0}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    move-object v1, p1
+
+    :cond_2
+    :goto_0
+    return-object v1
+.end method
+
+.method public final k()Ljavax/net/ssl/SSLContext;
+    .locals 2
+
+    const-string v0, "TLS"
+
+    iget-object v1, p0, Lb6/d;->c:Ljava/security/Provider;
+
+    invoke-static {v0, v1}, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;Ljava/security/Provider;)Ljavax/net/ssl/SSLContext;
+
+    move-result-object v0
+
+    const-string v1, "getInstance(\"TLS\", provider)"
+
+    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public final m()Ljavax/net/ssl/X509TrustManager;
+    .locals 3
+
+    const-string v0, "PKIX"
+
+    const-string v1, "BCJSSE"
+
+    invoke-static {v0, v1}, Ljavax/net/ssl/TrustManagerFactory;->getInstance(Ljava/lang/String;Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V
+
+    invoke-virtual {v0}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lk3/e;->i(Ljava/lang/Object;)V
+
+    array-length v1, v0
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_1
+
+    const/4 v1, 0x0
+
+    aget-object v1, v0, v1
+
+    instance-of v2, v1, Ljavax/net/ssl/X509TrustManager;
+
+    if-eqz v2, :cond_1
+
+    if-eqz v1, :cond_0
+
+    check-cast v1, Ljavax/net/ssl/X509TrustManager;
+
+    return-object v1
+
+    :cond_0
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string v1, "null cannot be cast to non-null type javax.net.ssl.X509TrustManager"
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "toString(this)"
+
+    invoke-static {v0, v1}, Lk3/e;->k(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v1, "Unexpected default trust managers: "
+
+    invoke-static {v0, v1}, Lk3/e;->K(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
 .end method
