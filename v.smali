@@ -1,142 +1,158 @@
-.class public final Lu0/v;
+.class public final Lw3/v;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
-.implements Landroid/view/View$OnAttachStateChangeListener;
+
+# static fields
+.field public static final b:Lw3/v;
+
+.field public static final c:Lw3/v;
+
+.field public static final d:Lw3/v;
 
 
 # instance fields
-.field public final e:Ljava/util/WeakHashMap;
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 8
+
+    new-instance v0, Lw3/v;
+
+    const-string v1, "GET"
+
+    invoke-direct {v0, v1}, Lw3/v;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lw3/v;->b:Lw3/v;
+
+    new-instance v1, Lw3/v;
+
+    const-string v2, "POST"
+
+    invoke-direct {v1, v2}, Lw3/v;-><init>(Ljava/lang/String;)V
+
+    sput-object v1, Lw3/v;->c:Lw3/v;
+
+    new-instance v2, Lw3/v;
+
+    const-string v3, "PUT"
+
+    invoke-direct {v2, v3}, Lw3/v;-><init>(Ljava/lang/String;)V
+
+    new-instance v3, Lw3/v;
+
+    const-string v4, "PATCH"
+
+    invoke-direct {v3, v4}, Lw3/v;-><init>(Ljava/lang/String;)V
+
+    new-instance v4, Lw3/v;
+
+    const-string v5, "DELETE"
+
+    invoke-direct {v4, v5}, Lw3/v;-><init>(Ljava/lang/String;)V
+
+    new-instance v5, Lw3/v;
+
+    const-string v6, "HEAD"
+
+    invoke-direct {v5, v6}, Lw3/v;-><init>(Ljava/lang/String;)V
+
+    sput-object v5, Lw3/v;->d:Lw3/v;
+
+    new-instance v6, Lw3/v;
+
+    const-string v7, "OPTIONS"
+
+    invoke-direct {v6, v7}, Lw3/v;-><init>(Ljava/lang/String;)V
+
+    filled-new-array/range {v0 .. v6}, [Lw3/v;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lk3/e;->B([Ljava/lang/Object;)Ljava/util/List;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/WeakHashMap;
-
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
-
-    iput-object v0, p0, Lu0/v;->e:Ljava/util/WeakHashMap;
+    iput-object p1, p0, Lw3/v;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onGlobalLayout()V
-    .locals 5
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/4 v0, 0x1
 
-    const/16 v1, 0x1c
+    if-ne p0, p1, :cond_0
 
-    if-ge v0, v1, :cond_3
-
-    iget-object v0, p0, Lu0/v;->e:Ljava/util/WeakHashMap;
-
-    invoke-virtual {v0}, Ljava/util/WeakHashMap;->entrySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
+    return v0
 
     :cond_0
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    instance-of v1, p1, Lw3/v;
 
-    move-result v2
+    const/4 v2, 0x0
 
-    if-eqz v2, :cond_3
+    if-nez v1, :cond_1
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/Map$Entry;
-
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/view/View;
-
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Boolean;
-
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v2
-
-    invoke-virtual {v3}, Landroid/view/View;->isShown()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    invoke-virtual {v3}, Landroid/view/View;->getWindowVisibility()I
-
-    move-result v4
-
-    if-nez v4, :cond_1
-
-    const/4 v4, 0x1
-
-    goto :goto_1
+    return v2
 
     :cond_1
-    const/4 v4, 0x0
+    check-cast p1, Lw3/v;
 
-    :goto_1
-    if-eq v2, v4, :cond_0
+    iget-object v1, p0, Lw3/v;->a:Ljava/lang/String;
 
-    if-eqz v4, :cond_2
+    iget-object p1, p1, Lw3/v;->a:Ljava/lang/String;
 
-    const/16 v2, 0x10
+    invoke-static {v1, p1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    goto :goto_2
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    return v2
 
     :cond_2
-    const/16 v2, 0x20
-
-    :goto_2
-    invoke-static {v3, v2}, Lu0/n0;->e(Landroid/view/View;I)V
-
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v3, v2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_3
-    return-void
+    return v0
 .end method
 
-.method public final onViewAttachedToWindow(Landroid/view/View;)V
-    .locals 0
+.method public final hashCode()I
+    .locals 1
 
-    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    iget-object v0, p0, Lw3/v;->a:Ljava/lang/String;
 
-    move-result-object p1
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+    move-result v0
 
-    return-void
+    return v0
 .end method
 
-.method public final onViewDetachedFromWindow(Landroid/view/View;)V
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    return-void
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "HttpMethod(value="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lw3/v;->a:Ljava/lang/String;
+
+    const/16 v2, 0x29
+
+    invoke-static {v0, v1, v2}, Landroidx/fragment/app/u;->o(Ljava/lang/StringBuilder;Ljava/lang/String;C)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

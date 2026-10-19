@@ -1,151 +1,72 @@
-.class public abstract Lu0/g0;
-.super Ljava/lang/Object;
+.class public final Lw3/g0;
+.super Lw4/i;
 .source "SourceFile"
+
+# interfaces
+.implements Lv4/c;
+
+
+# static fields
+.field public static final e:Lw3/g0;
 
 
 # direct methods
-.method public static a(Landroid/view/View;Lu0/l0;)V
+.method static constructor <clinit>()V
     .locals 2
 
-    const v0, 0x7f0800b2
+    new-instance v0, Lw3/g0;
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    move-result-object v1
+    invoke-direct {v0, v1}, Lw4/i;-><init>(I)V
 
-    check-cast v1, Ll/k;
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Ll/k;
-
-    invoke-direct {v1}, Ll/k;-><init>()V
-
-    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    :cond_0
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v0, Lu0/f0;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    invoke-virtual {v1, p1, v0}, Ll/k;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->addOnUnhandledKeyEventListener(Landroid/view/View$OnUnhandledKeyEventListener;)V
+    sput-object v0, Lw3/g0;->e:Lw3/g0;
 
     return-void
 .end method
 
-.method public static b(Landroid/view/View;)Ljava/lang/CharSequence;
-    .locals 0
 
-    invoke-virtual {p0}, Landroid/view/View;->getAccessibilityPaneTitle()Ljava/lang/CharSequence;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static c(Landroid/view/View;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/view/View;->isAccessibilityHeading()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static d(Landroid/view/View;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/view/View;->isScreenReaderFocusable()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static e(Landroid/view/View;Lu0/l0;)V
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    const v0, 0x7f0800b2
+    check-cast p1, Ll4/i;
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    const-string v0, "it"
 
-    move-result-object v0
+    invoke-static {p1, v0}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    check-cast v0, Ll/k;
+    iget-object v0, p1, Ll4/i;->e:Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    check-cast v0, Ljava/lang/String;
 
-    return-void
+    iget-object p1, p1, Ll4/i;->f:Ljava/lang/Object;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, Ll/k;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    check-cast p1, Landroid/view/View$OnUnhandledKeyEventListener;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    if-eqz p1, :cond_1
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->removeOnUnhandledKeyEventListener(Landroid/view/View$OnUnhandledKeyEventListener;)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_1
-    return-void
-.end method
+    const/16 v0, 0x3d
 
-.method public static f(Landroid/view/View;I)Ljava/lang/Object;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Landroid/view/View;",
-            "I)TT;"
-        }
-    .end annotation
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->requireViewById(I)Landroid/view/View;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p0
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return-object p0
-.end method
+    move-result-object v0
 
-.method public static g(Landroid/view/View;Z)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setAccessibilityHeading(Z)V
-
-    return-void
-.end method
-
-.method public static h(Landroid/view/View;Ljava/lang/CharSequence;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setAccessibilityPaneTitle(Ljava/lang/CharSequence;)V
-
-    return-void
-.end method
-
-.method public static i(Landroid/view/View;Landroid/view/autofill/AutofillId;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setAutofillId(Landroid/view/autofill/AutofillId;)V
-
-    return-void
-.end method
-
-.method public static j(Landroid/view/View;Z)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setScreenReaderFocusable(Z)V
-
-    return-void
+    :goto_0
+    return-object v0
 .end method

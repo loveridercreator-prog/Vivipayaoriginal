@@ -1,51 +1,217 @@
-.class public abstract Lu0/i0;
+.class public final Lw3/i0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:Lw3/f0;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:I
+
+.field public final d:Ljava/util/List;
+
+.field public final e:Ljava/lang/String;
+
+.field public final f:Ljava/lang/String;
+
+.field public final g:Ljava/lang/String;
+
+.field public final h:Ll4/m;
+
+.field public final i:Ll4/m;
+
+
 # direct methods
-.method public static a(Landroid/view/View;)I
+.method public constructor <init>(Lw3/f0;Ljava/lang/String;ILjava/util/ArrayList;Lw3/z;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    invoke-virtual {p0}, Landroid/view/View;->getImportantForContentCapture()I
+    const-string p6, "protocol"
 
-    move-result p0
+    invoke-static {p1, p6}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    return p0
-.end method
+    const-string p6, "host"
 
-.method public static b(Landroid/view/View;)Ljava/lang/CharSequence;
-    .locals 0
+    invoke-static {p2, p6}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Landroid/view/View;->getStateDescription()Ljava/lang/CharSequence;
+    const-string p6, "parameters"
 
-    move-result-object p0
+    invoke-static {p5, p6}, Lk3/e;->l(Ljava/lang/Object;Ljava/lang/String;)V
 
-    return-object p0
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public static c(Landroid/view/View;)Z
-    .locals 0
+    iput-object p1, p0, Lw3/i0;->a:Lw3/f0;
 
-    invoke-virtual {p0}, Landroid/view/View;->isImportantForContentCapture()Z
+    iput-object p2, p0, Lw3/i0;->b:Ljava/lang/String;
 
-    move-result p0
+    iput p3, p0, Lw3/i0;->c:I
 
-    return p0
-.end method
+    iput-object p4, p0, Lw3/i0;->d:Ljava/util/List;
 
-.method public static d(Landroid/view/View;I)V
-    .locals 0
+    iput-object p7, p0, Lw3/i0;->e:Ljava/lang/String;
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setImportantForContentCapture(I)V
+    iput-object p8, p0, Lw3/i0;->f:Ljava/lang/String;
+
+    iput-object p9, p0, Lw3/i0;->g:Ljava/lang/String;
+
+    if-ltz p3, :cond_0
+
+    const/high16 p1, 0x10000
+
+    if-ge p3, p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    if-nez p3, :cond_1
+
+    :goto_0
+    new-instance p1, Lw3/h0;
+
+    const/4 p2, 0x2
+
+    invoke-direct {p1, p0, p2}, Lw3/h0;-><init>(Lw3/i0;I)V
+
+    new-instance p2, Ll4/m;
+
+    invoke-direct {p2, p1}, Ll4/m;-><init>(Lv4/a;)V
+
+    new-instance p1, Lw3/h0;
+
+    const/4 p2, 0x4
+
+    invoke-direct {p1, p0, p2}, Lw3/h0;-><init>(Lw3/i0;I)V
+
+    new-instance p2, Ll4/m;
+
+    invoke-direct {p2, p1}, Ll4/m;-><init>(Lv4/a;)V
+
+    new-instance p1, Lw3/h0;
+
+    const/4 p2, 0x3
+
+    invoke-direct {p1, p0, p2}, Lw3/h0;-><init>(Lw3/i0;I)V
+
+    new-instance p2, Ll4/m;
+
+    invoke-direct {p2, p1}, Ll4/m;-><init>(Lv4/a;)V
+
+    new-instance p1, Lw3/h0;
+
+    const/4 p2, 0x5
+
+    invoke-direct {p1, p0, p2}, Lw3/h0;-><init>(Lw3/i0;I)V
+
+    new-instance p2, Ll4/m;
+
+    invoke-direct {p2, p1}, Ll4/m;-><init>(Lv4/a;)V
+
+    iput-object p2, p0, Lw3/i0;->h:Ll4/m;
+
+    new-instance p1, Lw3/h0;
+
+    const/4 p2, 0x1
+
+    invoke-direct {p1, p0, p2}, Lw3/h0;-><init>(Lw3/i0;I)V
+
+    new-instance p2, Ll4/m;
+
+    invoke-direct {p2, p1}, Ll4/m;-><init>(Lv4/a;)V
+
+    iput-object p2, p0, Lw3/i0;->i:Ll4/m;
+
+    new-instance p1, Lw3/h0;
+
+    const/4 p2, 0x0
+
+    invoke-direct {p1, p0, p2}, Lw3/h0;-><init>(Lw3/i0;I)V
+
+    new-instance p2, Ll4/m;
+
+    invoke-direct {p2, p1}, Ll4/m;-><init>(Lv4/a;)V
 
     return-void
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "port must be between 0 and 65535, or 0 if not set"
+
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
-.method public static e(Landroid/view/View;Ljava/lang/CharSequence;)V
-    .locals 0
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setStateDescription(Ljava/lang/CharSequence;)V
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    return-void
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_3
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    const-class v3, Lw3/i0;
+
+    if-eq v3, v2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lw3/i0;
+
+    iget-object v2, p0, Lw3/i0;->g:Ljava/lang/String;
+
+    iget-object p1, p1, Lw3/i0;->g:Ljava/lang/String;
+
+    invoke-static {v2, p1}, Lk3/e;->g(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    return v1
+
+    :cond_2
+    return v0
+
+    :cond_3
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lw3/i0;->g:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lw3/i0;->g:Ljava/lang/String;
+
+    return-object v0
 .end method
